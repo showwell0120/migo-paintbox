@@ -10990,7 +10990,7 @@ packages:
       async: 3.2.3
       chalk: 4.1.0
       filelist: 1.0.4
-      minimatch: 3.0.4
+      minimatch: 3.1.2
     dev: true
 
   /jest-changed-files/28.0.2:
@@ -14952,7 +14952,7 @@ packages:
     resolution: {integrity: sha512-JZkJMZkAGFFPP2YqXZXPbMlMBgsxzE8ILs4lMIX/2o0L9UBw9O/Y3o6wFw/i9YLapcUJWwqbi3kdxIPdC62TIA==}
     hasBin: true
     dependencies:
-      glob: 7.1.4
+      glob: 7.2.0
     dev: true
 
   /ripemd160/2.0.2:
@@ -16362,10 +16362,10 @@ packages:
       typescript: '*'
       webpack: ^5.0.0
     dependencies:
-      chalk: 4.1.2
+      chalk: 4.1.0
       enhanced-resolve: 5.9.3
       micromatch: 4.0.5
-      semver: 7.3.4
+      semver: 7.3.7
       typescript: 4.6.4
       webpack: 5.72.1
     dev: true
@@ -16432,7 +16432,7 @@ packages:
   /tsconfig-paths-webpack-plugin/3.5.2:
     resolution: {integrity: sha512-EhnfjHbzm5IYI9YPNVIxx1moxMI4bpHD2e0zTXeDNQcwjjRaGepP7IhTHJkyDBG0CAOoxRfe7jCG630Ou+C6Pw==}
     dependencies:
-      chalk: 4.1.2
+      chalk: 4.1.0
       enhanced-resolve: 5.9.3
       tsconfig-paths: 3.14.1
     dev: true
@@ -17345,7 +17345,7 @@ packages:
   /wide-align/1.1.5:
     resolution: {integrity: sha512-eDMORYaPNZ4sQIuuYPDHdQvf4gyCF9rEEV/yPxGfwPkRodwEgiMUUXTx/dex+Me0wxx53S+NgUHaP7y3MGlDmg==}
     dependencies:
-      string-width: 1.0.2
+      string-width: 4.2.3
     dev: true
 
   /widest-line/3.1.0:

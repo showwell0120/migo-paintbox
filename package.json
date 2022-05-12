@@ -3,7 +3,15 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "preinstall": "npx only-allow pnpm"
+    "preinstall": "npx only-allow pnpm",
+    "doc:serve": "pnpm nx run document:storybook",
+    "doc:build": "pnpm nx build-storybook document",
+    "react:add": "pnpm nx g @nrwl/react:lib $npm_config_name --directory=react --buildable --publishable",
+    "model:add": "pnpm gen-ts-lib --directory=model",
+    "lipsum:add": "npm gen-ts-lib --directory=lipsum",
+    "util:add": "pnpm gen-ts-lib --directory=util",
+    "api:add": "npm gen-ts-lib --directory=api",
+    "gen-ts-lib": "pnpm nx g @nrwl/js:lib $npm_config_name --buildable --publishable"
   },
   "private": true,
   "devDependencies": {
@@ -54,7 +62,8 @@
     "webpack": "^5.72.1"
   },
   "workspaces": [
-    "packages/**"
+    "packages/**",
+    "apps/**"
   ],
   "dependencies": {
     "core-js": "^3.22.5",
