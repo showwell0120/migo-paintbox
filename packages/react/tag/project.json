@@ -37,6 +37,19 @@
         "jestConfig": "packages/react/tag/jest.config.ts",
         "passWithNoTests": true
       }
+    },
+    "version": {
+      "executor": "@jscutlery/semver:version",
+      "options": {
+        "postTargets": [
+          "react-tag:lint",
+          "react-tag:build",
+          "react-tag:publish"
+        ]
+      }
+    },
+    "publish": {
+      "executor": "ngx-deploy-npm:deploy"
     }
   }
 }

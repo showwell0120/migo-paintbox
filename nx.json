@@ -5,6 +5,14 @@
     "appsDir": "apps",
     "libsDir": "packages"
   },
+  "targetDependencies": {
+    "version": [
+      {
+        "target": "version",
+        "projects": "dependencies"
+      }
+    ]
+  },
   "affected": {
     "defaultBase": "main"
   },
