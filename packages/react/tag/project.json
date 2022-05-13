@@ -38,14 +38,18 @@
         "passWithNoTests": true
       }
     },
+    "lint-test": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": ["nx lint react-tag", "nx test react-tag"]
+      }
+    },
     "version": {
       "executor": "@jscutlery/semver:version",
       "options": {
-        "postTargets": [
-          "react-tag:lint",
-          "react-tag:build",
-          "react-tag:publish"
-        ]
+        "preset": "conventional",
+        "tagPrefix": "${projectName}@",
+        "postTargets": ["react-tag:build", "react-tag:publish"]
       }
     },
     "publish": {
