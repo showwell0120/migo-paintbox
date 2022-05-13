@@ -18,7 +18,7 @@ Paintbox 是 TS/JS 元件或函式庫的套件集合，以 monorepo 的形式管
 - 在產出 bundle、執行測試或 lint、產生 `tsconfig.json` 等任務，都已經有預設的設定。
 - 視覺化套件間的依賴關係。
 - 使用 [affected](https://nx.dev/using-nx/affected) 相關指令批次對有變更或有被影響到的套件執行任務。
-- 內建 [Storybook](https://nx.dev/storybook/overview-react) 的導入與執行。
+- [Storybook](https://nx.dev/storybook/overview-react) 的導入與執行。
 
 開發過程中會使用到的外掛有 -
 
@@ -26,6 +26,7 @@ Paintbox 是 TS/JS 元件或函式庫的套件集合，以 monorepo 的形式管
 - `@nrwl/react`: 產生 React 的元件或函式庫。
 - `@nrwl/workspace`: 管理套件目錄，例如移除。
 - `@jscutlery/semver`: 管理語意化版本以及產生 CHANGELOG（非官方，[github](https://github.com/jscutlery/semver))。
+- `ngx-deploy-npm`: 發布套件（非官方，[github](https://github.com/bikecoders/ngx-deploy-npm)）。
 
 ### [commitzen/cz-conventional-changelog](https://commitizen-tools.github.io/commitizen/)
 
@@ -71,6 +72,34 @@ Paintbox 是 TS/JS 元件或函式庫的套件集合，以 monorepo 的形式管
 | `helper/` | 有狀態的方法類別 | `pnpm helper:add --name=<name> --importPath=@paintbox/helper-<name>` |
 | `lipsum/` | 假資料 | `pnpm lipsum:add --name=<name> --importPath=@paintbox/lipsum-<name>` |
 
+### 加入設定
+
+- `<group>/<name>/project.json`
+
+```json
+{
+  "targets" {
+    "lint-test": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": ["nx lint <group>-<name>", "nx test <group>-<name>"]
+      }
+    },
+    "version": {
+      "executor": "@jscutlery/semver:version",
+      "options": {
+        "preset": "conventional",
+        "tagPrefix": "<group>-<name>@",
+        "postTargets": ["<group>-<name>:build", "<group>-<name>:publish"]
+      }
+    },
+    "publish": {
+      "executor": "ngx-deploy-npm:deploy"
+    }
+  }
+}
+```
+
 ### 主程式開發
 
 預設的主程式在 `/<name>/src/lib/`中，包含進入點和樣式檔。完成一個段落後建議至少提交一個 commit。
@@ -83,13 +112,18 @@ Paintbox 是 TS/JS 元件或函式庫的套件集合，以 monorepo 的形式管
 
 完成後建議至少提交一個 commit。
 
-### 跑測試
+### 跑測試與 lint
 
-如果只有套件本身的變更，而且沒有影響到其他套件，可以執行 `pnpm nx test <group>-<name>`。反之，執行 `pnpm nx affected --target=test`。
+執行指令 - 
+
+- 只有套件本身：`pnpm nx lint-test <group>-<name>`
+- 所有有影響到的套件：`pnpm nx affected --target=lint-test`
+
+// TODO: 預設測試跑不過，待解決
 
 ### 修正主程式或有被影響到的套件
 
-持續上個步驟和這個步驟，直到所有的測試都成為綠燈 pass。完成後建議至少提交一個 commit。
+持續上個步驟和這個步驟，直到所有的 lint 跟測試都成為綠燈 pass。完成後建議至少提交一個 commit。
 
 ### 新增 story
 
@@ -101,17 +135,20 @@ Paintbox 是 TS/JS 元件或函式庫的套件集合，以 monorepo 的形式管
 
 每個套件的版本號會是獨立的，根據變更的性質跟重要性，來決定遞增的層級。
 
-針對每個有影響到的套件進行更版，執行的指令是 `pnpm af:<patch|minor|major>`。如果只有一個套件的話，執行 `pnpm pkg:<patch|minor|major> --pkg=<group>-<name>`。
+執行指令 - 
+
+- 只有套件本身：`pnpm nx version <group>-<name> --preset=conventional --releaseAs=<patch|minor|major>`
+- 所有有影響到的套件：`pnpm af:<patch|minor|major>`
 
 成功的話，會逐步完成以下事情 - 
 
 - 同步遞增所有影響到的套件版本，並且新增對應的 commit 和 git tags。
+- 執行
 - 建置所有套件的 bundle。產出的檔案路徑在 `dist/packages/<group>/<name>/` 下。
-
 - 將所有套件發佈到公司內部的 registry。
 
 ### 移除套件
 
 1. 移除套件本身的目錄 `pnpm nx g @nrwl/workspace:remove <group>-<name>`。
 2. 如果有出現引入依賴的錯誤訊息，先將有引入該套件的地方移除。
-3. 在 root 的 `tsconfig.base.json` 中的 `paths` 欄位，移除該套件。
+3. 在 `tsconfig.base.json` 中的 `paths` 欄位，移除該套件。
