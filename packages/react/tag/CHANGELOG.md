@@ -2,6 +2,8 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [3.0.1](https://gitlab.migoinc.com/migotv/paintbox/compare/react-tag@3.0.0...react-tag@3.0.1) (2022-05-13)
+
 ## [3.0.0](https://gitlab.migoinc.com/migotv/paintbox/compare/react-tag@2.0.0...react-tag@3.0.0) (2022-05-13)
 
 ## [2.0.0](https://gitlab.migoinc.com/migotv/paintbox/compare/react-tag@1.0.0...react-tag@2.0.0) (2022-05-13)
