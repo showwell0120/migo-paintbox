@@ -7,21 +7,15 @@ stages:
 
 install:
   stage: install
-  # rules:
-  #   - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
-  #     changes: 
-  #       - apps/document/**/*
-  before_script:
-    - curl -f https://get.pnpm.io/v6.16.js | node - add --global pnpm@7
-    - pnpm config set store-dir .pnpm-store
-  script:
-    - pnpm install # install dependencies
   cache:
-    key:
-      files:
-        - pnpm-lock.yaml
+    key: ${CI_COMMIT_REF_SLUG}
     paths:
-      - .pnpm-store
+      - node_modules/
+  artifacts:
+    paths:
+      - node_modules/
+  script:
+    - yarn
 
 build-storybook:
   stage: build-storybook
@@ -31,7 +25,7 @@ build-storybook:
     paths:
       - dist/storybook/document/
   script:
-    - pnpm doc:build
+    - npx nx build-storybook document
 
 pages:
   stage: deploy-storybook
