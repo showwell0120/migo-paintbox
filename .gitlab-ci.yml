@@ -31,7 +31,7 @@ build-storybook:
     paths:
       - dist/storybook/document/
   script:
-    - npx nx build-storybook document
+    - pnpm doc:build
 
 pages:
   stage: deploy-storybook
