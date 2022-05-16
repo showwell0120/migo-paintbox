@@ -55,9 +55,9 @@ Paintbox 是 TS/JS 元件或函式庫的套件集合，以 monorepo 的形式管
 
 ## 開發流程
 
-### 新增 git 分支
+### 新增開發分支
 
-因為 CI 上有設定 Storybook 的部署 pipeline，之後也有可能使用 CI 進行版本的發佈。所以在開啟一個開發週期時前，先新增分支。
+因為 CI 上有設定 Storybook 的部署 pipeline，之後也有可能使用 CI 進行版本的發佈。所以在開啟一個開發週期時前，先新增開發分支。
 
 ### 產生套件目錄
 
@@ -117,7 +117,7 @@ Paintbox 是 TS/JS 元件或函式庫的套件集合，以 monorepo 的形式管
 執行指令 - 
 
 - 只有套件本身：`pnpm nx lint-test <group>-<name>`
-- 所有有影響到的套件：`pnpm nx affected --target=lint-test`
+- 所有影響到的套件：`pnpm nx affected --target=lint-test`
 
 // TODO: 預設測試跑不過，待解決
 
@@ -138,7 +138,7 @@ Paintbox 是 TS/JS 元件或函式庫的套件集合，以 monorepo 的形式管
 執行指令 - 
 
 - 只有套件本身：`pnpm nx version <group>-<name> --preset=conventional --releaseAs=<patch|minor|major>`
-- 所有有影響到的套件：`pnpm af:<patch|minor|major>`
+- 所有影響到的套件：`pnpm af:<patch|minor|major>`
 
 成功的話，會逐步完成以下事情 - 
 
@@ -147,8 +147,16 @@ Paintbox 是 TS/JS 元件或函式庫的套件集合，以 monorepo 的形式管
 - 建置所有套件的 bundle。產出的檔案路徑在 `dist/packages/<group>/<name>/` 下。
 - 將所有套件發佈到公司內部的 registry。
 
+### 合併開發分支
+
+當開發分支完成後，請在 gitlab 中新增一個 Merge requests (MR)。合併完成後，就可以把開發分支移除。
+
 ### 移除套件
 
 1. 移除套件本身的目錄 `pnpm nx g @nrwl/workspace:remove <group>-<name>`。
 2. 如果有出現引入依賴的錯誤訊息，先將有引入該套件的地方移除。
 3. 在 `tsconfig.base.json` 中的 `paths` 欄位，移除該套件。
+
+## Storybook
+
+每當 main 分支有新的 push 或 merge，並且有更新 `/apps/document/` 的檔案時，會觸發 GitLab CI 產生 Storybook 的靜態檔，部署到 [GitLab Pages](https://migotv.migoinc.io/paintbox)。

@@ -1,0 +1,42 @@
+image: node:latest
+
+stages:
+  - install
+  - build-storybook
+  - deploy-storybook
+
+install:
+  stage: install
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+      changes: 
+        - apps/document/**/*
+  cache:
+    key: ${CI_COMMIT_REF_SLUG}
+    paths:
+      - node_modules/
+  artifacts:
+    paths:
+      - node_modules/
+  script:
+    - yarn
+
+build-storybook:
+  stage: build-storybook
+  artifacts:
+    expire_in: 2 weeks
+    when: always
+    paths:
+      - dist/storybook/document/
+  script:
+    - npx nx build-storybook document
+
+pages:
+  stage: deploy-storybook
+  script:
+    - rm -rf "public"
+    - mkdir -p "public";
+    - mv dist/storybook/document/* "public"
+  artifacts:
+    paths:
+      - public
