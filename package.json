@@ -3,7 +3,6 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "preinstall": "npx only-allow pnpm",
     "doc:serve": "pnpm nx run document:storybook",
     "doc:build": "pnpm nx build-storybook document",
     "react:add": "pnpm nx g @nrwl/react:lib $npm_config_name --directory=react --buildable --publishable",
