@@ -7,10 +7,10 @@ stages:
 
 install:
   stage: install
+  only:
+    - main
   rules:
-    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
-      changes:
-        - apps/document/**/*
+    - changes: apps/document/**/*
   cache:
     key: ${CI_COMMIT_REF_SLUG}
     paths:
@@ -23,7 +23,12 @@ install:
 
 build-storybook:
   stage: build-storybook
-  needs: ['install']
+  only:
+    - main
+  rules:
+    - changes: apps/document/**/*
+  needs:
+    - install
   artifacts:
     expire_in: 2 weeks
     when: always
@@ -34,7 +39,12 @@ build-storybook:
 
 pages:
   stage: deploy-storybook
-  needs: ['build-storybook']
+  only:
+    - main
+  rules:
+    - changes: apps/document/**/*
+  needs:
+    - build-storybook
   script:
     - rm -rf "public"
     - mkdir -p "public";
