@@ -8,8 +8,8 @@ stages:
 install:
   stage: install
   rules:
-    - if: $CI_COMMIT_REF_NAME == "main"
-      changes: apps/document/**/*
+    - if: $CI_COMMIT_BRANCH == "main"
+      changes: ["apps/document/**/*"]
   cache:
     key: ${CI_COMMIT_REF_SLUG}
     paths:
@@ -23,8 +23,8 @@ install:
 build-storybook:
   stage: build-storybook
   rules:
-    - if: $CI_COMMIT_REF_NAME == "main"
-      changes: apps/document/**/*
+    - if: $CI_COMMIT_BRANCH == "main"
+      changes: ["apps/document/**/*"]
   needs:
     - install
   artifacts:
@@ -38,8 +38,8 @@ build-storybook:
 pages:
   stage: deploy-storybook
   rules:
-    - if: $CI_COMMIT_REF_NAME == "main"
-      changes: apps/document/**/*
+    - if: $CI_COMMIT_BRANCH == "main"
+      changes: ["apps/document/**/*"]
   needs:
     - build-storybook
   script:
