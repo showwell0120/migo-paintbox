@@ -55,7 +55,7 @@ Paintbox 是 TS/JS 元件或函式庫的套件集合，以 monorepo 的形式管
 
 ## 開發流程
 
-### 新增開發分支
+### 新增開發分支 (optional)
 
 因為 CI 上有設定 Storybook 的部署 pipeline，之後也有可能使用 CI 進行版本的發佈。所以在開啟一個開發週期時前，先新增開發分支。
 
@@ -104,7 +104,7 @@ Paintbox 是 TS/JS 元件或函式庫的套件集合，以 monorepo 的形式管
 
 預設的主程式在 `/<name>/src/lib/`中，包含進入點和樣式檔。完成一個段落後建議至少提交一個 commit。
 
-### 寫單元/元件測試
+### 寫單元/元件測試 (optional)
 
 預設的測試檔在 `/<name>/src/lib/<group>-<name>.spec.ts(x)`。可以根據必要性寫好測試。順序的話，可以遵循 TDD，也可以先寫完主程式再補測試。 
 
@@ -112,7 +112,7 @@ Paintbox 是 TS/JS 元件或函式庫的套件集合，以 monorepo 的形式管
 
 完成後建議至少提交一個 commit。
 
-### 跑測試與 lint
+### 跑測試與 lint (optional)
 
 執行指令 - 
 
@@ -149,7 +149,7 @@ Paintbox 是 TS/JS 元件或函式庫的套件集合，以 monorepo 的形式管
 - 建置所有套件的 bundle。產出的檔案路徑在 `dist/packages/<group>/<name>/` 下。
 - 將所有套件發佈到公司內部的 registry。
 
-### 合併開發分支
+### 合併開發分支 (optional)
 
 當開發分支完成後，請在 gitlab 中新增一個 Merge requests (MR)。合併完成後，就可以把開發分支移除。
 

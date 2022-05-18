@@ -1,10 +1,10 @@
 import { render } from '@testing-library/react';
 
-import { ReactTag } from './react-tag';
+import { ReactChip } from './react-chip';
 
-describe('ReactTag', () => {
+describe('ReactChip', () => {
   it('should render successfully', () => {
-    const { baseElement } = render(<ReactTag text="test" />);
+    const { baseElement } = render(<ReactChip color="blue" />);
     expect(baseElement).toBeTruthy();
   });
 });
