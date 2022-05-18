@@ -129,6 +129,10 @@ Paintbox 是 TS/JS 元件或函式庫的套件集合，以 monorepo 的形式管
 
 完成以後，可以執行 `pnpm doc:serve` 開啟本機的 Storybook 瀏覽。沒問題的話建議至少提交一個 commit。
 
+### 在 `package.json` 新增欄位
+
+- `author`: 維護者的 email (讓用的人可以知道找誰 report issue)
+
 ### 遞增版本 / 建置 / 發布
 
 每個套件的版本號會是獨立的，根據變更的性質跟重要性，來決定遞增的層級。
