@@ -16,6 +16,7 @@
     "baseUrl": ".",
     "paths": {
       "@paintbox/model-video": ["packages/model/video/src/index.ts"],
+      "@paintbox/react-button": ["packages/react/button/src/index.ts"],
       "@paintbox/react-chip": ["packages/react/chip/src/index.ts"],
       "@paintbox/react-dialog": ["packages/react/dialog/src/index.ts"],
       "@paintbox/react-tag": ["packages/react/tag/src/index.ts"],
