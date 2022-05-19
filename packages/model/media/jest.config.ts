@@ -1,6 +1,6 @@
 /* eslint-disable */
 export default {
-  displayName: 'model-video',
+  displayName: 'model-media',
   preset: '../../../jest.preset.js',
   globals: {
     'ts-jest': {
@@ -11,5 +11,5 @@ export default {
     '^.+\\.[tj]s$': 'ts-jest',
   },
   moduleFileExtensions: ['ts', 'js', 'html'],
-  coverageDirectory: '../../../coverage/packages/model/video',
+  coverageDirectory: '../../../coverage/packages/model/media',
 };
