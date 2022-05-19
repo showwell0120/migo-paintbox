@@ -119,6 +119,8 @@ Paintbox 是 TS/JS 元件或函式庫的套件集合，以 monorepo 的形式管
 - 只有套件本身：`pnpm nx lint-test <group>-<name>`
 - 所有影響到的套件：`pnpm nx affected --target=lint-test`
 
+如果只有跑 `test`，可以加上 `--watch` 監聽程式的變動自動測試。
+
 ### 修正主程式或有被影響到的套件
 
 持續上個步驟和這個步驟，直到所有的 lint 跟測試都成為綠燈 pass。完成後建議至少提交一個 commit。
