@@ -1,0 +1,25 @@
+#dialog-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 201;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, .50);
+  display: flex;
+  justify-content: center;
+  .dialog-box {
+    position: relative;
+    z-index: 202;
+    padding: 2rem;
+    margin: auto;
+    background-color: #fff;
+    border-radius: 4px;
+    transform: translateY(0);
+    transition: all  .5s;
+  }
+  .fade-out {
+    opacity: 0;
+    transform: translateY(-300%);
+  }
+}
