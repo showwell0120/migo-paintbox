@@ -38,6 +38,23 @@
         "jestConfig": "packages/react/dialog/jest.config.ts",
         "passWithNoTests": true
       }
+    },
+    "lint-test": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": ["nx lint react-dialog", "nx test react-dialog"]
+      }
+    },
+    "version": {
+      "executor": "@jscutlery/semver:version",
+      "options": {
+        "preset": "conventional",
+        "tagPrefix": "react-dialog@",
+        "postTargets": ["react-dialog:build", "react-dialog:publish"]
+      }
+    },
+    "publish": {
+      "executor": "ngx-deploy-npm:deploy"
     }
   }
 }
