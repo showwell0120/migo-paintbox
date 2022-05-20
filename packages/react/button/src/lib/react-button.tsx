@@ -30,9 +30,10 @@ export const ReactButton: React.FC<ReactButtonProps> = ({
   }
 
   return (
-    disabled
-    ? <button className={styles['disabled']}>{children}</button>
-    : <button className={cx(styles['button'], styles[`button--${color}--${variant}`])} onClick={clickHandler}>
+    <button
+      className={cx(styles['button'], disabled ? styles['disabled'] : styles[`button--${variant}--${color}`])}
+      onClick={clickHandler}
+    >
       {children}
     </button>
   );

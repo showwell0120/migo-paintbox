@@ -4,7 +4,7 @@ import { ReactButton } from './react-button';
 
 describe('ReactButton', () => {
   it('should render successfully', () => {
-    const { baseElement } = render(<ReactButton />);
+    const { baseElement } = render(<ReactButton>Click</ReactButton>);
     expect(baseElement).toBeTruthy();
   });
 });
