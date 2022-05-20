@@ -10,6 +10,5 @@ const Template: Story<ReactDialogProps> = (args) => <ReactDialog {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
-  dialog: true,
   children: <div>Check</div>
 };
