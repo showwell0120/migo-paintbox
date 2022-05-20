@@ -2,8 +2,21 @@ import * as dayjs from 'dayjs';
 
 export interface EventCallbackParam {
   active: boolean;
-  seasonID?: string;
-  episodeID?: string;
+  seasonID?: number;
+  episodeID?: number;
+}
+
+export interface CoreProps {
+  distributed: boolean;
+  size: number;
+  name: string;
+  licensor: string;
+  cpCode: string;
+  runtime: number;
+  licenseStart: number;
+  licenseEnd: number;
+  publish: number;
+  deliverRate: number;
 }
 
 export type EventType = 'active_change' | 'distributed_change';
@@ -11,8 +24,8 @@ export type EventCallback = (param: EventCallbackParam) => void;
 
 const GB = 1024 * 1024;
 
-export class Core {
-  constructor(props: Partial<Core>) {
+export class Core implements CoreProps {
+  constructor(props: CoreProps) {
     Object.assign(this, props);
   }
 
@@ -28,8 +41,9 @@ export class Core {
   public licenseStart = 0;
   public licenseEnd = 0;
   public publish = 0;
+  public deliverRate = 0;
 
-  eventMap: Map<EventType, Set<EventCallback>> = new Map();
+  public eventMap: Map<EventType, Set<EventCallback>> = new Map();
 
   static getFormatTime(prop: number | string | Date) {
     return dayjs(prop).format('MMM. DD, YYYY');

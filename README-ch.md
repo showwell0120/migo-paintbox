@@ -134,6 +134,7 @@ Paintbox 是 TS/JS 元件或函式庫的套件集合，以 monorepo 的形式管
 ### 在 `package.json` 新增欄位
 
 - `author`: 維護者的 email (讓用的人可以知道找誰 report issue)
+- `peerDependencies`: 告訴用的人安裝套件後，需要再裝列舉中的依賴才能正常執行
 
 ### 遞增版本 / 建置 / 發布
 
