@@ -1,2 +1,2 @@
-export * from './lib/model-media';
 export * from './lib/core';
+export * from './lib/episode';

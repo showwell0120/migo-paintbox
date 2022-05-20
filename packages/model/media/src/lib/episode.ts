@@ -1,10 +1,7 @@
 import { Core, CoreProps } from './core';
+import { ItemProps } from '../declarations';
 
-export interface EpisodeProps extends CoreProps {
-  id: number;
-  number: number;
-  active: boolean;
-}
+export interface EpisodeProps extends CoreProps, ItemProps {}
 
 export class Episode extends Core implements EpisodeProps {
   constructor(props: EpisodeProps) {
@@ -18,9 +15,7 @@ export class Episode extends Core implements EpisodeProps {
   public active = true;
 
   get displayNumber() {
-    return this.number && this.number >= 0
-      ? `EP${this.number}`
-      : Core.undefinedMark;
+    return Core.getDisplayNumber(this.number, 'EP');
   }
 
   static copy(instance: Episode) {

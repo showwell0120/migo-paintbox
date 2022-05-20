@@ -1,5 +1,5 @@
-import { Episode, EpisodeProps } from './episode';
-import { Core } from './core';
+import { Episode, EpisodeProps } from '../lib/episode';
+import { Core } from '../lib/core';
 import { coreData } from './core.spec';
 
 const episodeData: EpisodeProps = {

@@ -1,4 +1,5 @@
-import { Core, EventCallbackParam, CoreProps } from './core';
+import { Core, CoreProps } from '../lib/core';
+import { EventCallbackParam } from '../declarations';
 
 export const coreData: CoreProps = {
   distributed: true,

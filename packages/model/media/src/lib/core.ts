@@ -1,10 +1,5 @@
 import * as dayjs from 'dayjs';
-
-export interface EventCallbackParam {
-  active: boolean;
-  seasonID?: number;
-  episodeID?: number;
-}
+import { EventCallbackParam, EventType, EventCallback } from '../declarations';
 
 export interface CoreProps {
   distributed: boolean;
@@ -18,9 +13,6 @@ export interface CoreProps {
   publish: number;
   deliverRate: number;
 }
-
-export type EventType = 'active_change' | 'distributed_change';
-export type EventCallback = (param: EventCallbackParam) => void;
 
 const GB = 1024 * 1024;
 
@@ -49,6 +41,10 @@ export class Core implements CoreProps {
     return dayjs(prop).format('MMM. DD, YYYY');
   }
 
+  static getDisplayNumber(number: number, prefix: string) {
+    return number && number >= 0 ? `${prefix}${number}` : Core.undefinedMark;
+  }
+
   get fPublish() {
     return Core.getFormatTime(this.publish);
   }
@@ -69,6 +65,11 @@ export class Core implements CoreProps {
     return `${this.licensor ? this.licensor : Core.undefinedMark}/${
       this.cpCode ? this.cpCode : Core.undefinedMark
     }`;
+  }
+
+  get isExpired() {
+    const now = new Date();
+    return this.licenseEnd < now.getTime();
   }
 
   setDistributed(active: boolean) {
