@@ -1,5 +1,5 @@
 import { Story, Meta } from '@storybook/react';
-import { ReactToast, ReactToastProps } from '@paintbox/react/toast';
+import { ReactToast, ReactToastProps } from '@paintbox/react-toast';
 
 export default {
   component: ReactToast,
