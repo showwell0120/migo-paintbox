@@ -14,16 +14,7 @@
       }
     },
     "publish": {
-      "executor": "@nrwl/workspace:run-commands",
-      "options": {
-        "command": "node tools/scripts/publish.mjs model-video {args.ver} {args.tag}"
-      },
-      "dependsOn": [
-        {
-          "projects": "self",
-          "target": "build"
-        }
-      ]
+      "executor": "ngx-deploy-npm:deploy"
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",
@@ -53,9 +44,6 @@
         "tagPrefix": "model-video@",
         "postTargets": ["model-video:build", "model-video:publish"]
       }
-    },
-    "publish": {
-      "executor": "ngx-deploy-npm:deploy"
     }
   },
   "tags": []

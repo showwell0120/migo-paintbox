@@ -17,92 +17,88 @@ $light-hover-bg-color: #e0e6ff;
   padding: 12px 16px;
   transition: background-color .5s;
   cursor: pointer;
-}
-.button-icon {
-  margin-right: 8px;
-}
-.button--default--default {
-  background-color: $base-color;
-  color: $base-text-color;
-  &:hover {
-    background-color: $hover-bg-color;
-    border-color: $hover-bg-color;
+  &.default--default {
+    background-color: $base-color;
+    color: $base-text-color;
+    &:hover {
+      background-color: $hover-bg-color;
+      border-color: $hover-bg-color;
+    }
   }
-}
-.button--outlined--default {
-  background-color: $base-text-color;
-  color: $base-color;
-  transition: background-color .5s;
-  &:hover {
-    background-color: $outlined-hover-bg-color;
+  &.outlined--default {
+    background-color: $base-text-color;
+    color: $base-color;
+    transition: background-color .5s;
+    &:hover {
+      background-color: $outlined-hover-bg-color;
+    }
   }
-}
-.button--light--default {
-  border: none;
-  background-color: $light-color;
-  color: $base-color;
-  transition: background-color .5s;
-  &:hover {
-    background-color: $light-hover-bg-color;
+  &.light--default {
+    border: none;
+    background-color: $light-color;
+    color: $base-color;
+    transition: background-color .5s;
+    &:hover {
+      background-color: $light-hover-bg-color;
+    }
   }
-}
-.button--default--gray {
-  background-color: #6C757D;
-  color: #FBFBFB;
-  border-color: #6C757D;
-  &:hover {
-    background-color:#899097;
-    border-color: #899097;
-  }
-}
-.button--light--gray {
-  color: #6C757D;
-  border: none;
-  background-color: #f0f1f2;
-  &:hover {
-    background-color:#e2e4e6;
-  }
-}
-.button--outlined--gray {
-  background-color: #FBFBFB;
-  color: #6C757D;
-  border-color: #6C757D;
-  &:hover {
-    background-color: #f0f1f2;
+  &.default--gray {
+    background-color: #6C757D;
+    color: #FBFBFB;
     border-color: #6C757D;
+    &:hover {
+      background-color:#899097;
+      border-color: #899097;
+    }
   }
-}
-.button--default--red {
-  background-color: $red-6;
-  color: $base-text-color;
-  border-color: $red-6;
-  &:hover {
-    background-color: #DC3545;
-    border-color:#DC3545;
+  &.light--gray {
+    color: #6C757D;
+    border: none;
+    background-color: #f0f1f2;
+    &:hover {
+      background-color:#e2e4e6;
+    }
   }
-}
-.button--outlined--red {
-  background-color: $base-text-color;
-  color: $red-6;
-  border-color: $red-6;
-  &:hover {
-    background-color: $red-1;
+  &.outlined--gray {
+    background-color: #FBFBFB;
+    color: #6C757D;
+    border-color: #6C757D;
+    &:hover {
+      background-color: #f0f1f2;
+      border-color: #6C757D;
+    }
+  }
+  &.default--red {
+    background-color: $red-6;
+    color: $base-text-color;
     border-color: $red-6;
+    &:hover {
+      background-color: #DC3545;
+      border-color:#DC3545;
+    }
   }
-}
-.button--light--red {
-  border: none;
-  color: $red-6;
-  background-color: $red-2;
-  &:hover {
-    background-color: $red-3;
+  &.outlined--red {
+    background-color: $base-text-color;
+    color: $red-6;
+    border-color: $red-6;
+    &:hover {
+      background-color: $red-1;
+      border-color: $red-6;
+    }
   }
-}
-
-.disabled {
-  cursor: #eff2ff;
-  color: #bebebe;
-  background-color: #eeeeee;
-  cursor: not-allowed;
-  border: none;
+  &.light--red {
+    border: none;
+    color: $red-6;
+    background-color: $red-2;
+    &:hover {
+      background-color: $red-3;
+    }
+  }
+  &.disabled {
+    cursor: #eff2ff;
+    color: #bebebe;
+    background-color: #eeeeee;
+    cursor: not-allowed;
+    border: none;
+  }
 }
