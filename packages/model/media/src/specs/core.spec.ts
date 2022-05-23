@@ -37,6 +37,10 @@ describe('Core', () => {
       `${Core.undefinedMark}/${Core.undefinedMark}`
     );
   });
+  it('Get isExpired as true if the licenseEnd time is before than now', () => {
+    const instance = new Core({ ...coreData });
+    expect(instance.isExpired).toEqual(true);
+  });
   it('Set distributed property when call setDistributed()', () => {
     const instance = new Core({ ...coreData, distributed: false });
     instance.setDistributed(true);

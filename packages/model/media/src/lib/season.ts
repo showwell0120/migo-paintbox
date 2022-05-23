@@ -8,9 +8,9 @@ export interface SeasonProps extends CoreProps, ItemProps {
 
 export class Season extends Core implements SeasonProps {
   constructor(props: SeasonProps) {
-    const { id, number, active, ...coreProps } = props;
+    const { id, number, active, episodes, ...coreProps } = props;
     super(coreProps);
-    Object.assign(this, { id, number, active });
+    Object.assign(this, { id, number, active, episodes });
 
     // listen episode active chagned event
     this.episodes.forEach((episode) => {
@@ -64,14 +64,16 @@ export class Season extends Core implements SeasonProps {
   }
 
   override setDistributed(active: boolean) {
-    this.distributed = active;
+    if (this.distributed !== active) {
+      this.distributed = active;
 
-    this.episodes.forEach((episode) => episode.setDistributed(active));
+      this.episodes.forEach((episode) => episode.setDistributed(active));
 
-    this.notify('distributed_change', {
-      seasonID: this.id,
-      active: this.distributed,
-    });
+      this.notify('distributed_change', {
+        seasonID: this.id,
+        active: this.distributed,
+      });
+    }
   }
 
   handleEpisodeActiveChange({ active }: EventCallbackParam) {

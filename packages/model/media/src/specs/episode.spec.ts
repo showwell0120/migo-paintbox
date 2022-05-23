@@ -2,7 +2,7 @@ import { Episode, EpisodeProps } from '../lib/episode';
 import { Core } from '../lib/core';
 import { coreData } from './core.spec';
 
-const episodeData: EpisodeProps = {
+export const episodeData: EpisodeProps = {
   ...coreData,
   id: 0,
   number: 0,

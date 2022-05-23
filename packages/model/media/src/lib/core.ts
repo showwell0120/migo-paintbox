@@ -73,7 +73,9 @@ export class Core implements CoreProps {
   }
 
   setDistributed(active: boolean) {
-    this.distributed = active;
+    if (this.distributed !== active) {
+      this.distributed = active;
+    }
   }
 
   getSizeInGB(digits?: number, unit = 'GB') {

@@ -37,8 +37,10 @@ export class Episode extends Core implements EpisodeProps {
   }
 
   setActive(active: boolean) {
-    this.active = active;
+    if (this.active !== active) {
+      this.active = active;
 
-    this.notify('active_change', { active: this.active, episodeID: this.id });
+      this.notify('active_change', { active: this.active, episodeID: this.id });
+    }
   }
 }
