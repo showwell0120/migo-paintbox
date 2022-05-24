@@ -1,17 +1,28 @@
 import axios, { AxiosRequestConfig, AxiosError, AxiosResponse } from 'axios';
 
+interface HandlerParam {
+  statusCode: number;
+  responseData: ResponseDataProps;
+}
+
 interface CoreAPIProps {
   baseURL: string;
   config?: AxiosRequestConfig;
   handlers?: {
-    onBadRequest?: (param: unknown) => void; // 400
-    onNeedAuth?: (param: unknown) => void; // 401
-    onForbidden?: (param: unknown) => void; // 403
-    onNotFound?: (param: unknown) => void; // 404 & 410
-    onConflict?: (param: unknown) => void; // 409
-    onFatalError?: (param: unknown) => void; // 5xx
+    onBadRequest?: (param: HandlerParam) => void; // 400
+    onNeedAuth?: (param: HandlerParam) => void; // 401
+    onForbidden?: (param: HandlerParam) => void; // 403
+    onNotFound?: (param: HandlerParam) => void; // 404 & 410
+    onConflict?: (param: HandlerParam) => void; // 409
+    onFatalError?: (param: HandlerParam) => void; // 5xx
     onDisconnect?: () => void; // no network
   };
+}
+
+interface ResponseDataProps {
+  code?: number;
+  message?: string;
+  data?: unknown;
 }
 
 export class CoreAPI {
@@ -67,78 +78,78 @@ export class CoreAPI {
     return Promise.reject(error);
   }
 
-  responseOnFufilled(response: AxiosResponse) {
-    if (!window.navigator.onLine) {
-      this?.handlers?.onDisconnect && this.handlers.onDisconnect();
-      return;
-    }
-
-    // Any status code that lie within the range of 2xx cause this function to trigger
-    // Do something with response data
-    return response.data;
-  }
-
-  responseOnRejected(error: AxiosError) {
-    if (!window.navigator.onLine) {
-      this?.handlers?.onDisconnect && this.handlers.onDisconnect();
-      return;
-    }
-
-    // Any status codes that falls outside the range of 2xx cause this function to trigger
-    // Do something with response error
-    const statusCode = error.response?.status ?? 500;
-    const param = { statusCode, responseData: error.response?.data ?? {} };
-
-    let callHandler = false;
-
+  handleStatusHandler(statusCode: number, param: HandlerParam) {
     switch (statusCode) {
       case 400: {
-        this?.handlers?.onBadRequest &&
-          (callHandler = true) &&
-          this.handlers.onBadRequest(param);
+        this?.handlers?.onBadRequest && this.handlers.onBadRequest(param);
         break;
       }
       case 401: {
-        this?.handlers?.onNeedAuth &&
-          (callHandler = true) &&
-          this.handlers.onNeedAuth(param);
+        this?.handlers?.onNeedAuth && this.handlers.onNeedAuth(param);
         break;
       }
       case 403: {
-        this?.handlers?.onForbidden &&
-          (callHandler = true) &&
-          this.handlers.onForbidden(param);
+        this?.handlers?.onForbidden && this.handlers.onForbidden(param);
         break;
       }
       case 404:
       case 410: {
-        this?.handlers?.onNotFound &&
-          (callHandler = true) &&
-          this.handlers.onNotFound(param);
+        this?.handlers?.onNotFound && this.handlers.onNotFound(param);
         break;
       }
       case 409: {
-        this?.handlers?.onConflict &&
-          (callHandler = true) &&
-          this.handlers.onConflict(param);
+        this?.handlers?.onConflict && this.handlers.onConflict(param);
         break;
       }
       default:
-        this?.handlers?.onFatalError &&
-          (callHandler = true) &&
-          this.handlers.onFatalError(param);
+        this?.handlers?.onFatalError && this.handlers.onFatalError(param);
         break;
-    }
-
-    if (callHandler) {
-      return;
-    } else {
-      // default behavior
-      return Promise.reject(error);
     }
   }
 
-  transformResponse(data: unknown) {
+  responseOnFufilled(response: AxiosResponse<ResponseDataProps>) {
+    // Any status code that lie within the range of 2xx cause this function to trigger
+    // Do something with response data
+
+    if (!window.navigator.onLine) {
+      this?.handlers?.onDisconnect && this.handlers.onDisconnect();
+      return;
+    }
+
+    const statusCode = response?.data?.code ?? 500;
+    const param: HandlerParam = {
+      statusCode,
+      responseData: response?.data ?? {},
+    };
+
+    this.handleStatusHandler(statusCode, param);
+
+    // default behavior
+    return response.data;
+  }
+
+  responseOnRejected(error: AxiosError<ResponseDataProps>) {
+    // Any status codes that falls outside the range of 2xx cause this function to trigger
+    // Do something with response error
+
+    if (!window.navigator.onLine) {
+      this?.handlers?.onDisconnect && this.handlers.onDisconnect();
+      return;
+    }
+
+    const statusCode = error.response?.status ?? 500;
+    const param: HandlerParam = {
+      statusCode,
+      responseData: error.response?.data ?? {},
+    };
+
+    this.handleStatusHandler(statusCode, param);
+
+    // default behavior
+    return Promise.reject(error);
+  }
+
+  transformResponse(data: ResponseDataProps) {
     // Do whatever you want to transform the data
     return data;
   }
