@@ -6,7 +6,6 @@ interface HandlerParam {
 }
 
 interface CoreAPIProps {
-  baseURL: string;
   config?: AxiosRequestConfig;
   handlers?: {
     onBadRequest?: (param: HandlerParam) => void; // 400
@@ -20,32 +19,30 @@ interface CoreAPIProps {
 }
 
 interface ResponseDataProps {
-  code?: number;
+  status?: number;
   message?: string;
   data?: unknown;
 }
 
 export class CoreAPI {
-  constructor({ baseURL, config = {}, handlers }: CoreAPIProps) {
+  constructor({ config = {}, handlers }: CoreAPIProps) {
     this.axiosInstance = axios.create({
       headers: {
         'Content-Type': 'application/json',
       },
       transformResponse: [this.transformResponse],
       timeout: 3000,
-      signal: undefined, // for cancel request
-      baseURL,
       ...config,
     });
 
     this.axiosInstance.interceptors.request.use(
-      this.requestOnFufilled,
-      this.requestOnRejected
+      this.requestOnFufilled.bind(this),
+      this.requestOnRejected.bind(this)
     );
 
     this.axiosInstance.interceptors.response.use(
-      this.responseOnFufilled,
-      this.responseOnRejected
+      this.responseOnFufilled.bind(this),
+      this.responseOnRejected.bind(this)
     );
 
     this.handlers = handlers;
@@ -116,7 +113,11 @@ export class CoreAPI {
       return;
     }
 
-    const statusCode = response?.data?.code ?? 500;
+    if (typeof response.data === 'string') {
+      response.data = JSON.parse(response.data);
+    }
+
+    const statusCode = response?.data?.status ?? 500;
     const param: HandlerParam = {
       statusCode,
       responseData: response?.data ?? {},
