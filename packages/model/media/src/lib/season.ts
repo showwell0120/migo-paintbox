@@ -76,6 +76,16 @@ export class Season extends Core implements SeasonProps {
     }
   }
 
+  setActive(active: boolean) {
+    this.active = active;
+
+    this.episodes.forEach(e => {
+      e.setActive(active);
+    });
+
+    this.notify('active_change', { seasonID: this.id, active: this.active });
+  }
+
   handleEpisodeActiveChange({ active }: EventCallbackParam) {
     if (active) {
       // if episode is activated, set active to toCarousel

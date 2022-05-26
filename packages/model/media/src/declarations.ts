@@ -4,6 +4,18 @@ export interface ItemProps {
   active: boolean;
 }
 
+export interface GenreProps {
+  code: string;
+  name: string;
+}
+
+export type ContentTypeProps = 'Movie' | 'Series';
+
+export interface RegionProps {
+  code: string;
+  name: string;
+}
+
 export interface EventCallbackParam {
   active: boolean;
   seasonID?: number;
