@@ -1,7 +1,7 @@
 export interface ItemProps {
   id: number;
-  number: number;
   active: boolean;
+  number?: number; // Title haven't this now
 }
 
 export interface GenreProps {

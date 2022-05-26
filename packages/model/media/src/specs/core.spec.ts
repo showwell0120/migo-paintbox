@@ -8,8 +8,6 @@ export const coreData: CoreProps = {
   licensor: '',
   cpCode: '',
   runtime: 0,
-  licenseStart: 0,
-  licenseEnd: 0,
   publish: 0,
   deliverRate: 0,
 };
@@ -38,7 +36,7 @@ describe('Core', () => {
     );
   });
   it('Get isExpired as true if the licenseEnd time is before than now', () => {
-    const instance = new Core({ ...coreData });
+    const instance = new Core({ ...coreData, licenseStart: 0, licenseEnd: 0 });
     expect(instance.isExpired).toEqual(true);
   });
   it('Set distributed property when call setDistributed()', () => {

@@ -8,10 +8,10 @@ export interface CoreProps {
   licensor: string;
   cpCode: string;
   runtime: number;
-  licenseStart: number;
-  licenseEnd: number;
   publish: number;
   deliverRate: number;
+  licenseStart?: number;
+  licenseEnd?: number;
 }
 
 const GB = 1024 * 1024;
@@ -30,10 +30,10 @@ export class Core implements CoreProps {
   public licensor = '';
   public cpCode = '';
   public runtime = 0; // unit is second
-  public licenseStart = 0;
-  public licenseEnd = 0;
   public publish = 0;
   public deliverRate = 0;
+  public licenseStart: number | undefined;
+  public licenseEnd: number | undefined;
 
   public eventMap: Map<EventType, Set<EventCallback>> = new Map();
 
@@ -50,11 +50,15 @@ export class Core implements CoreProps {
   }
 
   get fLicenseStart() {
-    return Core.getFormatTime(this.licenseStart);
+    return typeof this.licenseStart === 'number'
+      ? Core.getFormatTime(this.licenseStart)
+      : '';
   }
 
   get fLicenseEnd() {
-    return Core.getFormatTime(this.licenseEnd);
+    return typeof this.licenseEnd === 'number'
+      ? Core.getFormatTime(this.licenseEnd)
+      : '';
   }
 
   get displayName() {
@@ -69,7 +73,9 @@ export class Core implements CoreProps {
 
   get isExpired() {
     const now = new Date();
-    return this.licenseEnd < now.getTime();
+    return typeof this.licenseEnd === 'number'
+      ? this.licenseEnd < now.getTime()
+      : false;
   }
 
   setDistributed(active: boolean) {
@@ -94,7 +100,7 @@ export class Core implements CoreProps {
 
   getDiffTime(field: 'publish' | 'licenseStart' | 'licenseEnd', data: Core) {
     if (this[field] && data && data[field]) {
-      return this[field] - data[field];
+      return (this[field] as number) - (data[field] as number);
     }
     return 0;
   }

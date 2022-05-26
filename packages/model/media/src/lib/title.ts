@@ -13,21 +13,44 @@ export interface TitleProps extends ItemProps, CoreProps {
 
 export class Title extends Core implements TitleProps {
   constructor(props: TitleProps) {
-    const { id, number, active, displayID, genre, rating, year, type, status, seasons, ...coreProps } = props;
+    const {
+      id,
+      active,
+      displayID,
+      genre,
+      rating,
+      year,
+      type,
+      status,
+      seasons,
+      ...coreProps
+    } = props;
     super(coreProps);
-    Object.assign(this, { id, number, active, displayID, genre, rating, year, type, status, seasons });
+    Object.assign(this, {
+      id,
+      active,
+      displayID,
+      genre,
+      rating,
+      year,
+      type,
+      status,
+      seasons,
+    });
 
     this.seasons.forEach((season) => {
       season.on?.('active_change', this.handleSeasonActiveChange.bind(this));
     });
 
-    this.seasons.forEach(season => {
-      season.on?.('distributed_change', this.handleSeasonDistributedChange.bind(this));
+    this.seasons.forEach((season) => {
+      season.on?.(
+        'distributed_change',
+        this.handleSeasonDistributedChange.bind(this)
+      );
     });
   }
 
   public id = 0;
-  public number = 0;
   public active = true;
   public displayID = '';
   public rating = 'SU';
@@ -43,7 +66,7 @@ export class Title extends Core implements TitleProps {
 
   get episodeCount() {
     let count = 0;
-    this.seasons.forEach(season => {
+    this.seasons.forEach((season) => {
       season.episodes.forEach(() => {
         count += 1;
       });
@@ -57,7 +80,6 @@ export class Title extends Core implements TitleProps {
 
     return new Title({
       id: instance.id,
-      number: instance.number,
       active: instance.active,
       displayID: instance.displayID,
       genre: instance.genre,
@@ -85,7 +107,7 @@ export class Title extends Core implements TitleProps {
       return;
     }
 
-    this.seasons.forEach(season => {
+    this.seasons.forEach((season) => {
       season.setDistributed(active);
     });
   }
@@ -93,7 +115,7 @@ export class Title extends Core implements TitleProps {
   setActive(active: boolean) {
     this.active = active;
 
-    this.seasons.forEach(s => {
+    this.seasons.forEach((s) => {
       if (s.distributed || (!s.distributed && !active)) {
         s.setActive(active);
       }
@@ -104,7 +126,9 @@ export class Title extends Core implements TitleProps {
     if (active) {
       this.distributed = active;
     } else {
-      const allSeasonsUndistributed = !this.seasons.some(season => season.distributed);
+      const allSeasonsUndistributed = !this.seasons.some(
+        (season) => season.distributed
+      );
 
       if (allSeasonsUndistributed) {
         this.distributed = false;
@@ -117,7 +141,7 @@ export class Title extends Core implements TitleProps {
       this.active = active;
     } else {
       // if all seasons are inactive, set the title to inactive
-      const allSeasonsInactive = !this.seasons.some(season => season.active);
+      const allSeasonsInactive = !this.seasons.some((season) => season.active);
 
       if (allSeasonsInactive) {
         this.active = false;

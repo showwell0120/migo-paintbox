@@ -12,6 +12,8 @@ const seasonData: SeasonProps = {
   number: 1,
   active: true,
   episodes: [ep],
+  licenseStart: 0,
+  licenseEnd: 0,
 };
 
 describe('Season', () => {

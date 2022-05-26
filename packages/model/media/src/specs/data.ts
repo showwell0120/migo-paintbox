@@ -37,15 +37,14 @@ export const seasonObj: SeasonProps = {
 
 export const titleObj: TitleProps = {
   id: 176966,
-  name: "Boys Over Flowers",
-  number: 0,
+  name: 'Boys Over Flowers',
   active: true,
   distributed: true,
   size: 16973049551,
   publish: 1602895958290,
   runtime: 0,
-  licensor: "KRKBS",
-  cpCode: "KRKBS",
+  licensor: 'KRKBS',
+  cpCode: 'KRKBS',
   licenseStart: 1583020800000,
   licenseEnd: 1646092800000,
   deliverRate: 0,
