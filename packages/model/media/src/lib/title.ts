@@ -1,11 +1,11 @@
-import { ItemProps, GenreProps, ContentTypeProps, EventCallbackParam } from '../declarations';
+import { ItemProps, GenreProps, ContentType, EventCallbackParam } from '../declarations';
 import { Core, CoreProps } from './core';
 import { Season } from './season';
 export interface TitleProps extends ItemProps, CoreProps {
   displayID: string;
   rating: string;
   year: number;
-  type: ContentTypeProps;
+  type: ContentType;
   status: boolean;
   genre: GenreProps;
   seasons: Season[];
@@ -29,11 +29,11 @@ export class Title extends Core implements TitleProps {
   public id = 0;
   public number = 0;
   public active = true;
-  public displayID = '0';
-  public genre: GenreProps = { code: 'horror', name: 'Horror' };
-  public rating = 'R13+';
-  public year = 2022;
-  public type: ContentTypeProps = 'Series';
+  public displayID = '';
+  public rating = 'SU';
+  public year = 0;
+  public genre: GenreProps = { name: '', code: '' };
+  public type: ContentType = 'Movie';
   public status = true;
   public seasons: Season[] = [];
 

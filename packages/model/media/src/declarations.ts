@@ -9,7 +9,7 @@ export interface GenreProps {
   name: string;
 }
 
-export type ContentTypeProps = 'Movie' | 'Series';
+export type ContentType = 'Movie' | 'Series';
 
 export interface RegionProps {
   code: string;
