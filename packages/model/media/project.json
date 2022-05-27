@@ -31,15 +31,15 @@
     "lint-test": {
       "executor": "@nrwl/workspace:run-commands",
       "options": {
-        "commands": ["nx lint <group>-<name>", "nx test <group>-<name>"]
+        "commands": ["nx lint model-media", "nx test model-media"]
       }
     },
     "version": {
       "executor": "@jscutlery/semver:version",
       "options": {
         "preset": "conventional",
-        "tagPrefix": "<group>-<name>@",
-        "postTargets": ["<group>-<name>:build", "<group>-<name>:publish"]
+        "tagPrefix": "model-media@",
+        "postTargets": ["model-media:build", "model-media:publish"]
       }
     },
     "publish": {
