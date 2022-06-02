@@ -15,7 +15,6 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@paintbox/api-core": ["packages/api/core/src/index.ts"],
       "@paintbox/model-media": ["packages/model/media/src/index.ts"],
       "@paintbox/react-button": ["packages/react/button/src/index.ts"],
       "@paintbox/react-chip": ["packages/react/chip/src/index.ts"],
