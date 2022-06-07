@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [1.0.2](https://gitlab.migoinc.com/migotv/paintbox/compare/react-tag@1.0.1...react-tag@1.0.2) (2022-06-07)
+
+
+### Features
+
+* **react-chip:** add component | fix tests ([ab26122](https://gitlab.migoinc.com/migotv/paintbox/commit/ab26122bf260b661dd70441433a74b7264b5a560))
+
 ### [1.0.1](https://gitlab.migoinc.com/migotv/paintbox/compare/react-tag@1.0.0...react-tag@1.0.1) (2022-05-18)
 
 ## 1.0.0 (2022-05-18)
