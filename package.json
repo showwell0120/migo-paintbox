@@ -91,5 +91,8 @@
     "commitizen": {
       "path": "cz-conventional-changelog"
     }
+  },
+  "publishConfig": {
+    "@paintbox:registry": "https://gitlab.migoinc.com/api/v4/projects/319/packages/npm/"
   }
 }
