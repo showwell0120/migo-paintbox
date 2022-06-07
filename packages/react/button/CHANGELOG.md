@@ -2,6 +2,8 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.0.0](https://gitlab.migoinc.com/migotv/paintbox/compare/react-button@0.0.1...react-button@1.0.0) (2022-06-07)
+
 ### 0.0.1 (2022-06-07)
 
 
