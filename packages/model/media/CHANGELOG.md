@@ -2,6 +2,22 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [1.0.2](https://gitlab.migoinc.com/migotv/paintbox/compare/model-media@1.0.1...model-media@1.0.2) (2022-06-06)
+
+### [1.0.1](https://gitlab.migoinc.com/migotv/paintbox/compare/model-media@1.0.0...model-media@1.0.1) (2022-06-06)
+
+
+### Bug Fixes
+
+* **model-media:** correct task setting ([c8c2ad5](https://gitlab.migoinc.com/migotv/paintbox/commit/c8c2ad5219f353d4893812cebce7f2296cfe7254))
+
+### [1.0.1](https://gitlab.migoinc.com/migotv/paintbox/compare/model-media@1.0.0...model-media@1.0.1) (2022-06-06)
+
+
+### Bug Fixes
+
+* **model-media:** correct task setting ([c8c2ad5](https://gitlab.migoinc.com/migotv/paintbox/commit/c8c2ad5219f353d4893812cebce7f2296cfe7254))
+
 ## 1.0.0 (2022-05-27)
 
 
