@@ -17,7 +17,7 @@ export interface ReactTreeViewProps {
   prepend?: React.ReactNode,
   append?: React.ReactNode,
   depth?: number,
-  selectTab: (item: ItemType) => void,
+  selectTab?: (item: ItemType) => void,
 }
 
 export const ReactTreeView: React.FC<ReactTreeViewProps> = ({
@@ -30,7 +30,7 @@ export const ReactTreeView: React.FC<ReactTreeViewProps> = ({
 }) => {
   const clickHandler = (item: ItemType) => {
     if (!item.children || item.children.length === 0) {
-      selectTab(item);
+      selectTab && selectTab(item);
     }
   }
 
