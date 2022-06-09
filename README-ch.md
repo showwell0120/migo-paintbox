@@ -7,6 +7,11 @@ Paintbox 是 TS/JS 元件或函式庫的套件集合，以 monorepo 的形式管
 - `npm i -g pnpm`
 - `npm i -g commitizen`
 
+### 設定套件的 registry
+1. 建立 [personal access token](https://docs.gitlab.com/ee/user/profile/personal_access_tokens.html#create-a-personal-access-token)，scope 勾選 api 即可
+- `npm config set @paintbox:registry https://gitlab.migoinc.com/api/v4/projects/319/packages/npm/`
+- `npm config set -- 'https://gitlab.migoinc.com/api/v4/projects/319/packages/npm/:_authToken' "<your_token>"`
+- `npm config list` 確認相關設定是否正確
 ## 使用工具
 
 ### [Nx](https://nx.dev/)
@@ -133,10 +138,10 @@ Paintbox 是 TS/JS 元件或函式庫的套件集合，以 monorepo 的形式管
 
 ### 在 `package.json` 新增欄位
 
-- `author`: 維護者的 email (讓用的人可以知道找誰 report issue)
+- `author`: 維護者的 email （讓用的人可以知道找誰 report issue)
 - `peerDependencies`: 告訴用的人安裝套件後，需要再裝列舉中的依賴才能正常執行
 
-### 遞增版本 / 建置 / 發布
+### 遞增版本 + 建置 + 發布
 
 每個套件的版本號會是獨立的，根據變更的性質跟重要性，來決定遞增的層級。
 
@@ -150,6 +155,8 @@ Paintbox 是 TS/JS 元件或函式庫的套件集合，以 monorepo 的形式管
 - 同步遞增所有影響到的套件版本，並且新增對應的 commit 和 git tags。
 - 建置所有套件的 bundle。產出的檔案路徑在 `dist/packages/<group>/<name>/` 下。
 - 將所有套件發佈到公司內部的 registry。
+
+如果是第一次發布，將 `releaseAs` 參數設為 `major`，讓版號從 1.0.0 開始。
 
 ### 合併開發分支 (optional)
 
