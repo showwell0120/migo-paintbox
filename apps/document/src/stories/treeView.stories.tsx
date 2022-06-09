@@ -4,14 +4,17 @@ import { ReactTreeView, ReactTreeViewProps } from '@paintbox/react-tree-view';
 export default {
   component: ReactTreeView,
   title: 'ReactTreeView',
-} as Meta
+} as Meta;
 
-const Template: Story<ReactTreeViewProps> = (args) => <ReactTreeView {...args} />
+// 需要多個 selectedTab 的 state 和 selectTab 的事件實作，測試元件的 selectedTab 和 selectTab props
+const Template: Story<ReactTreeViewProps> = (args) => (
+  <ReactTreeView {...args} />
+);
 
 const itemProps = [
   {
     id: '1',
-    name: 'Test 1'
+    name: 'Test 1',
   },
   {
     id: '2',
@@ -20,9 +23,9 @@ const itemProps = [
       {
         id: '3',
         name: 'Test 3',
-      }
-    ]
-  }
+      },
+    ],
+  },
 ];
 
 export const Primary = Template.bind({});
