@@ -1,5 +1,5 @@
 import { Story, Meta } from '@storybook/react';
-import { ReactTreeView, ReactTreeViewProps } from '@paintbox/react-tree-view';
+import { ReactTreeView, ReactTreeViewProps, ItemType } from '@paintbox/react-tree-view';
 
 export default {
   component: ReactTreeView,
@@ -11,7 +11,7 @@ const Template: Story<ReactTreeViewProps> = (args) => (
   <ReactTreeView {...args} />
 );
 
-const itemProps = [
+const itemProps: ItemType = [
   {
     id: '1',
     name: 'Test 1',

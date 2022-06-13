@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react';
 
-import ReactTreeView from './react-tree-view';
+import { ReactTreeView } from './react-tree-view';
 
 describe('ReactTreeView', () => {
   it('should render successfully', () => {

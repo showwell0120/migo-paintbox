@@ -4,11 +4,10 @@ import styles from './react-tree-view.module.scss';
 
 const cx = classNames.bind(styles);
 
-// export ItemType，在 story 中將 itemProps 多個型別定義，在設定 args 時才能 pass 檢查
-interface ItemType {
+export interface ItemType {
   id: string;
   name: string;
-  children: Array<ItemType>; // 以 story 來看，這個 prop 應該是 optional (?)
+  children?: Array<ItemType>;
 }
 
 /* eslint-disable-next-line */
@@ -18,7 +17,7 @@ export interface ReactTreeViewProps {
   prepend?: React.ReactNode;
   append?: React.ReactNode;
   depth?: number;
-  selectTab?: (item: ItemType) => void; // event type 的 prop 以 on 開頭，比較不會跟 selectedTab 混淆 (onSelectTab)
+  onSelectTab?: (item: ItemType) => void;
 }
 
 export const ReactTreeView: React.FC<ReactTreeViewProps> = ({
@@ -27,13 +26,12 @@ export const ReactTreeView: React.FC<ReactTreeViewProps> = ({
   prepend,
   append,
   depth = 1,
-  selectTab,
+  onSelectTab,
 }) => {
   const clickHandler = (item: ItemType) => {
     if (!item.children || item.children.length === 0) {
-      selectTab && selectTab(item);
+      onSelectTab && onSelectTab(item);
     }
-    // 如果有 children 的 case?
   };
 
   return (
@@ -53,21 +51,17 @@ export const ReactTreeView: React.FC<ReactTreeViewProps> = ({
               <div className={styles['text']}>{item.name}</div>
               {append}
             </div>
-            {/* 如果 children 是 optional，要再多加個判斷 */}
-            <ReactTreeView
+            { item.children && <ReactTreeView
               items={item.children}
               selectedTab={selectedTab}
-              selectTab={selectTab}
+              onSelectTab={onSelectTab}
               depth={depth + 1}
               prepend={prepend}
               append={append}
-            />
+            />}
           </div>
         ))}
       </>
     )
   );
 };
-
-// 統一 export 方式
-export default ReactTreeView;
