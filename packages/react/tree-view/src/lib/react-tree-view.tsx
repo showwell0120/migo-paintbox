@@ -7,6 +7,8 @@ const cx = classNames.bind(styles);
 export interface ItemType {
   id: string;
   name: string;
+  icon?: React.ReactNode;
+  info?: string;
   children?: Array<ItemType>;
 }
 
@@ -14,8 +16,6 @@ export interface ItemType {
 export interface ReactTreeViewProps {
   items: Array<ItemType>;
   selectedTab: string;
-  prepend?: React.ReactNode;
-  append?: React.ReactNode;
   depth?: number;
   onSelectTab?: (item: ItemType) => void;
 }
@@ -23,8 +23,6 @@ export interface ReactTreeViewProps {
 export const ReactTreeView: React.FC<ReactTreeViewProps> = ({
   items,
   selectedTab,
-  prepend,
-  append,
   depth = 1,
   onSelectTab,
 }) => {
@@ -47,17 +45,15 @@ export const ReactTreeView: React.FC<ReactTreeViewProps> = ({
               style={{ paddingLeft: depth * 14 }}
               onClick={() => clickHandler(item)}
             >
-              {prepend}
+              <div className={styles['icon']}>{item.icon}</div>
               <div className={styles['text']}>{item.name}</div>
-              {append}
+              <div className={styles['info']}>{item.info}</div>
             </div>
             { item.children && <ReactTreeView
               items={item.children}
               selectedTab={selectedTab}
               onSelectTab={onSelectTab}
               depth={depth + 1}
-              prepend={prepend}
-              append={append}
             />}
           </div>
         ))}

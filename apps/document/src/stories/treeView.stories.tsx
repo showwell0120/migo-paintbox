@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Story, Meta } from '@storybook/react';
 import { ReactTreeView, ReactTreeViewProps, ItemType } from '@paintbox/react-tree-view';
 
@@ -6,12 +7,11 @@ export default {
   title: 'ReactTreeView',
 } as Meta;
 
-// 需要多個 selectedTab 的 state 和 selectTab 的事件實作，測試元件的 selectedTab 和 selectTab props
 const Template: Story<ReactTreeViewProps> = (args) => (
   <ReactTreeView {...args} />
 );
 
-const itemProps: ItemType = [
+const itemProps: Array<ItemType> = [
   {
     id: '1',
     name: 'Test 1',
@@ -29,8 +29,52 @@ const itemProps: ItemType = [
 ];
 
 export const Primary = Template.bind({});
+Primary.decorators = [
+  (Story, context) => {
+    const [ tab, setTab ] = useState('Test 1');
+    const handleTab = (t: ItemType) => {
+      setTab(t.name);
+    };
+
+    context.args.selectedTab = tab;
+    context.args.onSelectTab = handleTab;
+    return (
+      <div style={{width: '300px'}}>
+        <Story />
+      </div>
+    );
+  },
+];
 Primary.args = {
   items: itemProps,
-  selectedTab: 'Test 1',
-  prepend: <div>*</div>
 }
+
+const itemWithIconProp: Array<ItemType> = [
+  {
+    id: '1',
+    name: 'Item 1',
+    icon: '*',
+  },
+  {
+    id: '2',
+    name: 'Item 2',
+    icon: '#',
+    children: [
+      {
+        id: '3',
+        name: 'Item 3',
+        icon: '::',
+      },
+      {
+        id: '4',
+        name: 'Item 4',
+        icon: '::'
+      }
+    ],
+  }
+];
+
+export const Secondary = Template.bind({});
+Secondary.args = {
+  items: itemWithIconProp
+};
