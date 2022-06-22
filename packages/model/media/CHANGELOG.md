@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [1.3.1](https://gitlab.migoinc.com/migotv/paintbox/compare/model-media@1.3.0...model-media@1.3.1) (2022-06-22)
+
+
+### Bug Fixes
+
+* **model-media:** fix getSizeInGB method in core ([c4fd341](https://gitlab.migoinc.com/migotv/paintbox/commit/c4fd341bfc9030764f2f2e050a96f0fbb5a55868))
+
 ## [1.3.0](https://gitlab.migoinc.com/migotv/paintbox/compare/model-media@1.2.0...model-media@1.3.0) (2022-06-22)
 
 
