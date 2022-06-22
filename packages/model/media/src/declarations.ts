@@ -9,8 +9,9 @@ export interface GenreProps {
   name: string;
 }
 
-export type ContentType = 'Movie' | 'Series';
+export type ContentType = 'Movie' | 'Series' | null;
 
+export type VODType = 'SVOD' | 'TVOD' | null;
 export interface RegionProps {
   code: string;
   name: string;

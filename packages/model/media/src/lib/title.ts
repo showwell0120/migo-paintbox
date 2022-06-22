@@ -1,4 +1,10 @@
-import { ItemProps, GenreProps, ContentType, EventCallbackParam } from '../declarations';
+import {
+  ItemProps,
+  GenreProps,
+  ContentType,
+  EventCallbackParam,
+  VODType,
+} from '../declarations';
 import { Core, CoreProps } from './core';
 import { Season } from './season';
 export interface TitleProps extends ItemProps, CoreProps {
@@ -9,6 +15,7 @@ export interface TitleProps extends ItemProps, CoreProps {
   status: boolean;
   genre: GenreProps;
   seasons: Season[];
+  vod: VODType;
 }
 
 export class Title extends Core implements TitleProps {
@@ -23,6 +30,7 @@ export class Title extends Core implements TitleProps {
       type,
       status,
       seasons,
+      vod,
       ...coreProps
     } = props;
     super(coreProps);
@@ -36,6 +44,7 @@ export class Title extends Core implements TitleProps {
       type,
       status,
       seasons,
+      vod,
     });
 
     this.seasons.forEach((season) => {
@@ -56,9 +65,10 @@ export class Title extends Core implements TitleProps {
   public rating = 'SU';
   public year = 0;
   public genre: GenreProps = { name: '', code: '' };
-  public type: ContentType = 'Movie';
+  public type: ContentType = null;
   public status = true;
   public seasons: Season[] = [];
+  public vod: VODType = null;
 
   get seasonCount() {
     return this.seasons.length;
@@ -98,6 +108,7 @@ export class Title extends Core implements TitleProps {
       size: instance.size,
       runtime: instance.runtime,
       name: instance.name,
+      vod: instance.vod,
     });
   }
 

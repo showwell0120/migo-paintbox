@@ -43,6 +43,7 @@ describe('Title', () => {
       type: 'Series',
       status: true,
       genre: { code: 'romance', name: 'Romance' },
+      vod: 'SVOD',
     });
   });
 

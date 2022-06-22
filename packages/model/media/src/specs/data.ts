@@ -55,4 +55,5 @@ export const titleObj: TitleProps = {
   status: true,
   genre: { code: 'romance', name: 'Romance' },
   seasons: [],
+  vod: 'SVOD',
 };
