@@ -56,4 +56,29 @@ export const titleObj: TitleProps = {
   genre: { code: 'romance', name: 'Romance' },
   seasons: [],
   vod: 'SVOD',
+  region: {
+    code: 'US',
+    name: 'U.S.A.',
+  },
+  subtitles: [
+    {
+      code: 'EN',
+      name: 'English',
+    },
+    {
+      code: 'ID',
+      name: 'Bahasa',
+    },
+  ],
+  dubs: [
+    {
+      code: 'EN',
+      name: 'English',
+    },
+    {
+      code: 'ID',
+      name: 'Bahasa',
+    },
+  ],
+  rank: { code: 'high', name: 'High' },
 };

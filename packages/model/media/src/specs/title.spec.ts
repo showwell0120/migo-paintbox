@@ -44,6 +44,28 @@ describe('Title', () => {
       status: true,
       genre: { code: 'romance', name: 'Romance' },
       vod: 'SVOD',
+      region: { code: 'US', name: 'U.S.A.' },
+      subtitles: [
+        {
+          code: 'EN',
+          name: 'English',
+        },
+        {
+          code: 'ID',
+          name: 'Bahasa',
+        },
+      ],
+      dubs: [
+        {
+          code: 'EN',
+          name: 'English',
+        },
+        {
+          code: 'ID',
+          name: 'Bahasa',
+        },
+      ],
+      rank: { code: 'high', name: 'High' },
     });
   });
 

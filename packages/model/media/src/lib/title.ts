@@ -1,6 +1,6 @@
 import {
   ItemProps,
-  GenreProps,
+  KeyPair,
   ContentType,
   EventCallbackParam,
   VODType,
@@ -13,9 +13,13 @@ export interface TitleProps extends ItemProps, CoreProps {
   year: number;
   type: ContentType;
   status: boolean;
-  genre: GenreProps;
+  genre: KeyPair;
   seasons: Season[];
   vod: VODType;
+  region: KeyPair;
+  subtitles: KeyPair[];
+  dubs: KeyPair[];
+  rank: KeyPair;
 }
 
 export class Title extends Core implements TitleProps {
@@ -31,6 +35,10 @@ export class Title extends Core implements TitleProps {
       status,
       seasons,
       vod,
+      region,
+      subtitles,
+      dubs,
+      rank,
       ...coreProps
     } = props;
     super(coreProps);
@@ -45,6 +53,10 @@ export class Title extends Core implements TitleProps {
       status,
       seasons,
       vod,
+      region,
+      subtitles,
+      dubs,
+      rank,
     });
 
     this.seasons.forEach((season) => {
@@ -64,11 +76,15 @@ export class Title extends Core implements TitleProps {
   public displayID = '';
   public rating = 'SU';
   public year = 0;
-  public genre: GenreProps = { name: '', code: '' };
+  public genre: KeyPair = { name: '', code: '' };
   public type: ContentType = null;
   public status = true;
   public seasons: Season[] = [];
   public vod: VODType = null;
+  public region: KeyPair = { name: '', code: '' };
+  public subtitles: KeyPair[] = [];
+  public dubs: KeyPair[] = [];
+  public rank: KeyPair = { name: '', code: '' };
 
   get seasonCount() {
     return this.seasons.length;
@@ -109,6 +125,10 @@ export class Title extends Core implements TitleProps {
       runtime: instance.runtime,
       name: instance.name,
       vod: instance.vod,
+      region: instance.region,
+      subtitles: instance.subtitles,
+      dubs: instance.dubs,
+      rank: instance.rank,
     });
   }
 

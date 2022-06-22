@@ -4,7 +4,7 @@ export interface ItemProps {
   number?: number; // Title haven't this now
 }
 
-export interface GenreProps {
+export interface KeyPair {
   code: string;
   name: string;
 }
