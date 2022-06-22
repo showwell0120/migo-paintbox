@@ -14,6 +14,7 @@ const seasonData: SeasonProps = {
   episodes: [ep],
   licenseStart: 0,
   licenseEnd: 0,
+  onMDS: 0,
 };
 
 describe('Season', () => {
@@ -53,6 +54,7 @@ describe('Season', () => {
       licenseEnd: 0,
       publish: 0,
       deliverRate: 0,
+      onMDS: 0,
     });
   });
   it('Should trigger notify method when call setDistributed', () => {

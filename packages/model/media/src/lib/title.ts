@@ -20,6 +20,8 @@ export interface TitleProps extends ItemProps, CoreProps {
   subtitles: KeyPair[];
   dubs: KeyPair[];
   rank: KeyPair;
+  onMDS: number;
+  totalMDS: number;
 }
 
 export class Title extends Core implements TitleProps {
@@ -39,6 +41,8 @@ export class Title extends Core implements TitleProps {
       subtitles,
       dubs,
       rank,
+      onMDS,
+      totalMDS,
       ...coreProps
     } = props;
     super(coreProps);
@@ -57,6 +61,8 @@ export class Title extends Core implements TitleProps {
       subtitles,
       dubs,
       rank,
+      onMDS,
+      totalMDS,
     });
 
     this.seasons.forEach((season) => {
@@ -85,6 +91,8 @@ export class Title extends Core implements TitleProps {
   public subtitles: KeyPair[] = [];
   public dubs: KeyPair[] = [];
   public rank: KeyPair = { name: '', code: '' };
+  public onMDS = 0;
+  public totalMDS = 0;
 
   get seasonCount() {
     return this.seasons.length;
@@ -99,6 +107,17 @@ export class Title extends Core implements TitleProps {
     });
 
     return count;
+  }
+
+  get activeSeasonCount() {
+    const activeCount = this.seasons.reduce((accu, season) => {
+      if (season.active) {
+        return accu + 1;
+      }
+      return accu;
+    }, 0);
+
+    return activeCount;
   }
 
   static copy(instance: Title) {
@@ -129,6 +148,8 @@ export class Title extends Core implements TitleProps {
       subtitles: instance.subtitles,
       dubs: instance.dubs,
       rank: instance.rank,
+      onMDS: instance.onMDS,
+      totalMDS: instance.totalMDS,
     });
   }
 

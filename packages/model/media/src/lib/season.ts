@@ -4,13 +4,14 @@ import { Episode } from './episode';
 
 export interface SeasonProps extends CoreProps, ItemProps {
   episodes: Episode[];
+  onMDS: number;
 }
 
 export class Season extends Core implements SeasonProps {
   constructor(props: SeasonProps) {
-    const { id, number, active, episodes, ...coreProps } = props;
+    const { id, number, active, episodes, onMDS, ...coreProps } = props;
     super(coreProps);
-    Object.assign(this, { id, number, active, episodes });
+    Object.assign(this, { id, number, active, episodes, onMDS });
 
     // listen episode active chagned event
     this.episodes.forEach((episode) => {
@@ -22,6 +23,7 @@ export class Season extends Core implements SeasonProps {
   public number = 0;
   public active = true;
   public episodes: Episode[] = [];
+  public onMDS = 0;
 
   get displayNumber() {
     return Core.getDisplayNumber(this.number, 'S');
@@ -60,6 +62,7 @@ export class Season extends Core implements SeasonProps {
       licenseEnd: instance.licenseEnd,
       publish: instance.publish,
       episodes: copiedEpisodes,
+      onMDS: instance.onMDS,
     });
   }
 
@@ -79,7 +82,7 @@ export class Season extends Core implements SeasonProps {
   setActive(active: boolean) {
     this.active = active;
 
-    this.episodes.forEach(e => {
+    this.episodes.forEach((e) => {
       e.setActive(active);
     });
 

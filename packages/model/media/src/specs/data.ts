@@ -20,19 +20,20 @@ export const episodeObj: EpisodeProps = {
 
 export const seasonObj: SeasonProps = {
   id: 176968,
-  name: "",
+  name: '',
   number: 1,
   active: true,
   distributed: true,
   size: 16973049551,
   publish: 1602895958290,
   runtime: 0,
-  licensor: "KRKBS",
-  cpCode: "KRKBS",
+  licensor: 'KRKBS',
+  cpCode: 'KRKBS',
   licenseStart: 1583020800000,
   licenseEnd: 1646092800000,
   deliverRate: 0,
   episodes: [],
+  onMDS: 35,
 };
 
 export const titleObj: TitleProps = {
@@ -81,4 +82,6 @@ export const titleObj: TitleProps = {
     },
   ],
   rank: { code: 'high', name: 'High' },
+  onMDS: 35,
+  totalMDS: 40,
 };
