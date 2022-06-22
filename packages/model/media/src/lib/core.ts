@@ -84,12 +84,18 @@ export class Core implements CoreProps {
     }
   }
 
-  getSizeInGB(digits?: number, unit = 'GB') {
-    const inGB = this.size / GB;
-    if (!digits) {
-      return `${inGB} ${unit}`;
+  getSizeInGB(digits?: number, unit = true) {
+    let inGB: string | number = this.size / GB;
+
+    if (digits) {
+      inGB = inGB.toFixed(digits);
     }
-    return `${inGB.toFixed(digits)} ${unit}`;
+
+    if (unit) {
+      return `${inGB} GB`;
+    }
+
+    return inGB;
   }
 
   // TODO: preciseness ?
