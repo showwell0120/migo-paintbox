@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [1.3.3](https://gitlab.migoinc.com/migotv/paintbox/compare/model-media@1.3.2...model-media@1.3.3) (2022-06-22)
+
+
+### Bug Fixes
+
+* **model-media:** make license end/start as required fields ([12b5f73](https://gitlab.migoinc.com/migotv/paintbox/commit/12b5f73b09bb229932086a419642f78f9c0be488))
+
 ### [1.3.2](https://gitlab.migoinc.com/migotv/paintbox/compare/model-media@1.3.1...model-media@1.3.2) (2022-06-22)
 
 
