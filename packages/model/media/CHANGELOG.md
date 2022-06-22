@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.2.0](https://gitlab.migoinc.com/migotv/paintbox/compare/model-media@1.1.0...model-media@1.2.0) (2022-06-22)
+
+
+### Features
+
+* **model-media:** title add missing field ([efaae95](https://gitlab.migoinc.com/migotv/paintbox/commit/efaae95347f5cd866f2706e31be48b16c2e01119))
+
 ## [1.1.0](https://gitlab.migoinc.com/migotv/paintbox/compare/model-media@1.0.2...model-media@1.1.0) (2022-06-22)
 
 
