@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.1.0](https://gitlab.migoinc.com/migotv/paintbox/compare/model-media@1.0.2...model-media@1.1.0) (2022-06-22)
+
+
+### Features
+
+* **model-media:** title add vod field ([748450d](https://gitlab.migoinc.com/migotv/paintbox/commit/748450d93552c6644e50de8bc1d03170634cc274))
+
 ### [1.0.2](https://gitlab.migoinc.com/migotv/paintbox/compare/model-media@1.0.1...model-media@1.0.2) (2022-06-06)
 
 ### [1.0.1](https://gitlab.migoinc.com/migotv/paintbox/compare/model-media@1.0.0...model-media@1.0.1) (2022-06-06)
