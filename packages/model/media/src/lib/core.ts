@@ -14,7 +14,7 @@ export interface CoreProps {
   licenseEnd?: number;
 }
 
-const GB = 1024 * 1024;
+const GB = 1024 * 1024 * 1024;
 
 export class Core implements CoreProps {
   constructor(props: CoreProps) {

@@ -44,9 +44,9 @@ describe('Core', () => {
     instance.setDistributed(true);
     expect(instance.distributed).toBeTruthy();
   });
-  it('Get 88.10 GB where digits is 2 and size is 92378943', () => {
+  it('Get 0.09 GB where digits is 2 and size is 92378943', () => {
     const instance = new Core({ ...coreData, size: 92378943 });
-    expect(instance.getSizeInGB(2)).toEqual('88.10 GB');
+    expect(instance.getSizeInGB(2)).toEqual('0.09 GB');
   });
 
   it('Get 1247 mins where runtime is 74832', () => {
