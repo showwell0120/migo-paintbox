@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [1.3.2](https://gitlab.migoinc.com/migotv/paintbox/compare/model-media@1.3.1...model-media@1.3.2) (2022-06-22)
+
+
+### Bug Fixes
+
+* **model-media:** correct GB value ([ffd1c56](https://gitlab.migoinc.com/migotv/paintbox/commit/ffd1c56574ea6ed42a47c151cb60040ce6cdc455))
+
 ### [1.3.1](https://gitlab.migoinc.com/migotv/paintbox/compare/model-media@1.3.0...model-media@1.3.1) (2022-06-22)
 
 
