@@ -10,8 +10,8 @@ export interface CoreProps {
   runtime: number;
   publish: number;
   deliverRate: number;
-  licenseStart?: number;
-  licenseEnd?: number;
+  licenseStart: number;
+  licenseEnd: number;
 }
 
 const GB = 1024 * 1024 * 1024;
@@ -32,8 +32,8 @@ export class Core implements CoreProps {
   public runtime = 0; // unit is second
   public publish = 0;
   public deliverRate = 0;
-  public licenseStart: number | undefined;
-  public licenseEnd: number | undefined;
+  public licenseStart = 0;
+  public licenseEnd = 0;
 
   public eventMap: Map<EventType, Set<EventCallback>> = new Map();
 
@@ -105,10 +105,7 @@ export class Core implements CoreProps {
   }
 
   getDiffTime(field: 'publish' | 'licenseStart' | 'licenseEnd', data: Core) {
-    if (this[field] && data && data[field]) {
-      return (this[field] as number) - (data[field] as number);
-    }
-    return 0;
+    return (this[field] as number) - (data[field] as number);
   }
 
   on(event: EventType, callback: EventCallback) {
