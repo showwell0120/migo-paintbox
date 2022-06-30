@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [1.3.4](https://gitlab.migoinc.com/migotv/paintbox/compare/model-media@1.3.3...model-media@1.3.4) (2022-06-30)
+
+
+### Features
+
+* **model-media:** add const ([e2ddc7c](https://gitlab.migoinc.com/migotv/paintbox/commit/e2ddc7c382c7ef583d958c28a334eeff5c480ba4))
+
 ### [1.3.3](https://gitlab.migoinc.com/migotv/paintbox/compare/model-media@1.3.2...model-media@1.3.3) (2022-06-22)
 
 
