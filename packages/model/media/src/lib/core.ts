@@ -1,6 +1,8 @@
 import * as dayjs from 'dayjs';
 import { EventCallbackParam, EventType, EventCallback } from '../declarations';
 
+import { GB } from '../const';
+
 export interface CoreProps {
   distributed: boolean;
   size: number;
@@ -13,8 +15,6 @@ export interface CoreProps {
   licenseStart: number;
   licenseEnd: number;
 }
-
-const GB = 1024 * 1024 * 1024;
 
 export class Core implements CoreProps {
   constructor(props: CoreProps) {

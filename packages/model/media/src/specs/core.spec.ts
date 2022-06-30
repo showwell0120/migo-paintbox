@@ -10,6 +10,8 @@ export const coreData: CoreProps = {
   runtime: 0,
   publish: 0,
   deliverRate: 0,
+  licenseEnd: 0,
+  licenseStart: 0,
 };
 
 describe('Core', () => {

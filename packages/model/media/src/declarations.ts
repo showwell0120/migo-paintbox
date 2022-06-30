@@ -12,11 +12,6 @@ export interface KeyPair {
 export type ContentType = 'Movie' | 'Series' | null;
 
 export type VODType = 'SVOD' | 'TVOD' | null;
-export interface RegionProps {
-  code: string;
-  name: string;
-}
-
 export interface EventCallbackParam {
   active: boolean;
   seasonID?: number;
