@@ -3,8 +3,8 @@ import { ReactDialog, ReactDialogProps } from '@paintbox/react-dialog';
 
 export default {
   component: ReactDialog,
-  title: 'ReactDialog',
-} as Meta
+  title: 'Components / Dialog',
+} as Meta;
 
 const Template: Story<ReactDialogProps> = (args) => <ReactDialog {...args} />;
 

@@ -76,6 +76,7 @@ Paintbox 是 TS/JS 元件或函式庫的套件集合，以 monorepo 的形式管
 | `util/` | 靜態、無狀態的方法 | `pnpm util:add --name=<name> --importPath=@paintbox/util-<name>` |
 | `helper/` | 有狀態的方法類別 | `pnpm helper:add --name=<name> --importPath=@paintbox/helper-<name>` |
 | `lipsum/` | 假資料 | `pnpm lipsum:add --name=<name> --importPath=@paintbox/lipsum-<name>` |
+| `design/` | 設計相關 | `pnpm design:add --name=<name> --importPath=@paintbox/design-<name>` |
 
 ### 加入設定
 

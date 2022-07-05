@@ -3,8 +3,8 @@ import { ReactButton, ReactButtonProps } from '@paintbox/react-button';
 
 export default {
   component: ReactButton,
-  title: 'ReactButton',
-} as Meta
+  title: 'Components / Button',
+} as Meta;
 
 const Template: Story<ReactButtonProps> = (args) => <ReactButton {...args} />;
 

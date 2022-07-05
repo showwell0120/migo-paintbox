@@ -3,8 +3,8 @@ import { ReactToast, ReactToastProps } from '@paintbox/react-toast';
 
 export default {
   component: ReactToast,
-  title: 'ReactToast',
-} as Meta
+  title: 'Components / Toast',
+} as Meta;
 
 const Template: Story<ReactToastProps> = (args) => <ReactToast {...args} />;
 

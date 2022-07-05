@@ -6,6 +6,7 @@
     "doc:serve": "pnpm nx run document:storybook",
     "doc:build": "pnpm nx build-storybook document",
     "react:add": "pnpm nx g @nrwl/react:lib $npm_config_name --directory=react --buildable --publishable",
+    "design:add": "pnpm nx g @nrwl/react:lib $npm_config_name --directory=design --buildable --publishable",
     "model:add": "pnpm gen-ts-lib --directory=model",
     "lipsum:add": "npm gen-ts-lib --directory=lipsum",
     "helper:add": "pnpm gen-ts-lib --directory=helper",

@@ -3,7 +3,7 @@ import { ReactTag, ReactTagProps } from '@paintbox/react-tag';
 
 export default {
   component: ReactTag,
-  title: 'ReactTag',
+  title: 'Components / Tag',
 } as Meta;
 
 const Template: Story<ReactTagProps> = (args) => <ReactTag {...args} />;

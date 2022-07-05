@@ -3,7 +3,7 @@ import { ReactChip, ReactChipProps } from '@paintbox/react-chip';
 
 export default {
   component: ReactChip,
-  title: 'ReactChip',
+  title: 'Components / Chip',
   argTypes: { onClick: { action: 'clicked' } },
 } as Meta;
 

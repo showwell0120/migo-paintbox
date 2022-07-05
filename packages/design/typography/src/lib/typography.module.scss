@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+
+// root default font size: 16px
+
+.heading-base {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    &.h1 {
+        font-size: 1.75rem;
+    }
+    &.h2 {
+        font-size: 1.5rem;
+    }
+    &.h3 {
+        font-size: 1.25rem;
+    }
+    &.h4 {
+        font-size: 1.125rem;
+    }
+    &.h5 {
+        font-size: 1rem;
+    }
+    &.h6 {
+        font-size: 0.875rem;
+    }
+}
+
+.body-base {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.875rem;
+    &.normal {}
+    &.bold {
+        font-weight: 700;
+    }
+    &.italicized {
+        font-style: italic;
+    }
+    &.underlined {
+        text-decoration-line: underline;
+    }
+    &.deleted {
+        text-decoration-line: line-through;
+    }
+    &.print {
+        font-size: 0.75rem;
+    }
+}
+
+
