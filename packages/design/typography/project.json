@@ -42,15 +42,15 @@
     "lint-test": {
       "executor": "@nrwl/workspace:run-commands",
       "options": {
-        "commands": ["nx lint design-assets", "nx test design-assets"]
+        "commands": ["nx lint design-typography", "nx test design-typography"]
       }
     },
     "version": {
       "executor": "@jscutlery/semver:version",
       "options": {
         "preset": "conventional",
-        "tagPrefix": "design-assets@",
-        "postTargets": ["design-assets:build", "design-assets:publish"]
+        "tagPrefix": "design-typography@",
+        "postTargets": ["design-typography:build", "design-typography:publish"]
       }
     },
     "publish": {
