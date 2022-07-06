@@ -1,6 +1,6 @@
 import styles from './react-search-bar.module.scss';
-import searchIcon from '../images/search.svg';
-import cancelIcon from '../images/cancel.svg';
+import { SearchIcon } from '../images/SearchIcon';
+import { CancelIcon } from '../images/CancelIcon';
 import React, { useState } from 'react'; 
 import { debounce } from 'lodash';
 
@@ -51,7 +51,7 @@ export const ReactSearchBar: React.FC<ReactSearchBarProps> = ({
     }
   };
 
-  const clearKeyword = (e: React.MouseEvent<HTMLImageElement>) => {
+  const clearKeyword = (e: React.MouseEvent<HTMLDivElement>) => {
     setKeyword('');
     onChange && onChange('');
     setFocus(false);
@@ -64,7 +64,7 @@ export const ReactSearchBar: React.FC<ReactSearchBarProps> = ({
       onBlur={onBlur}
       className={styles['container']}
     > 
-      <img alt={''} src={searchIcon} className={styles['icons']} />
+      <SearchIcon />
       <input
         tabIndex={1}
         type="text"
@@ -75,11 +75,7 @@ export const ReactSearchBar: React.FC<ReactSearchBarProps> = ({
         onKeyDown={handleKeyDown}
         className={styles['input']}
       />
-      {(isFocus && keyword) && <img
-        alt={''}
-        src={cancelIcon}
-        onClick={clearKeyword}
-        className={styles['icons']} />}
+      {(isFocus && keyword) && <div onClick={clearKeyword} className={styles['icons']}><CancelIcon /></div>}
     </div>
   );
 }

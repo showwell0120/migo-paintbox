@@ -4,7 +4,7 @@ import { ReactSearchBar, ReactSearchBarProps } from '@paintbox/react-search-bar'
 
 export default {
   component: ReactSearchBar,
-  title: 'ReactSearchBar',
+  title: 'Components / SearchBar',
 } as Meta;
 
 const Template: Story<ReactSearchBarProps> = (args) => <ReactSearchBar {...args} />;
