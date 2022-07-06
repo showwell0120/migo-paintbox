@@ -47,6 +47,7 @@ specifiers:
   import: ^0.0.6
   jest: 28.1.0
   jest-environment-jsdom: ^28.1.0
+  lodash: ^4.17.21
   ngx-deploy-npm: ^3.1.9
   nx: 14.4.1
   prettier: 2.7.1
@@ -8464,7 +8465,11 @@ packages:
       - supports-color
     dev: true
 
+<<<<<<< HEAD
   /eslint-module-utils/2.7.3_ea34krk32wbcqzxapvwr7rsjs4:
+=======
+  /eslint-module-utils/2.7.3_cphntlaow2spielwlvsegonsm4:
+>>>>>>> react-search-bar
     resolution: {integrity: sha512-088JEC7O3lDZM9xGe0RerkOMd0EjFl+Yvd1jPWIkMT5u3H9+HC34mWWPnqPrN13gieT9pBOO+Qt07Nb/6TresQ==}
     engines: {node: '>=4'}
     peerDependencies:
@@ -12473,7 +12478,6 @@ packages:
 
   /lodash/4.17.21:
     resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==}
-    dev: true
 
   /log-symbols/4.1.0:
     resolution: {integrity: sha512-8XPvpAA8uyhfteu8pIvQxpJZ7SYYdpUivZpGy6sFsBuKRY/7rQGavedeB8aK+Zkyq6upMFVL/9AW6vOYzfRyLg==}
@@ -14497,7 +14501,11 @@ packages:
     dev: true
 
   /promise-inflight/1.0.1:
+<<<<<<< HEAD
     resolution: {integrity: sha512-6zWPyEOFaQBJYcGMHBKTKJ3u6TBsnMFOIZSa6ce1e/ZrrsOlnHRHbabMjLiBYKp+n44X9eUI6VUPaukCXHuG4g==}
+=======
+    resolution: {integrity: sha1-mEcocL8igTL8vdhoEputEsPAKeM=}
+>>>>>>> react-search-bar
     peerDependencies:
       bluebird: '*'
     peerDependenciesMeta:
