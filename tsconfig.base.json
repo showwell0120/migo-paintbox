@@ -16,6 +16,7 @@
     "baseUrl": ".",
     "paths": {
       "@paintbox/design-assets": ["packages/design/assets/src/index.ts"],
+      "@paintbox/design-palette": ["packages/design/palette/src/index.ts"],
       "@paintbox/design-typography": [
         "packages/design/typography/src/index.ts"
       ],

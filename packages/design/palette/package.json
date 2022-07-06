@@ -1,0 +1,7 @@
+{
+  "name": "@paintbox/design-palette",
+  "version": "0.0.1",
+  "files": [
+    "./src/main.scss"
+  ]
+}

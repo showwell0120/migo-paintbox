@@ -1,0 +1,127 @@
+$palettes: (
+    gray: (
+        100: #F8F9FA,
+        200: #E9ECEF,
+        300: #DEE2E6,
+        400: #CED4DA,
+        500: #ADB5BD,
+        600: #6C757D,
+        700: #495057,
+        800: #343A40,
+        900: #212529
+    ),
+    accent-light: (
+        brand: #D63131,
+        primary: #6484FF,
+        secondary: #6C757D,
+        success: #4F9D52,
+        danger: #DC3545,
+        warning: #F08843,
+        info: #17A2B8,
+        light: #EDEDED,
+        hover: rgba(232, 245, 253, 0.8),
+        dark: #292D43,
+        white: #FFFFFF,
+        transparent: rgba(196, 196, 196, 0.1)
+    ),
+    accent-dark: (
+        brand: #D63131,
+        primary: #809AFF,
+        secondary: #7C8892,
+        success: #65BB68,
+        danger: #F7514D,
+        warning: #F99451,
+        info: #18B0C8,
+        light: #E8E8E8,
+        hover: #35363A,
+        dark: #202124,
+        white: #FFFFFF,
+        transparent: rgba(255, 255, 255, 0.1)
+    ),
+    text-light: (
+        body: #000000,
+        lighten: #292D43,
+        muted: #8C8C8C,
+        alpha50: rgba(0, 0, 0, 0.5),
+        brand: #D63131,
+        primary: #6484FF
+    ),
+    text-dark: (
+        body: #FFFFFF,
+        lighten: #A8A8A8,
+        muted: #686868,
+        alpha50: rgba(255, 255, 255, 0.5),
+        brand: #FD4141,
+        primary: #809AFF
+    )
+);
+
+
+// define accent css variables in root and body
+:root, body[data-theme="light"] {
+    $colors: map-get($palettes, 'accent-light');
+    @each $name, $color in $colors {
+        --#{$name}: #{$color};
+    }
+
+    .migo-filled-light, .migo-filled-hover, .migo-filled-white, .migo-filled-transparent {
+        color: #343A40;
+    }
+}
+
+body[data-theme="dark"] {
+    $colors: map-get($palettes, 'accent-dark');
+    @each $name, $color in $colors {
+        --#{$name}: #{$color};
+    }
+
+    .migo-filled-light, .migo-filled-white {
+        color: #343A40;
+    }
+}
+
+// generate filled color classnames
+$accent-keys: map-keys(map-get($palettes, 'accent-light'));
+@each $name in $accent-keys {
+    .migo-filled-#{$name} {
+        background-color: var(--#{$name});
+        color: #FFFFFF;
+    }
+    
+}
+
+// generate outlined color classnames
+@for $i from 1 through 8 {
+    .migo-outlined-#{nth($accent-keys, $i)} {
+        border: 1px solid var(--#{nth($accent-keys, $i)});
+        color: var(--#{nth($accent-keys, $i)});
+    }
+}
+
+$text-keys: map-keys(map-get($palettes, 'text-light'));
+@each $name in $text-keys {
+    .migo-text-#{$name} {
+        color: var(--#{$name});
+    }
+}
+
+@function color($color,$tone){
+
+    @warn map-get($palettes,$color);
+
+    @if map-has-key($palettes,$color){
+        $color: map-get($palettes,$color);
+
+            @if map-has-key($color,$tone){
+                $tone: map-get($color,$tone);
+                @return $tone;
+            }
+
+            @warn "unknown tone `#{$tone}` in color";
+            @return null;        
+    }
+
+    @warn "unknown color `#{$color}` in palette";
+    @return null;
+   
+}
