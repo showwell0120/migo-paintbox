@@ -4,7 +4,7 @@ import { ReactTreeView, ReactTreeViewProps, ItemType } from '@paintbox/react-tre
 
 export default {
   component: ReactTreeView,
-  title: 'ReactTreeView',
+  title: 'Components / TreeView',
 } as Meta;
 
 const Template: Story<ReactTreeViewProps> = (args) => (
@@ -36,8 +36,8 @@ Primary.decorators = [
       setTab(t.name);
     };
 
-    context.args.selectedTab = tab;
-    context.args.onSelectTab = handleTab;
+    context.args['selectedTab'] = tab;
+    context.args['onSelectTab'] = handleTab;
     return (
       <div style={{width: '300px'}}>
         <Story />

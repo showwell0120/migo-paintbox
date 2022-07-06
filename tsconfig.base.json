@@ -25,7 +25,7 @@
       "@paintbox/react-dialog": ["packages/react/dialog/src/index.ts"],
       "@paintbox/react-tag": ["packages/react/tag/src/index.ts"],
       "@paintbox/react-tree-view": ["packages/react/tree-view/src/index.ts"],
-      "@paintbox/react/toast": ["packages/react/toast/src/index.ts"]
+      "@paintbox/react-toast": ["packages/react/toast/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
