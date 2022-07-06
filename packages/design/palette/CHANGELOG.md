@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [1.0.3](https://gitlab.migoinc.com/migotv/paintbox/compare/design-palette@1.0.2...design-palette@1.0.3) (2022-07-06)
+
+
+### Bug Fixes
+
+* **design-palette:** fix text class names ([c646b70](https://gitlab.migoinc.com/migotv/paintbox/commit/c646b70dc4efd1477f86b19c467a71eade2f7c4c))
+
 ### [1.0.2](https://gitlab.migoinc.com/migotv/paintbox/compare/design-palette@1.0.1...design-palette@1.0.2) (2022-07-06)
 
 
