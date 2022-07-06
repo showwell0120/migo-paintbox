@@ -110,7 +110,7 @@ $accent-keys: map-keys(map-get($palettes, 'accent-light'));
 
 $text-keys: map-keys(map-get($palettes, 'text-light'));
 @each $name in $text-keys {
-    .migo-text-#{$name} {
+    .migo-#{$name} {
         color: var(--#{$name});
     }
 }
