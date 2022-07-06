@@ -39,20 +39,20 @@ $palettes: (
         transparent: rgba(255, 255, 255, 0.1)
     ),
     text-light: (
-        body: #000000,
-        lighten: #292D43,
-        muted: #8C8C8C,
-        alpha50: rgba(0, 0, 0, 0.5),
-        brand: #D63131,
-        primary: #6484FF
+        text-body: #000000,
+        text-lighten: #292D43,
+        text-muted: #8C8C8C,
+        text-alpha50: rgba(0, 0, 0, 0.5),
+        text-brand: #D63131,
+        text-primary: #6484FF
     ),
     text-dark: (
-        body: #FFFFFF,
-        lighten: #A8A8A8,
-        muted: #686868,
-        alpha50: rgba(255, 255, 255, 0.5),
-        brand: #FD4141,
-        primary: #809AFF
+        text-body: #FFFFFF,
+        text-lighten: #A8A8A8,
+        text-muted: #686868,
+        text-alpha50: rgba(255, 255, 255, 0.5),
+        text-brand: #FD4141,
+        text-primary: #809AFF
     )
 );
 
@@ -64,6 +64,11 @@ $palettes: (
         --#{$name}: #{$color};
     }
 
+    $text-colors: map-get($palettes, 'text-light');
+    @each $name, $color in $text-colors {
+        --#{$name}: #{$color};
+    }
+
     .migo-filled-light, .migo-filled-hover, .migo-filled-white, .migo-filled-transparent {
         color: #343A40;
     }
@@ -72,6 +77,11 @@ $palettes: (
 body[data-theme="dark"] {
     $colors: map-get($palettes, 'accent-dark');
     @each $name, $color in $colors {
+        --#{$name}: #{$color};
+    }
+
+    $text-colors: map-get($palettes, 'text-dark');
+    @each $name, $color in $text-colors {
         --#{$name}: #{$color};
     }
 
