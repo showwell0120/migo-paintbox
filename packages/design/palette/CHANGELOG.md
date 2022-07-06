@@ -2,6 +2,8 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [1.0.1](https://gitlab.migoinc.com/migotv/paintbox/compare/design-palette@1.0.0...design-palette@1.0.1) (2022-07-06)
+
 ## 1.0.0 (2022-07-06)
 
 
