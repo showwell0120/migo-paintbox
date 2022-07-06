@@ -47,7 +47,7 @@ specifiers:
   import: ^0.0.6
   jest: 28.1.0
   jest-environment-jsdom: ^28.1.0
-  ngx-deploy-npm: ^3.1.9
+  ngx-deploy-npm: ^4.1.0
   nx: 14.4.1
   prettier: 2.7.1
   react: 18.2.0
@@ -119,7 +119,7 @@ devDependencies:
   http-proxy-middleware: 2.0.6
   jest: 28.1.0_bc7y33wneoblweznpgbbldfcu4
   jest-environment-jsdom: 28.1.0
-  ngx-deploy-npm: 3.1.9_nx@14.4.1
+  ngx-deploy-npm: 4.1.0_nx@14.4.1
   nx: 14.4.1
   prettier: 2.7.1
   react-test-renderer: 18.2.0_react@18.2.0
@@ -2337,8 +2337,8 @@ packages:
       - webpack-cli
     dev: true
 
-  /@nrwl/devkit/14.0.5_nx@14.4.1:
-    resolution: {integrity: sha512-2kGv3tquuf3xko9FVG+Q6gUMt+RsOigdieANZtvsPaNUAxJOD5DabxHA1pwkd8AUg6bewpv64cVLgvhUIBj1MQ==}
+  /@nrwl/devkit/14.3.6_nx@14.4.1:
+    resolution: {integrity: sha512-yGAZ5emBSb13smdkVagJRD/IC+ZkGLuRUc9A4Oqp/hDtOoUx6Jxot6vKwniTfbYZlk1Dkeq77d3atsEwz0dD1A==}
     peerDependencies:
       nx: '>= 13.10 <= 15'
     dependencies:
@@ -6947,7 +6947,7 @@ packages:
     dev: true
 
   /color-name/1.1.3:
-    resolution: {integrity: sha1-p9BVi9icQveV3UIyj3QIMcpTvCU=}
+    resolution: {integrity: sha512-72fSenhMw2HZMTVHeCA9KCmpEIbzWiQsjN+BHcBbS9vr1mtt+vJjPdksIBNUmKAW8TFUDPJK5SUU3QhE9NEXDw==}
     dev: true
 
   /color-name/1.1.4:
@@ -9895,7 +9895,7 @@ packages:
     dev: true
 
   /has-flag/3.0.0:
-    resolution: {integrity: sha1-tdRU3CGZriJWmfNGfloH87lVuv0=}
+    resolution: {integrity: sha512-sKJf1+ceQBr4SMkvQnBDNDtf4TXpVhVGateu0t918bl30FnbE2m4vNLX+VWe/dpjlb+HugGYzW7uQXH98HPEYw==}
     engines: {node: '>=4'}
     dev: true
 
@@ -13054,10 +13054,11 @@ packages:
     resolution: {integrity: sha512-9iN1ka/9zmX1ZvLV9ewJYEk9h7RyRRtqdK0woXcqohu8EWIerfPUjYJPg0ULy0UqP7cslmdGc8xKDJcojlKiaw==}
     dev: true
 
-  /ngx-deploy-npm/3.1.9_nx@14.4.1:
-    resolution: {integrity: sha512-JedTEbpqwgyrfoItu8RE9mofVPDM3AR/bfKFSfUlJITfnZTuFPktcw4MAImMQ54lZ8jiVZhIAeDC/Q7b6PJX2Q==}
+  /ngx-deploy-npm/4.1.0_nx@14.4.1:
+    resolution: {integrity: sha512-/WHloNsGsmI8qAovFqS8AcTKyyuheiTmpQPxfDeyLBtgQ+/jvoxDfbEz98uTx4WtiSfSGJnOBLZiPVLwVyyqLg==}
+    engines: {node: '>=14.0.0'}
     dependencies:
-      '@nrwl/devkit': 14.0.5_nx@14.4.1
+      '@nrwl/devkit': 14.3.6_nx@14.4.1
     transitivePeerDependencies:
       - nx
     dev: true
