@@ -84,4 +84,6 @@ export const titleObj: TitleProps = {
   rank: { code: 'high', name: 'High' },
   onMDS: 35,
   totalMDS: 40,
+  listPrice: null,
+  discountPrice: null,
 };

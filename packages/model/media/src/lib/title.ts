@@ -22,6 +22,8 @@ export interface TitleProps extends ItemProps, CoreProps {
   rank: KeyPair;
   onMDS: number;
   totalMDS: number;
+  listPrice: number | null;
+  discountPrice: number | null;
 }
 
 export class Title extends Core implements TitleProps {
@@ -43,6 +45,8 @@ export class Title extends Core implements TitleProps {
       rank,
       onMDS,
       totalMDS,
+      listPrice,
+      discountPrice,
       ...coreProps
     } = props;
     super(coreProps);
@@ -63,6 +67,8 @@ export class Title extends Core implements TitleProps {
       rank,
       onMDS,
       totalMDS,
+      listPrice,
+      discountPrice,
     });
 
     this.seasons.forEach((season) => {
@@ -93,6 +99,8 @@ export class Title extends Core implements TitleProps {
   public rank: KeyPair = { name: '', code: '' };
   public onMDS = 0;
   public totalMDS = 0;
+  public listPrice = null;
+  public discountPrice = null;
 
   get seasonCount() {
     return this.seasons.length;
@@ -150,6 +158,8 @@ export class Title extends Core implements TitleProps {
       rank: instance.rank,
       onMDS: instance.onMDS,
       totalMDS: instance.totalMDS,
+      listPrice: instance.listPrice,
+      discountPrice: instance.discountPrice,
     });
   }
 
