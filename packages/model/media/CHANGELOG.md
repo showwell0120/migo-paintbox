@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.4.0](https://gitlab.migoinc.com/migotv/paintbox/compare/model-media@1.3.4...model-media@1.4.0) (2022-07-07)
+
+
+### Features
+
+* **model-media:** title add price fields ([8b12258](https://gitlab.migoinc.com/migotv/paintbox/commit/8b122581bac213d6861c72bc4cbc0ef56b0a04d5))
+
 ### [1.3.4](https://gitlab.migoinc.com/migotv/paintbox/compare/model-media@1.3.3...model-media@1.3.4) (2022-06-30)
 
 
