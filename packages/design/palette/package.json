@@ -3,6 +3,7 @@
   "version": "1.0.4",
   "files": [
     "main.scss",
+    "functions.scss",
     "package.json",
     "README.md"
   ]
