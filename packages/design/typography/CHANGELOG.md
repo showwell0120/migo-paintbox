@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.1.0](https://gitlab.migoinc.com/migotv/paintbox/compare/design-typography@1.0.0...design-typography@1.1.0) (2022-07-08)
+
+
+### Features
+
+* **design-typography:** add inner text components ([284880c](https://gitlab.migoinc.com/migotv/paintbox/commit/284880ca4e2fcdc7087008e6f70477a6c7a4f54f))
+
 ## 1.0.0 (2022-07-05)
 
 
