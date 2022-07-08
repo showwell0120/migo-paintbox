@@ -1,3 +1,5 @@
+@import './main.scss';
+
 @function getColor($color,$tone){
     @if map-has-key($palettes,$color){
         $color: map-get($palettes,$color);
