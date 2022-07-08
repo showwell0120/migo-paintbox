@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [1.0.4](https://gitlab.migoinc.com/migotv/paintbox/compare/design-palette@1.0.3...design-palette@1.0.4) (2022-07-08)
+
+
+### Bug Fixes
+
+* **design-palette:** get color functions ([da401e8](https://gitlab.migoinc.com/migotv/paintbox/commit/da401e846976f10301f0ea5eab9fe1ea7c8f4672))
+
 ### [1.0.3](https://gitlab.migoinc.com/migotv/paintbox/compare/design-palette@1.0.2...design-palette@1.0.3) (2022-07-06)
 
 
