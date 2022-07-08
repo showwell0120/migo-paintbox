@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [1.0.6](https://gitlab.migoinc.com/migotv/paintbox/compare/design-palette@1.0.5...design-palette@1.0.6) (2022-07-08)
+
+
+### Bug Fixes
+
+* **design-palette:** functions import main ([1685440](https://gitlab.migoinc.com/migotv/paintbox/commit/168544001950de15f304da149e2868174ce39196))
+
 ### [1.0.5](https://gitlab.migoinc.com/migotv/paintbox/compare/design-palette@1.0.4...design-palette@1.0.5) (2022-07-08)
 
 
