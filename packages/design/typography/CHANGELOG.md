@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [1.1.1](https://gitlab.migoinc.com/migotv/paintbox/compare/design-typography@1.1.0...design-typography@1.1.1) (2022-07-08)
+
+
+### Bug Fixes
+
+* **model-design-typography:** classname prop naming ([5bd9c75](https://gitlab.migoinc.com/migotv/paintbox/commit/5bd9c75d4ed7694bb1f03ae237843465014898d5))
+
 ## [1.1.0](https://gitlab.migoinc.com/migotv/paintbox/compare/design-typography@1.0.0...design-typography@1.1.0) (2022-07-08)
 
 
