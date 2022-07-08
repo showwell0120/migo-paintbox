@@ -6,14 +6,14 @@ import styles from './typography.module.scss';
 const cx = classNames.bind(styles);
 
 function HeadingBase({
-  clasName,
+  className,
   style,
   children,
   defaultClassName,
 }: BaseProps) {
   return (
     <div
-      className={cx(styles['heading-base'], defaultClassName, clasName)}
+      className={cx(styles['heading-base'], defaultClassName, className)}
       style={style}
     >
       {children && children}
