@@ -1,40 +1,43 @@
 import { Story, Meta } from '@storybook/react';
-import {
-  H1,
-  H2,
-  H3,
-  H4,
-  H5,
-  H6,
-  Text,
-  BText,
-  IText,
-  UText,
-  DText,
-  PText,
-} from '@paintbox/design-typography';
+import * as T from '@paintbox/design-typography';
 
 function App() {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
-      <H1>Heading</H1>
+      <T.H1>Heading</T.H1>
       <br />
-      <H1>H1. Web heading</H1>
-      <H2>H2. Web heading</H2>
-      <H3>H3. Web heading</H3>
-      <H4>H4. Web heading</H4>
-      <H5>H5. Web heading</H5>
-      <H6>H6. Web heading</H6>
+      <T.H1>H1. Web heading</T.H1>
+      <T.H2>H2. Web heading</T.H2>
+      <T.H3>H3. Web heading</T.H3>
+      <T.H4>H4. Web heading</T.H4>
+      <T.H5>H5. Web heading</T.H5>
+      <T.H6>H6. Web heading</T.H6>
       <br />
       <br />
-      <H1>Body</H1>
+      <T.H1>Body</T.H1>
       <br />
-      <Text>This line of text is meant to be treated as body text.</Text>
-      <BText>This line rendered as bold text.</BText>
-      <IText>This line rendered as italicized text.</IText>
-      <UText>This line of text will render as underlined</UText>
-      <DText>This line of text is meant to be treated as deleted text.</DText>
-      <PText>This line of text is meant to be treated as fine print.</PText>
+      <T.Text>This line of text is meant to be treated as body text.</T.Text>
+      <T.BText>This line rendered as bold text.</T.BText>
+      <T.IText>This line rendered as italicized text.</T.IText>
+      <T.UText>This line of text will render as underlined</T.UText>
+      <T.DText>
+        This line of text is meant to be treated as deleted text.
+      </T.DText>
+      <T.PText>This line of text is meant to be treated as fine print.</T.PText>
+      <br />
+      <br />
+      <T.H1>Inner</T.H1>
+      <T.Small>This line of text is meant to be treated as body text.</T.Small>
+      <T.BSmall>This line rendered as bold text.</T.BSmall>
+      <T.ISmall>This line rendered as italicized text.</T.ISmall>
+      <T.USmall>This line of text will render as underlined</T.USmall>
+      <T.DSmall>
+        This line of text is meant to be treated as deleted text.
+      </T.DSmall>
+      <T.PSmall>
+        This line of text is meant to be treated as fine print.
+      </T.PSmall>
+      <br />
     </div>
   );
 }

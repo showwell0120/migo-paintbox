@@ -2,7 +2,7 @@ import { CSSProperties, ReactNode } from 'react';
 
 /* eslint-disable-next-line */
 export interface TypographyProps {
-  clasName?: string;
+  className?: string;
   style?: Partial<CSSProperties>;
   children?: ReactNode;
 }
