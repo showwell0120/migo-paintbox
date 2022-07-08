@@ -21,7 +21,8 @@
             "input": ".",
             "output": "."
           },
-          "packages/design/palette/src/main.scss"
+          "packages/design/palette/src/main.scss",
+          "packages/design/palette/src/functions.scss"
         ]
       }
     },
