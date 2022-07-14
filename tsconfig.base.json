@@ -15,13 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@paintbox/design-assets": ["packages/design/assets/src/index.ts"],
       "@paintbox/design-foundation": [
         "packages/design/foundation/src/index.ts"
-      ],
-      "@paintbox/design-palette": ["packages/design/palette/src/index.ts"],
-      "@paintbox/design-typography": [
-        "packages/design/typography/src/index.ts"
       ],
       "@paintbox/model-media": ["packages/model/media/src/index.ts"],
       "@paintbox/react-button": ["packages/react/button/src/index.ts"],
