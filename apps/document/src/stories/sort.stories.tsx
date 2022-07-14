@@ -1,4 +1,4 @@
-import { Story, Meta } from '@storybook/react';
+import { Meta } from '@storybook/react';
 import * as S from '@paintbox/design-foundation';
 
 function App() {
@@ -61,7 +61,11 @@ export default {
   title: 'Design / SVGs / Sort',
 } as Meta;
 
-const Template: Story = (args) => <App {...args} />;
+export const myStory = () => <App />;
 
-export const Default = Template.bind({});
-Default.args = {};
+myStory.parameters = {
+  design: {
+    type: 'figma',
+    url: 'https://www.figma.com/file/Sv8VnmaINqyDQcpdO3cz5M/%F0%9F%96%A5-Foundation?node-id=14%3A825',
+  },
+};
