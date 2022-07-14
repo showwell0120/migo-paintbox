@@ -16,6 +16,9 @@
     "baseUrl": ".",
     "paths": {
       "@paintbox/design-assets": ["packages/design/assets/src/index.ts"],
+      "@paintbox/design-foundation": [
+        "packages/design/foundation/src/index.ts"
+      ],
       "@paintbox/design-palette": ["packages/design/palette/src/index.ts"],
       "@paintbox/design-typography": [
         "packages/design/typography/src/index.ts"
@@ -26,8 +29,8 @@
       "@paintbox/react-dialog": ["packages/react/dialog/src/index.ts"],
       "@paintbox/react-search-bar": ["packages/react/search-bar/src/index.ts"],
       "@paintbox/react-tag": ["packages/react/tag/src/index.ts"],
-      "@paintbox/react-tree-view": ["packages/react/tree-view/src/index.ts"],
-      "@paintbox/react-toast": ["packages/react/toast/src/index.ts"]
+      "@paintbox/react-toast": ["packages/react/toast/src/index.ts"],
+      "@paintbox/react-tree-view": ["packages/react/tree-view/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

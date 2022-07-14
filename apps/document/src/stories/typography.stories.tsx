@@ -1,5 +1,5 @@
 import { Story, Meta } from '@storybook/react';
-import * as T from '@paintbox/design-typography';
+import * as T from '@paintbox/design-foundation';
 
 function App() {
   return (
@@ -27,7 +27,9 @@ function App() {
       <br />
       <br />
       <T.H1>Inner</T.H1>
-      <T.Small>This line of text is meant to be treated as body text.</T.Small>
+      <T.Small className="test">
+        This line of text is meant to be treated as body text.
+      </T.Small>
       <T.BSmall>This line rendered as bold text.</T.BSmall>
       <T.ISmall>This line rendered as italicized text.</T.ISmall>
       <T.USmall>This line of text will render as underlined</T.USmall>

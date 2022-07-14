@@ -1,0 +1,62 @@
+{
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/design/foundation/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:rollup",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/design/foundation",
+        "tsConfig": "packages/design/foundation/tsconfig.lib.json",
+        "project": "packages/design/foundation/package.json",
+        "entryFile": "packages/design/foundation/src/index.ts",
+        "external": ["react/jsx-runtime"],
+        "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
+        "compiler": "babel",
+        "assets": [
+          {
+            "glob": "packages/design/foundation/README.md",
+            "input": ".",
+            "output": "."
+          },
+          "packages/design/foundation/src/palettes/main.scss",
+          "packages/design/foundation/src/palettes/functions.scss"
+        ]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/design/foundation/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/packages/design/foundation"],
+      "options": {
+        "jestConfig": "packages/design/foundation/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "lint-test": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": ["nx lint design-foundation", "nx test design-foundation"]
+      }
+    },
+    "version": {
+      "executor": "@jscutlery/semver:version",
+      "options": {
+        "preset": "conventional",
+        "tagPrefix": "design-foundation@",
+        "postTargets": ["design-foundation:build", "design-foundation:publish"]
+      }
+    },
+    "publish": {
+      "executor": "ngx-deploy-npm:deploy"
+    }
+  }
+}

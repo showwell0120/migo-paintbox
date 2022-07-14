@@ -85,6 +85,7 @@ Paintbox 是 TS/JS 元件或函式庫的套件集合，以 monorepo 的形式管
 ```json
 {
   "targets" {
+    // ...,
     "lint-test": {
       "executor": "@nrwl/workspace:run-commands",
       "options": {

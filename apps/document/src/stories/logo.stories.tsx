@@ -1,11 +1,13 @@
 import { Story, Meta } from '@storybook/react';
-import {
-  SolidLogo,
-  FilledLogo,
-  FilledLogoProps,
-} from '@paintbox/design-assets';
+// import {
+//   SolidLogo,
+//   FilledLogo,
+//   FilledLogoProps,
+// } from '@paintbox/design-assets';
 
-function App(props: FilledLogoProps) {
+import { SolidLogo, FilledLogo, SVGProps } from '@paintbox/design-foundation';
+
+function App(props: SVGProps) {
   return (
     <div>
       <h2>SolidLogo:</h2>
@@ -30,10 +32,10 @@ function App(props: FilledLogoProps) {
 
 export default {
   component: App,
-  title: 'Design / Logo',
+  title: 'Design / SVGs / Logos',
 } as Meta;
 
-const Template: Story<FilledLogoProps> = (args) => <App {...args} />;
+const Template: Story<SVGProps> = (args) => <App {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {};
