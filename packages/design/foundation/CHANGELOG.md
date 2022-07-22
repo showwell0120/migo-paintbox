@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.2.0](https://gitlab.migoinc.com/migotv/paintbox/compare/design-foundation@1.1.1...design-foundation@1.2.0) (2022-07-22)
+
+
+### Features
+
+* **design-foundation:** add caret svgs ([97adbca](https://gitlab.migoinc.com/migotv/paintbox/commit/97adbca4bda4974439c9fb22143058978ac30720))
+
 ### [1.1.1](https://gitlab.migoinc.com/migotv/paintbox/compare/design-foundation@1.1.0...design-foundation@1.1.1) (2022-07-20)
 
 
