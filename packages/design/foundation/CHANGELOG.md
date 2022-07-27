@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.3.0](https://gitlab.migoinc.com/migotv/paintbox/compare/design-foundation@1.2.0...design-foundation@1.3.0) (2022-07-27)
+
+
+### Features
+
+* **design-foundation:** add media svgs ([3db4bfd](https://gitlab.migoinc.com/migotv/paintbox/commit/3db4bfd559fc614caf25befd7bd9a27ae46957f7))
+
 ## [1.2.0](https://gitlab.migoinc.com/migotv/paintbox/compare/design-foundation@1.1.1...design-foundation@1.2.0) (2022-07-22)
 
 
