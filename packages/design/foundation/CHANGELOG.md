@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [1.3.1](https://gitlab.migoinc.com/migotv/paintbox/compare/design-foundation@1.3.0...design-foundation@1.3.1) (2022-07-27)
+
+
+### Bug Fixes
+
+* **design-foundation:** correct default size ([584b949](https://gitlab.migoinc.com/migotv/paintbox/commit/584b9493e6585b993d326b2dbb392cb7c79021c7))
+
 ## [1.3.0](https://gitlab.migoinc.com/migotv/paintbox/compare/design-foundation@1.2.0...design-foundation@1.3.0) (2022-07-27)
 
 
