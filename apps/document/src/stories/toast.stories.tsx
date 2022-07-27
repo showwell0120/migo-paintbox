@@ -12,3 +12,9 @@ export const Primary = Template.bind({});
 Primary.args = {
   message: 'test',
 };
+
+export const Alert = Template.bind({});
+Primary.args = {
+  children: <div>Alert Test</div>,
+  className: 'test',
+};

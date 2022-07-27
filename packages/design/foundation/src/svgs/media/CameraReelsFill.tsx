@@ -1,9 +1,6 @@
 import { SVGProps, defaultIconColor } from '../declarations';
 
-export function CameraReelsFill({
-  size = 116,
-  stroke = defaultIconColor,
-}: SVGProps) {
+export function CameraReelsFill({ size = 16, stroke = defaultIconColor }: SVGProps) {
   const w = Math.floor(size * 1.012);
 
   return (
