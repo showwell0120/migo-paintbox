@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.4.0](https://gitlab.migoinc.com/migotv/paintbox/compare/design-foundation@1.3.1...design-foundation@1.4.0) (2022-07-29)
+
+
+### Features
+
+* **design-foundation:** add time svgs ([4938e8b](https://gitlab.migoinc.com/migotv/paintbox/commit/4938e8bbbe3d797f4230cd2b807d2d15f4eb9ddd))
+
 ### [1.3.1](https://gitlab.migoinc.com/migotv/paintbox/compare/design-foundation@1.3.0...design-foundation@1.3.1) (2022-07-27)
 
 
