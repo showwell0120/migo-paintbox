@@ -11,7 +11,7 @@ const Template: Story<ReactToastProps> = (args) => <ReactToast {...args} />;
 export const Warn = Template.bind({});
 Warn.args = {
   variant: 'warn',
-  childern:
+  children:
     'Unable to log in, please check your login information and try again.',
   enableClose: true,
   onClose: () => alert('update show prop'),
@@ -23,7 +23,7 @@ Warn.args = {
 export const Info = Template.bind({});
 Info.args = {
   variant: 'info',
-  childern: 'Price successfully updated!',
+  children: 'Price successfully updated!',
   waitToClose: 3000,
   onClose: () => alert('update show prop'),
 };
