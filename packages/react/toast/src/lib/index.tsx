@@ -13,7 +13,7 @@ export type VariantType = 'warn' | 'info';
 export interface ReactToastProps {
   variant: VariantType;
   children?: React.ReactNode;
-  onClose?: (visible?: boolean) => void;
+  onClose?: (visible: boolean) => void;
   yAxis?: 'top' | 'center' | 'bottom';
   xAxis?: 'right' | 'center' | 'left';
   className?: string;
