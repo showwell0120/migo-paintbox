@@ -13,7 +13,7 @@ export type VariantType = 'warn' | 'info';
 export interface ReactToastProps {
   variant: VariantType;
   children?: React.ReactNode;
-  onClose?: () => void;
+  onClose?: (visible?: boolean) => void;
   yAxis?: 'top' | 'center' | 'bottom';
   xAxis?: 'right' | 'center' | 'left';
   className?: string;
@@ -46,10 +46,14 @@ export const ReactToast: React.FC<ReactToastProps> = ({
 
   const stroke = getIconStroke(variant);
 
+  const handleClose = () => {
+    onClose && onClose(false);
+  };
+
   React.useEffect(() => {
     waitToClose &&
       (timer.current = setTimeout(() => {
-        onClose && onClose();
+        onClose && onClose(false);
         clearTimeout(timer.current);
       }, waitToClose));
   }, [waitToClose, onClose]);
@@ -69,7 +73,7 @@ export const ReactToast: React.FC<ReactToastProps> = ({
       )}
       {children && children}
       {enableClose && (
-        <div onClick={onClose} className={styles['close']}>
+        <div onClick={handleClose} className={styles['close']}>
           <Cross {...(stroke && { stroke })} size={10} />
         </div>
       )}
