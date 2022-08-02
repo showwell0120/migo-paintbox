@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [2.1.0](https://gitlab.migoinc.com/migotv/paintbox/compare/react-toast@2.0.3...react-toast@2.1.0) (2022-08-02)
+
+
+### Features
+
+* **react-toast:** onclose prop add parameter ([5279eac](https://gitlab.migoinc.com/migotv/paintbox/commit/5279eace198aae660c1b44d6485dbc70bb7d1ea0))
+
 ### [2.0.3](https://gitlab.migoinc.com/migotv/paintbox/compare/react-toast@2.0.2...react-toast@2.0.3) (2022-08-02)
 
 
