@@ -1,1 +1,1 @@
-export * from './lib/react-toast';
+export * from './lib';
