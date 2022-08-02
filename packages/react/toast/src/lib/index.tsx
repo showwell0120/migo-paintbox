@@ -49,7 +49,7 @@ export const ReactToast: React.FC<ReactToastProps> = ({
   React.useEffect(() => {
     waitToClose &&
       (timer.current = setTimeout(() => {
-        onClose();
+        onClose && onClose();
         clearTimeout(timer.current);
       }, waitToClose));
   }, [waitToClose, onClose]);
