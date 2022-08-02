@@ -12,7 +12,7 @@ export type VariantType = 'warn' | 'info';
 /* eslint-disable-next-line */
 export interface ReactToastProps {
   variant: VariantType;
-  childern?: React.ReactNode;
+  children?: React.ReactNode;
   onClose?: () => void;
   yAxis?: 'top' | 'center' | 'bottom';
   xAxis?: 'right' | 'center' | 'left';
@@ -34,7 +34,7 @@ const getIconStroke = (variant: VariantType) => {
 
 export const ReactToast: React.FC<ReactToastProps> = ({
   variant,
-  childern,
+  children,
   yAxis = 'top',
   xAxis = 'center',
   className,
@@ -67,7 +67,7 @@ export const ReactToast: React.FC<ReactToastProps> = ({
       {variant === 'warn' && (
         <ExclamationCycleFill {...(stroke && { stroke })} />
       )}
-      {childern}
+      {children && children}
       {enableClose && (
         <div onClick={onClose} className={styles['close']}>
           <Cross {...(stroke && { stroke })} size={10} />
