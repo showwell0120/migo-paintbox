@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.6.0](https://gitlab.migoinc.com/migotv/paintbox/compare/design-foundation@1.5.0...design-foundation@1.6.0) (2022-08-02)
+
+
+### Features
+
+* **design-foundation:** add box-arrow svgs ([8411d54](https://gitlab.migoinc.com/migotv/paintbox/commit/8411d548c3665d11260ac8f8ed8ad01ffce41b7b))
+
 ## [1.5.0](https://gitlab.migoinc.com/migotv/paintbox/compare/design-foundation@1.4.0...design-foundation@1.5.0) (2022-08-02)
 
 
