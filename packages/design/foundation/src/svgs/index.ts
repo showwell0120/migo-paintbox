@@ -6,3 +6,4 @@ export * from './caret';
 export * from './media';
 export * from './time';
 export * from './sign';
+export * from './box-arrow';
