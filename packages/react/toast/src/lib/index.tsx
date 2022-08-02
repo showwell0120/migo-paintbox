@@ -12,8 +12,8 @@ export type VariantType = 'warn' | 'info';
 /* eslint-disable-next-line */
 export interface ReactToastProps {
   variant: VariantType;
-  childern: React.ReactNode;
-  onClose: () => void;
+  childern?: React.ReactNode;
+  onClose?: () => void;
   yAxis?: 'top' | 'center' | 'bottom';
   xAxis?: 'right' | 'center' | 'left';
   className?: string;
