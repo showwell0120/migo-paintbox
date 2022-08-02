@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [2.0.1](https://gitlab.migoinc.com/migotv/paintbox/compare/react-toast@2.0.0...react-toast@2.0.1) (2022-08-02)
+
+
+### Bug Fixes
+
+* **react-toast:** let some props optiona; ([cb1484f](https://gitlab.migoinc.com/migotv/paintbox/commit/cb1484f54ea62aa97af68d5aec0b4cbf7a511f39))
+
 ## [2.0.0](https://gitlab.migoinc.com/migotv/paintbox/compare/react-toast@1.0.0...react-toast@2.0.0) (2022-08-02)
 
 
