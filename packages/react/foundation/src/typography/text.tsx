@@ -4,6 +4,9 @@ import { ClassNames } from '@emotion/react';
 import { TypographyProps } from './common';
 
 const BaseText = styled.div`
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
   font-size: 0.875rem;
 `;
 

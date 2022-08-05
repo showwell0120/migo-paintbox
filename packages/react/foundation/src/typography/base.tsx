@@ -7,6 +7,7 @@ export const BaseTypepography = () => (
         font-family: 'Roboto';
         font-style: normal;
         font-weight: 400;
+        box-sizing: border-box;
       }
       @font-face {
         src: url(https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap)
