@@ -1,8 +1,10 @@
 import { Meta } from '@storybook/react';
-import * as T from '@paintbox/design-foundation';
+import * as T from '@paintbox/react-foundation';
+import { BaseTypepography } from '@paintbox/react-foundation';
 
 export const Default = () => (
   <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
+    <BaseTypepography />
     <T.H1>Heading</T.H1>
     <br />
     <T.H1>H1. Web heading</T.H1>
@@ -45,5 +47,5 @@ Default.parameters = {
 
 export default {
   component: Default,
-  title: 'Design / Typography',
+  title: 'Design(react-foundation) / Typography',
 } as Meta;
