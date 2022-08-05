@@ -19,6 +19,7 @@ specifiers:
   '@nrwl/storybook': 14.4.1
   '@nrwl/web': 14.4.1
   '@nrwl/workspace': 14.4.1
+  '@storybook/addon-docs': 6.5.9
   '@storybook/addon-essentials': 6.5.9
   '@storybook/addon-storysource': ^6.5.9
   '@storybook/builder-webpack5': 6.5.9
@@ -101,6 +102,7 @@ devDependencies:
   '@nrwl/storybook': 14.4.1_vyyvcwa73dmkkm2f6p6xzx7dm4
   '@nrwl/web': 14.4.1_fqpcbdgs2pgo6hd2qfft4ayqrq
   '@nrwl/workspace': 14.4.1_p4mi2smrdlimk4bbxlu4b6wavm
+  '@storybook/addon-docs': 6.5.9_3psnjvhq7pw5vpfvftrufaidbu
   '@storybook/addon-essentials': 6.5.9_4uitksbutosr7fwpfn5iqm7fly
   '@storybook/addon-storysource': 6.5.9_biqbaboplfbrettd7655fr4n2y
   '@storybook/builder-webpack5': 6.5.9_h3jjsywk3mzbt34ovlns5wil5u
@@ -7167,7 +7169,7 @@ packages:
     dev: true
 
   /commondir/1.0.1:
-    resolution: {integrity: sha1-3dgA2gxmEnOTzKWVDqloo6rxJTs=}
+    resolution: {integrity: sha512-W9pAhw0ja1Edb5GVdIF1mjZw/ASI0AlShXM83UUGe2DVr5TdAPEA1OA8m/g8zWp9x6On7gqufY+FatDbC3MDQg==}
     dev: true
 
   /compare-func/2.0.0:
@@ -10989,7 +10991,7 @@ packages:
     dev: true
 
   /is-plain-obj/1.1.0:
-    resolution: {integrity: sha1-caUMhCnfync8kqOQpKA7OfzVHT4=}
+    resolution: {integrity: sha512-yvkRyxmFKEOQ4pNXCmJG5AEQNlXJS5LaONXo5/cLdTZdWvsZ1ioJEonLGAosKlMWE8lwUy/bJzMjcw8az73+Fg==}
     engines: {node: '>=0.10.0'}
     dev: true
 
@@ -11080,7 +11082,7 @@ packages:
     dev: true
 
   /is-typedarray/1.0.0:
-    resolution: {integrity: sha1-5HnICFjfDBsR3dppQPlgEfzaSpo=}
+    resolution: {integrity: sha512-cyA56iCMHAh5CdzjJIa4aohJyeO1YbwLi3Jc35MmRU6poroFjIGZzUzupGiRPOjgHg9TLu43xbpwXk523fMxKA==}
     dev: true
 
   /is-unicode-supported/0.1.0:
@@ -12600,7 +12602,7 @@ packages:
     dev: true
 
   /lodash.debounce/4.0.8:
-    resolution: {integrity: sha1-gteb/zCmfEAF/9XiUVMArZyk168=}
+    resolution: {integrity: sha512-FT1yDzDYEoYWhnSGnpE/4Kj1fLZkDFyqRb7fNt6FdYOSxlUWAtp42Eh6Wb0rGIv/m9Bgo7x4GhQbm5Ys4SG5ow==}
     dev: true
 
   /lodash.ismatch/4.4.0:
@@ -13263,7 +13265,7 @@ packages:
     dev: true
 
   /node-int64/0.4.0:
-    resolution: {integrity: sha1-h6kGXNs1XTGC2PlM4RGIuCXGijs=}
+    resolution: {integrity: sha512-O5lz91xSOeoXP6DulyHfllpq+Eg00MWitZIbtPfoSEvqIHdl5gfcY6hYzDWnj0qD5tz52PI08u9qUvSVeUBeHw==}
     dev: true
 
   /node-libs-browser/2.2.1:

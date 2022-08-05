@@ -7,10 +7,9 @@ module.exports = {
 
   stories: [
     ...rootMain.stories,
-    '../src/stories/**/*.stories.mdx',
-    '../src/stories/**/*.stories.@(js|jsx|ts|tsx)',
-    '../src/app/**/*.stories.mdx',
-    '../src/app/**/*.stories.@(js|jsx|ts|tsx)',
+    '../src/guides/**/*.stories.mdx',
+    '../src/components/**/*.stories.mdx',
+    '../src/model/**/*.stories.mdx',
   ],
   addons: [...rootMain.addons, '@nrwl/react/plugins/storybook'],
   webpackFinal: async (config, { configType }) => {
