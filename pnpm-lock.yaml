@@ -26,6 +26,7 @@ specifiers:
   '@storybook/core-server': 6.5.9
   '@storybook/manager-webpack5': 6.5.9
   '@storybook/react': 6.5.9
+  '@storybook/theming': 6.5.9
   '@svgr/webpack': ^6.2.1
   '@testing-library/react': 13.3.0
   '@types/jest': 27.5.1
@@ -109,6 +110,7 @@ devDependencies:
   '@storybook/core-server': 6.5.9_ow2zd76crlewv7jyrzor7womhy
   '@storybook/manager-webpack5': 6.5.9_h3jjsywk3mzbt34ovlns5wil5u
   '@storybook/react': 6.5.9_vsjmxhyl53stifnshhpw5buu5u
+  '@storybook/theming': 6.5.9_biqbaboplfbrettd7655fr4n2y
   '@svgr/webpack': 6.2.1
   '@testing-library/react': 13.3.0_biqbaboplfbrettd7655fr4n2y
   '@types/jest': 27.5.1
