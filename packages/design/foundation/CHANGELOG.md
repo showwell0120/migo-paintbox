@@ -2,6 +2,8 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [1.6.1](https://gitlab.migoinc.com/migotv/paintbox/compare/design-foundation@1.6.0...design-foundation@1.6.1) (2022-08-08)
+
 ## [1.6.0](https://gitlab.migoinc.com/migotv/paintbox/compare/design-foundation@1.5.0...design-foundation@1.6.0) (2022-08-02)
 
 
