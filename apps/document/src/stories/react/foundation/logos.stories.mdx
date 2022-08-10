@@ -1,0 +1,77 @@
+import { Meta, Canvas, Story } from '@storybook/addon-docs/blocks';
+
+import { FilledLogo, SolidLogo } from '@paintbox/react-foundation';
+
+<Meta title="React/Foundation/Logos" />
+
+# Logos
+
+> Logos 集中了所有與 Migo 相關的 Logo 圖檔，並且提供 props 設定注入樣式。
+
+```javascript
+export interface SVGProps {
+  size?: number;    // 寬度
+  fill?: string;    // 背景的顏色  
+  stroke?: string;  // 線條的顏色
+}
+```
+
+## Mockup
+
+目前沒有。
+
+## Usage 
+
+```javascript
+import { FilledLogo, SolidLogo } from '@paintbox/react-foundation';
+return <FilledLogo />
+```
+
+## Stories
+
+### FilledLogo
+
+<Canvas>
+  <Story name="FilledLogo">
+    <FilledLogo size={60} />
+    <br />
+  </Story>
+</Canvas>
+
+FilledLogo 可傳入 `fill` 和 `stroke` 來改變整體色系。
+
+<Canvas>
+  <Story name="FilledLogo With Discolor">
+    
+    <FilledLogo size={60} fill="DarkCyan" stroke="MintCream" />
+  </Story>
+</Canvas>
+
+### SolidLogo
+
+<Canvas>
+  <Story name="SolidLogo">
+    <div
+      style={{
+        width: 60,
+        height: 60,
+        backgroundColor: '#000',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+      }}
+    >
+      <SolidLogo />
+    </div>
+    <br />
+  </Story>
+</Canvas>
+
+SolidLogo 只能改變線條色，因此不能傳入 `fill`。
+
+<Canvas>
+  <Story name="SolidLogo With Discolor">
+    
+    <SolidLogo size={60} stroke="DarkCyan" />
+  </Story>
+</Canvas>

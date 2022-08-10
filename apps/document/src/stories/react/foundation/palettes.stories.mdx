@@ -1,0 +1,296 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="React/Foundation/Palettes" />
+
+# Palettes
+
+> Palettes 以 SCSS 產生一系列的顏色變數和 class 名稱，並且提供 utility 動態取得樣式。
+
+## Mockup
+- [Figma](https://www.figma.com/file/Sv8VnmaINqyDQcpdO3cz5M/%F0%9F%96%A5-Foundation?node-id=5%3A2)
+
+## 顏色變數集合
+
+根據 mockup 中的設計，語意化定義各個顏色群組。
+
+```css
+$palettes: (
+    gray: (
+        100: #F8F9FA,
+        200: #E9ECEF,
+        300: #DEE2E6,
+        400: #CED4DA,
+        500: #ADB5BD,
+        600: #6C757D,
+        700: #495057,
+        800: #343A40,
+        900: #212529
+    ),
+    accent-light: (
+        brand: #D63131,
+        primary: #6484FF,
+        secondary: #6C757D,
+        success: #4F9D52,
+        danger: #DC3545,
+        warning: #F08843,
+        info: #17A2B8,
+        light: #EDEDED,
+        hover: rgba(232, 245, 253, 0.8),
+        dark: #292D43,
+        white: #FFFFFF,
+        transparent: rgba(196, 196, 196, 0.1)
+    ),
+    accent-dark: (
+        brand: #D63131,
+        primary: #809AFF,
+        secondary: #7C8892,
+        success: #65BB68,
+        danger: #F7514D,
+        warning: #F99451,
+        info: #18B0C8,
+        light: #E8E8E8,
+        hover: #35363A,
+        dark: #202124,
+        white: #FFFFFF,
+        transparent: rgba(255, 255, 255, 0.1)
+    ),
+    text-light: (
+        text-body: #000000,
+        text-lighten: #292D43,
+        text-muted: #8C8C8C,
+        text-alpha50: rgba(0, 0, 0, 0.5),
+        text-brand: #D63131,
+        text-primary: #6484FF
+    ),
+    text-dark: (
+        text-body: #FFFFFF,
+        text-lighten: #A8A8A8,
+        text-muted: #686868,
+        text-alpha50: rgba(255, 255, 255, 0.5),
+        text-brand: #FD4141,
+        text-primary: #809AFF
+    )
+);
+```
+## Usage
+
+目前在 Palettes 中共有兩個 SCSS 檔案
+
+### main.scss
+
+`main.scss` 主要是有關顏色、字體、基本樣式的統一定義，以及產生公用的 class 名稱。因此需要在專案樣式檔的開頭匯入。
+
+```css
+/* index.scss */
+@import '~@paintbox/react-foundation/palettes/main.scss';
+
+.data-list-price {
+    color: var(--text-muted);
+}
+```
+
+當匯入這個檔案時會進行以下初始化－
+1. 匯入 Roboto Font
+2. 在 `*` 下設定字體和 box 相關的樣式
+3. 定義 `$palettes` 
+4. 在 `:root, body` 下，根據 light / dark theme，以 `$palettes` 產生一系列的 CSS 變數
+5. 以 `$palettes` 的 `accent-light` 產生一系列 `.migo-filled-xxx` 和`.migo-outlined-xxx` 的 class 名稱
+5. 以 `$palettes` 的 `text-light` 產生一系列 `.migo-xxx` 的 class 名稱
+
+編譯過的 CSS－
+
+```css
+* {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  box-sizing: border-box;
+}
+
+:root, body[data-theme=light] {
+  --brand: #D63131;
+  --primary: #6484FF;
+  --secondary: #6C757D;
+  --success: #4F9D52;
+  --danger: #DC3545;
+  --warning: #F08843;
+  --info: #17A2B8;
+  --light: #EDEDED;
+  --hover: rgba(232, 245, 253, 0.8);
+  --dark: #292D43;
+  --white: #FFFFFF;
+  --transparent: rgba(196, 196, 196, 0.1);
+  --text-body: #000000;
+  --text-lighten: #292D43;
+  --text-muted: #8C8C8C;
+  --text-alpha50: rgba(0, 0, 0, 0.5);
+  --text-brand: #D63131;
+  --text-primary: #6484FF;
+}
+:root .migo-filled-light, :root .migo-filled-hover, :root .migo-filled-white, :root .migo-filled-transparent, body[data-theme=light] .migo-filled-light, body[data-theme=light] .migo-filled-hover, body[data-theme=light] .migo-filled-white, body[data-theme=light] .migo-filled-transparent {
+  color: #343A40;
+}
+
+body[data-theme=dark] {
+  --brand: #D63131;
+  --primary: #809AFF;
+  --secondary: #7C8892;
+  --success: #65BB68;
+  --danger: #F7514D;
+  --warning: #F99451;
+  --info: #18B0C8;
+  --light: #E8E8E8;
+  --hover: #35363A;
+  --dark: #202124;
+  --white: #FFFFFF;
+  --transparent: rgba(255, 255, 255, 0.1);
+  --text-body: #FFFFFF;
+  --text-lighten: #A8A8A8;
+  --text-muted: #686868;
+  --text-alpha50: rgba(255, 255, 255, 0.5);
+  --text-brand: #FD4141;
+  --text-primary: #809AFF;
+}
+body[data-theme=dark] .migo-filled-light, body[data-theme=dark] .migo-filled-white {
+  color: #343A40;
+}
+
+.migo-filled-brand {
+  background-color: var(--brand);
+  color: #FFFFFF;
+}
+
+.migo-filled-primary {
+  background-color: var(--primary);
+  color: #FFFFFF;
+}
+
+.migo-filled-secondary {
+  background-color: var(--secondary);
+  color: #FFFFFF;
+}
+
+.migo-filled-success {
+  background-color: var(--success);
+  color: #FFFFFF;
+}
+
+.migo-filled-danger {
+  background-color: var(--danger);
+  color: #FFFFFF;
+}
+
+.migo-filled-warning {
+  background-color: var(--warning);
+  color: #FFFFFF;
+}
+
+.migo-filled-info {
+  background-color: var(--info);
+  color: #FFFFFF;
+}
+
+.migo-filled-light {
+  background-color: var(--light);
+  color: #FFFFFF;
+}
+
+.migo-filled-hover {
+  background-color: var(--hover);
+  color: #FFFFFF;
+}
+
+.migo-filled-dark {
+  background-color: var(--dark);
+  color: #FFFFFF;
+}
+
+.migo-filled-white {
+  background-color: var(--white);
+  color: #FFFFFF;
+}
+
+.migo-filled-transparent {
+  background-color: var(--transparent);
+  color: #FFFFFF;
+}
+
+.migo-outlined-brand {
+  border: 1px solid var(--brand);
+  color: var(--brand);
+}
+
+.migo-outlined-primary {
+  border: 1px solid var(--primary);
+  color: var(--primary);
+}
+
+.migo-outlined-secondary {
+  border: 1px solid var(--secondary);
+  color: var(--secondary);
+}
+
+.migo-outlined-success {
+  border: 1px solid var(--success);
+  color: var(--success);
+}
+
+.migo-outlined-danger {
+  border: 1px solid var(--danger);
+  color: var(--danger);
+}
+
+.migo-outlined-warning {
+  border: 1px solid var(--warning);
+  color: var(--warning);
+}
+
+.migo-outlined-info {
+  border: 1px solid var(--info);
+  color: var(--info);
+}
+
+.migo-outlined-light {
+  border: 1px solid var(--light);
+  color: var(--light);
+}
+
+.migo-text-body {
+  color: var(--text-body);
+}
+
+.migo-text-lighten {
+  color: var(--text-lighten);
+}
+
+.migo-text-muted {
+  color: var(--text-muted);
+}
+
+.migo-text-alpha50 {
+  color: var(--text-alpha50);
+}
+
+.migo-text-brand {
+  color: var(--text-brand);
+}
+
+.migo-text-primary {
+  color: var(--text-primary);
+}
+```
+
+### functions.scss
+
+`functions.scss` 定義動態取得樣式的 utility。因為這個檔案有匯入 `main.scss`，如果有使用到這個檔案的話，就不需要再匯入 `main.scss`。
+
+目前有定義 `getColor` 的 utility， 可以用語意化參數的方式，取得 `$palettes` 下的特定顏色。
+
+```css
+@import '~@paintbox/react-foundation/palettes/functions.scss';
+
+.data-id {
+    color: getColor(gray, 700);
+}
+```
+

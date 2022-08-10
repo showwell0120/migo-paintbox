@@ -1,0 +1,131 @@
+import { Meta, Canvas, Story } from '@storybook/addon-docs/blocks';
+
+import * as T from '@paintbox/react-foundation';
+
+<Meta title="React/Foundation/Typography" />
+
+# Typography
+
+> Typography 定義了各種字體樣式的元件，並且提供 props 設定注入樣式或 class 名稱。
+
+```javascript
+export interface TypographyProps {
+  className?: string;
+  style?: Partial<CSSProperties>;
+  children?: ReactNode;
+}
+```
+
+## Mockup
+- [Figma](https://www.figma.com/file/Sv8VnmaINqyDQcpdO3cz5M/%F0%9F%96%A5-Foundation?node-id=9%3A377)
+
+## Usage 
+
+```javascript
+import { H1 } from '@paintbox/react-foundation';
+return <H1>text content</H1>
+```
+
+
+## Stories
+
+### All Headings
+
+對應到 mockup 中 的「Heading」。
+
+<Canvas>
+  <Story name="All Headings">
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
+      <T.H1>H1. Web heading</T.H1>
+      <T.H2>H2. Web heading</T.H2>
+      <T.H3>H3. Web heading</T.H3>
+      <T.H4>H4. Web heading</T.H4>
+      <T.H5>H5. Web heading</T.H5>
+      <T.H6>H6. Web heading</T.H6>
+    </div>
+  </Story>
+</Canvas>
+
+傳入 `className` 和 `style` 的 props。
+
+<Canvas>
+  <Story name="All Headings With Props">
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
+      <T.H1 className="test" style={{color: 'navy'}}>H1. Web heading</T.H1>
+      <T.H2 className="test" style={{color: 'navy'}}>H2. Web heading</T.H2>
+      <T.H3 className="test" style={{color: 'navy'}}>H3. Web heading</T.H3>
+      <T.H4 className="test" style={{color: 'navy'}}>H4. Web heading</T.H4>
+      <T.H5 className="test" style={{color: 'navy'}}>H5. Web heading</T.H5>
+      <T.H6 className="test" style={{color: 'navy'}}>H6. Web heading</T.H6>
+    </div>
+  </Story>
+</Canvas>
+
+### All Texts
+
+對應到 mockup 中 的「Body」。
+
+<Canvas>
+  <Story name="All Texts">
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
+      <T.Text>This line of text is meant to be treated as body text.</T.Text>
+      <T.BText>This line rendered as bold text.</T.BText>
+      <T.IText>This line rendered as italicized text.</T.IText>
+      <T.UText>This line of text will render as underlined</T.UText>
+      <T.DText>This line of text is meant to be treated as deleted text.</T.DText>
+      <T.PText>This line of text is meant to be treated as fine print.</T.PText>
+    </div>
+  </Story>
+</Canvas>
+
+傳入 `className` 和 `style` 的 props。
+
+<Canvas>
+  <Story name="All Texts With Props">
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
+      <T.Text className="test" style={{color: 'DarkCyan'}}>This line of text is meant to be treated as body text.</T.Text>
+      <T.BText className="test" style={{color: 'DarkCyan'}}>This line rendered as bold text.</T.BText>
+      <T.IText className="test" style={{color: 'DarkCyan'}}>This line rendered as italicized text.</T.IText>
+      <T.UText className="test" style={{color: 'DarkCyan'}}>This line of text will render as underlined</T.UText>
+      <T.DText className="test" style={{color: 'DarkCyan'}}>This line of text is meant to be treated as deleted text.</T.DText>
+      <T.PText className="test" style={{color: 'DarkCyan'}}>This line of text is meant to be treated as fine print.</T.PText>
+    </div>
+  </Story>
+</Canvas>
+
+### All Smalls
+
+對應到 mockup 中 的「Inner」。
+
+<Canvas>
+  <Story name="All Smalls With Props">
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
+      <T.Small>This line of text is meant to be treated as body text.</T.Small>
+      <T.BSmall>This line rendered as bold text.</T.BSmall>
+      <T.ISmall>This line rendered as italicized text.</T.ISmall>
+      <T.USmall>This line of text will render as underlined</T.USmall>
+      <T.DSmall>
+        This line of text is meant to be treated as deleted text.
+      </T.DSmall>
+      <T.PSmall>This line of text is meant to be treated as fine print.</T.PSmall>
+    </div>
+  </Story>
+</Canvas>
+
+傳入 `className` 和 `style` 的 props。
+
+<Canvas>
+  <Story name="All Smalls">
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
+      <T.Small className="test" style={{color: 'OrangeRed'}}>This line of text is meant to be treated as body text.</T.Small>
+      <T.BSmall className="test" style={{color: 'OrangeRed'}}>This line rendered as bold text.</T.BSmall>
+      <T.ISmall className="test" style={{color: 'OrangeRed'}}>This line rendered as italicized text.</T.ISmall>
+      <T.USmall className="test" style={{color: 'OrangeRed'}}>This line of text will render as underlined</T.USmall>
+      <T.DSmall className="test" style={{color: 'OrangeRed'}}>
+        This line of text is meant to be treated as deleted text.
+      </T.DSmall>
+      <T.PSmall className="test" style={{color: 'OrangeRed'}}>This line of text is meant to be treated as fine print.</T.PSmall>
+    </div>
+  </Story>
+</Canvas>
+
