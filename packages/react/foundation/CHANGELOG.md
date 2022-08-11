@@ -9,6 +9,13 @@ This file was generated using [@jscutlery/semver](https://github.com/jscutlery/s
 
 * **react-foundation:** svg properties name ([414692f](https://gitlab.migoinc.com/migotv/paintbox/commit/414692f4d53fb0e0d009d925aa775885b2b3e40d))
 
+### [1.0.1](https://gitlab.migoinc.com/migotv/paintbox/compare/react-foundation@1.0.0...react-foundation@1.0.1) (2022-08-11)
+
+
+### Bug Fixes
+
+* **react-foundation:** svg properties name ([414692f](https://gitlab.migoinc.com/migotv/paintbox/commit/414692f4d53fb0e0d009d925aa775885b2b3e40d))
+
 ## 1.0.0 (2022-08-11)
 
 
