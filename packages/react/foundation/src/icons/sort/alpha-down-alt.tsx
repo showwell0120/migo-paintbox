@@ -20,8 +20,8 @@ export function SortAlphaDownAlt({
         fill={stroke}
       />
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         d="M9.08203 11.6289L8.66406 13H7.59766L9.38672 7.66797H10.6211L12.4023 13H11.2812L10.8633 11.6289H9.08203ZM10.6523 10.8438L10 8.6875H9.95312L9.30078 10.8438H10.6523Z"
         fill={stroke}
       />

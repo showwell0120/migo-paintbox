@@ -16,8 +16,8 @@ export function SortAlphaUp({
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         d="M9.08203 4.62891L8.66406 6H7.59766L9.38672 0.667969H10.6211L12.4023 6H11.2812L10.8633 4.62891H9.08203ZM10.6523 3.84375L10 1.6875H9.95312L9.30078 3.84375H10.6523Z"
         fill={stroke}
       />
