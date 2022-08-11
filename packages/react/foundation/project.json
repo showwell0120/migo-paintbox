@@ -21,8 +21,11 @@
             "input": ".",
             "output": "."
           },
-          "packages/react/foundation/src/palettes/main.scss",
-          "packages/react/foundation/src/palettes/functions.scss"
+          {
+            "glob": "*",
+            "input": "packages/react/foundation/src/palettes",
+            "output": "palettes/"
+          }
         ]
       }
     },
