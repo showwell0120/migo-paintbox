@@ -38,6 +38,23 @@
         "jestConfig": "packages/react/checkbox/jest.config.ts",
         "passWithNoTests": true
       }
+    },
+    "lint-test": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": ["nx lint react-checkbox", "nx test react-checkbox"]
+      }
+    },
+    "version": {
+      "executor": "@jscutlery/semver:version",
+      "options": {
+        "preset": "conventional",
+        "tagPrefix": "react-checkbox@",
+        "postTargets": ["react-checkbox:build", "react-checkbox:publish"]
+      }
+    },
+    "publish": {
+      "executor": "ngx-deploy-npm:deploy"
     }
   }
 }
