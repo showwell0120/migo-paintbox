@@ -3,7 +3,7 @@ import { ClassNames } from '@emotion/react';
 
 import { TypographyProps } from './common';
 
-const BaseText = styled.div`
+const BaseText = styled.span`
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 400;

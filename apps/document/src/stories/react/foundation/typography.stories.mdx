@@ -29,12 +29,12 @@ return <H1>text content</H1>
 
 ## Stories
 
-### All Headings
+### Headings
 
 對應到 mockup 中 的「Heading」。
 
 <Canvas>
-  <Story name="All Headings">
+  <Story name="Default Headings">
     <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
       <T.H1>H1. Web heading</T.H1>
       <T.H2>H2. Web heading</T.H2>
@@ -49,7 +49,7 @@ return <H1>text content</H1>
 傳入 `className` 和 `style` 的 props。
 
 <Canvas>
-  <Story name="All Headings With Props">
+  <Story name="Custom Headings">
     <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
       <T.H1 className="test" style={{color: 'navy'}}>H1. Web heading</T.H1>
       <T.H2 className="test" style={{color: 'navy'}}>H2. Web heading</T.H2>
@@ -61,12 +61,12 @@ return <H1>text content</H1>
   </Story>
 </Canvas>
 
-### All Texts
+### Texts
 
 對應到 mockup 中 的「Body」。
 
 <Canvas>
-  <Story name="All Texts">
+  <Story name="Default Texts">
     <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
       <T.Text>This line of text is meant to be treated as body text.</T.Text>
       <T.BText>This line rendered as bold text.</T.BText>
@@ -81,7 +81,7 @@ return <H1>text content</H1>
 傳入 `className` 和 `style` 的 props。
 
 <Canvas>
-  <Story name="All Texts With Props">
+  <Story name="Custom Texts">
     <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
       <T.Text className="test" style={{color: 'DarkCyan'}}>This line of text is meant to be treated as body text.</T.Text>
       <T.BText className="test" style={{color: 'DarkCyan'}}>This line rendered as bold text.</T.BText>
@@ -93,12 +93,12 @@ return <H1>text content</H1>
   </Story>
 </Canvas>
 
-### All Smalls
+### Smalls
 
 對應到 mockup 中 的「Inner」。
 
 <Canvas>
-  <Story name="All Smalls">
+  <Story name="Default Smalls">
     <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
       <T.Small>This line of text is meant to be treated as body text.</T.Small>
       <T.BSmall>This line rendered as bold text.</T.BSmall>
@@ -115,7 +115,7 @@ return <H1>text content</H1>
 傳入 `className` 和 `style` 的 props。
 
 <Canvas>
-  <Story name="All Smalls With Props">
+  <Story name="Custom Smalls">
     <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
       <T.Small className="test" style={{color: 'OrangeRed'}}>This line of text is meant to be treated as body text.</T.Small>
       <T.BSmall className="test" style={{color: 'OrangeRed'}}>This line rendered as bold text.</T.BSmall>
