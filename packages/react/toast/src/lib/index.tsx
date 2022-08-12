@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames/bind';
 
-import { Cross, ExclamationCycleFill } from '@paintbox/design-foundation';
+import { Cross, ExclamationCycleFill } from '@paintbox/react-foundation';
 
 import styles from './react-toast.module.scss';
 

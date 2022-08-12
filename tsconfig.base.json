@@ -15,9 +15,6 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@paintbox/design-foundation": [
-        "packages/design/foundation/src/index.ts"
-      ],
       "@paintbox/model-media": ["packages/model/media/src/index.ts"],
       "@paintbox/react-button": ["packages/react/button/src/index.ts"],
       "@paintbox/react-chip": ["packages/react/chip/src/index.ts"],
@@ -27,7 +24,7 @@
       "@paintbox/react-tag": ["packages/react/tag/src/index.ts"],
       "@paintbox/react-toast": ["packages/react/toast/src/index.ts"],
       "@paintbox/react-tree-view": ["packages/react/tree-view/src/index.ts"],
-      "react-ui": ["packages/react/ui/src/index.ts"]
+      "@paintbox/react-ui": ["packages/react/ui/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
