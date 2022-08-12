@@ -1,0 +1,50 @@
+import { Meta, Canvas, Story } from '@storybook/addon-docs/blocks';
+
+import { ReactCheckbox, Sample } from '@paintbox/react-checkbox';
+
+<Meta title="React/Form/Checkbox" />
+
+# Checkbox
+
+> 核對方塊。以控制元件的方式實作，提供以下 props－
+
+```javascript
+export interface SVGProps {
+  checked: boolean;                     // current state
+  label?: string;                       // checkbox 右方的文字
+  onChange: (checked: boolean) => void; // event handler
+}
+```
+
+## Mockup
+
+- [Billing System on Figma](https://www.figma.com/file/rvTsTJLCarPAEYvdXQuRDY/Billing-System---MVP?node-id=5289%3A11324)
+
+## Usage 
+
+```javascript
+import { ReactCheckbox } from '@paintbox/react-checkbox';
+
+export const Sample = () => {
+  const [checked, setChecked] = React.useState<boolean>(false);
+  return <ReactCheckbox checked={checked} onChange={setChecked} />;
+};
+```
+
+## Stories
+
+### Default
+
+<Canvas>
+  <Story name="Default">
+    <Sample />
+  </Story>
+</Canvas>
+
+### With label
+
+<Canvas>
+  <Story name="With label">
+    <Sample label="Set Discount" />
+  </Story>
+</Canvas>
