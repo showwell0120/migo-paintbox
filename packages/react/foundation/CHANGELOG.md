@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [1.1.1](https://gitlab.migoinc.com/migotv/paintbox/compare/react-foundation@1.1.0...react-foundation@1.1.1) (2022-08-12)
+
+
+### Bug Fixes
+
+* **react-design:** remove box-sizing style ([8cc17f3](https://gitlab.migoinc.com/migotv/paintbox/commit/8cc17f3ea3776892eca3aaec488af75a3926e478))
+
 ## [1.1.0](https://gitlab.migoinc.com/migotv/paintbox/compare/react-foundation@1.0.3...react-foundation@1.1.0) (2022-08-12)
 
 
