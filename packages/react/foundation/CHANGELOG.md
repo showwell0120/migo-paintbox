@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [1.1.2](https://gitlab.migoinc.com/migotv/paintbox/compare/react-foundation@1.1.1...react-foundation@1.1.2) (2022-08-12)
+
+
+### Bug Fixes
+
+* **react-foundation:** change div element type ([9c47bc0](https://gitlab.migoinc.com/migotv/paintbox/commit/9c47bc09d735489b385d5b7dc057a9d4a3f224d6))
+
 ### [1.1.1](https://gitlab.migoinc.com/migotv/paintbox/compare/react-foundation@1.1.0...react-foundation@1.1.1) (2022-08-12)
 
 
