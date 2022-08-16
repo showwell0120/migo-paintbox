@@ -1,0 +1,65 @@
+import { Meta, Canvas, Story } from '@storybook/addon-docs/blocks';
+
+import { ReactTimePicker, Sample } from '@paintbox/react-time-picker';
+
+<Meta title="React/Form/TimePicker" />
+
+# TimePicker
+
+> 日期時間的輸入。以控制元件的方式實作，提供以下 props 和可以指定資料名稱的泛型－
+
+```javascript
+export interface ChangeHandlerParams<NameType = string> {
+  valid: boolean;         // 驗證的狀態是否通過
+  value: number | null;   // current value
+  name: NameType;         // 資料名稱
+}
+
+export interface FormFieldBaseProps<NameType = string> {
+  value: number | null;                                      // current value
+  name: NameType;                                            // 資料名稱
+  min?: number | null | undefined;                           // 最小值
+  onChange: (param: ChangeHandlerParams<NameType>) => void;  // event handler
+}
+
+export interface ReactTimePickerProps<NameType> extends FormFieldBaseProps<NameType> {
+  dateLabel?: string;   // 日期的 label 文字
+  timeLabel?: string;   // 時間的 label 文字
+}
+```
+
+## Mockup
+
+- [Billing System on Figma](https://www.figma.com/file/rvTsTJLCarPAEYvdXQuRDY/Billing-System---1.0.0?node-id=5301%3A12735)
+
+## Usage 
+
+```javascript
+import { ReactTimePicker } from '@paintbox/react-timepicker';
+
+export const Sample = () => {
+  const [value, setValue] = React.useState<number | null>(null);
+
+  const handleChange = (params: ChangeHandlerParams) => {
+    setValue(params.value);
+  };
+
+  return (
+    <ReactTimePicker<'field_name'>
+      name="field_name"
+      value={value}
+      onChange={handleChange}
+    />
+  );
+};
+```
+
+## Stories
+
+### Default
+
+<Canvas>
+  <Story name="Default">
+    <Sample />
+  </Story>
+</Canvas>

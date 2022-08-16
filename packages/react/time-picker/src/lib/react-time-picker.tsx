@@ -1,9 +1,9 @@
+import React from 'react';
 import Datepicker from 'react-datepicker';
 import styled from '@emotion/styled';
-import { css } from '@emotion/react';
 
 import { Clock, Calendar3 } from '@paintbox/react-foundation';
-import { FormFieldBaseProps } from '../../../declarations';
+import { FormFieldBaseProps, ChangeHandlerParams } from '../../../declarations';
 import {
   convertUTCToLocalDate,
   convertLocalToUTCDate,
@@ -102,3 +102,21 @@ export function ReactTimePicker<NameType>({
     </Container>
   );
 }
+
+export const Sample = () => {
+  const [value, setValue] = React.useState<number | null>(null);
+
+  const handleChange = (params: ChangeHandlerParams) => {
+    setValue(params.value);
+  };
+
+  return (
+    <div style={{ height: 400 }}>
+      <ReactTimePicker<'field_name'>
+        name="field_name"
+        value={value}
+        onChange={handleChange}
+      />
+    </div>
+  );
+};
