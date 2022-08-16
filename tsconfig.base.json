@@ -24,6 +24,9 @@
       "@paintbox/react-foundation": ["packages/react/foundation/src/index.ts"],
       "@paintbox/react-search-bar": ["packages/react/search-bar/src/index.ts"],
       "@paintbox/react-tag": ["packages/react/tag/src/index.ts"],
+      "@paintbox/react-time-picker": [
+        "packages/react/time-picker/src/index.ts"
+      ],
       "@paintbox/react-toast": ["packages/react/toast/src/index.ts"],
       "@paintbox/react-tree-view": ["packages/react/tree-view/src/index.ts"],
       "@paintbox/react-ui": ["packages/react/ui/src/index.ts"]
