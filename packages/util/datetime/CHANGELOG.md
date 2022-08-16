@@ -2,6 +2,8 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.0.0](https://gitlab.migoinc.com/migotv/paintbox/compare/util-datetime@0.1.0...util-datetime@1.0.0) (2022-08-16)
+
 ## 0.1.0 (2022-08-16)
 
 
