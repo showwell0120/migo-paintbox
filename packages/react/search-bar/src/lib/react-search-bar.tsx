@@ -1,4 +1,3 @@
-// import styles from './react-search-bar.module.scss';
 import { SearchIcon } from '../images/SearchIcon';
 import { CancelIcon } from '../images/CancelIcon';
 import React, { useState, useEffect, useRef } from 'react';
@@ -9,16 +8,17 @@ import { debounce } from 'lodash';
 export type CallbackProp = (t: string) => void
 
 const containerStyle = css`
-  height: 40px;
   position: relative;
   border: 1px solid #b2b2b2;
   box-sizing: border-box;
   border-radius: 4px;
+  background-color: #fff;
   display: flex;
   align-items: center;
-  padding: 12px;
+  padding: 0px 12px 0px 12px;
   &:focus-within {
-    border: 2px solid #6484FF;
+    border: 1px solid #6484FF;
+    box-shadow: 0 0 0 1px #6484FF;
   }
 `;
 
@@ -35,11 +35,13 @@ const iconStyle = css`
 
 const inputStyle = css`
   width: 100%;
+  height: 40px;
   font-size: 14px;
   color: #727272;
   background-color: transparent;
   border: 0px;
   margin-left: 20px;
+  padding: 0;
   &:focus {
     outline: none;
   }
@@ -125,3 +127,25 @@ export const ReactSearchBar: React.FC<ReactSearchBarProps> = ({
     </div>
   );
 }
+
+export const Sample = () => {
+  const [keyword, setKeyword] = useState('');
+  const onChange = (k: string) => {
+    setKeyword(k);
+  };
+
+  const onEnter = (k: string) => {
+    alert(`you press enter and the keyword is: ${k}`);
+  };
+
+  return (
+    <div style={{ width: '300px' }}>
+      <p>You are typing: {keyword}</p>
+      <ReactSearchBar
+        placeholder="search for..."
+        onChange={onChange}
+        onEnter={onEnter}
+      />
+    </div>
+  );
+};
