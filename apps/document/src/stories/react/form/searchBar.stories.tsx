@@ -1,18 +1,23 @@
 import { useState } from 'react';
 import { Story, Meta } from '@storybook/react';
-import { ReactSearchBar, ReactSearchBarProps } from '@paintbox/react-search-bar';
+import {
+  ReactSearchBar,
+  ReactSearchBarProps,
+} from '@paintbox/react-search-bar';
 
 export default {
   component: ReactSearchBar,
-  title: 'Components / SearchBar',
+  title: 'React/Form/SearchBar',
 } as Meta;
 
-const Template: Story<ReactSearchBarProps> = (args) => <ReactSearchBar {...args} />;
+const Template: Story<ReactSearchBarProps> = (args) => (
+  <ReactSearchBar {...args} />
+);
 
 export const Primary = Template.bind({});
 Primary.decorators = [
   (Story, context) => {
-    const [ text, setText ] = useState('');
+    const [text, setText] = useState('');
     const showText = (t: string) => {
       setText(t);
     };
@@ -20,7 +25,7 @@ Primary.decorators = [
     context.args.onChange = showText;
 
     return (
-      <div style={{width: '300px'}}>
+      <div style={{ width: '300px' }}>
         <span>You are typing: {text}</span>
         <Story />
       </div>
@@ -39,9 +44,9 @@ Secondary.decorators = [
       alert(t);
     };
     context.args.onEnter = showText;
-    
+
     return (
-      <div style={{width: '300px'}}>
+      <div style={{ width: '300px' }}>
         <Story />
       </div>
     );
