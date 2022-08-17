@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [2.0.13](https://gitlab.migoinc.com/migotv/paintbox/compare/react-time-picker@2.0.12...react-time-picker@2.0.13) (2022-08-17)
+
+
+### Bug Fixes
+
+* **react-time-picker:** react-datepicker add default in JSX ([88bd3f6](https://gitlab.migoinc.com/migotv/paintbox/commit/88bd3f67f931074a245098b402a9fb98ff77bb48))
+
 ### [2.0.12](https://gitlab.migoinc.com/migotv/paintbox/compare/react-time-picker@2.0.11...react-time-picker@2.0.12) (2022-08-17)
 
 ### [2.0.11](https://gitlab.migoinc.com/migotv/paintbox/compare/react-time-picker@2.0.10...react-time-picker@2.0.11) (2022-08-17)
