@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [2.0.1](https://gitlab.migoinc.com/migotv/paintbox/compare/react-search-bar@2.0.0...react-search-bar@2.0.1) (2022-08-17)
+
+
+### Bug Fixes
+
+* **react:** update search-bar onChange event behaviour ([93046d5](https://gitlab.migoinc.com/migotv/paintbox/commit/93046d537c980022259af6979e2957bb6fc67fc0))
+
 ## [2.0.0](https://gitlab.migoinc.com/migotv/paintbox/compare/react-search-bar@1.0.0...react-search-bar@2.0.0) (2022-07-06)
 
 ## 1.0.0 (2022-07-06)
