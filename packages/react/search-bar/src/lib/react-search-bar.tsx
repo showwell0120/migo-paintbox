@@ -1,38 +1,84 @@
-import styles from './react-search-bar.module.scss';
+// import styles from './react-search-bar.module.scss';
 import { SearchIcon } from '../images/SearchIcon';
 import { CancelIcon } from '../images/CancelIcon';
-import React, { useState } from 'react'; 
+import React, { useState, useEffect, useRef } from 'react';
+import { css } from '@emotion/react';
 import { debounce } from 'lodash';
 
 /* eslint-disable-next-line */
 export type CallbackProp = (t: string) => void
 
+const containerStyle = css`
+  height: 40px;
+  position: relative;
+  border: 1px solid #b2b2b2;
+  box-sizing: border-box;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  &:focus-within {
+    border: 2px solid #6484FF;
+  }
+`;
+
+const iconStyle = css`
+  height: 100%;
+  width: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &:hover {
+    cursor: pointer;
+  }
+`;
+
+const inputStyle = css`
+  width: 100%;
+  font-size: 14px;
+  color: #727272;
+  background-color: transparent;
+  border: 0px;
+  margin-left: 20px;
+  &:focus {
+    outline: none;
+  }
+`;
+
 export interface ReactSearchBarProps {
   placeholder?: string,
   onChange?: CallbackProp,
   onEnter?: CallbackProp,
-  time?: number,
+  isDebounce?: boolean,
 }
 
 export const ReactSearchBar: React.FC<ReactSearchBarProps> = ({
   placeholder = 'Search',
   onChange,
   onEnter,
-  time = 500
+  isDebounce = true,
 }) => {
   const [ keyword, setKeyword ] = useState('');
+  const isFirstRender = useRef(true);
 
-  const handleKeyChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const searchKeyword = (e.target.value).toString();
-    setKeyword(searchKeyword);
-    const handleChange = debounce((callback) => { callback(searchKeyword.trim()) }, time);
-    if (onChange) {
-      handleChange(onChange);
+  const searchKeyword = keyword.trim();
+  const onChangeHandler = debounce((keyword) => { 
+    onChange && onChange(keyword);
+  }, 500);
+
+  useEffect(() => {
+    if (isFirstRender.current) {
+      isFirstRender.current = false;
+      return
     }
-    // 我發現如果當 searchKeyword 為 '' 而不觸發 onChange 事件時，會遇到以下情境：
-    // 使用者僅管已經將輸入的字全部刪除，但是父元件永遠只收到最後一個傳上來的字，因而無法做其他的處理
-    // 所以我這裡沒有加上這個判斷
-  };
+
+    if (isDebounce) {
+      onChangeHandler(searchKeyword);
+    } else {
+      onChange && onChange(searchKeyword);
+    }
+    
+  } ,[searchKeyword, onChangeHandler, onChange, isDebounce]);
 
   const [ isFocus, setFocus ] = useState(false);
   const onFocus = (e: React.FocusEvent<HTMLDivElement>) => {
@@ -46,8 +92,8 @@ export const ReactSearchBar: React.FC<ReactSearchBarProps> = ({
   };
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === 'Enter' && onEnter && keyword) {
-      onEnter(keyword);
+    if (e.key === 'Enter' && onEnter) {
+      onEnter(keyword.trim());
     }
   };
 
@@ -62,7 +108,7 @@ export const ReactSearchBar: React.FC<ReactSearchBarProps> = ({
       tabIndex={0}
       onFocus={onFocus}
       onBlur={onBlur}
-      className={styles['container']}
+      css={containerStyle}
     > 
       <SearchIcon />
       <input
@@ -70,12 +116,12 @@ export const ReactSearchBar: React.FC<ReactSearchBarProps> = ({
         type="text"
         value={keyword}
         placeholder={placeholder}
-        onChange={handleKeyChange}
+        onChange={e => setKeyword(e.target.value)}
         onBlur={(e: React.FocusEvent<HTMLInputElement>) => { e.stopPropagation() }}
         onKeyDown={handleKeyDown}
-        className={styles['input']}
+        css={inputStyle}
       />
-      {(isFocus && keyword) && <div onClick={clearKeyword} className={styles['icons']}><CancelIcon /></div>}
+      {(isFocus && keyword) && <div onClick={clearKeyword} css={iconStyle}><CancelIcon /></div>}
     </div>
   );
 }

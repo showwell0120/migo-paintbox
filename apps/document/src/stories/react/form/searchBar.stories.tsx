@@ -14,15 +14,15 @@ const Template: Story<ReactSearchBarProps> = (args) => (
   <ReactSearchBar {...args} />
 );
 
-export const Primary = Template.bind({});
-Primary.decorators = [
+export const KeyChange = Template.bind({});
+KeyChange.decorators = [
   (Story, context) => {
     const [text, setText] = useState('');
     const showText = (t: string) => {
       setText(t);
     };
 
-    context.args.onChange = showText;
+    context.args['onChange'] = showText;
 
     return (
       <div style={{ width: '300px' }}>
@@ -32,18 +32,40 @@ Primary.decorators = [
     );
   },
 ];
-Primary.args = {
+KeyChange.args = {
   placeholder: 'default text',
-  time: 1000,
 };
 
-export const Secondary = Template.bind({});
-Secondary.decorators = [
+export const KeyChangeWithoutDebounce = Template.bind({});
+KeyChangeWithoutDebounce.decorators = [
+  (Story, context) => {
+    const [text, setText] = useState('');
+    const showText = (t: string) => {
+      setText(t);
+    };
+
+    context.args['onChange'] = showText;
+
+    return (
+      <div style={{ width: '300px' }}>
+        <span>You are typing: {text}</span>
+        <Story />
+      </div>
+    );
+  },
+];
+KeyChangeWithoutDebounce.args = {
+  placeholder: 'default text',
+  isDebounce: false,
+};
+
+export const onEnter = Template.bind({});
+onEnter.decorators = [
   (Story, context) => {
     const showText = (t: string) => {
       alert(t);
     };
-    context.args.onEnter = showText;
+    context.args['onEnter'] = showText;
 
     return (
       <div style={{ width: '300px' }}>
@@ -53,6 +75,6 @@ Secondary.decorators = [
   },
 ];
 
-Secondary.args = {
+onEnter.args = {
   placeholder: 'test test',
 };

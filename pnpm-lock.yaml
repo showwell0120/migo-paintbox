@@ -30,6 +30,7 @@ specifiers:
   '@svgr/webpack': ^6.2.1
   '@testing-library/react': 13.3.0
   '@types/jest': 27.5.1
+  '@types/lodash': ^4.14.183
   '@types/node': 18.0.0
   '@types/react': 18.0.14
   '@types/react-datepicker': ^4.4.2
@@ -55,6 +56,7 @@ specifiers:
   import: ^0.0.6
   jest: 28.1.0
   jest-environment-jsdom: ^28.1.0
+  lodash: ^4.17.21
   ngx-deploy-npm: ^4.1.0
   nx: 14.4.1
   prettier: 2.7.1
@@ -78,11 +80,13 @@ specifiers:
 dependencies:
   '@emotion/react': 11.9.3_ye5oo5gdqa4s6udf5a5xmn5ftq
   '@emotion/styled': 11.9.3_zdy4t5wzawcp2kb6lz5nl4exba
+  '@types/lodash': 4.14.183
   axios: 0.27.2
   classnames: 2.3.1
   core-js: 3.22.5
   dayjs: 1.11.2
   import: 0.0.6
+  lodash: 4.17.21
   react: 18.2.0
   react-datepicker: 4.8.0_biqbaboplfbrettd7655fr4n2y
   react-dom: 18.2.0_react@18.2.0
@@ -4208,7 +4212,7 @@ packages:
       '@babel/preset-env': 7.17.10_@babel+core@7.17.10
       '@babel/types': 7.17.10
       '@mdx-js/mdx': 1.6.22
-      '@types/lodash': 4.14.182
+      '@types/lodash': 4.14.183
       js-string-escape: 1.0.1
       loader-utils: 2.0.2
       lodash: 4.17.21
@@ -4906,9 +4910,8 @@ packages:
     resolution: {integrity: sha1-7ihweulOEdK4J7y+UnC86n8+ce4=}
     dev: true
 
-  /@types/lodash/4.14.182:
-    resolution: {integrity: sha512-/THyiqyQAP9AfARo4pF+aCGcyiQ94tX/Is2I7HofNRqoYLgN1PBoOWu2/zTA5zMxzP5EFutMtWtGAFRKUe961Q==}
-    dev: true
+  /@types/lodash/4.14.183:
+    resolution: {integrity: sha512-UXavyuxzXKMqJPEpFPri6Ku5F9af6ZJXUneHhvQJxavrEjuHkFp2YnDWHcxJiG7hk8ZkWqjcyNeW1s/smZv5cw==}
 
   /@types/mdast/3.0.10:
     resolution: {integrity: sha512-W864tg/Osz1+9f4lrGTZpCSO5/z4608eUp19tbozkq2HJK6i3z1kT0H9tlADXuYIb1YYOBByU4Jsqkk75q48qA==}
@@ -12664,7 +12667,6 @@ packages:
 
   /lodash/4.17.21:
     resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==}
-    dev: true
 
   /log-symbols/4.1.0:
     resolution: {integrity: sha512-8XPvpAA8uyhfteu8pIvQxpJZ7SYYdpUivZpGy6sFsBuKRY/7rQGavedeB8aK+Zkyq6upMFVL/9AW6vOYzfRyLg==}
