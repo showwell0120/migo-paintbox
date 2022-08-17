@@ -1,9 +1,15 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+/* eslint-disable react/jsx-pascal-case */
+// @ts-nocheck
+
+// FIXME: 在專案中使用這個套件時，react-datepicker 的 default import 會是整個 module，而不是 react-datepicker 中預設 export 的元件。為了暫時解決這個問題，在 JSX 中是 call ReactDatePicker.default。不過在 storybook 中會報錯，目前僅以文字說明。
+
 import React from 'react';
-import Datepicker from 'react-datepicker';
+import ReactDatePicker from 'react-datepicker';
 import styled from '@emotion/styled';
 
 import { Clock, Calendar3 } from '@paintbox/react-foundation';
-import { FormFieldBaseProps, ChangeHandlerParams } from '../../../declarations';
+import { FormFieldBaseProps, ChangeHandlerParams } from './declarations';
 import {
   convertUTCToLocalDate,
   convertLocalToUTCDate,
@@ -70,7 +76,7 @@ export function ReactTimePicker<NameType>({
           <Icon>
             <Calendar3 />
           </Icon>
-          <Datepicker
+          <ReactDatePicker.default
             className="date"
             selected={convertUTCToLocalDate(value)}
             placeholderText="DD/MMM/YYYY"
@@ -86,7 +92,7 @@ export function ReactTimePicker<NameType>({
           <Icon>
             <Clock />
           </Icon>
-          <Datepicker
+          <ReactDatePicker.default
             className="time"
             placeholderText="00:00 a.m."
             selected={convertUTCToLocalDate(value)}
@@ -103,7 +109,9 @@ export function ReactTimePicker<NameType>({
   );
 }
 
-export const Sample = () => {
+export default ReactTimePicker;
+
+export const TimepickerSample = () => {
   const [value, setValue] = React.useState<number | null>(null);
 
   const handleChange = (params: ChangeHandlerParams) => {

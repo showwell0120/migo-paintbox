@@ -1,6 +1,6 @@
 import { Meta, Canvas, Story } from '@storybook/addon-docs/blocks';
 
-import { ReactTimePicker, Sample } from '@paintbox/react-time-picker';
+import ReactTimePicker, { TimepickerSample } from '@paintbox/react-time-picker';
 
 <Meta title="React/Form/TimePicker" />
 
@@ -37,6 +37,8 @@ export interface ReactTimePickerProps<NameType> extends FormFieldBaseProps<NameT
 ```javascript
 import { ReactTimePicker } from '@paintbox/react-timepicker';
 
+import '@paintbox/react-time-picker/index.css';
+
 export const Sample = () => {
   const [value, setValue] = React.useState<number | null>(null);
 
@@ -56,10 +58,4 @@ export const Sample = () => {
 
 ## Stories
 
-### Default
-
-<Canvas>
-  <Story name="Default">
-    <Sample />
-  </Story>
-</Canvas>
+在專案中使用這個套件時，react-datepicker 的 default import 會是整個 module，而不是 react-datepicker 中預設 export 的元件。為了暫時解決這個問題，在 JSX 中是 call ReactDatePicker.default。不過在 storybook 中會報錯，目前僅以文字說明。
