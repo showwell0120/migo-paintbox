@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [2.0.2](https://gitlab.migoinc.com/migotv/paintbox/compare/react-search-bar@2.0.1...react-search-bar@2.0.2) (2022-08-22)
+
+
+### Bug Fixes
+
+* **react-search-bar:** update debounce onChange behaviour ([a6d4255](https://gitlab.migoinc.com/migotv/paintbox/commit/a6d4255b408b4293eae8b57a9316c263c8266a06))
+
 ### [2.0.1](https://gitlab.migoinc.com/migotv/paintbox/compare/react-search-bar@2.0.0...react-search-bar@2.0.1) (2022-08-17)
 
 
