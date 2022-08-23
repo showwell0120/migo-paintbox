@@ -1,0 +1,380 @@
+import { Meta, Story } from '@storybook/addon-docs/blocks';
+
+import NxWorkspaceImg from './nx-workspace.png';
+import NxStorybookImg from './nx-storybook.png';
+
+<Meta title="Project/Launch a React App" />
+
+# Launch a React App
+> 建立 CSR 的 React 應用，通常用於內部系統的建立。
+
+## GitLab
+
+1. 新增空白的專案
+
+2. Project URL 的 sub domain 選擇 `migotv`
+
+3. 輸入 Project description。例如：*Frontend application for Evergreen, launch in 2022.*
+
+4. 將 Project Configuration 中的 `Initialize repository with a README` 取消勾選 
+
+5. 建立專案
+
+## Local
+
+### Initialize
+
+1. 打開 terminal， cd 到專案目錄的上層
+
+2. 以新增 Nx 的 workspace 的指令建立專案目錄
+
+```bash
+npx create-nx-workspace@latest
+```
+3. 根據以下問題依序選擇或輸入－專案名稱、react、main、SASS(scss)、No Nx Cloud。成功的話，會產生專案目錄，並且會有一些預設檔案
+
+<img src={NxWorkspaceImg} alt={'NxWorkspace'} style={{width: '80%'}} />;
+
+4. cd 到專案目錄，並新增 git remote
+
+```bash
+git remote add origin git@gitlab.migoinc.com:migotv/<repo-name>.git
+```
+
+6. push Nx workspace 的初始化
+
+```bash
+git push -u origin main
+```
+
+3. 在 `package.json`` 中加入 npm script－
+
+```bash
+"scripts": {
+    "serve": "pnpm nx serve main",
+},
+```
+
+4. 執行 `pnpm serve` 確認應用成功執行在 `http://localhost:4200`
+
+
+### npm -> pnpm
+
+1. 移除 `package-lock.json`
+
+2. 以 pnpm 安裝所有依賴，產生 `pnpm-lock.yml`
+
+```bash
+pnpm i
+```
+
+3. 提交變更
+
+### 產生格式化的 commit
+
+1. 全域安裝 `commitizen`
+
+```bash
+npm i -g commitizen
+```
+
+2. 專案目錄下安裝 `cz-conventional-changelog`
+
+```bash
+pnpm i -D cz-conventional-changelog
+```
+
+3. `package.json` 中加入 `config`
+
+```json
+"config": {
+    "commitizen": {
+        "path": "cz-conventional-changelog"
+    }
+},
+```
+
+之後要 commit 變更，先 add 要提交的檔案後，在 terminal 中打 **`cz`** 就可以進行 commit 訊息的編輯。
+
+### Storybook
+
+1. 安裝 Nx 的 storybook plugin - `@nrwl/storybook`
+
+```bash
+pnpm i -D @nrwl/storybook
+```
+
+2. 產生 Storybook 的設定檔
+
+```bash
+nx g @nrwl/react:storybook-configuration main
+```
+
+<img src={NxStorybookImg} alt={'NxStorybook'} style={{width: '80%'}} />;
+
+3. 在 package.json 中加入 npm script－
+
+```bash
+"scripts": {
+    "sb": "pnpm nx storybook main"
+},
+```
+
+4. 執行 `pnpm sb` 確認 Storybook 成功執行在 `http://localhost:4400`
+
+5. 修改 `main.js`
+
+```javascript
+module.exports = {
+    // ...
+    stories: [
+        ...rootMain.stories,
+        '../src/**/*.stories.mdx',
+        '../src/**/*.stories.@(js|jsx|ts|tsx)',
+    ],
+    // ...
+}
+```
+
+6. 修改 `preview.js`
+
+```javascript
+export const parameters = {
+  layout: 'centered',
+  controls: { expanded: true },
+};
+```
+
+7. 新增 `preview-head.html`
+
+```html
+<!-- .storybook/preview-head.html -->
+
+<!-- Pull in static files served from your Static directory or the internet -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+```
+
+8. 提交變更
+
+### MSW
+
+1. 安裝 `msw`
+
+```bash
+pnpm i -D msw
+```
+
+2. 初始化，在 `apps/main/src/` 下產生 `mockServiceWorker.js`
+
+```bash
+npx msw init ./apps/main/src 
+```
+
+3. 在 `apps/main/src/index.html` 中註冊 service worker
+
+```html
+<script>
+    // Check that service workers are supported
+    if ('serviceWorker' in navigator) {
+    // Use the window load event to keep the page load performant
+    window.addEventListener('load', () => {
+        navigator.serviceWorker.register('mockServiceWorker.js');
+    });
+    }
+</script>
+```
+
+4. 在 `apps/main/src/` 下新增 msw 目錄，並新增以下檔案－
+
+- `handlers.ts`
+
+````javascript
+import { rest } from 'msw';
+
+export const handlers = [];
+````
+
+- `browser.js`
+
+````javascript
+import { setupWorker } from 'msw';
+import { handlers } from './handlers';
+
+export const worker = setupWorker(...handlers);
+````
+
+5. 修改 `apps/main/project.json`
+
+- 在 build target 中的 `assets` 新增 `mockServiceWorker.js`
+
+````json
+"build": {
+    // ...
+    "assets": [
+        "apps/main/src/favicon.ico",
+        "apps/main/src/assets",
+        "apps/main/src/mockServiceWorker.js"
+    ],
+    // ...
+}
+````
+
+- 新增 `serve-msw` 的 target
+
+````json
+"serve-msw": {
+    "executor": "@nrwl/workspace:run-commands",
+    "options": {
+    "command": "NX_NEXT_ENABLE_MSW=enabled nx serve main"
+    }
+},
+````
+
+6. 在 `apps/main/src/app/app.tsx` 中新增－
+
+````javascript
+import { worker } from '../msw/browser';
+
+if (process.env['NX_NEXT_ENABLE_MSW'] === 'enabled') {
+  worker.start();
+}
+````
+
+7. 在 package.json 中加入 npm script－
+
+```bash
+"scripts": {
+    "serve.mock": "pnpm nx serve-msw main"
+},
+```
+
+8. 執行 `pnpm serve.mock` 確認應用成功執行在 `http://localhost:4200`，打開 devtool 可以在 console 看到 `[MSW] Mocking enabled.`
+
+### Version & CHANGELOG
+
+1. 安裝 `@jscutlery/semver`
+```bash
+pnpm i -D @jscutlery/semver
+```
+2. 在 `apps/main/project.json` 中新增 `version` 的 target
+
+````json
+"version": {
+    "executor": "@jscutlery/semver:version",
+    "options": {
+    "preset": "conventional"
+    }
+}
+````
+
+3. 在 package.json 中加入 npm script－
+
+```bash
+"scripts": {
+    "ver": "pnpm nx version main --preset=conventional",
+    "ver.pat": "pnpm ver --releaseAs=patch",
+    "ver.min": "pnpm ver --releaseAs=minor",
+    "ver.maj": "pnpm ver --releaseAs=major",
+},
+```
+
+4. 在 `apps/main/` 底下新增 `package.json`，新增 `version` 欄位－
+
+```json
+{
+  "version": "0.0.0"
+}
+```
+
+5. 執行 `pnpm ver.pat` 測試-
+
+- 版本進到 0.0.1
+- 產生 CHANGELOG.md
+- 在 git 打上 `main-0.0.1` 的 tag
+
+### Ansible
+
+1. 在專案目錄下新增 `ansible` 的目錄，並新增以下檔案－
+
+- `ansible.cfg`
+
+```yml
+[defaults]
+deprecation_warnings = False
+inventory = hosts
+
+[ssh_connection]
+scp_if_ssh = yes
+```
+
+- `hosts`
+
+```yml
+[all:vars]
+ansible_user=ubuntu
+
+
+[production]
+<domain-name>.private.migosrv.com 
+
+[production:vars]
+ansible_ssh_private_key_file=~/.ssh/migo/production-devops
+bundle_path=/srv/<domain-name>.migoinc.com/public
+
+[staging]
+<domain-name>.private.migosrv-staging.com
+
+[staging:vars]
+ansible_ssh_private_key_file=~/.ssh/migo/staging-devops
+bundle_path=/srv/<domain-name>.migoinc-staging.com/public
+
+[dev]
+<domain-name>.private.migosrv-dev.com
+
+[dev:vars]
+ansible_ssh_private_key_file=~/.ssh/migo/dev-devops
+bundle_path=/srv/<domain-name>.migoinc-dev.com/public
+
+```
+
+- `<project-name>.yml`
+
+```yml
+- hosts: all
+  become: yes
+  become_user: root
+  tasks:
+    - name: update bundle
+      synchronize:
+        delete: yes
+        dest: "{{bundle_path}}/"
+        group: no
+        owner: no
+        src: ../dist/apps/main/
+        rsync_opts:
+          - "--chown=www-data:www-data"
+    - name: change owner
+      file:
+        group: www-data
+        path: "{{bundle_path}}/"
+        owner: www-data
+        recurse: yes
+```
+
+2. 在 package.json 中加入 npm script－
+
+```bash
+"scripts": {
+    "deploy.dev": "git stash; pnpm build && cd ansible; ansible-playbook -i hosts evergreen-frontend.yml --limit dev",
+    "deploy.stage": "git stash; pnpm build && cd ansible; ansible-playbook -i hosts evergreen-frontend.yml --limit staging",
+    "deploy.prod": "git stash; pnpm build && cd ansible; ansible-playbook -i hosts evergreen-frontend.yml --limit production"
+},
+```
+
+## 參考專案
+
+- [evergreen-frontend](https://gitlab.migoinc.com/migotv/evergreen-frontend/-/commits/main)
