@@ -26,7 +26,7 @@ const getIconStroke = (variant: VariantType) => {
     case 'warn':
       return '#DC3545';
     case 'info':
-      return '#000000';
+      return '#ffffff';
     default:
       return;
   }
