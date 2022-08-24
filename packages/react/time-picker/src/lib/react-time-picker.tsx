@@ -9,11 +9,11 @@ import ReactDatePicker from 'react-datepicker';
 import styled from '@emotion/styled';
 
 import { Clock, Calendar3 } from '@paintbox/react-foundation';
-import { FormFieldBaseProps, ChangeHandlerParams } from './declarations';
+import { FormFieldBaseProps, ChangeHandlerParams } from '@paintbox/react-base';
 import {
   convertUTCToLocalDate,
   convertLocalToUTCDate,
-} from '@paintbox/util-datetime';
+} from '@paintbox/util-i18n';
 
 import 'react-datepicker/dist/react-datepicker.css';
 import './custom-react-datepicker.css';
@@ -108,8 +108,6 @@ export function ReactTimePicker<NameType>({
     </Container>
   );
 }
-
-export default ReactTimePicker;
 
 export const TimepickerSample = () => {
   const [value, setValue] = React.useState<number | null>(null);
