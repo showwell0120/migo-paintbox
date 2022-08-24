@@ -16,9 +16,13 @@
     "baseUrl": ".",
     "paths": {
       "@paintbox/model-media": ["packages/model/media/src/index.ts"],
+      "@paintbox/react-base": ["packages/react/base/src/index.ts"],
       "@paintbox/react-button": ["packages/react/button/src/index.ts"],
       "@paintbox/react-checkbox": ["packages/react/checkbox/src/index.ts"],
       "@paintbox/react-chip": ["packages/react/chip/src/index.ts"],
+      "@paintbox/react-currency-input": [
+        "packages/react/currency-input/src/index.ts"
+      ],
       "@paintbox/react-dialog": ["packages/react/dialog/src/index.ts"],
       "@paintbox/react-form": ["packages/react/form/src/index.ts"],
       "@paintbox/react-foundation": ["packages/react/foundation/src/index.ts"],
@@ -33,7 +37,7 @@
       "@paintbox/react-toast": ["packages/react/toast/src/index.ts"],
       "@paintbox/react-tree-view": ["packages/react/tree-view/src/index.ts"],
       "@paintbox/react-ui": ["packages/react/ui/src/index.ts"],
-      "@paintbox/util-datetime": ["packages/util/datetime/src/index.ts"]
+      "@paintbox/util-i18n": ["packages/util/i18n/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
