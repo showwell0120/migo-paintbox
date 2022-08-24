@@ -1,3 +1,5 @@
+import '../../../packages/react/foundation/src/palettes/main.scss';
+
 export const parameters = {
   layout: 'centered',
   controls: { expanded: true },
