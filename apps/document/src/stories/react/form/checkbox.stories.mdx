@@ -1,6 +1,6 @@
 import { Meta, Canvas, Story } from '@storybook/addon-docs/blocks';
 
-import { ReactCheckbox, Sample } from '@paintbox/react-checkbox';
+import { ReactCheckbox, CheckboxSample } from '@paintbox/react-checkbox';
 
 <Meta title="React/Form/Checkbox" />
 
@@ -22,7 +22,7 @@ export interface SVGProps {
 
 ## Usage 
 
-```javascript
+```jsx
 import { ReactCheckbox } from '@paintbox/react-checkbox';
 
 export const Sample = () => {
@@ -37,7 +37,7 @@ export const Sample = () => {
 
 <Canvas>
   <Story name="Default">
-    <Sample />
+    <CheckboxSample />
   </Story>
 </Canvas>
 
@@ -45,6 +45,6 @@ export const Sample = () => {
 
 <Canvas>
   <Story name="With label">
-    <Sample label="Set Discount" />
+    <CheckboxSample label="Set Discount" />
   </Story>
 </Canvas>

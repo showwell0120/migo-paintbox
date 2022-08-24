@@ -100,7 +100,7 @@ export const ReactCheckbox = ({
   );
 };
 
-export const Sample = ({ label }: { label?: string }) => {
+export const CheckboxSample = ({ label }: { label?: string }) => {
   const [checked, setChecked] = React.useState<boolean>(false);
   return (
     <ReactCheckbox checked={checked} onChange={setChecked} label={label} />

@@ -137,7 +137,7 @@ export const ReactSearchBar: React.FC<ReactSearchBarProps> = ({
   );
 }
 
-export const Sample = () => {
+export const SearchBarSample = () => {
   const [keyword, setKeyword] = useState('');
   const onChange = (k: string) => {
     setKeyword(k);
