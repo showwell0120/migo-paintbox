@@ -25,7 +25,7 @@ const Container = styled.div<{ prefixWidth: string }>`
   border-radius: 4px;
   border: 1px solid #adb5bd;
   position: relative;
-  padding-left: ${(props) => props.prefixWidth};
+  padding-left: ${(props: { prefixWidth: string }) => props.prefixWidth};
 
   &[data-prefix] {
     &::before {
