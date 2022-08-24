@@ -39,6 +39,23 @@
         "jestConfig": "packages/util/i18n/jest.config.ts",
         "passWithNoTests": true
       }
+    },
+    "lint-test": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": ["nx lint util-i18n", "nx test util-i18n"]
+      }
+    },
+    "version": {
+      "executor": "@jscutlery/semver:version",
+      "options": {
+        "preset": "conventional",
+        "tagPrefix": "util-i18n@",
+        "postTargets": ["util-i18n:build", "util-i18n:publish"]
+      }
+    },
+    "publish": {
+      "executor": "ngx-deploy-npm:deploy"
     }
   },
   "tags": []

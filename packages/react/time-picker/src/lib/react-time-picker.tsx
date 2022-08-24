@@ -3,6 +3,7 @@
 // @ts-nocheck
 
 // FIXME: 在專案中使用這個套件時，react-datepicker 的 default import 會是整個 module，而不是 react-datepicker 中預設 export 的元件。為了暫時解決這個問題，在 JSX 中是 call ReactDatePicker.default。不過在 storybook 中會報錯，目前僅以文字說明。
+// TODO: 要可以清空
 
 import React from 'react';
 import ReactDatePicker from 'react-datepicker';
