@@ -235,4 +235,7 @@ pnpm af:<patch|minor|major>
 
 ## 開發規範與 coding style
 
-TODO
+- 在元件中新增 Sample 元件時， 需要冠上元件名稱當作 prefix，避免上層元件在 export 多個元件時發生命名衝突
+- React 元件的樣式系統以 CSS-in-JS 方式實作，所以在初始化 package 時請選擇 **emotion**
+- 第一次發布時，以 `major` level 發布 1.0.0 的版本
+- 以 2 個空白作為縮排距離(可開啟 VSCode 的 format on save)
