@@ -23,6 +23,9 @@
       "@paintbox/react-form": ["packages/react/form/src/index.ts"],
       "@paintbox/react-foundation": ["packages/react/foundation/src/index.ts"],
       "@paintbox/react-search-bar": ["packages/react/search-bar/src/index.ts"],
+      "@paintbox/react-select-option": [
+        "packages/react/select-option/src/index.ts"
+      ],
       "@paintbox/react-tag": ["packages/react/tag/src/index.ts"],
       "@paintbox/react-time-picker": [
         "packages/react/time-picker/src/index.ts"
