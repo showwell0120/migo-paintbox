@@ -1,0 +1,76 @@
+import { Meta, Canvas, Story } from '@storybook/addon-docs/blocks';
+
+import { ReactCurrencyInput, CurrencyInputSample } from '@paintbox/react-currency-input';
+
+<Meta title="React/Form/CurrencyInput" />
+
+# CurrencyInput
+
+> 貨幣數值的輸入。以控制元件的方式實作，提供以下 props－
+
+```javascript
+export interface ChangeHandlerParams<NameType = string> {
+  valid: boolean;         // 驗證的狀態是否通過
+  value: number | null;   // current value
+  name: NameType;         // 資料名稱
+}
+
+export interface FormFieldBaseProps<NameType = string> {
+  value: number | null;                                      // current value
+  name: NameType;                                            // 資料名稱
+  min?: number | null | undefined;                           // 最小值
+  onChange: (param: ChangeHandlerParams<NameType>) => void;  // event handler
+}
+
+export interface ReactCurrencyInputProps<NameType>
+  extends FormFieldBaseProps<NameType> {
+  label: string;                  // label
+  step?: number;                  // 遞增/減數值的最小單位，預設為 1
+  max?: number;                   // 最大值
+  currency?: SupportedCurrency;   // 國際貨幣代號
+  allowDecimal?: boolean;         // 允許小數點，預設為 false
+  description?: React.ReactNode;  // 描述
+}
+```
+
+## Mockup
+
+- [Billing System on Figma](https://www.figma.com/file/rvTsTJLCarPAEYvdXQuRDY/Billing-System---1.0.0?node-id=4821%3A63603)
+
+## Usage 
+
+```jsx
+import { ReactCurrencyInput } from '@paintbox/react-checkbox';
+
+export const CurrencyInputSample = () => {
+  const [value, setValue] = React.useState<number | null>(null);
+
+  const handleChange = (params: ChangeHandlerParams) => {
+    setValue(params.value);
+  };
+
+  return <ReactCurrencyInput name="list_price" label="List Price"
+      value={value} onChange={handleChange} />;
+};
+```
+
+## Stories
+
+### Default
+
+<Canvas>
+  <Story name="Default">
+    <CurrencyInputSample />
+  </Story>
+</Canvas>
+
+### With Description and Max
+
+<Canvas>
+  <Story name="With Description and Max">
+    <CurrencyInputSample max={1000} description={<div>
+        This price will be shown on Migo app for customers as original price with
+        strickthrough. (e.g. <del>Rp 30.000</del>)
+      </div>} />
+  </Story>
+</Canvas>
