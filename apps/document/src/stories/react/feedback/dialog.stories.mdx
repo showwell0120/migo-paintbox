@@ -1,0 +1,57 @@
+import { Meta, Canvas, Story } from '@storybook/addon-docs/blocks';
+import { ReactDialog, DialogSample, ClickOverlaySample } from '@paintbox/react-dialog';
+
+<Meta title="React/Feedback/Dialog" />
+
+# Dialog
+
+> 對話框。以控制元件的方式實作，提供以下 props－
+
+```javascript
+export interface ReactDialogProps {
+  isOepn: boolean,              // 傳入布林值，來決定對話框是否出現
+  onClose: () => void           // 關閉對話框的 function
+  closeOnOverlayClick?: boolean // 傳入布林值，預設是 false，若為 true 則點選對話框以外的區域會關閉對話框
+  children?: React.ReactNode,   // 任何想要在對話框裡顯示的內容
+}
+```
+
+## Usage
+
+```
+import { ReactDialog } from '@paintbox/react-dialog';
+import { useState } from 'react'
+
+export const DialogSample = () => {
+  const [open, setOpen] = useState(false);
+  const onClose = () => {
+    setOpen(false);
+  };
+
+  return (<div>
+    <button onClick={() => {setOpen(true)}}>Click to open</button>
+    <ReactDialog isOpen={open} onClose={onClose}>
+      <div>Check</div>
+      <button onClick={onClose}>click to close</button>
+    </ReactDialog>
+  </div>);
+}; 
+```
+
+## Stories
+
+### Default
+
+<Canvas>
+  <Story name="Default">
+    <DialogSample />
+  </Story>
+</Canvas>
+
+### ClickOverlay
+
+<Canvas>
+  <Story name="ClickOverlay">
+    <ClickOverlaySample />
+  </Story>
+</Canvas>

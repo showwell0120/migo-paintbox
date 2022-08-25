@@ -24,6 +24,7 @@
         "packages/react/currency-input/src/index.ts"
       ],
       "@paintbox/react-dialog": ["packages/react/dialog/src/index.ts"],
+      "@paintbox/react-display": ["packages/react/display/src/index.ts"],
       "@paintbox/react-form": ["packages/react/form/src/index.ts"],
       "@paintbox/react-foundation": ["packages/react/foundation/src/index.ts"],
       "@paintbox/react-pagination": ["packages/react/pagination/src/index.ts"],

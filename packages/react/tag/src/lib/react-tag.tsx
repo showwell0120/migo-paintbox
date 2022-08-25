@@ -1,7 +1,19 @@
-import classNames from 'classnames/bind';
-import styles from './react-tag.module.scss';
+import { css } from '@emotion/react';
 
-const cx = classNames.bind(styles);
+const containerStyle = css`
+  border-radius: 4px;
+  background-color: #e9ecef;
+  font-size: 14px;
+  padding: 2px 10px;
+  min-height: 1rem;
+  margin-right: 8px;
+  border: 1px solid transparent;
+  width: fit-content;
+`;
+
+const borderStyle = css`
+  border: 1px solid rgba(0, 0, 0, 0.3);
+`;
 
 type TextColorType = 'white' | 'default';
 type BackgoundColorType = 'red' | 'blue' | 'purple' | 'default';
@@ -47,10 +59,30 @@ export const ReactTag: React.FC<ReactTagProps> = ({
 
   return (
     <div
-      className={cx(styles['container'], hasBorder && styles['border'])}
-      style={{ color, backgroundColor }}
+      css={[containerStyle, hasBorder && borderStyle, { color, backgroundColor }]}
     >
       {text}
+    </div>
+  );
+};
+
+export const TagSample = () => {
+  return (
+    <div>
+      <ReactTag text={'test'} />
+    </div>
+  );
+};
+
+export const ColorTagSample = () => {
+  return (
+    <div>
+      <ReactTag
+        text={'test'}
+        colorType={'white'}
+        bgColorType={'blue'}
+        hasBorder={true}
+      />
     </div>
   );
 };

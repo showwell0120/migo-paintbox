@@ -1,23 +1,86 @@
-import classNames from 'classnames/bind';
-import styles from './react-dialog.module.scss';
+import { css } from '@emotion/react';
+import React, { useState } from 'react';
 
-const cx = classNames.bind(styles);
+const containerStyle = css`
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2147483646;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, .50);
+  display: flex;
+  justify-content: center;
+`;
+
+const boxStyle = css`
+  position: relative;
+  z-index: 202;
+  padding: 2rem;
+  margin: auto;
+  background-color: #fff;
+  border-radius: 4px;
+`;
 
 /* eslint-disable-next-line */
 export interface ReactDialogProps {
-  toFadeOut? : boolean,
+  isOpen: boolean,
+  onClose: () => void,
+  closeOnOverlayClick?: boolean,
   children?: React.ReactNode,
 }
 
 export const ReactDialog: React.FC<ReactDialogProps> = ({
-  toFadeOut = false,
+  isOpen,
+  onClose,
+  closeOnOverlayClick = false,
   children,
 }) => {
+  const onClickOverlay = (e: React.MouseEvent<HTMLDivElement>) => {
+    const overlay = e.target as HTMLDivElement;
+    const isOverlay = overlay.id === 'overlay';
+    if (closeOnOverlayClick && isOverlay) {
+      onClose();
+    }
+  };
+
   return (
-    <div id={styles['dialog-wrapper']}>
-      <div className={cx(styles['dialog-box'], toFadeOut && styles['fade-out'])}>
+    isOpen
+    ? <div css={containerStyle} id={'overlay'} onClick={onClickOverlay}>
+      <div css={boxStyle}>
         {children}
       </div>
     </div>
+    : null
   );
 }
+
+export const DialogSample = () => {
+  const [open, setOpen] = useState(false);
+  const onClose = () => {
+    setOpen(false);
+  };
+
+  return (<div>
+    <button onClick={() => {setOpen(true)}}>Click to open</button>
+    <ReactDialog isOpen={open} onClose={onClose}>
+      <div>Check</div>
+      <button onClick={onClose}>click to close</button>
+    </ReactDialog>
+  </div>);
+};
+
+export const ClickOverlaySample = () => {
+  const [open, setOpen] = useState(false);
+  const onClose = () => {
+    setOpen(false);
+  };
+
+  return (<div>
+    <button onClick={() => {setOpen(true)}}>Click to open</button>
+    <ReactDialog isOpen={open} onClose={onClose} closeOnOverlayClick={true}>
+      <div>Check</div>
+      <button onClick={onClose}>click to close</button>
+    </ReactDialog>
+  </div>);
+};
