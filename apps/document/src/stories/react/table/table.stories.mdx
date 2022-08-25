@@ -23,7 +23,15 @@ export interface TableBaseProps {
 
 ```jsx
 import { useTable,Column } from 'react-table'
-import * as T from '@paintbox/react-table';
+import {
+    StyledTable,
+    StyledThead,
+    StyledHeadTR,
+    StyledTH,
+    StyledTbody,
+    StyledBodyTR,
+    StyledTD
+} from '@paintbox/react-table';
 
 export const Sample = () => {
   const data = React.useMemo(
@@ -66,31 +74,31 @@ export const Sample = () => {
 
   return (
     // apply the table props
-    <T.StyledTable {...getTableProps()}>
-      <T.StyledThead>
+    <StyledTable {...getTableProps()}>
+      <StyledThead>
         {
           // Loop over the header rows
           headerGroups.map((headerGroup) => (
             // Apply the header row props
-            <T.StyledHeadTR {...headerGroup.getHeaderGroupProps()}>
+            <StyledHeadTR {...headerGroup.getHeaderGroupProps()}>
               {
                 // Loop over the headers in each row
                 headerGroup.headers.map((column) => (
                   // Apply the header cell props
-                  <T.StyledTH {...column.getHeaderProps()}>
+                  <StyledTH {...column.getHeaderProps()}>
                     {
                       // Render the header
                       column.render('Header')
                     }
-                  </T.StyledTH>
+                  </StyledTH>
                 ))
               }
-            </T.StyledHeadTR>
+            </StyledHeadTR>
           ))
         }
-      </T.StyledThead>
+      </StyledThead>
       {/* Apply the table body props */}
-      <T.StyledTbody {...getTableBodyProps()}>
+      <StyledTbody {...getTableBodyProps()}>
         {
           // Loop over the table rows
           rows.map((row) => {
@@ -98,27 +106,27 @@ export const Sample = () => {
             prepareRow(row);
             return (
               // Apply the row props
-              <T.StyledBodyTR {...row.getRowProps()}>
+              <StyledBodyTR {...row.getRowProps()}>
                 {
                   // Loop over the rows cells
                   row.cells.map((cell) => {
                     // Apply the cell props
                     return (
-                      <T.StyledTD {...cell.getCellProps()}>
+                      <StyledTD {...cell.getCellProps()}>
                         {
                           // Render the cell contents
                           cell.render('Cell')
                         }
-                      </T.StyledTD>
+                      </StyledTD>
                     );
                   })
                 }
-              </T.StyledBodyTR>
+              </StyledBodyTR>
             );
           })
         }
-      </T.StyledTbody>
-    </T.StyledTable>
+      </StyledTbody>
+    </StyledTable>
   );
 };
 ```
