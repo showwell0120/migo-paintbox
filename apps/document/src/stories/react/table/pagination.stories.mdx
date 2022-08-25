@@ -1,0 +1,64 @@
+import { Meta, Canvas, Story } from '@storybook/addon-docs/blocks';
+
+import { PaginationSample } from '@paintbox/react-pagination';
+
+<Meta title="React/Table/Pagination" />
+
+# Pagination
+
+> 換頁元件。以控制元件的方式實作，提供以下 props－
+
+```javascript
+export interface PageParams {
+  page: number;   // 目前的頁數
+  limit: number;  // 一頁顯示的筆數
+}
+
+/* eslint-disable-next-line */
+export interface ReactPaginationProps {
+  pageParams: PageParams;                 // data
+  total: number;                          // 總筆數
+  onPageChange: (page: number) => void;   // event handler
+}
+```
+
+## Mockup
+
+- [Billing System on Figma](https://www.figma.com/file/rvTsTJLCarPAEYvdXQuRDY/Billing-System---1.0.0?node-id=5284%3A14144)
+
+## Usage 
+
+```jsx
+import { ReactPagination } from '@paintbox/react-pagination';
+
+export const Sample = () => {
+  const defaultPageParams: PageParams = {
+    limit: 10,
+    page: 0,
+  };
+
+  const [pageParams, setPageParams] =
+    React.useState<PageParams>(defaultPageParams);
+
+  const handlePageChange = (page: number) =>
+    setPageParams({ ...pageParams, page });
+
+  return (
+    <ReactPagination
+      pageParams={pageParams}
+      total={1234}
+      onPageChange={handlePageChange}
+    />
+  );
+};
+```
+
+## Stories
+
+### Default
+
+<Canvas>
+  <Story name="Default">
+    <PaginationSample />
+  </Story>
+</Canvas>
