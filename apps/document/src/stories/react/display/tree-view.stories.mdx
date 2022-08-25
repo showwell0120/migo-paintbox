@@ -1,0 +1,81 @@
+import { Meta, Canvas, Story } from '@storybook/addon-docs/blocks';
+import { ReactTreeView, TreeViewSample, TreeViewWithIconSample } from '@paintbox/react-tree-view';
+
+<Meta title="React/Display/TreeView" />
+
+# TreeView
+
+> 樹狀結構。提供以下 prop -
+
+```javascript
+export interface ItemType {
+  id: string;
+  name: string;
+  icon?: React.ReactNode;
+  info?: string;
+  children?: Array<ItemType>;
+}
+
+export interface ReactTreeViewProps {
+  items: Array<ItemType>;                 // 樹狀結構的資料
+  selectedTab: string;                    // 被點選的單一節點
+  depth?: number;                         // 樹狀結構的階層深度
+  onSelectTab?: (item: ItemType) => void; // 處理選擇節點的 function
+}
+```
+
+## Usage
+
+```javascript
+import { ReactTreeView } from '@paintbox/react-tree-view';
+
+export const TreeViewSample = () => {
+  const items = [
+    {
+      id: '1',
+      name: 'Test 1',
+    },
+    {
+      id: '2',
+      name: 'Test 2',
+      children: [
+        {
+          id: '3',
+          name: 'Test 3',
+        },
+      ],
+    },
+  ];
+
+  const [tab, setTab] = useState('Test 1');
+  const handleTab = (t: ItemType) => {
+    setTab(t.name);
+  };
+
+  return (<div style={{width: '300px'}}>
+    <ReactTreeView
+      items={items}
+      selectedTab={tab}
+      onSelectTab={handleTab}
+    />
+  </div>);
+};
+```
+
+## Stories
+
+### Default
+
+<Canvas>
+  <Story name="Default">
+    <TreeViewSample />
+  </Story>
+</Canvas>
+
+### With icon
+
+<Canvas>
+  <Story name="With icon">
+    <TreeViewWithIconSample />
+  </Story>
+</Canvas>
