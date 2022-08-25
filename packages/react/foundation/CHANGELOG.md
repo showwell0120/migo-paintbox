@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.3.0](https://gitlab.migoinc.com/migotv/paintbox/compare/react-foundation@1.2.0...react-foundation@1.3.0) (2022-08-25)
+
+
+### Features
+
+* **react-foundation:** add gray css variables ([19cc628](https://gitlab.migoinc.com/migotv/paintbox/commit/19cc628932e8766066b17d4d7c45810282bbfb94))
+
 ## [1.2.0](https://gitlab.migoinc.com/migotv/paintbox/compare/react-foundation@1.1.3...react-foundation@1.2.0) (2022-08-24)
 
 
