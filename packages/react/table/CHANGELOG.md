@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.1.0](https://gitlab.migoinc.com/migotv/paintbox/compare/react-table@1.0.2...react-table@1.1.0) (2022-08-25)
+
+
+### Features
+
+* **react-table:** add pagination import ([e2db80e](https://gitlab.migoinc.com/migotv/paintbox/commit/e2db80e92150f5d70566af4c123bbb27848fcbe7))
+
 ### [1.0.2](https://gitlab.migoinc.com/migotv/paintbox/compare/react-table@1.0.1...react-table@1.0.2) (2022-08-25)
 
 
