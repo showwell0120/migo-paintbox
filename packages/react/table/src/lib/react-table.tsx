@@ -13,6 +13,7 @@ import {
 export interface TableBaseProps {
   children: React.ReactNode;
   className?: string;
+  onClick?: () => void;
 }
 
 /* eslint-disable-next-line */
