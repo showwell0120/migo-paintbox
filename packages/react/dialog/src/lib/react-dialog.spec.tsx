@@ -4,7 +4,11 @@ import { ReactDialog } from './react-dialog';
 
 describe('ReactDialog', () => {
   it('should render successfully', () => {
-    const { baseElement } = render(<ReactDialog />);
+    
+    const { baseElement } = render(
+    // eslint-disable-next-line @typescript-eslint/no-empty-function
+    <ReactDialog isOpen={true} onClose={() => {}} />
+    );
     expect(baseElement).toBeTruthy();
   });
 });
