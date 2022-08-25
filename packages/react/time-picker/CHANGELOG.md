@@ -2,6 +2,20 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [2.2.0](https://gitlab.migoinc.com/migotv/paintbox/compare/react-time-picker@2.1.0...react-time-picker@2.2.0) (2022-08-24)
+
+
+### Bug Fixes
+
+* **util-i18n:** add nx targets ([a72a158](https://gitlab.migoinc.com/migotv/paintbox/commit/a72a1580653a2e635c97ca894663b8ffe4b4b912))
+
+## [2.1.0](https://gitlab.migoinc.com/migotv/paintbox/compare/react-time-picker@2.0.13...react-time-picker@2.1.0) (2022-08-24)
+
+
+### Bug Fixes
+
+* **react-form:** correct import | remove default export ([442cc2b](https://gitlab.migoinc.com/migotv/paintbox/commit/442cc2b6bfad06a3837e524e5aac914156c4ff0c))
+
 ### [2.0.13](https://gitlab.migoinc.com/migotv/paintbox/compare/react-time-picker@2.0.12...react-time-picker@2.0.13) (2022-08-17)
 
 

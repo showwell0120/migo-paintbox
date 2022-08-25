@@ -1,6 +1,7 @@
 export * from './const';
 export * from './box-arrow';
 export * from './caret';
+export * from './chevron';
 export * from './media';
 export * from './people';
 export * from './sign';

@@ -1,0 +1,69 @@
+import { Meta, Canvas, Story } from '@storybook/addon-docs/blocks';
+
+import { ReactSelectOption, SelectOptionSample } from '@paintbox/react-select-option';
+
+<Meta title="React/Form/SelectOption" />
+
+# SelectOption
+
+> 下拉選單。以控制元件的方式實作，提供以下 props－
+
+```javascript
+export interface ReactSelectOptionProps {
+  options: OptionItem[];                   // 選項列表
+  option?: OptionItem;                     // 目前選取的選項
+  prefix?: string;                         // <select> 中的前綴字
+
+  onChange: (item: OptionItem) => void;    // 變更選項的 event handler
+}
+
+export interface OptionItem {
+  id: string | number;   // 選項 id
+  name: string;          // 選項名稱
+}
+```
+
+## Mockup
+
+- [Billing System on Figma](https://www.figma.com/file/rvTsTJLCarPAEYvdXQuRDY/Billing-System---1.0.0?node-id=5283%3A13222)
+
+## Usage 
+
+```jsx
+import { ReactSelectOption, OptionItem } from '@paintbox/react-select-option';
+
+const options: OptionItem[] = [
+  {
+    id: 'all',
+    name: 'All',
+  },
+  {
+    id: 'empty',
+    name: 'Empty',
+  },
+];
+
+export const SelectOptionSample = () => {
+  const [selected, setSelected] = React.useState<boolean>();
+  
+  return <ReactSelectOption options={selected} option={selected} onChange={setSelected} />;
+};
+```
+
+## Stories
+
+### Default
+
+<Canvas>
+  <Story name="Default">
+    <SelectOptionSample />
+  </Story>
+</Canvas>
+
+### With Prefix
+
+<Canvas>
+  <Story name="With Prefix">
+    <SelectOptionSample prefix={'Price:'} />
+  </Story>
+</Canvas>

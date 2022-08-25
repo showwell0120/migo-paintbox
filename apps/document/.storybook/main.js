@@ -1,3 +1,4 @@
+const path = require('path');
 const rootMain = require('../../../.storybook/main');
 
 module.exports = {

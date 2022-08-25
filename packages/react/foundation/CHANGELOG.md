@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.2.0](https://gitlab.migoinc.com/migotv/paintbox/compare/react-foundation@1.1.3...react-foundation@1.2.0) (2022-08-24)
+
+
+### Features
+
+* **react-foundation:** add chevron icons ([0fc3d57](https://gitlab.migoinc.com/migotv/paintbox/commit/0fc3d57762eca97c41e6bbb68e762ae97b076f64))
+
 ### [1.1.3](https://gitlab.migoinc.com/migotv/paintbox/compare/react-foundation@1.1.2...react-foundation@1.1.3) (2022-08-12)
 
 ### [1.1.2](https://gitlab.migoinc.com/migotv/paintbox/compare/react-foundation@1.1.1...react-foundation@1.1.2) (2022-08-12)
