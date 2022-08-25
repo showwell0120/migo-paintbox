@@ -35,6 +35,7 @@ specifiers:
   '@types/react': 18.0.14
   '@types/react-datepicker': ^4.4.2
   '@types/react-dom': 18.0.5
+  '@types/react-table': ^7.7.12
   '@types/uuid': ^8.3.4
   '@typescript-eslint/eslint-plugin': 5.30.5
   '@typescript-eslint/parser': 5.30.5
@@ -66,6 +67,7 @@ specifiers:
   react-dom: 18.2.0
   react-error-boundary: ^3.1.4
   react-router-dom: '6'
+  react-table: ^7.8.0
   react-test-renderer: 18.2.0
   regenerator-runtime: 0.13.9
   require-from-string: ^2.0.2
@@ -95,6 +97,7 @@ dependencies:
   react-dom: 18.2.0_react@18.2.0
   react-error-boundary: 3.1.4_react@18.2.0
   react-router-dom: 6.3.0_biqbaboplfbrettd7655fr4n2y
+  react-table: 7.8.0_react@18.2.0
   regenerator-runtime: 0.13.9
   tslib: 2.4.0
   uuid: 8.3.2
@@ -131,6 +134,7 @@ devDependencies:
   '@types/react': 18.0.14
   '@types/react-datepicker': 4.4.2_biqbaboplfbrettd7655fr4n2y
   '@types/react-dom': 18.0.5
+  '@types/react-table': 7.7.12
   '@types/uuid': 8.3.4
   '@typescript-eslint/eslint-plugin': 5.30.5_4kxl66lm5rq3w3uv4rnh73m4am
   '@typescript-eslint/parser': 5.30.5_4hx5bygx4rxgd7xwyndf6ymwce
@@ -5006,6 +5010,12 @@ packages:
 
   /@types/react-syntax-highlighter/11.0.5:
     resolution: {integrity: sha512-VIOi9i2Oj5XsmWWoB72p3KlZoEbdRAcechJa8Ztebw7bDl2YmR+odxIqhtJGp1q2EozHs02US+gzxJ9nuf56qg==}
+    dependencies:
+      '@types/react': 18.0.14
+    dev: true
+
+  /@types/react-table/7.7.12:
+    resolution: {integrity: sha512-bRUent+NR/WwtDGwI/BqhZ8XnHghwHw0HUKeohzB5xN3K2qKWYE5w19e7GCuOkL1CXD9Gi1HFy7TIm2AvgWUHg==}
     dependencies:
       '@types/react': 18.0.14
     dev: true
@@ -15096,6 +15106,14 @@ packages:
       react: 18.2.0
       refractor: 3.6.0
     dev: true
+
+  /react-table/7.8.0_react@18.2.0:
+    resolution: {integrity: sha512-hNaz4ygkZO4bESeFfnfOft73iBUj8K5oKi1EcSHPAibEydfsX2MyU6Z8KCr3mv3C9Kqqh71U+DhZkFvibbnPbA==}
+    peerDependencies:
+      react: ^16.8.3 || ^17.0.0-0 || ^18.0.0
+    dependencies:
+      react: 18.2.0
+    dev: false
 
   /react-test-renderer/18.2.0_react@18.2.0:
     resolution: {integrity: sha512-JWD+aQ0lh2gvh4NM3bBM42Kx+XybOxCpgYK7F8ugAlpaTSnWsX+39Z4XkOykGZAHrjwwTZT3x3KxswVWxHPUqA==}

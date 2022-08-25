@@ -48,6 +48,7 @@
     "@types/react": "18.0.14",
     "@types/react-datepicker": "^4.4.2",
     "@types/react-dom": "18.0.5",
+    "@types/react-table": "^7.7.12",
     "@types/uuid": "^8.3.4",
     "@typescript-eslint/eslint-plugin": "5.30.5",
     "@typescript-eslint/parser": "5.30.5",
@@ -98,6 +99,7 @@
     "react-dom": "18.2.0",
     "react-error-boundary": "^3.1.4",
     "react-router-dom": "6",
+    "react-table": "^7.8.0",
     "regenerator-runtime": "0.13.9",
     "tslib": "^2.4.0",
     "uuid": "^8.3.2"
