@@ -43,6 +43,23 @@
         "jestConfig": "packages/react/ui/jest.config.ts",
         "passWithNoTests": true
       }
+    },
+    "lint-test": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": ["nx lint react-ui", "nx test react-ui"]
+      }
+    },
+    "version": {
+      "executor": "@jscutlery/semver:version",
+      "options": {
+        "preset": "conventional",
+        "tagPrefix": "react-ui@",
+        "postTargets": ["react-ui:build", "react-ui:publish"]
+      }
+    },
+    "publish": {
+      "executor": "ngx-deploy-npm:deploy"
     }
   }
 }

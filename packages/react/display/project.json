@@ -38,6 +38,23 @@
         "jestConfig": "packages/react/display/jest.config.ts",
         "passWithNoTests": true
       }
+    },
+    "lint-test": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": ["nx lint react-display", "nx test react-display"]
+      }
+    },
+    "version": {
+      "executor": "@jscutlery/semver:version",
+      "options": {
+        "preset": "conventional",
+        "tagPrefix": "react-display@",
+        "postTargets": ["react-display:build", "react-display:publish"]
+      }
+    },
+    "publish": {
+      "executor": "ngx-deploy-npm:deploy"
     }
   }
 }
