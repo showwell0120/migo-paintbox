@@ -38,6 +38,23 @@
         "jestConfig": "packages/react/stepper/jest.config.ts",
         "passWithNoTests": true
       }
+    },
+    "lint-test": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": ["nx lint react-stepper", "nx test react-stepper"]
+      }
+    },
+    "version": {
+      "executor": "@jscutlery/semver:version",
+      "options": {
+        "preset": "conventional",
+        "tagPrefix": "react-stepper@",
+        "postTargets": ["react-stepper:build", "react-stepper:publish"]
+      }
+    },
+    "publish": {
+      "executor": "ngx-deploy-npm:deploy"
     }
   }
 }
