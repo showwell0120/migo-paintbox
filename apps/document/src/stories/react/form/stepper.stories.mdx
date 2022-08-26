@@ -1,0 +1,137 @@
+import { Meta, Canvas, Story } from '@storybook/addon-docs/blocks';
+
+import { StepperSample1, StepperSample2 } from '@paintbox/react-stepper';
+
+<Meta title="React/Form/Stepper" />
+
+# Stepper
+
+> 步驟引導式操作的相關元件集合。實作時會需要以下的元件和 Hook－
+
+
+### `<StepGraph />`
+
+通常在 UI 的上方，顯示目前個步驟的狀態。需以下 props－
+
+````javascript
+{
+  stepItems: FormStepItem[];     // 傳入 useFormStep.stepItems
+}
+````
+
+### `<StepContents />`
+
+通常在 UI 的中間，顯示每個步驟的內容。需以下 props－
+
+````javascript
+{
+  stepItems: FormStepItem[];     // 傳入 useFormStep.stepItems
+  children: React.ReactFragment; // 每個步驟要渲染的 JSX，需要按照順序。
+}
+````
+
+### `<StepActions />`
+
+通常在 UI 的下方，會有取消、下一步、確認等 buttons。除了需傳入 `useFormStep` 回傳，還需以下 props－
+
+````javascript
+export interface StepActionsProps extends UseFormStepReturn {
+  onCancel: () => void;  // 點擊取消 button 的 callback
+  onSubmit: () => void;  // 點擊確認 button 的 callback
+  submitName?: string;   // 確認 button 的 wording，預設為 Submit
+}
+````
+
+
+### `useFormStep`
+
+實作步驟切換的資料邏輯。在元件中呼叫 `useFormStep` 時需要傳入預設的資料集合，集合內的物件須符合以下介面－
+
+````javascript
+export type Status = 'current' | 'done' | 'none';
+// current 目前的步驟
+// done 前面已經完成的步驟
+// none 後面還沒完成的步驟
+
+export interface FormStepItem {
+  name: string;        // 步驟的名稱
+  order: number;       // 步驟的順序，從 1 開始
+  status: Status;      // 步驟的狀態。 
+  validated: boolean;  // 是否內容驗證通過，可到下一步
+}
+````
+
+回傳的物件中含有以下－
+
+````javascript
+export interface UseFormStepReturn {
+  isOnFirstStep: boolean;                                 // 是否在第一個步驟
+  isOnLastStep: boolean;                                  // 是否在最後一個步驟
+  stepItems: FormStepItem[];                              // 所有的 step data
+  currStepItem: FormStepItem | undefined;                 // 目前步驟的的 step data
+  onChangeStep: (direction: 'previous' | 'next') => void; // 改變步驟順序的 event handler
+  onValidateStep: (validated: boolean) => void;           // 改變當前步驟驗證狀態的 event handler
+}
+````
+
+
+## Mockup
+
+- [Billing System on Figma](https://www.figma.com/file/rvTsTJLCarPAEYvdXQuRDY/Billing-System---1.0.0?node-id=5499%3A22163)
+
+## Usage 
+
+```jsx
+import { useFormStep } from '@paintbox/react-stepper';
+
+const defaultStepItems: FormStepItem[] = [
+  {
+    name: 'Price',
+    order: 1,
+    status: 'current',
+    validated: true,
+  },
+  {
+    name: 'Publish',
+    order: 2,
+    status: 'none',
+    validated: true,
+  },
+];
+
+export const Sample = () => {
+  const stepProps = useFormStep(defaultStepItems);
+
+  return (
+    <div>
+      <StepGraph stepItems={stepProps.stepItems} />
+      <StepContents stepItems={stepProps.stepItems}>
+        <div>step 1</div>
+        <div>step 2</div>
+      </StepContents>
+      <StepActions
+        {...stepProps}
+        onCancel={() => alert('cancel')}
+        onSubmit={() => alert('submit')}
+      />
+    </div>);
+};
+```
+
+## Stories
+
+### Default
+
+<Canvas>
+  <Story name="Default">
+    <StepperSample1 />
+  </Story>
+</Canvas>
+
+### Need to be Validated
+
+<Canvas>
+  <Story name="Need to be Validated">
+    <StepperSample2 />
+  </Story>
+</Canvas>

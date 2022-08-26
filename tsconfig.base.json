@@ -33,6 +33,7 @@
         "packages/react/select-option/src/index.ts"
       ],
       "@paintbox/react-spinner": ["packages/react/spinner/src/index.ts"],
+      "@paintbox/react-stepper": ["packages/react/stepper/src/index.ts"],
       "@paintbox/react-table": ["packages/react/table/src/index.ts"],
       "@paintbox/react-tag": ["packages/react/tag/src/index.ts"],
       "@paintbox/react-time-picker": [
