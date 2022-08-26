@@ -2,6 +2,8 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [2.0.0](https://gitlab.migoinc.com/migotv/paintbox/compare/react-dialog@1.0.0...react-dialog@2.0.0) (2022-08-26)
+
 ## 1.0.0 (2022-06-07)
 
 
