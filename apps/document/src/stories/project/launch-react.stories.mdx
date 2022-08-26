@@ -369,11 +369,21 @@ bundle_path=/srv/<domain-name>.migoinc-dev.com/public
 
 ```bash
 "scripts": {
-    "deploy.dev": "git stash; pnpm build && cd ansible; ansible-playbook -i hosts evergreen-frontend.yml --limit dev",
-    "deploy.stage": "git stash; pnpm build && cd ansible; ansible-playbook -i hosts evergreen-frontend.yml --limit staging",
-    "deploy.prod": "git stash; pnpm build && cd ansible; ansible-playbook -i hosts evergreen-frontend.yml --limit production"
+    "deploy.dev": "pnpm build && cd ansible; ansible-playbook -i hosts evergreen-frontend.yml --limit dev && git tag dev && git push origin --tags",
+    "deploy.stage": "pnpm build && cd ansible; ansible-playbook -i hosts evergreen-frontend.yml --limit staging && git tag staging && git push origin --tags",
+    "deploy.prod": "pnpm build && cd ansible; ansible-playbook -i hosts evergreen-frontend.yml --limit production && git tag production && git push origin --tags"
 },
 ```
+
+### import `main.scss`
+
+- 如果要使用 paintbox 任一個元件，需要先全域新增 design 相關的樣式
+- 如果沒有安裝 `@paintbox/react-ui`，則需要另外安裝 `@paintbox/react-foundation`
+- 在 `apps/main/src/styles.scss` 中 import
+
+````css
+@import '~@paintbox/react-<foundation | ui>/palettes/main.scss';
+````
 
 ## 參考專案
 
