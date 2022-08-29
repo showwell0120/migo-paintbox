@@ -4,7 +4,7 @@ import { ReactToast } from './react-toast';
 
 describe('ReactToast', () => {
   it('should render successfully', () => {
-    const { baseElement } = render(<ReactToast message="test" />);
+    const { baseElement } = render(<ReactToast variant={'warn'}>Test</ReactToast>);
     expect(baseElement).toBeTruthy();
   });
 });
