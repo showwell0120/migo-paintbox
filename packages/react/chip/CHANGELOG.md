@@ -2,6 +2,8 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [1.0.8](https://gitlab.migoinc.com/migotv/paintbox/compare/react-chip@1.0.7...react-chip@1.0.8) (2022-08-29)
+
 ### [1.0.7](https://gitlab.migoinc.com/migotv/paintbox/compare/react-chip@1.0.6...react-chip@1.0.7) (2022-08-29)
 
 ### [1.0.6](https://gitlab.migoinc.com/migotv/paintbox/compare/react-chip@1.0.5...react-chip@1.0.6) (2022-08-29)
