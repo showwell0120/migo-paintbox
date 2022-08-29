@@ -50,7 +50,7 @@ const xAxisStyle = {
   left: 'left: 36px;',
 };
 
-const Container = styled.div(
+const Container = styled.div<cssProps>(
   baseStyle,
   (props: cssProps) => {
     return css`

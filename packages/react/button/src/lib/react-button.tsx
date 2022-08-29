@@ -89,7 +89,7 @@ const disableStyle = css`
   border: none;
 `;
 
-const Button = styled.button(
+const Button = styled.button<colorProps>(
   baseStyle,
   (props: colorProps) => {
     const colorKey: colorKeyType = `${props.color}-${props.variant}`;
