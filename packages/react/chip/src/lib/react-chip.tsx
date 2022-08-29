@@ -113,16 +113,16 @@ export const ReactChip: React.FC<ReactChipProps> = ({
   clickable = false,
   onClick,
 }) => {
-  const colors = getColor(color);
+  const { text: textColor, background: backgroundColor } = getColor(color);
 
   return (
     <div onClick={clickable && onClick ? onClick : undefined}>
       <div
-        css={[containerStyle, clickable && clickableStyle, {backgroundColor: colors.background}]}
+        css={[containerStyle, clickable && clickableStyle, {backgroundColor}]}
       >
-        {dot && (<Dot backgroundColor={colors.text} />)}
-        {icon && (<Icon color={colors.text}>{icon}</Icon>)}
-        <Text color={colors.text}>{children}</Text>
+        {dot && (<Dot backgroundColor={textColor} />)}
+        {icon && (<Icon color={textColor}>{icon}</Icon>)}
+        <Text color={textColor}>{children}</Text>
       </div>
     </div>
   );
