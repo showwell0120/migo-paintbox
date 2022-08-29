@@ -1,12 +1,6 @@
 import styled from '@emotion/styled';
-import { css } from '@emotion/react';
 
-type cssProp = { 
-  backgroundColor?: string,
-  color?: string,
-}
-
-const containerStyle = css`
+const Container = styled.div<{ backgroundColor: string, clickable: boolean }>`
   min-width: 70px;
   border-radius: 16px;
   background-color: $base-color;
@@ -15,17 +9,14 @@ const containerStyle = css`
   justify-content: flex-start;
   align-items: center;
   padding: 2px 12px;
-  cursor: default;
-`;
-
-const clickableStyle = css`
-  cursor: pointer;
+  cursor: ${(props: { clickable: boolean }) => props.clickable ? 'pointer' : 'default'};
+  background-color: ${(props: { backgroundColor: string }) => props.backgroundColor};
 `;
 
 const bgColor = 'rgba(0, 0, 0, 0.08)';
 const textColor = '#000';
 
-const Dot = styled.div(
+const Dot = styled.div<{ backgroundColor: string }>(
   {
     width: '8px',
     height: '8px',
@@ -33,28 +24,28 @@ const Dot = styled.div(
     backgroundColor: bgColor,
     marginRight: '5px'
   },
-  (props: cssProp) => ({
+  (props: { backgroundColor: string }) => ({
     backgroundColor: props.backgroundColor,
   })
 );
 
-const Icon = styled.div(
+const Icon = styled.div<{ color: string }>(
   {
     color: textColor,
     marginRight: '5px',
   },
-  (props: cssProp) => ({
+  (props: { color: string }) => ({
     color: props.color,
   })
 );
 
-const Text = styled.div(
+const Text = styled.div<{ color: string }>(
   {
     zIndex: '2',
     fontSize: '14px',
     lineHeight: '1.5'
   },
-  (props: cssProp) => ({
+  (props: { color: string }) => ({
     color: props.color,
   })
 );
@@ -117,13 +108,11 @@ export const ReactChip: React.FC<ReactChipProps> = ({
 
   return (
     <div onClick={clickable && onClick ? onClick : undefined}>
-      <div
-        css={[containerStyle, clickable && clickableStyle, {backgroundColor}]}
-      >
+      <Container clickable={clickable} backgroundColor={backgroundColor}>
         {dot && (<Dot backgroundColor={textColor} />)}
         {icon && (<Icon color={textColor}>{icon}</Icon>)}
         <Text color={textColor}>{children}</Text>
-      </div>
+      </Container>
     </div>
   );
 };
