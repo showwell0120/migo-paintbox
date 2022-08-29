@@ -36,7 +36,7 @@ export function StyledTable({
               border-collapse: separate;
               border-spacing: 0;
               width: inherit;
-              border: 1px solid #adb5bd;
+              border: 1px solid var(--gray-500);
             `,
             className
           )}

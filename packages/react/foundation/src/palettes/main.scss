@@ -66,6 +66,13 @@ $palettes: (
 
 
 // define accent css variables in root and body
+:root {
+    $colors: map-get($palettes, gray);
+    @each $name, $color in $colors {
+        --gray-#{$name}: #{$color};
+    }
+}
+
 :root, body[data-theme="light"] {
     $colors: map-get($palettes, 'accent-light');
     @each $name, $color in $colors {

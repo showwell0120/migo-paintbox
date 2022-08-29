@@ -25,13 +25,16 @@
       ],
       "@paintbox/react-dialog": ["packages/react/dialog/src/index.ts"],
       "@paintbox/react-display": ["packages/react/display/src/index.ts"],
+      "@paintbox/react-feedback": ["packages/react/feedback/src/index.ts"],
       "@paintbox/react-form": ["packages/react/form/src/index.ts"],
       "@paintbox/react-foundation": ["packages/react/foundation/src/index.ts"],
+      "@paintbox/react-pagination": ["packages/react/pagination/src/index.ts"],
       "@paintbox/react-search-bar": ["packages/react/search-bar/src/index.ts"],
       "@paintbox/react-select-option": [
         "packages/react/select-option/src/index.ts"
       ],
       "@paintbox/react-spinner": ["packages/react/spinner/src/index.ts"],
+      "@paintbox/react-stepper": ["packages/react/stepper/src/index.ts"],
       "@paintbox/react-table": ["packages/react/table/src/index.ts"],
       "@paintbox/react-tag": ["packages/react/tag/src/index.ts"],
       "@paintbox/react-time-picker": [

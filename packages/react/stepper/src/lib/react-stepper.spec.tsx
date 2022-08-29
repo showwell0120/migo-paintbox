@@ -1,10 +1,10 @@
 import { render } from '@testing-library/react';
 
-import ReactDisplay from './react-display';
+import ReactStepper from './react-stepper';
 
-describe('ReactDisplay', () => {
+describe('ReactStepper', () => {
   it('should render successfully', () => {
-    const { baseElement } = render(<ReactDisplay />);
+    const { baseElement } = render(<ReactStepper />);
     expect(baseElement).toBeTruthy();
   });
 });

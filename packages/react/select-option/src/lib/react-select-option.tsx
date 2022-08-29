@@ -23,7 +23,7 @@ const Container = styled.div<{ prefixWidth: string }>`
   letter-spacing: 0.15px;
   background: var(--white);
   border-radius: 4px;
-  border: 1px solid #adb5bd;
+  border: 1px solid var(--gray-500);
   position: relative;
   padding-left: ${(props: { prefixWidth: string }) => props.prefixWidth};
 

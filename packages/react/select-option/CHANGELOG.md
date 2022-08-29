@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [1.0.2](https://gitlab.migoinc.com/migotv/paintbox/compare/react-select-option@1.0.1...react-select-option@1.0.2) (2022-08-25)
+
+
+### Bug Fixes
+
+* **react-table | react-select-option:** replace hard-coded gray style ([c4d0cf8](https://gitlab.migoinc.com/migotv/paintbox/commit/c4d0cf8f37390e5643fe99a2314afb0620266066))
+
 ### [1.0.1](https://gitlab.migoinc.com/migotv/paintbox/compare/react-select-option@1.0.0...react-select-option@1.0.1) (2022-08-24)
 
 ## 1.0.0 (2022-08-24)
