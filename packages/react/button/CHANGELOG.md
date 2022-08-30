@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [1.0.1](https://gitlab.migoinc.com/migotv/paintbox/compare/react-button@1.0.0...react-button@1.0.1) (2022-08-30)
+
+
+### Bug Fixes
+
+* **react-:** update react-button, react-toast css prop type ([3dd83d6](https://gitlab.migoinc.com/migotv/paintbox/commit/3dd83d6579e514fe51e73219d4f5f7a4ebf15d68))
+
 ### [1.0.2](https://gitlab.migoinc.com/migotv/paintbox/compare/react-button@1.0.1...react-button@1.0.2) (2022-08-29)
 
 ### [1.0.1](https://gitlab.migoinc.com/migotv/paintbox/compare/react-button@1.0.0...react-button@1.0.1) (2022-08-29)
