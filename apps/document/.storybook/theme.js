@@ -4,5 +4,5 @@ export default create({
   base: 'light',
   brandTitle: '🎨 Paintbox | Web Component Library',
   brandUrl: 'https://gitlab.migoinc.com/migotv/paintbox',
-  brandTarget: '_self',
+  brandTarget: '_blank',
 });
