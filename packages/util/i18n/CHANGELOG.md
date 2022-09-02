@@ -2,6 +2,8 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [1.0.3](https://gitlab.migoinc.com/migotv/paintbox/compare/util-i18n@1.0.2...util-i18n@1.0.3) (2022-09-02)
+
 ### [1.0.2](https://gitlab.migoinc.com/migotv/paintbox/compare/util-i18n@1.0.1...util-i18n@1.0.2) (2022-09-02)
 
 ### [1.0.1](https://gitlab.migoinc.com/migotv/paintbox/compare/util-i18n@1.0.0...util-i18n@1.0.1) (2022-09-02)
