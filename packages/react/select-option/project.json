@@ -50,18 +50,25 @@
         ]
       }
     },
+    "publish": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": [
+          "nx build react-select-option",
+          "nx version react-select-option"
+        ],
+        "parallel": false
+      }
+    },
     "version": {
       "executor": "@jscutlery/semver:version",
       "options": {
         "preset": "conventional",
         "tagPrefix": "react-select-option@",
-        "postTargets": [
-          "react-select-option:build",
-          "react-select-option:publish"
-        ]
+        "postTargets": ["react-select-option:deploy"]
       }
     },
-    "publish": {
+    "deploy": {
       "executor": "ngx-deploy-npm:deploy"
     }
   }

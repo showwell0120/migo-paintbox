@@ -134,15 +134,22 @@ npm i -g commitizen
         "commands": ["nx lint <group>-<name>", "nx test <group>-<name>"]
       }
     },
+    "publish": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": ["nx build <group>-<name>", "nx version <group>-<name>"],
+        "parallel": false
+      }
+    },
     "version": {
       "executor": "@jscutlery/semver:version",
       "options": {
         "preset": "conventional",
         "tagPrefix": "<group>-<name>@",
-        "postTargets": ["<group>-<name>:build", "<group>-<name>:publish"]
+        "postTargets": ["<group>-<name>:deploy"]
       }
     },
-    "publish": {
+    "deploy": {
       "executor": "ngx-deploy-npm:deploy"
     }
   }
@@ -192,25 +199,25 @@ pnpm nx affected --target=lint-test
 - `author` 或 `contributors`: 維護者的 email (讓用的人可以知道找誰 report issue)
 - `peerDependencies`: 告訴用的人安裝套件後，需要再裝列舉中的依賴才能正常執行
 
-### 遞增版本 + 建置 + 發布
+### 建置 -> 遞增版本 -> 發布
 
 每個套件的版本號會是獨立的，根據變更的性質跟重要性，來決定遞增的層級。
 
 ```bash
 # 只有套件本身
-pnpm nx version <group>-<name> --preset=conventional --releaseAs=<patch|minor|major>
+pnpm nx publish <group>-<name> --preset=conventional --releaseAs=<patch|minor|major>
 
 # 所有影響到的套件
-pnpm af:<patch|minor|major>
+pnpm af.publish:<pat|min|maj>
 ```
 
 成功的話，會逐步完成以下事情 - 
 
-- 同步遞增所有影響到的套件版本，並且新增對應的 commit 和 git tags。
 - 建置所有套件的 bundle。產出的檔案路徑在 `dist/packages/<group>/<name>/` 下。
+- 同步遞增所有影響到的套件版本，並且新增對應的 commit 和 git tags。
 - 將所有套件發佈到公司內部的 registry。
 
-如果是第一次發布，將 `releaseAs` 參數設為 `major`，讓版號從 1.0.0 開始。
+如果是第一次發布，將 `releaseAs` 參數設為 `major`，讓版號從 `1.0.0` 開始。
 
 ### 更新遠端 Git
 

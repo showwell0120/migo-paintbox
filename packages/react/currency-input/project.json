@@ -50,18 +50,25 @@
         ]
       }
     },
+    "publish": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": [
+          "nx build react-currency-input",
+          "nx version react-currency-input"
+        ],
+        "parallel": false
+      }
+    },
     "version": {
       "executor": "@jscutlery/semver:version",
       "options": {
         "preset": "conventional",
         "tagPrefix": "react-currency-input@",
-        "postTargets": [
-          "react-currency-input:build",
-          "react-currency-input:publish"
-        ]
+        "postTargets": ["react-currency-input:deploy"]
       }
     },
-    "publish": {
+    "deploy": {
       "executor": "ngx-deploy-npm:deploy"
     }
   }

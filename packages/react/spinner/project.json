@@ -45,15 +45,22 @@
         "commands": ["nx lint react-spinner", "nx test react-spinner"]
       }
     },
+    "publish": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": ["nx build react-spinner", "nx version react-spinner"],
+        "parallel": false
+      }
+    },
     "version": {
       "executor": "@jscutlery/semver:version",
       "options": {
         "preset": "conventional",
         "tagPrefix": "react-spinner@",
-        "postTargets": ["react-spinner:build", "react-spinner:publish"]
+        "postTargets": ["react-spinner:deploy"]
       }
     },
-    "publish": {
+    "deploy": {
       "executor": "ngx-deploy-npm:deploy"
     }
   }

@@ -50,15 +50,22 @@
         "commands": ["nx lint react-ui", "nx test react-ui"]
       }
     },
+    "publish": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": ["nx build react-ui", "nx version react-ui"],
+        "parallel": false
+      }
+    },
     "version": {
       "executor": "@jscutlery/semver:version",
       "options": {
         "preset": "conventional",
         "tagPrefix": "react-ui@",
-        "postTargets": ["react-ui:build", "react-ui:publish"]
+        "postTargets": ["react-ui:deploy"]
       }
     },
-    "publish": {
+    "deploy": {
       "executor": "ngx-deploy-npm:deploy"
     }
   }

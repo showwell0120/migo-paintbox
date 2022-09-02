@@ -13,18 +13,6 @@
         "assets": ["packages/util/i18n/*.md"]
       }
     },
-    "publish": {
-      "executor": "@nrwl/workspace:run-commands",
-      "options": {
-        "command": "node tools/scripts/publish.mjs util-i18n {args.ver} {args.tag}"
-      },
-      "dependsOn": [
-        {
-          "projects": "self",
-          "target": "build"
-        }
-      ]
-    },
     "lint": {
       "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],
@@ -43,7 +31,15 @@
     "lint-test": {
       "executor": "@nrwl/workspace:run-commands",
       "options": {
-        "commands": ["nx lint util-i18n", "nx test util-i18n"]
+        "commands": ["nx lint util-i18n", "nx test util-i18n"],
+        "parallel": false
+      }
+    },
+    "publish": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": ["nx build util-i18n", "nx version util-i18n"],
+        "parallel": false
       }
     },
     "version": {
@@ -51,10 +47,10 @@
       "options": {
         "preset": "conventional",
         "tagPrefix": "util-i18n@",
-        "postTargets": ["util-i18n:build", "util-i18n:publish"]
+        "postTargets": ["util-i18n:deploy"]
       }
     },
-    "publish": {
+    "deploy": {
       "executor": "ngx-deploy-npm:deploy"
     }
   },

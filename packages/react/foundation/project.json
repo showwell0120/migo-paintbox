@@ -50,15 +50,25 @@
         "commands": ["nx lint react-foundation", "nx test react-foundation"]
       }
     },
+    "publish": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": [
+          "nx build react-foundation",
+          "nx version react-foundation"
+        ],
+        "parallel": false
+      }
+    },
     "version": {
       "executor": "@jscutlery/semver:version",
       "options": {
         "preset": "conventional",
         "tagPrefix": "react-foundation@",
-        "postTargets": ["react-foundation:build", "react-foundation:publish"]
+        "postTargets": ["react-foundation:deploy"]
       }
     },
-    "publish": {
+    "deploy": {
       "executor": "ngx-deploy-npm:deploy"
     }
   }

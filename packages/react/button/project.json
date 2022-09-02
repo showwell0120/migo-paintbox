@@ -45,15 +45,22 @@
         "commands": ["nx lint react-button", "nx test react-button"]
       }
     },
+    "publish": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": ["nx build react-button", "nx version react-button"],
+        "parallel": false
+      }
+    },
     "version": {
       "executor": "@jscutlery/semver:version",
       "options": {
         "preset": "conventional",
         "tagPrefix": "react-button@",
-        "postTargets": ["react-button:build", "react-button:publish"]
+        "postTargets": ["react-button:deploy"]
       }
     },
-    "publish": {
+    "deploy": {
       "executor": "ngx-deploy-npm:deploy"
     }
   }

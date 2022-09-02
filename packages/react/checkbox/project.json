@@ -45,15 +45,22 @@
         "commands": ["nx lint react-checkbox", "nx test react-checkbox"]
       }
     },
+    "publish": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": ["nx build react-checkbox", "nx version react-checkbox"],
+        "parallel": false
+      }
+    },
     "version": {
       "executor": "@jscutlery/semver:version",
       "options": {
         "preset": "conventional",
         "tagPrefix": "react-checkbox@",
-        "postTargets": ["react-checkbox:build", "react-checkbox:publish"]
+        "postTargets": ["react-checkbox:deploy"]
       }
     },
-    "publish": {
+    "deploy": {
       "executor": "ngx-deploy-npm:deploy"
     }
   }

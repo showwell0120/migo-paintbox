@@ -45,15 +45,22 @@
         "commands": ["nx lint react-chip", "nx test react-chip"]
       }
     },
+    "publish": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": ["nx build react-chip", "nx version react-chip"],
+        "parallel": false
+      }
+    },
     "version": {
       "executor": "@jscutlery/semver:version",
       "options": {
         "preset": "conventional",
         "tagPrefix": "react-chip@",
-        "postTargets": ["react-chip:build", "react-chip:publish"]
+        "postTargets": ["react-chip:deploy"]
       }
     },
-    "publish": {
+    "deploy": {
       "executor": "ngx-deploy-npm:deploy"
     }
   }

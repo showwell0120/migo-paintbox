@@ -45,15 +45,25 @@
         "commands": ["nx lint react-search-bar", "nx test react-search-bar"]
       }
     },
+    "publish": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": [
+          "nx build react-search-bar",
+          "nx version react-search-bar"
+        ],
+        "parallel": false
+      }
+    },
     "version": {
       "executor": "@jscutlery/semver:version",
       "options": {
         "preset": "conventional",
         "tagPrefix": "react-search-bar@",
-        "postTargets": ["react-search-bar:build", "react-search-bar:publish"]
+        "postTargets": ["react-search-bar:deploy"]
       }
     },
-    "publish": {
+    "deploy": {
       "executor": "ngx-deploy-npm:deploy"
     }
   }

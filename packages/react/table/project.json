@@ -45,15 +45,22 @@
         "commands": ["nx lint react-table", "nx test react-table"]
       }
     },
+    "publish": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": ["nx build react-table", "nx version react-table"],
+        "parallel": false
+      }
+    },
     "version": {
       "executor": "@jscutlery/semver:version",
       "options": {
         "preset": "conventional",
         "tagPrefix": "react-table@",
-        "postTargets": ["react-table:build", "react-table:publish"]
+        "postTargets": ["react-table:deploy"]
       }
     },
-    "publish": {
+    "deploy": {
       "executor": "ngx-deploy-npm:deploy"
     }
   }

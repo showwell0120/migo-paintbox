@@ -45,15 +45,22 @@
         "commands": ["nx lint react-feedback", "nx test react-feedback"]
       }
     },
+    "publish": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": ["nx build react-feedback", "nx version react-feedback"],
+        "parallel": false
+      }
+    },
     "version": {
       "executor": "@jscutlery/semver:version",
       "options": {
         "preset": "conventional",
         "tagPrefix": "react-feedback@",
-        "postTargets": ["react-feedback:build", "react-feedback:publish"]
+        "postTargets": ["react-feedback:deploy"]
       }
     },
-    "publish": {
+    "deploy": {
       "executor": "ngx-deploy-npm:deploy"
     }
   }

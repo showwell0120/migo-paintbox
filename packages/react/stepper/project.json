@@ -45,15 +45,22 @@
         "commands": ["nx lint react-stepper", "nx test react-stepper"]
       }
     },
+    "publish": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": ["nx build react-stepper", "nx version react-stepper"],
+        "parallel": false
+      }
+    },
     "version": {
       "executor": "@jscutlery/semver:version",
       "options": {
         "preset": "conventional",
         "tagPrefix": "react-stepper@",
-        "postTargets": ["react-stepper:build", "react-stepper:publish"]
+        "postTargets": ["react-stepper:deploy"]
       }
     },
-    "publish": {
+    "deploy": {
       "executor": "ngx-deploy-npm:deploy"
     }
   }

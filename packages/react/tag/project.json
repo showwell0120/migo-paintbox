@@ -44,15 +44,22 @@
         "commands": ["nx lint react-tag", "nx test react-tag"]
       }
     },
+    "publish": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": ["nx build react-tag", "nx version react-tag"],
+        "parallel": false
+      }
+    },
     "version": {
       "executor": "@jscutlery/semver:version",
       "options": {
         "preset": "conventional",
-        "tagPrefix": "${projectName}@",
-        "postTargets": ["react-tag:build", "react-tag:publish"]
+        "tagPrefix": "react-tag@",
+        "postTargets": ["react-tag:deploy"]
       }
     },
-    "publish": {
+    "deploy": {
       "executor": "ngx-deploy-npm:deploy"
     }
   }

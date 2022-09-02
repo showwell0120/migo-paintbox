@@ -45,15 +45,22 @@
         "commands": ["nx lint react-display", "nx test react-display"]
       }
     },
+    "publish": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": ["nx build react-display", "nx version react-display"],
+        "parallel": false
+      }
+    },
     "version": {
       "executor": "@jscutlery/semver:version",
       "options": {
         "preset": "conventional",
         "tagPrefix": "react-display@",
-        "postTargets": ["react-display:build", "react-display:publish"]
+        "postTargets": ["react-display:deploy"]
       }
     },
-    "publish": {
+    "deploy": {
       "executor": "ngx-deploy-npm:deploy"
     }
   }

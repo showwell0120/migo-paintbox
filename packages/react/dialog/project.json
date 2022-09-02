@@ -45,15 +45,22 @@
         "commands": ["nx lint react-dialog", "nx test react-dialog"]
       }
     },
+    "publish": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": ["nx build react-dialog", "nx version react-dialog"],
+        "parallel": false
+      }
+    },
     "version": {
       "executor": "@jscutlery/semver:version",
       "options": {
         "preset": "conventional",
         "tagPrefix": "react-dialog@",
-        "postTargets": ["react-dialog:build", "react-dialog:publish"]
+        "postTargets": ["react-dialog:deploy"]
       }
     },
-    "publish": {
+    "deploy": {
       "executor": "ngx-deploy-npm:deploy"
     }
   }

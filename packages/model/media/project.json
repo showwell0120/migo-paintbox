@@ -34,15 +34,22 @@
         "commands": ["nx lint model-media", "nx test model-media"]
       }
     },
+    "publish": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": ["nx build model-media", "nx version model-media"],
+        "parallel": false
+      }
+    },
     "version": {
       "executor": "@jscutlery/semver:version",
       "options": {
         "preset": "conventional",
         "tagPrefix": "model-media@",
-        "postTargets": ["model-media:build", "model-media:publish"]
+        "postTargets": ["model-media:deploy"]
       }
     },
-    "publish": {
+    "deploy": {
       "executor": "ngx-deploy-npm:deploy"
     }
   },
