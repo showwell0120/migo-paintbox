@@ -15,14 +15,14 @@ export const coreData: CoreProps = {
 };
 
 describe('Core', () => {
-  it('Get displayName as same as name', () => {
-    const instance = new Core({ ...coreData, name: 'Titanic' });
-    expect(instance.displayName).toEqual('Titanic');
-  });
-  it('Get displayName as <undefinedMark> if name is not provided', () => {
-    const instance = new Core({ ...coreData });
-    expect(instance.displayName).toEqual(Core.undefinedMark);
-  });
+  // it('Get displayName as same as name', () => {
+  //   const instance = new Core({ ...coreData, name: 'Titanic' });
+  //   expect(instance.displayName).toEqual('Titanic');
+  // });
+  // it('Get displayName as <undefinedMark> if name is not provided', () => {
+  //   const instance = new Core({ ...coreData });
+  //   expect(instance.displayName).toEqual(Core.undefinedMark);
+  // });
   it('Get dpcp as licensor/cpCode', () => {
     const instance = new Core({
       ...coreData,

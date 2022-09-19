@@ -18,6 +18,10 @@ export class Episode extends Core implements EpisodeProps {
     return Core.getDisplayNumber(this.number, 'EP');
   }
 
+  get displayName() {
+    return this.name ? this.name : `EP${this.number}`;
+  }
+
   static copy(instance: Episode) {
     return new Episode({
       id: instance.id,

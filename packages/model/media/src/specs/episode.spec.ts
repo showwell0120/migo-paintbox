@@ -14,6 +14,10 @@ describe('Episode', () => {
     const instance = new Episode({ ...episodeData, number: 1 });
     expect(instance.displayNumber).toEqual('EP1');
   });
+  it('Get displayName as S<number>', () => {
+    const instance = new Episode({ ...episodeData, number: 1 });
+    expect(instance.displayName).toEqual('EP1');
+  });
   it('Get displayNumber as undefinedMark if number is not provided', () => {
     const instance = new Episode({ ...episodeData });
     expect(instance.displayNumber).toEqual(Core.undefinedMark);

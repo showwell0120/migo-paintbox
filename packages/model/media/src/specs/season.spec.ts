@@ -22,6 +22,10 @@ describe('Season', () => {
     const instance = new Season(seasonData);
     expect(instance.displayNumber).toEqual('S1');
   });
+  it('Get displayName as S<number> for default', () => {
+    const instance = new Season(seasonData);
+    expect(instance.displayName).toEqual('S1');
+  });
   it('Get episodeCount as total episodes', () => {
     const instance = new Season(seasonData);
     expect(instance.episodeCount).toEqual(1);
