@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [1.4.1](https://gitlab.migoinc.com/migotv/paintbox/compare/model-media@1.4.0...model-media@1.4.1) (2022-09-19)
+
+
+### Bug Fixes
+
+* **model-media:** update default displayName for season and episode ([6070efb](https://gitlab.migoinc.com/migotv/paintbox/commit/6070efb272a646f8a3f8cb4ca4d5eb3a19109fb8))
+
 ## [1.4.0](https://gitlab.migoinc.com/migotv/paintbox/compare/model-media@1.3.4...model-media@1.4.0) (2022-07-07)
 
 
