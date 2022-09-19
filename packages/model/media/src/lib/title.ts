@@ -102,6 +102,10 @@ export class Title extends Core implements TitleProps {
   public listPrice = null;
   public discountPrice = null;
 
+  get displayName() {
+    return this.name ? this.name : '';
+  }
+
   get seasonCount() {
     return this.seasons.length;
   }
