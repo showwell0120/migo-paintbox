@@ -29,6 +29,10 @@ export class Season extends Core implements SeasonProps {
     return Core.getDisplayNumber(this.number, 'S');
   }
 
+  get displayName() {
+    return this.name ? this.name : `S${this.number}`;
+  }
+
   get episodeCount() {
     return this.episodes.length;
   }

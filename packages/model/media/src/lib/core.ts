@@ -61,9 +61,9 @@ export class Core implements CoreProps {
       : '';
   }
 
-  get displayName() {
-    return this.name ? this.name : Core.undefinedMark;
-  }
+  // get displayName() {
+  //   return this.name ? this.name : Core.undefinedMark;
+  // }
 
   get dpcp() {
     return `${this.licensor ? this.licensor : Core.undefinedMark}/${
