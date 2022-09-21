@@ -1,6 +1,6 @@
 {
   "name": "@paintbox/react-search-bar",
-  "version": "2.0.2",
+  "version": "0.1.0",
   "author": "alison@migo.io",
   "peerDependencies": {
     "lodash": "^4.17.21",
