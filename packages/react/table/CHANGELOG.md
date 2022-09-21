@@ -2,6 +2,8 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.3.0](https://gitlab.migoinc.com/migotv/paintbox/compare/react-table@1.2.0...react-table@1.3.0) (2022-09-21)
+
 ## [1.2.0](https://gitlab.migoinc.com/migotv/paintbox/compare/react-table@1.1.0...react-table@1.2.0) (2022-09-21)
 
 
