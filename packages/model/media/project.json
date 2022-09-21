@@ -10,7 +10,8 @@
         "outputPath": "dist/packages/model/media",
         "main": "packages/model/media/src/index.ts",
         "tsConfig": "packages/model/media/tsconfig.lib.json",
-        "assets": ["packages/model/media/*.md"]
+        "assets": ["packages/model/media/*.md"],
+        "buildableProjectDepsInPackageJsonType": "dependencies"
       }
     },
     "lint": {
