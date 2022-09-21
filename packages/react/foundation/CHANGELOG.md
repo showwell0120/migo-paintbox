@@ -2,6 +2,8 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.5.0](https://gitlab.migoinc.com/migotv/paintbox/compare/react-foundation@1.4.0...react-foundation@1.5.0) (2022-09-21)
+
 ## [1.4.0](https://gitlab.migoinc.com/migotv/paintbox/compare/react-foundation@1.3.0...react-foundation@1.4.0) (2022-09-21)
 
 
