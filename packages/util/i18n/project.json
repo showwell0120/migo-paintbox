@@ -10,7 +10,8 @@
         "outputPath": "dist/packages/util/i18n",
         "main": "packages/util/i18n/src/index.ts",
         "tsConfig": "packages/util/i18n/tsconfig.lib.json",
-        "assets": ["packages/util/i18n/*.md"]
+        "assets": ["packages/util/i18n/*.md"],
+        "buildableProjectDepsInPackageJsonType": "dependencies"
       }
     },
     "lint": {

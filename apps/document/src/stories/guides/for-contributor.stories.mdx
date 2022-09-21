@@ -120,9 +120,18 @@ npm i -g commitizen
 | `util/` | 靜態、無狀態的方法集合 | `pnpm util:add --name=<name> --importPath=@paintbox/util-<name>` |
 | `helper/` | 有狀態的方法類別 | `pnpm helper:add --name=<name> --importPath=@paintbox/helper-<name>` |
 
-### 加入設定
+### `project.json` 設定
 
-在套件目錄中的 `project.json` 新增以下 targets，並且把 `<group>-<name>` 取代為套件名稱。
+- 在 `build` target 的 `options` 中加入以下設定－
+
+```json
+{
+  // "assets": ...,
+  "buildableProjectDepsInPackageJsonType": "dependencies"
+}
+```
+
+- 新增以下 targets，並且把 `<group>-<name>` 取代為套件名稱。
 
 ```json
 {
@@ -193,11 +202,6 @@ pnpm nx affected --target=lint-test
 在 `app/document/src/stories/` 中對應的目錄中，新增 `xxx.stories.tsx` 來寫元件的 story；或是新增 `<group>-<name.>stories.mdx` 來寫文件。
 
 完成以後，可以執行 `pnpm doc:serve` 開啟本機的 Storybook 瀏覽。沒問題的話建議至少提交一個 commit。
-
-### 在 `package.json` 新增欄位
-
-- `author` 或 `contributors`: 維護者的 email (讓用的人可以知道找誰 report issue)
-- `peerDependencies`: 告訴用的人安裝套件後，需要再裝列舉中的依賴才能正常執行
 
 ### 建置 -> 遞增版本 -> 發布
 
