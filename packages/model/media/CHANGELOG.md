@@ -2,6 +2,8 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.6.0](https://gitlab.migoinc.com/migotv/paintbox/compare/model-media@1.5.0...model-media@1.6.0) (2022-09-21)
+
 ## [1.5.0](https://gitlab.migoinc.com/migotv/paintbox/compare/model-media@1.4.2...model-media@1.5.0) (2022-09-21)
 
 ### [1.4.2](https://gitlab.migoinc.com/migotv/paintbox/compare/model-media@1.4.1...model-media@1.4.2) (2022-09-19)
