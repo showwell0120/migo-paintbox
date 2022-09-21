@@ -26,7 +26,8 @@
             "input": "packages/react/foundation/src/palettes",
             "output": "palettes/"
           }
-        ]
+        ],
+        "buildableProjectDepsInPackageJsonType": "dependencies"
       }
     },
     "lint": {
