@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.0.0](https://gitlab.migoinc.com/migotv/paintbox/compare/react-ui@0.1.0...react-ui@1.0.0) (2022-09-21)
+
+
+### Features
+
+* **react-ui:** adjust exports of react-ui ([8b9a774](https://gitlab.migoinc.com/migotv/paintbox/commit/8b9a77450ad3c8b049334860fb1166c2698f9867))
+
 ## 0.1.0 (2022-09-21)
 
 
