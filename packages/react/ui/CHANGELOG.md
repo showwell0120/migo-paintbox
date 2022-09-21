@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [1.0.1](https://gitlab.migoinc.com/migotv/paintbox/compare/react-ui@1.0.0...react-ui@1.0.1) (2022-09-21)
+
+
+### Bug Fixes
+
+* **react-ui:** package name add @paintbox/ ([ebbee23](https://gitlab.migoinc.com/migotv/paintbox/commit/ebbee236b903771d03fe77aaa0dee2d2e27f998f))
+
 ## [1.0.0](https://gitlab.migoinc.com/migotv/paintbox/compare/react-ui@0.1.0...react-ui@1.0.0) (2022-09-21)
 
 
