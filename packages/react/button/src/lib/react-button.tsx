@@ -14,14 +14,14 @@ type colorProps = {
 
 const backgroundColors = {
   'default-default': 'var(--primary)',
-  'default-outlined': 'var(--white)',
+  'default-outlined': 'transparent',
   'default-light': '#eff2ff',
   'red-default': 'var(--danger)',
-  'red-outlined': 'var(--white)',
+  'red-outlined': 'transparent',
   'red-light': '#f8d6d9',
   'gray-default': 'var(--secondary)',
-  'gray-outlined': '#FBFBFB',
-  'gray-light': '#f0f1f2', 
+  'gray-outlined': 'transparent',
+  'gray-light': '#f0f1f2',
 };
 
 type colorKeyType = keyof typeof backgroundColors;

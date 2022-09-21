@@ -18,12 +18,12 @@ export function ReactSpinner(props: ReactSpinnerProps) {
     <div
       css={css`
         margin: auto;
-        border: 3px solid var(--light);
+        border: 3px solid var(--transparent);
         width: 48px;
         height: 48px;
         display: inline-block;
         border-radius: 50%;
-        border-right: 4px solid #d23739;
+        border-right: 4px solid var(--brand);
         text-align: center;
         animation-name: ${rotate};
         animation-duration: 700ms;

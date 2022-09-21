@@ -9,16 +9,16 @@ export type CallbackProp = (t: string) => void
 
 const containerStyle = css`
   position: relative;
-  border: 1px solid #b2b2b2;
+  border: 1px solid var(--secondary);
   box-sizing: border-box;
   border-radius: 4px;
-  background-color: #fff;
+  background-color: transparent;
   display: flex;
   align-items: center;
   padding: 0px 12px 0px 12px;
   &:focus-within {
-    border: 1px solid #6484FF;
-    box-shadow: 0 0 0 1px #6484FF;
+    border: 1px solid var(--primary);
+    box-shadow: 0 0 0 1px var(--primary);
   }
 `;
 

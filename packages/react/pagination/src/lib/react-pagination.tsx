@@ -24,7 +24,8 @@ const Container = styled.div`
 `;
 
 const itemStyle = css`
-  background: var(--white);
+  background: transparent;
+  color: var(--text-body);
   border-radius: 4px;
   border: 1px solid var(--gray-500);
   height: 40px;
@@ -97,16 +98,20 @@ export function ReactPagination({
       </Dashboard>
       <ToggleButton disabled={page === 0} onClick={handleMinusPage}>
         <CaretLeftFill
-          {...(page === 0 && {
-            stroke: 'var(--text-muted)',
-          })}
+          {...(page === 0
+            ? {
+                stroke: 'var(--text-muted)',
+              }
+            : { stroke: 'var(--text-body)' })}
         />
       </ToggleButton>
       <ToggleButton disabled={page === lastPage} onClick={handleAddPage}>
         <CaretRightFill
-          {...(page === lastPage && {
-            stroke: 'var(--text-muted)',
-          })}
+          {...(page === lastPage
+            ? {
+                stroke: 'var(--text-muted)',
+              }
+            : { stroke: 'var(--text-body)' })}
         />
       </ToggleButton>
     </Container>

@@ -44,7 +44,7 @@ const inputStyle = css`
         top: 2px;
         width: 4px;
         height: 8px;
-        border: solid #6484ff;
+        border: solid var(--primary);
         border-width: 0 2px 2px 0;
         -webkit-transform: rotate(45deg);
         -ms-transform: rotate(45deg);
@@ -60,8 +60,8 @@ const spanStyle = css`
   left: 0;
   height: 16px;
   width: 16px;
-  background-color: #ffffff;
-  border: solid 1px rgba(0, 0, 0, 0.5);
+  background-color: var(--transparent);
+  border: solid 1px var(--text-body);
   border-radius: 3px;
   /* Create the checkmark/indicator (hidden when not checked) */
   &:after {
@@ -85,7 +85,7 @@ export const ReactCheckbox = ({
   return (
     <Container>
       <label css={labelStyle} htmlFor={id}>
-        <Text>{label}</Text>
+        <Text style={{ color: 'var(--text-body)' }}>{label}</Text>
         <input
           type="checkbox"
           id={id}

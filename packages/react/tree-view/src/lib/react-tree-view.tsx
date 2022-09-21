@@ -13,15 +13,16 @@ const contentStyle = css`
   align-items: center;
   margin-bottom: 8px;
   min-width: 150px;
+  color: var(--text-body);
   &:hover {
     cursor: pointer;
-    background-color: #E9ECEF;
+    background-color: var(--hover);
     border-radius: 4px;
   }
 `;
 
 const activeStyle = css`
-  background-color: #E9ECEF;
+  background-color: var(--hover);
   border-radius: 4px;
 `;
 

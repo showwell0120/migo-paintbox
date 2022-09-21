@@ -61,7 +61,7 @@ const PriceText = styled.div`
   height: 36px;
   line-height: 36px;
   width: calc(100% - 24px);
-  background-color: var(--white);
+  background-color: transparent;
 `;
 
 const WarnText = styled.div`
@@ -70,7 +70,7 @@ const WarnText = styled.div`
 `;
 
 const Description = styled.div`
-  color: #8c8c8c;
+  color: var(--text-muted);
   font-size: 12px;
   line-height: 14px;
   margin-top: 6px;
@@ -157,7 +157,7 @@ export function ReactCurrencyInput<NameType>({
   return (
     <Container>
       <Upper>
-        <Label>{label as string}</Label>
+        <Label style={{ color: 'var(--text-body)' }}>{label as string}</Label>
       </Upper>
       <Middle>
         <ClassNames>
@@ -177,7 +177,9 @@ export function ReactCurrencyInput<NameType>({
                 css`
                   width: 100%;
                   height: 38px;
-                  border: 1px solid rgba(0, 0, 0, 0.4);
+                  color: var(--text-muted);
+                  background-color: transparent;
+                  border: 1px solid var(--text-body);
                   border-radius: 4px;
                   padding: 12px;
                   box-sizing: border-box;

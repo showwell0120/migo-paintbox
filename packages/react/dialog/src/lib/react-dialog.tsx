@@ -18,7 +18,7 @@ const boxStyle = css`
   z-index: 202;
   padding: 2rem;
   margin: auto;
-  background-color: #fff;
+  background-color: var(--background);
   border-radius: 4px;
 `;
 

@@ -21,7 +21,7 @@ export interface OptionItem {
 const Container = styled.div<{ prefixWidth: string }>`
   font-size: 0.875rem;
   letter-spacing: 0.15px;
-  background: var(--white);
+  background: transparent;
   border-radius: 4px;
   border: 1px solid var(--gray-500);
   position: relative;
@@ -55,7 +55,7 @@ const selectStyle = css`
   position: relative;
   z-index: 1;
   background: transparent;
-  color: var(--dark);
+  color: var(--text-body);
 `;
 
 const iconStyle = css`

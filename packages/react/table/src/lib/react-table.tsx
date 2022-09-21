@@ -30,13 +30,15 @@ export function StyledTable({
         <table
           className={cx(
             css`
-              background-color: var(--white);
+              color: var(--text-body);
+              background-color: var(--background);
               border-radius: 4px;
               text-align: left;
               border-collapse: separate;
               border-spacing: 0;
               width: inherit;
               border: 1px solid var(--gray-500);
+              border-bottom: none;
             `,
             className
           )}
@@ -60,7 +62,7 @@ export function StyledThead({ children, className }: StyledTheadProps) {
           className={cx(
             css`
               height: 52px;
-              background-color: #f8f9fa;
+              background-color: var(--transparent);
               box-shadow: 0px -1px 0px 0px rgba(0, 0, 0, 0.2) inset;
               position: sticky;
               left: 0;
@@ -201,7 +203,7 @@ export function StyledTD({ children, className, ...props }: StyledTDProps) {
           className={cx(
             css`
               padding-left: 1rem;
-              border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+              border-bottom: 1px solid var(--gray-500);
               &:last-child {
                 padding-right: 1rem;
               }
