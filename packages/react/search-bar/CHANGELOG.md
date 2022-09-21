@@ -2,6 +2,8 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.0.0](https://gitlab.migoinc.com/migotv/paintbox/compare/react-search-bar@0.3.0...react-search-bar@1.0.0) (2022-09-21)
+
 ## [0.3.0](https://gitlab.migoinc.com/migotv/paintbox/compare/react-search-bar@0.2.0...react-search-bar@0.3.0) (2022-09-21)
 
 ## [0.2.0](https://gitlab.migoinc.com/migotv/paintbox/compare/react-search-bar@0.1.0...react-search-bar@0.2.0) (2022-09-21)
