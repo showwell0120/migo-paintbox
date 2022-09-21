@@ -2,6 +2,8 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [1.1.1](https://gitlab.migoinc.com/migotv/paintbox/compare/react-tree-view@1.1.0...react-tree-view@1.1.1) (2022-09-21)
+
 ## [1.1.0](https://gitlab.migoinc.com/migotv/paintbox/compare/react-tree-view@1.0.1...react-tree-view@1.1.0) (2022-09-21)
 
 
