@@ -1,0 +1,60 @@
+{
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/react/radio/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:rollup",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/react/radio",
+        "tsConfig": "packages/react/radio/tsconfig.lib.json",
+        "project": "packages/react/radio/package.json",
+        "entryFile": "packages/react/radio/src/index.ts",
+        "external": ["@emotion/react/jsx-runtime"],
+        "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
+        "compiler": "babel",
+        "assets": [
+          {
+            "glob": "packages/react/radio/README.md",
+            "input": ".",
+            "output": "."
+          }
+        ]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/react/radio/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/packages/react/radio"],
+      "options": {
+        "jestConfig": "packages/react/radio/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "lint-test": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": ["nx lint react-radio", "nx test react-radio"]
+      }
+    },
+    "version": {
+      "executor": "@jscutlery/semver:version",
+      "options": {
+        "preset": "conventional",
+        "tagPrefix": "react-radio@",
+        "postTargets": ["react-radio:build", "react-radio:publish"]
+      }
+    },
+    "publish": {
+      "executor": "ngx-deploy-npm:deploy"
+    }
+  }
+}

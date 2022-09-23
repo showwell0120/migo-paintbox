@@ -26,6 +26,7 @@
       "@paintbox/react-dialog": ["packages/react/dialog/src/index.ts"],
       "@paintbox/react-foundation": ["packages/react/foundation/src/index.ts"],
       "@paintbox/react-pagination": ["packages/react/pagination/src/index.ts"],
+      "@paintbox/react-radio": ["packages/react/radio/src/index.ts"],
       "@paintbox/react-search-bar": ["packages/react/search-bar/src/index.ts"],
       "@paintbox/react-select-option": [
         "packages/react/select-option/src/index.ts"

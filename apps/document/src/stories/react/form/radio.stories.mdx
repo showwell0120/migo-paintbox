@@ -1,0 +1,45 @@
+import { Meta, Canvas, Story } from '@storybook/addon-docs/blocks';
+import { ReactRadio, ReactRadioSample } from '@paintbox/react-radio'
+
+<Meta title="React/Form/Radio" />
+
+# Radio
+
+> radio button, 提供以下 props －
+
+```javascript
+export interface ReactRadioProps {
+  label: string,
+  checked: boolean,
+  name: string,
+  value: string,
+  onChange: (val: string) => void,
+}
+```
+
+## Usage
+
+```jsx
+import { ReactRadio } from '@paintbox/react-radio';
+
+export const ReactRadioSample = () => {
+  const [check, setCheck] = React.useState('');
+
+  function handleChange(val: string) {
+    setCheck(val);
+  }
+
+  return (
+    <ReactRadio label="test one" name="test" checked={check === 'test one'} value="test one" onChange={handleChange} />
+  );
+};
+```
+
+## Stories
+### Default
+
+<Canvas>
+  <Story name="Default">
+    <ReactRadioSample />
+  </Story>
+</Canvas>
