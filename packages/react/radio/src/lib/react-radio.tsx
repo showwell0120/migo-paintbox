@@ -13,7 +13,7 @@ const inputStyle = css`
   &[type="radio"] {
     -webkit-appearance: none;
     appearance: none;
-    background-color: var(--white);
+    background-color: var(--transparent);
     margin: 5px;
     font: inherit;
     width: 18px;
@@ -72,7 +72,7 @@ export function ReactRadio({label, checked, name, value, onChange}: ReactRadioPr
         onChange={handleChange}
       />
       <label css={labelStyle} htmlFor={id}>
-        <Text>{label}</Text>
+        <Text style={{ color: 'var(--text-body)' }}>{label}</Text>
       </label>
     </Container>
   );
@@ -86,6 +86,31 @@ export const ReactRadioSample = () => {
   }
 
   return (
-    <ReactRadio label="test one" name="test" checked={check === 'test one'} value="test one" onChange={handleChange} />
+    <div>
+      <p style={{ color: 'var(--text-body)' }}>Select your favorite drink:</p>
+      <ReactRadio label="Boba Milk Tea" name="drink" checked={check === 'boba'} value="boba" onChange={handleChange} />
+      <ReactRadio label="Orange Green Tea" name="drink" checked={check === 'orange'} value="orange" onChange={handleChange} />
+      <ReactRadio label="Watermelon Juice" name="drink" checked={check === 'watermelon'} value="watermelon" onChange={handleChange} />
+    </div>
+  );
+};
+
+export const BooleanRadioSample = () => {
+  const [check, setCheck] = React.useState('');
+  const [hasCovid, setHasCovid] = React.useState(false);
+
+  function handleChange(val: string) {
+    setCheck(val);
+    setHasCovid(Boolean(val));
+  }
+
+  console.log(hasCovid);
+
+  return (
+    <div>
+      <p style={{ color: 'var(--text-body)' }}>Have you had Covid-19?</p>
+      <ReactRadio label="Yes" name="covid" checked={check === 'true'} value="true" onChange={handleChange} />
+      <ReactRadio label="No" name="covid" checked={check === ''} value="" onChange={handleChange} />
+    </div>
   );
 };

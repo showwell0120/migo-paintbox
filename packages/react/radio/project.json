@@ -21,7 +21,8 @@
             "input": ".",
             "output": "."
           }
-        ]
+        ],
+        "buildableProjectDepsInPackageJsonType": "dependencies"
       }
     },
     "lint": {
@@ -45,15 +46,22 @@
         "commands": ["nx lint react-radio", "nx test react-radio"]
       }
     },
+    "publish": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": ["nx build react-radio", "nx version react-radio"],
+        "parallel": false
+      }
+    },
     "version": {
       "executor": "@jscutlery/semver:version",
       "options": {
         "preset": "conventional",
         "tagPrefix": "react-radio@",
-        "postTargets": ["react-radio:build", "react-radio:publish"]
+        "postTargets": ["react-radio:deploy"]
       }
     },
-    "publish": {
+    "deploy": {
       "executor": "ngx-deploy-npm:deploy"
     }
   }

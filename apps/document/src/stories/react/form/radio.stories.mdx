@@ -1,5 +1,5 @@
 import { Meta, Canvas, Story } from '@storybook/addon-docs/blocks';
-import { ReactRadio, ReactRadioSample } from '@paintbox/react-radio'
+import { ReactRadio, ReactRadioSample, BooleanRadioSample } from '@paintbox/react-radio'
 
 <Meta title="React/Form/Radio" />
 
@@ -30,7 +30,12 @@ export const ReactRadioSample = () => {
   }
 
   return (
-    <ReactRadio label="test one" name="test" checked={check === 'test one'} value="test one" onChange={handleChange} />
+    <div>
+      <p style={{ color: 'var(--text-body)' }}>Select your favorite drink:</p>
+      <ReactRadio label="Boba Milk Tea" name="drink" checked={check === 'boba'} value="boba" onChange={handleChange} />
+      <ReactRadio label="Orange Green Tea" name="drink" checked={check === 'orange'} value="orange" onChange={handleChange} />
+      <ReactRadio label="Watermelon Juice" name="drink" checked={check === 'watermelon'} value="watermelon" onChange={handleChange} />
+    </div>
   );
 };
 ```
@@ -41,5 +46,36 @@ export const ReactRadioSample = () => {
 <Canvas>
   <Story name="Default">
     <ReactRadioSample />
+  </Story>
+</Canvas>
+
+### Boolean value
+#### Code example
+
+```jsx
+export const BooleanRadioSample = () => {
+  const [check, setCheck] = React.useState('');
+  const [hasCovid, setHasCovid] = React.useState(false);
+
+  function handleChange(val: string) {
+    setCheck(val);
+    setHasCovid(Boolean(val));
+  }
+
+  console.log(hasCovid);
+
+  return (
+    <div>
+      <p style={{ color: 'var(--text-body)' }}>Have you had Covid-19?</p>
+      <ReactRadio label="Yes" name="covid" checked={check === 'true'} value="true" onChange={handleChange} />
+      <ReactRadio label="No" name="covid" checked={check === ''} value="" onChange={handleChange} />
+    </div>
+  );
+};
+```
+
+<Canvas>
+  <Story name="Boolean value">
+    <BooleanRadioSample />
   </Story>
 </Canvas>
