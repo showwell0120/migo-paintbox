@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [1.7.1](https://gitlab.migoinc.com/migotv/paintbox/compare/react-foundation@1.7.0...react-foundation@1.7.1) (2022-09-27)
+
+
+### Bug Fixes
+
+* **react-table:** fix td element, dark theme hover style ([56d0259](https://gitlab.migoinc.com/migotv/paintbox/commit/56d025985ed689f7a50870bf0225551d9338970f))
+
 ## [1.7.0](https://gitlab.migoinc.com/migotv/paintbox/compare/react-foundation@1.6.0...react-foundation@1.7.0) (2022-09-21)
 
 ## [1.6.0](https://gitlab.migoinc.com/migotv/paintbox/compare/react-foundation@1.5.0...react-foundation@1.6.0) (2022-09-21)
