@@ -50,6 +50,7 @@ $palettes: (
     ),
     text-light: (
         text-body: #000000,
+        text-body-reversed: #FFFFFF,
         text-lighten: #292D43,
         text-muted: #8C8C8C,
         text-alpha50: rgba(0, 0, 0, 0.5),
@@ -58,6 +59,7 @@ $palettes: (
     ),
     text-dark: (
         text-body: #FFFFFF,
+        text-body-reversed: #000000,
         text-lighten: #A8A8A8,
         text-muted: #686868,
         text-alpha50: rgba(255, 255, 255, 0.5),

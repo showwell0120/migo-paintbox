@@ -140,10 +140,12 @@ export function StyledBodyTR({
               &:hover,
               &:active {
                 background: rgba(232, 245, 253, 0.8);
+                td {
+                  color: var(--text-body-reversed);
+                }
               }
               &:last-child {
                 td {
-                  border-bottom: none;
                   &:first-child {
                     border-bottom-left-radius: 4px;
                   }
@@ -199,7 +201,7 @@ export function StyledTD({ children, className, ...props }: StyledTDProps) {
   return (
     <ClassNames>
       {({ css, cx }) => (
-        <th
+        <td
           className={cx(
             css`
               padding-left: 1rem;
@@ -213,7 +215,7 @@ export function StyledTD({ children, className, ...props }: StyledTDProps) {
           {...props}
         >
           {children}
-        </th>
+        </td>
       )}
     </ClassNames>
   );
