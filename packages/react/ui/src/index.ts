@@ -14,3 +14,4 @@ export * from '@paintbox/react-tag';
 export * from '@paintbox/react-time-picker';
 export * from '@paintbox/react-toast';
 export * from '@paintbox/react-tree-view';
+export * from '@paintbox/react-radio';
