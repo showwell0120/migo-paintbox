@@ -85,6 +85,23 @@ return <SortUp />
     </Story>
 </Canvas>
 
+### Misc
+
+<Canvas>
+    <Story name="Misc">
+        <div style={{ display: 'flex', gap: 48, flexWrap: 'wrap' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 6, alignItems: 'center' }}>
+                <S.Small>Bookmark Check Fill</S.Small>
+                <S.BookmarkCheckFill size={20} />
+            </div>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 6, alignItems: 'center' }}>
+                <S.Small>Bookmark X Fill</S.Small>
+                <S.BookmarkXFill size={20} />
+            </div>
+        </div>
+    </Story>
+</Canvas>
+
 ### People
 
 <Canvas>
@@ -104,12 +121,20 @@ return <SortUp />
     <Story name="Sign">
         <div style={{ display: 'flex', gap: 48, flexWrap: 'wrap' }}>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 6, alignItems: 'center' }}>
+                <S.Small>Check Cycle Fill</S.Small>
+                <S.CheckCycleFill size={20} />
+            </div>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 6, alignItems: 'center' }}>
                 <S.Small>Cross</S.Small>
                 <S.Cross size={20} />
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 6, alignItems: 'center' }}>
                 <S.Small>Exclamation Cycle Fill</S.Small>
                 <S.ExclamationCycleFill size={20} />
+            </div>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 6, alignItems: 'center' }}>
+                <S.Small>X Cycle Fill</S.Small>
+                <S.XCycleFill size={20} />
             </div>
         </div>
     </Story>
@@ -156,7 +181,7 @@ return <SortUp />
                 <S.Small>Sort Number Down </S.Small>
                 <S.SortNumberDown size={20} />
             </div>
-            <div>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 6, alignItems: 'center' }}>
                 <S.Small>Sort Number Up </S.Small>
                 <S.SortNumberUp size={20} />
             </div>
@@ -171,5 +196,3 @@ return <SortUp />
         </div>
     </Story>
 </Canvas>
-
-### time
