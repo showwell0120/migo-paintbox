@@ -15,6 +15,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@paintbox/helper-axios-client": [
+        "packages/helper/axios-client/src/index.ts"
+      ],
       "@paintbox/model-media": ["packages/model/media/src/index.ts"],
       "@paintbox/react-base": ["packages/react/base/src/index.ts"],
       "@paintbox/react-button": ["packages/react/button/src/index.ts"],
