@@ -22,6 +22,15 @@ npm config set -- 'https://gitlab.migoinc.com/api/v4/projects/319/packages/npm/:
 npm config list
 ```
 
+## 設定 gitlab-ci.yml
+
+為了在 gitlab ci 中可以順利安裝 paintbox，須在 install stage 裡加上相關 npm 設定－
+
+```yaml
+before_script:
+    - npm config set @paintbox:registry https://gitlab.migoinc.com/api/v4/projects/319/packages/npm/
+    - echo "//gitlab.migoinc.com/api/v4/projects/319/packages/npm/:_authToken=${CI_JOB_TOKEN}">.npmrc
+```
 
 ## 套件列表
 
@@ -29,7 +38,7 @@ npm config list
 
 | name | 說明 | 備註 |
 | --- | --- | --- |
-| **`@paintbox/react-ui`** | 所有元件和 hooks 的集合 | 尚未發布 |
+| **`@paintbox/react-ui`** | 所有元件和 Hooks 的集合 | 尚未發布 |
 | **`@paintbox/react-hooks`** | 所有 React Hooks 的集合 | 尚未實作 |
 | **`@paintbox/react-foundation`** |  design foundation 的元件集合 | -- |
 | **`@paintbox/react-table`** |  表格相關的元件集合 | -- |
@@ -68,10 +77,10 @@ npm config list
 
 | name | 說明 | 備註 |
 | --- | --- | --- |
-| **`@paintbox/util-locales`** | 在地化(時區、時間、貨幣） | --- |
+| **`@paintbox/util-i18n`** | 在地化(時區、時間、貨幣） | --- |
 
 ### Helper
 
 | name | 說明 | 備註 |
 | --- | --- | --- |
-| **`@paintbox/helper-http-client`** | 使用 Axios 處理 HttpRequest 相關的邏輯 | --- |
+| **`@paintbox/helper-axios-client`** | 使用 Axios 處理 HttpRequest 相關的邏輯 | --- |
