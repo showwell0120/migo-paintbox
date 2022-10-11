@@ -8,3 +8,4 @@ export * from './people';
 export * from './sign';
 export * from './sort';
 export * from './time';
+export * from './arrow';
