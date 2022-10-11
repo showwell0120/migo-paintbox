@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.10.0](https://gitlab.migoinc.com/migotv/paintbox/compare/react-foundation@1.9.0...react-foundation@1.10.0) (2022-10-11)
+
+
+### Bug Fixes
+
+* **react-foundation:** fix icon stroke ([3ae3116](https://gitlab.migoinc.com/migotv/paintbox/commit/3ae3116a1f790e18c91cd32ce29928a5e47691d5))
+
 ## [1.9.0](https://gitlab.migoinc.com/migotv/paintbox/compare/react-foundation@1.8.0...react-foundation@1.9.0) (2022-10-11)
 
 
