@@ -2,13 +2,12 @@
 import React from 'react';
 import { ClassNames } from '@emotion/react';
 
-export interface NormalTableProps {
+export interface PreviewTableProps {
   children: React.ReactNode;
   className?: string;
-  onClick?: () => void;
 }
 
-function StyledTable({ children, className, ...props }: NormalTableProps) {
+function StyledTable({ children, className, ...props }: PreviewTableProps) {
   return (
     <ClassNames>
       {({ css, cx }) => (
@@ -37,15 +36,16 @@ function StyledTable({ children, className, ...props }: NormalTableProps) {
   );
 }
 
-function StyledHead({ children, className }: NormalTableProps) {
+function StyledHead({ children, className }: PreviewTableProps) {
   return (
     <ClassNames>
       {({ css, cx }) => (
         <thead
           className={cx(
             css`
-              height: 52px;
-              background-color: var(--transparent);
+              height: 34px;
+              color: rgba(0, 0, 0, 0.6);
+              background-color: #ebebeb;
               box-shadow: 0px -1px 0px 0px rgba(0, 0, 0, 0.2) inset;
               position: sticky;
               left: 0;
@@ -61,11 +61,19 @@ function StyledHead({ children, className }: NormalTableProps) {
   );
 }
 
-function StyledBody({ children, className, ...props }: NormalTableProps) {
+function StyledBody({ children, className, ...props }: PreviewTableProps) {
   return (
     <ClassNames>
       {({ css, cx }) => (
-        <tbody className={cx(css``, className)} {...props}>
+        <tbody
+          className={cx(
+            css`
+              background-color: rgba(244, 244, 244, 0.5);
+            `,
+            className
+          )}
+          {...props}
+        >
           {children}
         </tbody>
       )}
@@ -73,7 +81,7 @@ function StyledBody({ children, className, ...props }: NormalTableProps) {
   );
 }
 
-function StyledHeadTR({ children, className, ...props }: NormalTableProps) {
+function StyledHeadTR({ children, className, ...props }: PreviewTableProps) {
   return (
     <ClassNames>
       {({ css, cx }) => (
@@ -94,19 +102,14 @@ function StyledHeadTR({ children, className, ...props }: NormalTableProps) {
   );
 }
 
-function StyledBodyTR({ children, className, ...props }: NormalTableProps) {
+function StyledBodyTR({ children, className, ...props }: PreviewTableProps) {
   return (
     <ClassNames>
       {({ css, cx }) => (
         <tr
           className={cx(
             css`
-              height: 48px;
-              &:hover,
-              &:active {
-                background: rgba(232, 245, 253, 0.8);
-                cursor: pointer;
-              }
+              height: 32px;
               &:last-child {
                 td {
                   &:first-child {
@@ -129,7 +132,7 @@ function StyledBodyTR({ children, className, ...props }: NormalTableProps) {
   );
 }
 
-function StyledTH({ children, className, ...props }: NormalTableProps) {
+function StyledTH({ children, className, ...props }: PreviewTableProps) {
   return (
     <ClassNames>
       {({ css, cx }) => (
@@ -157,7 +160,7 @@ function StyledTH({ children, className, ...props }: NormalTableProps) {
   );
 }
 
-function StyledTD({ children, className, ...props }: NormalTableProps) {
+function StyledTD({ children, className, ...props }: PreviewTableProps) {
   return (
     <ClassNames>
       {({ css, cx }) => (
@@ -181,7 +184,7 @@ function StyledTD({ children, className, ...props }: NormalTableProps) {
   );
 }
 
-export const NormalTable = {
+export const PreviewTable = {
   StyledTable,
   StyledHead,
   StyledBody,
