@@ -1,17 +1,16 @@
 import { Meta, Canvas, Story } from '@storybook/addon-docs/blocks';
 
-import { TableSample } from '@paintbox/react-table';
+<Meta title="React/Table/Normal Style/Doc" />
 
-<Meta title="React/Table/StyledTable" />
+# Normal Style Table
 
-# StyledTable
-
-> 表格相關組成的元件集合。需搭配 `react-table` 傳入各元件需要的 props。提供以下共同的 props－
+> 一般樣式表格的元件集合。需搭配 `@tankstack/react-table` 傳入各元件需要的 props，提供以下共同的 props－
 
 ```javascript
 export interface TableBaseProps {
   children: React.ReactNode;
   className?: string;
+  onClick?: () => void;
 }
 ```
 
@@ -19,124 +18,25 @@ export interface TableBaseProps {
 
 - [Billing System on Figma](https://www.figma.com/file/rvTsTJLCarPAEYvdXQuRDY/Billing-System---1.0.0?node-id=5284%3A14149)
 
-## Usage 
+## Dependencies
+
+- [`@tanstack/react-table: ^8.7.0`](https://tanstack.com/table/v8)
+
+## Import 
 
 ```jsx
-import { useTable,Column } from 'react-table'
 import {
-    StyledTable,
-    StyledThead,
-    StyledHeadTR,
-    StyledTH,
-    StyledTbody,
-    StyledBodyTR,
-    StyledTD
-} from '@paintbox/react-table';
+  createColumnHelper,
+  flexRender,
+  getCoreRowModel,
+  useReactTable,
+} from '@tanstack/react-table';
 
-export const Sample = () => {
-  const data = React.useMemo(
-    () => [
-      {
-        col1: 'Hello',
-        col2: 'World',
-      },
-      {
-        col1: 'react-table',
-        col2: 'rocks',
-      },
-      {
-        col1: 'whatever',
-        col2: 'you want',
-      },
-    ],
-    []
-  );
-
-  const columns: ReadonlyArray<Column<{ col1: string; col2: string }>> =
-    React.useMemo(
-      () => [
-        {
-          Header: 'Column 1',
-          accessor: 'col1', // accessor is the "key" in the data
-        },
-        {
-          Header: 'Column 2',
-          accessor: 'col2',
-        },
-      ],
-      []
-    );
-
-  const tableInstance = useTable({ columns, data });
-
-  const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
-    tableInstance;
-
-  return (
-    // apply the table props
-    <StyledTable {...getTableProps()}>
-      <StyledThead>
-        {
-          // Loop over the header rows
-          headerGroups.map((headerGroup) => (
-            // Apply the header row props
-            <StyledHeadTR {...headerGroup.getHeaderGroupProps()}>
-              {
-                // Loop over the headers in each row
-                headerGroup.headers.map((column) => (
-                  // Apply the header cell props
-                  <StyledTH {...column.getHeaderProps()}>
-                    {
-                      // Render the header
-                      column.render('Header')
-                    }
-                  </StyledTH>
-                ))
-              }
-            </StyledHeadTR>
-          ))
-        }
-      </StyledThead>
-      {/* Apply the table body props */}
-      <StyledTbody {...getTableBodyProps()}>
-        {
-          // Loop over the table rows
-          rows.map((row) => {
-            // Prepare the row for display
-            prepareRow(row);
-            return (
-              // Apply the row props
-              <StyledBodyTR {...row.getRowProps()}>
-                {
-                  // Loop over the rows cells
-                  row.cells.map((cell) => {
-                    // Apply the cell props
-                    return (
-                      <StyledTD {...cell.getCellProps()}>
-                        {
-                          // Render the cell contents
-                          cell.render('Cell')
-                        }
-                      </StyledTD>
-                    );
-                  })
-                }
-              </StyledBodyTR>
-            );
-          })
-        }
-      </StyledTbody>
-    </StyledTable>
-  );
-};
+import { NormalTable } from '@paintbox/react-table';
 ```
 
 ## Stories
 
-### Default
+### Case 1 - Basic
 
-<Canvas>
-  <Story name="Default">
-    <TableSample />
-  </Story>
-</Canvas>
+<Story id="react-table-normal-mode-case-1-basic--default" />
