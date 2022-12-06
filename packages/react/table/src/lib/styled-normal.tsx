@@ -2,20 +2,13 @@
 import React from 'react';
 import { ClassNames } from '@emotion/react';
 
-export interface TableBaseProps {
+export interface NormalTableProps {
   children: React.ReactNode;
   className?: string;
   onClick?: () => void;
 }
 
-/* eslint-disable-next-line */
-export interface StyledTableProps extends TableBaseProps {}
-
-export function StyledTable({
-  children,
-  className,
-  ...props
-}: StyledTableProps) {
+function StyledTable({ children, className, ...props }: NormalTableProps) {
   return (
     <ClassNames>
       {({ css, cx }) => (
@@ -43,10 +36,7 @@ export function StyledTable({
   );
 }
 
-/* eslint-disable-next-line */
-export interface StyledHeadProps extends TableBaseProps {}
-
-export function StyledHead({ children, className }: StyledHeadProps) {
+function StyledHead({ children, className }: NormalTableProps) {
   return (
     <ClassNames>
       {({ css, cx }) => (
@@ -70,10 +60,7 @@ export function StyledHead({ children, className }: StyledHeadProps) {
   );
 }
 
-/* eslint-disable-next-line */
-export interface StyledBodyProps extends TableBaseProps {}
-
-export function StyledBody({ children, className, ...props }: StyledBodyProps) {
+function StyledBody({ children, className, ...props }: NormalTableProps) {
   return (
     <ClassNames>
       {({ css, cx }) => (
@@ -85,13 +72,7 @@ export function StyledBody({ children, className, ...props }: StyledBodyProps) {
   );
 }
 
-export interface StyledHeadTRProps extends TableBaseProps {}
-
-export function StyledHeadTR({
-  children,
-  className,
-  ...props
-}: StyledHeadTRProps) {
+function StyledHeadTR({ children, className, ...props }: NormalTableProps) {
   return (
     <ClassNames>
       {({ css, cx }) => (
@@ -112,13 +93,7 @@ export function StyledHeadTR({
   );
 }
 
-export interface StyledBodyTRProps extends TableBaseProps {}
-
-export function StyledBodyTR({
-  children,
-  className,
-  ...props
-}: StyledBodyTRProps) {
+function StyledBodyTR({ children, className, ...props }: NormalTableProps) {
   return (
     <ClassNames>
       {({ css, cx }) => (
@@ -153,7 +128,7 @@ export function StyledBodyTR({
   );
 }
 
-export function StyledTH({ children, className, ...props }: StyledHeadTRProps) {
+function StyledTH({ children, className, ...props }: NormalTableProps) {
   return (
     <ClassNames>
       {({ css, cx }) => (
@@ -181,9 +156,7 @@ export function StyledTH({ children, className, ...props }: StyledHeadTRProps) {
   );
 }
 
-export interface StyledTDProps extends TableBaseProps {}
-
-export function StyledTD({ children, className, ...props }: StyledTDProps) {
+function StyledTD({ children, className, ...props }: NormalTableProps) {
   return (
     <ClassNames>
       {({ css, cx }) => (
