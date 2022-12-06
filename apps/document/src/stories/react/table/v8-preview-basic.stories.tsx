@@ -7,10 +7,10 @@ import {
   useReactTable,
 } from '@tanstack/react-table';
 
-import { NormalTable } from '@paintbox/react-table';
+import { PreviewTable } from '@paintbox/react-table';
 import { defaultData, columns } from './basic-data';
 
-function NormalBasicTable() {
+function PreviewBasicTable() {
   const [data, setData] = React.useState(() => [...defaultData]);
 
   const table = useReactTable({
@@ -20,46 +20,46 @@ function NormalBasicTable() {
   });
 
   return (
-    <NormalTable.StyledTable>
-      <NormalTable.StyledHead>
+    <PreviewTable.StyledTable>
+      <PreviewTable.StyledHead>
         {table.getHeaderGroups().map((headerGroup) => (
-          <NormalTable.StyledHeadTR key={headerGroup.id}>
+          <PreviewTable.StyledHeadTR key={headerGroup.id}>
             {headerGroup.headers.map((header) => (
-              <NormalTable.StyledTH key={header.id}>
+              <PreviewTable.StyledTH key={header.id}>
                 {header.isPlaceholder
                   ? null
                   : flexRender(
                       header.column.columnDef.header,
                       header.getContext()
                     )}
-              </NormalTable.StyledTH>
+              </PreviewTable.StyledTH>
             ))}
-          </NormalTable.StyledHeadTR>
+          </PreviewTable.StyledHeadTR>
         ))}
-      </NormalTable.StyledHead>
-      <NormalTable.StyledBody>
+      </PreviewTable.StyledHead>
+      <PreviewTable.StyledBody>
         {table.getRowModel().rows.map((row) => (
-          <NormalTable.StyledBodyTR key={row.id}>
+          <PreviewTable.StyledBodyTR key={row.id}>
             {row.getVisibleCells().map((cell) => (
-              <NormalTable.StyledTD key={cell.id}>
+              <PreviewTable.StyledTD key={cell.id}>
                 {flexRender(cell.column.columnDef.cell, cell.getContext())}
-              </NormalTable.StyledTD>
+              </PreviewTable.StyledTD>
             ))}
-          </NormalTable.StyledBodyTR>
+          </PreviewTable.StyledBodyTR>
         ))}
-      </NormalTable.StyledBody>
-    </NormalTable.StyledTable>
+      </PreviewTable.StyledBody>
+    </PreviewTable.StyledTable>
   );
 }
 
-const Template: ComponentStory<typeof NormalBasicTable> = (args) => {
-  return <NormalBasicTable />;
+const Template: ComponentStory<typeof PreviewBasicTable> = (args) => {
+  return <PreviewBasicTable />;
 };
 
 export const Default = Template.bind({});
 Default.args = {};
 
 export default {
-  component: NormalBasicTable,
-  title: 'React/Table/Normal Style/Basic',
-} as ComponentMeta<typeof NormalBasicTable>;
+  component: PreviewBasicTable,
+  title: 'React/Table/Preview Style/Basic',
+} as ComponentMeta<typeof PreviewBasicTable>;

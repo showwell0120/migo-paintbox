@@ -1,16 +1,31 @@
 import { Meta, Canvas, Story } from '@storybook/addon-docs/blocks';
 
-<Meta title="React/Table/Normal Style/Doc" />
+<Meta title="React/Table/Doc" />
 
-# Normal Style Table
+# @paintbox/react-table
+
+---
+
+## Normal Style 
 
 > 一般樣式表格的元件集合。需搭配 `@tankstack/react-table` 傳入各元件需要的 props，提供以下共同的 props－
 
 ```javascript
-export interface TableBaseProps {
+export interface NormalTableProps {
   children: React.ReactNode;
   className?: string;
   onClick?: () => void;
+}
+```
+
+## Preview Style 
+
+> 預覽樣式表格的元件集合。需搭配 `@tankstack/react-table` 傳入各元件需要的 props，提供以下共同的 props－
+
+```javascript
+export interface PreviewTableProps {
+  children: React.ReactNode;
+  className?: string;
 }
 ```
 
@@ -32,11 +47,15 @@ import {
   useReactTable,
 } from '@tanstack/react-table';
 
-import { NormalTable } from '@paintbox/react-table';
+import { NormalTable, PreviewTable } from '@paintbox/react-table';
 ```
 
 ## Stories
 
-### Case 1 - Basic
+### Normal - Basic
 
-<Story id="react-table-normal-style-case-1-basic--default" />
+<Story id="react-table-normal-style-basic--default" />
+
+### Preview - Basic
+
+<Story id="react-table-preview-style-basic--default" />
