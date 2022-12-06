@@ -28,6 +28,7 @@ specifiers:
   '@storybook/react': 6.5.9
   '@storybook/theming': 6.5.9
   '@svgr/webpack': ^6.2.1
+  '@tanstack/react-table': ^8.7.0
   '@testing-library/react': 13.3.0
   '@types/jest': 27.5.1
   '@types/lodash': ^4.14.183
@@ -87,6 +88,7 @@ specifiers:
 dependencies:
   '@emotion/react': 11.9.3_ye5oo5gdqa4s6udf5a5xmn5ftq
   '@emotion/styled': 11.9.3_zdy4t5wzawcp2kb6lz5nl4exba
+  '@tanstack/react-table': 8.7.0_biqbaboplfbrettd7655fr4n2y
   '@types/lodash': 4.14.183
   axios: 0.27.2
   classnames: 2.3.1
@@ -4684,6 +4686,23 @@ packages:
     transitivePeerDependencies:
       - supports-color
     dev: true
+
+  /@tanstack/react-table/8.7.0_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-VJ+9rsymDLaSU35rWOfX0bwNXnpW1i+T14wi+sHx8lxwAsfg6IY1Yw7FPfGADvUFP5eQn2t4nlohAJd+IoEj/Q==}
+    engines: {node: '>=12'}
+    peerDependencies:
+      react: '>=16'
+      react-dom: '>=16'
+    dependencies:
+      '@tanstack/table-core': 8.7.0
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+    dev: false
+
+  /@tanstack/table-core/8.7.0:
+    resolution: {integrity: sha512-DRiRbOAmDHapzUBd4/C4Yy+FTug4fdGp5sdZWWfCq4wxRoaXQraQgbzmK23a3QcbwLFtLeNezPkZrqbJWuX+VA==}
+    engines: {node: '>=12'}
+    dev: false
 
   /@testing-library/dom/8.13.0:
     resolution: {integrity: sha512-9VHgfIatKNXQNaZTtLnalIy0jNZzY35a4S3oi08YAt9Hv1VsfZ/DfA45lM8D/UhtHBGJ4/lGwp0PZkVndRkoOQ==}

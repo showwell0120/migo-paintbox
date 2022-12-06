@@ -1,1 +1,1 @@
-export * from './lib/react-table';
+export * from './lib/styled-normal';
