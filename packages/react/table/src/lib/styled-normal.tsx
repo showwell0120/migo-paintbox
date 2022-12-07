@@ -3,7 +3,7 @@ import React from 'react';
 import { ClassNames } from '@emotion/react';
 
 export interface NormalTableProps {
-  children: React.ReactNode;
+  children?: React.ReactNode;
   className?: string;
   onClick?: () => void;
 }
@@ -157,7 +157,11 @@ function StyledTH({ children, className, ...props }: NormalTableProps) {
   );
 }
 
-function StyledTD({ children, className, ...props }: NormalTableProps) {
+function StyledTD({
+  children,
+  className,
+  ...props
+}: NormalTableProps & { colSpan?: number }) {
   return (
     <ClassNames>
       {({ css, cx }) => (

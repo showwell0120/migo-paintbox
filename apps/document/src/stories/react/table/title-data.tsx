@@ -1,3 +1,5 @@
+import { ColumnDef } from '@tanstack/react-table';
+
 export interface Genre {
   code: string;
   name: string;
@@ -38,13 +40,13 @@ export interface SeasonResponse {
 export interface TitleResponse {
   title_id: number;
   title_iid: string;
-  title_name: string;
-  genre: Genre;
+  title_name: string; // show 1
+  genre: Genre; // show 2
   rating: string;
-  release_year: number;
+  release_year: number; // show 5
   region: string | null;
-  content_type: string;
-  episode_count: number;
+  content_type: string; // show 4
+  episode_count: number; // show 9
   content_length: number;
   publish_timestamp: number;
   deliver_success_count: number | null;
@@ -52,19 +54,95 @@ export interface TitleResponse {
   deliver_rate: number;
   approve_status: boolean;
   activate: boolean;
-  cp_code: string;
+  cp_code: string; // show 7 (add licensor)
   license_start: number;
-  license_end: number;
+  license_end: number; // show 6
   licensor: string;
   distribution: boolean;
   file_size: number;
-  seasons: SeasonResponse[];
-  vod: string;
-  list_price: number | null;
-  discount_price: number | null;
+  seasons: SeasonResponse[]; // show 8 (get length)
+  vod: string; // show 3
+  list_price: number | null; // show 10
+  discount_price: number | null; // show 11
 }
 
-export const SelectTitleData: TitleResponse[] = [
+export const columns: ColumnDef<TitleResponse>[] = [
+  {
+    id: 'expander',
+    header: () => null,
+    cell: ({ row }) => {
+      return row.getCanExpand() && row.original.seasons.length ? (
+        <button
+          {...{
+            onClick: row.getToggleExpandedHandler(),
+            style: { cursor: 'pointer' },
+          }}
+        >
+          {row.getIsExpanded() ? '👇' : '👉'}
+        </button>
+      ) : null;
+    },
+  },
+  {
+    accessorKey: 'title_name',
+    header: 'Title Name',
+    cell: (info) => info.getValue(),
+  },
+  {
+    accessorKey: 'genre',
+    header: 'Genre',
+    cell: (info) => info.getValue<Genre>().name,
+  },
+  {
+    accessorKey: 'vod',
+    header: 'VOD',
+    cell: (info) => info.getValue(),
+  },
+  {
+    accessorKey: 'content_type',
+    header: 'Type',
+    cell: (info) => info.getValue(),
+  },
+  {
+    accessorKey: 'release_year',
+    header: 'Year',
+    cell: (info) => info.getValue(),
+  },
+  {
+    accessorKey: 'license_end',
+    header: 'Expiration',
+    cell: (info) => info.getValue(),
+  },
+  {
+    id: 'dpcp',
+    header: 'DP / CP',
+    cell: ({ row }) => (
+      <span>{`${row.original.licensor}/${row.original.cp_code}`}</span>
+    ),
+  },
+  {
+    id: 'season',
+    header: 'Seasons',
+    cell: ({ row }) => <span>{row.original.seasons.length}</span>,
+  },
+  {
+    accessorKey: 'episode_count',
+    header: 'Episodes',
+    cell: (info) => info.getValue(),
+  },
+  {
+    accessorKey: 'list_price',
+    header: 'List Price',
+    cell: (info) => info.getValue(),
+  },
+  {
+    accessorKey: 'discount_price',
+    header: 'Discount Price',
+    cell: (info) => info.getValue(),
+  },
+];
+
+export const promosSelectTitleData: TitleResponse[] = [
   {
     title_id: 601478,
     title_iid: '601478',
