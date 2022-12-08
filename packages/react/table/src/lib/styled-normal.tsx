@@ -45,7 +45,7 @@ function StyledHead({ children, className }: NormalTableProps) {
           className={cx(
             css`
               height: 52px;
-              background-color: var(--transparent);
+              background-color: #e9ecef;
               box-shadow: 0px -1px 0px 0px rgba(0, 0, 0, 0.2) inset;
               position: sticky;
               left: 0;

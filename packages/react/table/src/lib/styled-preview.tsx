@@ -47,9 +47,6 @@ function StyledHead({ children, className }: PreviewTableProps) {
               color: rgba(0, 0, 0, 0.6);
               background-color: #ebebeb;
               box-shadow: 0px -1px 0px 0px rgba(0, 0, 0, 0.2) inset;
-              position: sticky;
-              left: 0;
-              top: 0;
             `,
             className
           )}
