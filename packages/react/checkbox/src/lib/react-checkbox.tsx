@@ -14,7 +14,6 @@ export interface ReactCheckboxProps {
 
 const Container = styled.div`
   width: 100%;
-  min-width: 300px;
   font-size: 0.875rem;
   letter-spacing: 0.15px;
 `;

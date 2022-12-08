@@ -1,6 +1,6 @@
 import { createColumnHelper } from '@tanstack/react-table';
 
-type Person = {
+export type Person = {
   firstName: string;
   lastName: string;
   age: number;
