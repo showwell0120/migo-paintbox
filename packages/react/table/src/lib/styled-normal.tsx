@@ -1,10 +1,12 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
 import React from 'react';
 import { ClassNames } from '@emotion/react';
-
+import { Row, flexRender } from '@tanstack/react-table';
+import { useDrag, useDrop } from 'react-dnd';
 export interface NormalTableProps {
   children?: React.ReactNode;
   className?: string;
+  style?: React.CSSProperties;
   onClick?: () => void;
 }
 
@@ -129,6 +131,41 @@ function StyledBodyTR({ children, className, ...props }: NormalTableProps) {
   );
 }
 
+const StyledBodyTRRef = React.forwardRef<HTMLTableRowElement, NormalTableProps>(
+  ({ children, className, ...props }, ref) => (
+    <ClassNames>
+      {({ css, cx }) => (
+        <tr
+          className={cx(
+            css`
+              height: 48px;
+              &:hover,
+              &:active {
+                background: rgba(232, 245, 253, 0.8);
+                cursor: pointer;
+              }
+              &:last-child {
+                td {
+                  &:first-child {
+                    border-bottom-left-radius: 4px;
+                  }
+                  &:last-child {
+                    border-bottom-right-radius: 4px;
+                  }
+                }
+              }
+            `,
+            className
+          )}
+          {...props}
+        >
+          {children}
+        </tr>
+      )}
+    </ClassNames>
+  )
+);
+
 function StyledTH({ children, className, ...props }: NormalTableProps) {
   return (
     <ClassNames>
@@ -157,11 +194,9 @@ function StyledTH({ children, className, ...props }: NormalTableProps) {
   );
 }
 
-function StyledTD({
-  children,
-  className,
-  ...props
-}: NormalTableProps & { colSpan?: number }) {
+type StyledTDProps = NormalTableProps & { colSpan?: number };
+
+function StyledTD({ children, className, ...props }: StyledTDProps) {
   return (
     <ClassNames>
       {({ css, cx }) => (
@@ -185,6 +220,75 @@ function StyledTD({
   );
 }
 
+const StyledTDRef = React.forwardRef<HTMLTableCellElement, StyledTDProps>(
+  ({ children, className, ...props }, ref) => (
+    <ClassNames>
+      {({ css, cx }) => (
+        <td
+          ref={ref}
+          className={cx(
+            css`
+              padding-left: 1rem;
+              border-bottom: 1px solid var(--gray-500);
+              &:last-child {
+                padding-right: 1rem;
+              }
+            `,
+            className
+          )}
+          {...props}
+        >
+          {children}
+        </td>
+      )}
+    </ClassNames>
+  )
+);
+
+interface DraggableRowProps<RowType> {
+  row: Row<RowType>;
+  reorderRow: (draggedRowIndex: number, targetRowIndex: number) => void;
+}
+
+function DraggableRow<RowType>({
+  row,
+  reorderRow,
+}: DraggableRowProps<RowType>) {
+  const [, dropRef] = useDrop({
+    accept: 'row',
+    drop: (draggedRow: Row<RowType>) => reorderRow(draggedRow.index, row.index),
+  });
+
+  const [{ isDragging }, dragRef, previewRef] = useDrag({
+    collect: (monitor) => ({
+      isDragging: monitor.isDragging(),
+    }),
+    item: () => row,
+    type: 'row',
+  });
+
+  return (
+    <StyledBodyTRRef
+      ref={previewRef} //previewRef could go here
+      style={{ opacity: isDragging ? 0.5 : 1 }}
+    >
+      <StyledTDRef ref={dropRef}>
+        <button ref={dragRef}>🟰</button>
+      </StyledTDRef>
+      {row.getVisibleCells().map((cell, index) => {
+        if (index === 0) {
+          return null;
+        }
+        return (
+          <StyledTD key={cell.id}>
+            {flexRender(cell.column.columnDef.cell, cell.getContext())}
+          </StyledTD>
+        );
+      })}
+    </StyledBodyTRRef>
+  );
+}
+
 export const NormalTable = {
   StyledTable,
   StyledHead,
@@ -193,4 +297,5 @@ export const NormalTable = {
   StyledBodyTR,
   StyledTH,
   StyledTD,
+  DraggableRow,
 };
