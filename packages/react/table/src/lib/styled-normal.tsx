@@ -1,8 +1,7 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
 import React from 'react';
 import { ClassNames } from '@emotion/react';
-import { Row, flexRender } from '@tanstack/react-table';
-import { useDrag, useDrop } from 'react-dnd';
+import { Row } from '@tanstack/react-table';
 export interface NormalTableProps {
   children?: React.ReactNode;
   className?: string;
@@ -245,48 +244,9 @@ const StyledTDRef = React.forwardRef<HTMLTableCellElement, StyledTDProps>(
   )
 );
 
-interface DraggableRowProps<RowType> {
+export interface DraggableRowProps<RowType> {
   row: Row<RowType>;
   reorderRow: (draggedRowIndex: number, targetRowIndex: number) => void;
-}
-
-function DraggableRow<RowType>({
-  row,
-  reorderRow,
-}: DraggableRowProps<RowType>) {
-  const [, dropRef] = useDrop({
-    accept: 'row',
-    drop: (draggedRow: Row<RowType>) => reorderRow(draggedRow.index, row.index),
-  });
-
-  const [{ isDragging }, dragRef, previewRef] = useDrag({
-    collect: (monitor) => ({
-      isDragging: monitor.isDragging(),
-    }),
-    item: () => row,
-    type: 'row',
-  });
-
-  return (
-    <StyledBodyTRRef
-      ref={previewRef} //previewRef could go here
-      style={{ opacity: isDragging ? 0.5 : 1 }}
-    >
-      <StyledTDRef ref={dropRef}>
-        <button ref={dragRef}>🟰</button>
-      </StyledTDRef>
-      {row.getVisibleCells().map((cell, index) => {
-        if (index === 0) {
-          return null;
-        }
-        return (
-          <StyledTD key={cell.id}>
-            {flexRender(cell.column.columnDef.cell, cell.getContext())}
-          </StyledTD>
-        );
-      })}
-    </StyledBodyTRRef>
-  );
 }
 
 export const NormalTable = {
@@ -297,5 +257,6 @@ export const NormalTable = {
   StyledBodyTR,
   StyledTH,
   StyledTD,
-  DraggableRow,
+  StyledBodyTRRef,
+  StyledTDRef,
 };

@@ -5,54 +5,60 @@ import {
   flexRender,
   getCoreRowModel,
   useReactTable,
-  ColumnDef,
+  Row,
 } from '@tanstack/react-table';
-import { DndProvider } from 'react-dnd';
+import { DndProvider, useDrag, useDrop } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
 
-import { NormalTable } from '@paintbox/react-table';
+import { NormalTable, DraggableRowProps } from '@paintbox/react-table';
 
-import { defaultData, Person } from './basic-data';
+import { defaultData, Person, dndColumns } from './basic-data';
 
-const columns: ColumnDef<Person>[] = [
-  {
-    id: 'dnd',
-    header: 'DnD',
-    cell: () => null,
-  },
-  {
-    accessorKey: 'firstName',
-    header: 'First Name',
-    cell: (info) => info.getValue(),
-  },
-  {
-    accessorKey: 'lastName',
-    header: 'Last Name',
-    cell: (info) => info.getValue(),
-  },
-  {
-    accessorKey: 'progress',
-    header: 'Progress',
-    cell: (info) => info.getValue(),
-  },
-  {
-    accessorKey: 'status',
-    header: 'Status',
-    cell: (info) => info.getValue(),
-  },
-  {
-    accessorKey: 'visits',
-    header: 'Visits',
-    cell: (info) => info.getValue(),
-  },
-];
+function DraggableRow<RowType>({
+  row,
+  reorderRow,
+}: DraggableRowProps<RowType>) {
+  const [, dropRef] = useDrop({
+    accept: 'row',
+    drop: (draggedRow: Row<RowType>) => reorderRow(draggedRow.index, row.index),
+  });
+
+  const [{ isDragging }, dragRef, previewRef] = useDrag({
+    collect: (monitor) => ({
+      isDragging: monitor.isDragging(),
+    }),
+    item: () => row,
+    type: 'row',
+  });
+
+  return (
+    <NormalTable.StyledBodyTRRef
+      ref={previewRef} //previewRef could go here
+      style={{ opacity: isDragging ? 0.5 : 1 }}
+    >
+      <NormalTable.StyledTDRef ref={dropRef}>
+        <button ref={dragRef}>🟰</button>
+      </NormalTable.StyledTDRef>
+      {row.getVisibleCells().map((cell, index) => {
+        if (index === 0) {
+          return null;
+        }
+        return (
+          <NormalTable.StyledTD key={cell.id}>
+            {flexRender(cell.column.columnDef.cell, cell.getContext())}
+          </NormalTable.StyledTD>
+        );
+      })}
+    </NormalTable.StyledBodyTRRef>
+  );
+}
 
 function NormalDnDTable() {
   const [data, setData] = React.useState(() => [...defaultData]);
 
   const table = useReactTable({
     data,
-    columns,
+    columns: dndColumns,
     getCoreRowModel: getCoreRowModel(),
   });
 
@@ -86,7 +92,7 @@ function NormalDnDTable() {
         </NormalTable.StyledHead>
         <NormalTable.StyledBody>
           {table.getRowModel().rows.map((row) => (
-            <NormalTable.DraggableRow<Person>
+            <DraggableRow<Person>
               key={row.id}
               row={row}
               reorderRow={reorderRow}
