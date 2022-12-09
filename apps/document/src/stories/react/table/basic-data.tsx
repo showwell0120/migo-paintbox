@@ -1,4 +1,6 @@
-import { createColumnHelper } from '@tanstack/react-table';
+import { createColumnHelper, ColumnDef } from '@tanstack/react-table';
+
+import { selectCol, dndCol } from '@paintbox/react-table';
 
 export type Person = {
   firstName: string;
@@ -66,4 +68,42 @@ export const columns = [
     header: 'Profile Progress',
     footer: (info) => info.column.id,
   }),
+];
+
+const commonColumns: ColumnDef<Person>[] = [
+  {
+    accessorKey: 'firstName',
+    header: 'First Name',
+    cell: (info) => info.getValue(),
+  },
+  {
+    accessorKey: 'lastName',
+    header: 'Last Name',
+    cell: (info) => info.getValue(),
+  },
+  {
+    accessorKey: 'progress',
+    header: 'Progress',
+    cell: (info) => info.getValue(),
+  },
+  {
+    accessorKey: 'status',
+    header: 'Status',
+    cell: (info) => info.getValue(),
+  },
+  {
+    accessorKey: 'visits',
+    header: 'Visits',
+    cell: (info) => info.getValue(),
+  },
+];
+
+export const selectColumns: ColumnDef<Person>[] = [
+  selectCol as ColumnDef<Person>,
+  ...commonColumns,
+];
+
+export const dndColumns: ColumnDef<Person>[] = [
+  dndCol as ColumnDef<Person>,
+  ...commonColumns,
 ];

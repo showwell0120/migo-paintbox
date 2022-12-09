@@ -1,4 +1,5 @@
 import { ColumnDef } from '@tanstack/react-table';
+import { expanderCol, selectCol, dndCol } from '@paintbox/react-table';
 
 export interface Genre {
   code: string;
@@ -40,13 +41,13 @@ export interface SeasonResponse {
 export interface TitleResponse {
   title_id: number;
   title_iid: string;
-  title_name: string; // show 1
-  genre: Genre; // show 2
+  title_name: string;
+  genre: Genre;
   rating: string;
-  release_year: number; // show 5
+  release_year: number;
   region: string | null;
-  content_type: string; // show 4
-  episode_count: number; // show 9
+  content_type: string;
+  episode_count: number;
   content_length: number;
   publish_timestamp: number;
   deliver_success_count: number | null;
@@ -54,35 +55,19 @@ export interface TitleResponse {
   deliver_rate: number;
   approve_status: boolean;
   activate: boolean;
-  cp_code: string; // show 7 (add licensor)
+  cp_code: string;
   license_start: number;
-  license_end: number; // show 6
+  license_end: number;
   licensor: string;
   distribution: boolean;
   file_size: number;
-  seasons: SeasonResponse[]; // show 8 (get length)
-  vod: string; // show 3
-  list_price: number | null; // show 10
-  discount_price: number | null; // show 11
+  seasons: SeasonResponse[];
+  vod: string;
+  list_price: number | null;
+  discount_price: number | null;
 }
 
-export const columns: ColumnDef<TitleResponse>[] = [
-  {
-    id: 'expander',
-    header: () => null,
-    cell: ({ row }) => {
-      return row.getCanExpand() && row.original.seasons.length ? (
-        <button
-          {...{
-            onClick: row.getToggleExpandedHandler(),
-            style: { cursor: 'pointer' },
-          }}
-        >
-          {row.getIsExpanded() ? '👇' : '👉'}
-        </button>
-      ) : null;
-    },
-  },
+const basicColumns: ColumnDef<TitleResponse>[] = [
   {
     accessorKey: 'title_name',
     header: 'Title Name',
@@ -103,23 +88,9 @@ export const columns: ColumnDef<TitleResponse>[] = [
     header: 'Type',
     cell: (info) => info.getValue(),
   },
-  {
-    accessorKey: 'release_year',
-    header: 'Year',
-    cell: (info) => info.getValue(),
-  },
-  {
-    accessorKey: 'license_end',
-    header: 'Expiration',
-    cell: (info) => info.getValue(),
-  },
-  {
-    id: 'dpcp',
-    header: 'DP / CP',
-    cell: ({ row }) => (
-      <span>{`${row.original.licensor}/${row.original.cp_code}`}</span>
-    ),
-  },
+];
+
+const svodColumns: ColumnDef<TitleResponse>[] = [
   {
     id: 'season',
     header: 'Seasons',
@@ -130,6 +101,9 @@ export const columns: ColumnDef<TitleResponse>[] = [
     header: 'Episodes',
     cell: (info) => info.getValue(),
   },
+];
+
+const tvodColumns: ColumnDef<TitleResponse>[] = [
   {
     accessorKey: 'list_price',
     header: 'List Price',
@@ -142,7 +116,77 @@ export const columns: ColumnDef<TitleResponse>[] = [
   },
 ];
 
-export const promosSelectTitleData: TitleResponse[] = [
+const licenseColumns: ColumnDef<TitleResponse>[] = [
+  {
+    accessorKey: 'license_end',
+    header: 'Expiration',
+    cell: (info) => info.getValue(),
+  },
+  {
+    id: 'dpcp',
+    header: 'DP / CP',
+    cell: ({ row }) => (
+      <span>{`${row.original.licensor}/${row.original.cp_code}`}</span>
+    ),
+  },
+];
+
+export const expandColumns: ColumnDef<TitleResponse>[] = [
+  expanderCol as ColumnDef<TitleResponse>,
+  ...basicColumns,
+  {
+    accessorKey: 'release_year',
+    header: 'Year',
+    cell: (info) => info.getValue(),
+  },
+  ...licenseColumns,
+  ...svodColumns,
+  ...tvodColumns,
+];
+
+export const allFeatColumns: ColumnDef<TitleResponse>[] = [
+  selectCol as ColumnDef<TitleResponse>,
+  expanderCol as ColumnDef<TitleResponse>,
+  {
+    accessorKey: 'title_id',
+    header: 'Title ID',
+    cell: (info) => info.getValue(),
+  },
+  ...basicColumns,
+  ...svodColumns,
+  {
+    accessorKey: 'publish_timestamp',
+    header: 'Publish',
+    cell: (info) => info.getValue(),
+  },
+  ...licenseColumns,
+  {
+    id: 'mds',
+    header: 'MDS',
+    cell: ({ row }) => (
+      <span>{`${row.original?.deliver_rate?.toFixed(2) ?? '0'} %`}</span>
+    ),
+  },
+  {
+    accessorKey: 'file_size',
+    header: 'Size',
+    cell: (info) => info.getValue(),
+  },
+  ...tvodColumns,
+  {
+    id: 'distribution',
+    header: () => <div>Distribution</div>,
+    cell: () => 'switch', // TODO
+  },
+  {
+    id: 'programming',
+    header: 'For Programming',
+    cell: () => 'switch', // TODO
+  },
+  dndCol as ColumnDef<TitleResponse>,
+];
+
+export const titleData: TitleResponse[] = [
   {
     title_id: 601478,
     title_iid: '601478',

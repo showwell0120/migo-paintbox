@@ -5,50 +5,10 @@ import {
   flexRender,
   getCoreRowModel,
   useReactTable,
-  ColumnDef,
 } from '@tanstack/react-table';
 
-import { ReactCheckbox } from '@paintbox/react-checkbox';
 import { NormalTable } from '@paintbox/react-table';
-import { defaultData, Person } from './basic-data';
-
-const columns: ColumnDef<Person>[] = [
-  {
-    id: 'select',
-    header: 'Select',
-    cell: ({ row }) => (
-      <ReactCheckbox
-        checked={row.getIsSelected()}
-        onChange={row.getToggleSelectedHandler()}
-      />
-    ),
-  },
-  {
-    accessorKey: 'firstName',
-    header: 'First Name',
-    cell: (info) => info.getValue(),
-  },
-  {
-    accessorKey: 'lastName',
-    header: 'Last Name',
-    cell: (info) => info.getValue(),
-  },
-  {
-    accessorKey: 'progress',
-    header: 'Progress',
-    cell: (info) => info.getValue(),
-  },
-  {
-    accessorKey: 'status',
-    header: 'Status',
-    cell: (info) => info.getValue(),
-  },
-  {
-    accessorKey: 'visits',
-    header: 'Visits',
-    cell: (info) => info.getValue(),
-  },
-];
+import { defaultData, selectColumns } from './basic-data';
 
 function NormalSelectTable() {
   const [data, setData] = React.useState(() => [...defaultData]);
@@ -56,7 +16,7 @@ function NormalSelectTable() {
 
   const table = useReactTable({
     data,
-    columns,
+    columns: selectColumns,
     state: {
       rowSelection,
     },

@@ -10,8 +10,8 @@ import {
 
 import { NormalTable } from '@paintbox/react-table';
 import {
-  promosSelectTitleData,
-  columns,
+  titleData,
+  expandColumns,
   SeasonResponse,
   EpisodeResponse,
 } from './title-data';
@@ -88,12 +88,12 @@ function SeasonRows({ seasons }: { seasons: SeasonResponse[] }) {
 }
 
 function NormalSubCompTable() {
-  const [data, setData] = React.useState(() => [...promosSelectTitleData]);
+  const [data, setData] = React.useState(() => [...titleData]);
 
   const table = useReactTable({
     data,
-    columns,
-    getRowCanExpand: () => true,
+    columns: expandColumns,
+    getRowCanExpand: (row) => row.original.seasons.length > 0,
     getCoreRowModel: getCoreRowModel(),
     getExpandedRowModel: getExpandedRowModel(),
   });
