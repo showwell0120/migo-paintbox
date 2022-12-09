@@ -12,7 +12,15 @@ import {
 import { NormalTable } from '@paintbox/react-table';
 import { defaultData, columns } from './basic-data';
 
-function NormalSortTable() {
+interface NormalSortTableProps {
+  onSort?: (sort: SortingState) => void;
+  sortByClient?: boolean;
+}
+
+function NormalSortTable({
+  onSort,
+  sortByClient = false,
+}: NormalSortTableProps) {
   const [data, setData] = React.useState(() => [...defaultData]);
   const [sorting, setSorting] = React.useState<SortingState>([]);
 
@@ -24,8 +32,12 @@ function NormalSortTable() {
     },
     onSortingChange: setSorting,
     getCoreRowModel: getCoreRowModel(),
-    getSortedRowModel: getSortedRowModel(),
+    ...(sortByClient && { getSortedRowModel: getSortedRowModel() }),
   });
+
+  React.useEffect(() => {
+    onSort?.(sorting);
+  }, [sorting, onSort]);
 
   return (
     <NormalTable.StyledTable>
@@ -74,11 +86,16 @@ function NormalSortTable() {
 }
 
 const Template: ComponentStory<typeof NormalSortTable> = (args) => {
-  return <NormalSortTable />;
+  return <NormalSortTable {...args} />;
 };
 
 export const Default = Template.bind({});
-Default.args = {};
+Default.args = {
+  onSort(s) {
+    console.log(s);
+  },
+  sortByClient: true,
+};
 
 export default {
   component: NormalSortTable,
