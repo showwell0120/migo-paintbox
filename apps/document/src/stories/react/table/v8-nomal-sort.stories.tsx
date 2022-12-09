@@ -12,7 +12,7 @@ import {
 import { NormalTable } from '@paintbox/react-table';
 import { defaultData, columns } from './basic-data';
 
-interface NormalSortTableProps {
+export interface NormalSortTableProps {
   onSort?: (sort: SortingState) => void;
   sortByClient?: boolean;
 }
