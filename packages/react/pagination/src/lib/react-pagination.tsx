@@ -2,7 +2,7 @@ import React from 'react';
 import styled from '@emotion/styled';
 import { css } from '@emotion/react';
 
-import { CaretLeftFill, CaretRightFill } from '@paintbox/react-foundation';
+import { CaretIcons } from '@paintbox/react-foundation';
 
 export interface PageParams {
   page: number;
@@ -97,7 +97,7 @@ export function ReactPagination({
         {currRange?.from}-{currRange?.to} of {amountGetter.format(total)}
       </Dashboard>
       <ToggleButton disabled={page === 0} onClick={handleMinusPage}>
-        <CaretLeftFill
+        <CaretIcons.LeftFill
           {...(page === 0
             ? {
                 stroke: 'var(--text-muted)',
@@ -106,7 +106,7 @@ export function ReactPagination({
         />
       </ToggleButton>
       <ToggleButton disabled={page === lastPage} onClick={handleAddPage}>
-        <CaretRightFill
+        <CaretIcons.RightFill
           {...(page === lastPage
             ? {
                 stroke: 'var(--text-muted)',
