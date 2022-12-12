@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
 import React from 'react';
 import { ClassNames } from '@emotion/react';
-import { Row } from '@tanstack/react-table';
+import { Row, flexRender, Header } from '@tanstack/react-table';
 export interface NormalTableProps {
   children?: React.ReactNode;
   className?: string;
@@ -244,6 +244,33 @@ const StyledTDRef = React.forwardRef<HTMLTableCellElement, StyledTDProps>(
   )
 );
 
+interface SortStyledTHProps<TData> {
+  header: Header<TData, unknown>;
+}
+
+export function SortStyledTH<TData>({ header }: SortStyledTHProps<TData>) {
+  return (
+    <NormalTable.StyledTH key={header.id}>
+      {header.isPlaceholder ? null : (
+        <div
+          {...{
+            className: header.column.getCanSort()
+              ? 'cursor-pointer select-none'
+              : '',
+            onClick: header.column.getToggleSortingHandler(),
+          }}
+        >
+          {flexRender(header.column.columnDef.header, header.getContext())}
+          {{
+            asc: ' 🔼',
+            desc: ' 🔽',
+          }[header.column.getIsSorted() as string] ?? null}
+        </div>
+      )}
+    </NormalTable.StyledTH>
+  );
+}
+
 export interface DraggableRowProps<RowType> {
   row: Row<RowType>;
   reorderRow: (draggedRowIndex: number, targetRowIndex: number) => void;
@@ -259,4 +286,5 @@ export const NormalTable = {
   StyledTD,
   StyledBodyTRRef,
   StyledTDRef,
+  SortStyledTH,
 };
