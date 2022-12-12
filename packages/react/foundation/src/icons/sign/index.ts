@@ -1,5 +1,11 @@
-export * from './check-cycle-fill';
-export * from './cross';
-export * from './exclamation-cycle-fill';
-export * from './x-circle-fill';
-export * from './x';
+import { ReactComponent as CheckCircleFill } from './check-circle-fill.svg';
+import { ReactComponent as ExclamationCircleFill } from './exclamation-circle-fill.svg';
+import { ReactComponent as XCircleFill } from './x-circle-fill.svg';
+import { ReactComponent as X } from './x.svg';
+
+export const SignIcons = {
+  CheckCircleFill,
+  ExclamationCircleFill,
+  XCircleFill,
+  X,
+};

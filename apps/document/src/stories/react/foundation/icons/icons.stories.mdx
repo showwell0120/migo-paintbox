@@ -1,0 +1,135 @@
+import { Meta, Canvas, Story } from '@storybook/addon-docs/blocks';
+
+<Meta title="React/Foundation/Icons/Doc" />
+
+# Icons
+
+> Icons 集中了目前在專案中有用到的 SVG 圖檔，並且以內建的 ReactComponent 的形式匯出。Icon 元件可以設定原生支援的 props。常見的有－
+
+```javascript
+export interface SVGProps {
+  className?: string | undefined;
+  height?: number | string | undefined;
+  width?: number | string | undefined;
+  fill?: string | undefined;
+  fillOpacity?: number | string | undefined;
+  stroke?: string | undefined;
+  strokeOpacity?: number | string | undefined;
+  strokeWidth?: number | string | undefined;
+}
+```
+
+如果發現設定 `fill` 無法改變填色，可以新增 `className`，並且對元件底下的 `path` element 設定 `fill` 的顏色。
+
+```scss
+.fill-path-primary {
+    path {
+        fill: var(--primary);
+    }
+}
+```
+
+```javascript
+<MediaIcons.CameraReelsFill className="fill-path-primary" />
+```
+
+## Mockup
+
+- [Figma](https://www.figma.com/file/Sv8VnmaINqyDQcpdO3cz5M/%F0%9F%96%A5-Foundation?node-id=14%3A2361)
+
+## Usage
+
+```javascript
+import { MediaIcons } from '@paintbox/react-foundation';
+return <MediaIcons.CameraReelsFill />
+```
+
+## Stories
+
+### Arrow
+
+`import { ArrowIcons } from '@paintbox/react-foundation';`
+
+<Canvas>
+    <Story id="react-foundation-icons-arrow--default" />
+</Canvas>
+
+### Box Arrow
+
+`import { BoxArrowIcons } from '@paintbox/react-foundation';`
+
+<Canvas>
+    <Story id="react-foundation-icons-boxarrow--default" />
+</Canvas>
+
+### Caret
+
+`import { CaretIcons } from '@paintbox/react-foundation';`
+
+<Canvas>
+    <Story id="react-foundation-icons-caret--default" />
+</Canvas>
+
+### Chevron
+
+`import { ChevronIcons } from '@paintbox/react-foundation';`
+
+<Canvas>
+    <Story id="react-foundation-icons-chevron--default" />
+</Canvas>
+
+### Header
+
+`import { HeaderIcons } from '@paintbox/react-foundation';`
+
+<Canvas>
+    <Story id="react-foundation-icons-header--default" />
+</Canvas>
+
+### Media
+
+`import { MediaIcons } from '@paintbox/react-foundation';`
+
+<Canvas>
+    <Story id="react-foundation-icons-media--default" />
+</Canvas>
+
+### Misc
+
+`import { MiscIcons } from '@paintbox/react-foundation';`
+
+<Canvas>
+    <Story id="react-foundation-icons-misc--default" />
+</Canvas>
+
+### People
+
+`import { PeopleIcons } from '@paintbox/react-foundation';`
+
+<Canvas>
+    <Story id="react-foundation-icons-people--default" />
+</Canvas>
+
+### Sign
+
+`import { SignIcons } from '@paintbox/react-foundation';`
+
+<Canvas>
+    <Story id="react-foundation-icons-sign--default" />
+</Canvas>
+
+### Sort 
+
+`import { SortIcons } from '@paintbox/react-foundation';`
+
+<Canvas>
+    <Story id="react-foundation-icons-sort--default" />
+</Canvas>
+
+### Time 
+
+`import { TimeIcons } from '@paintbox/react-foundation';`
+
+<Canvas>
+    <Story id="react-foundation-icons-time--default" />
+</Canvas>
