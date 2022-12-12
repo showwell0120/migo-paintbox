@@ -135,6 +135,7 @@ const StyledBodyTRRef = React.forwardRef<HTMLTableRowElement, NormalTableProps>(
     <ClassNames>
       {({ css, cx }) => (
         <tr
+          ref={ref}
           className={cx(
             css`
               height: 48px;

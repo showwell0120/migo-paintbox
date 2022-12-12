@@ -144,10 +144,7 @@ function DraggableRow({ row, reorderRow }: DraggableRowProps<TitleResponse>) {
 
   return (
     <React.Fragment key={row.id}>
-      <NormalTable.StyledBodyTRRef
-        ref={previewRef}
-        style={{ opacity: isDragging ? 0.5 : 1 }}
-      >
+      <NormalTable.StyledBodyTR style={{ opacity: isDragging ? 0.5 : 1 }}>
         {row.getVisibleCells().map((cell, index) => {
           if (index === row.getVisibleCells().length - 1) {
             return null;
@@ -162,7 +159,7 @@ function DraggableRow({ row, reorderRow }: DraggableRowProps<TitleResponse>) {
         <NormalTable.StyledTDRef ref={dropRef}>
           <button ref={dragRef}>🟰</button>
         </NormalTable.StyledTDRef>
-      </NormalTable.StyledBodyTRRef>
+      </NormalTable.StyledBodyTR>
       {row.getIsExpanded() && <SeasonRows seasons={row.original.seasons} />}
     </React.Fragment>
   );
