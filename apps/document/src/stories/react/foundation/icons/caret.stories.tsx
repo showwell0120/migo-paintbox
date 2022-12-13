@@ -8,6 +8,10 @@ function Caret({ className }: TemplateProps) {
   return (
     <Container>
       <Wrapper>
+        <Small>DownFill</Small>
+        <CaretIcons.DownFill width={20} height={20} className={className} />
+      </Wrapper>
+      <Wrapper>
         <Small>LeftFill</Small>
         <CaretIcons.LeftFill width={20} height={20} className={className} />
       </Wrapper>

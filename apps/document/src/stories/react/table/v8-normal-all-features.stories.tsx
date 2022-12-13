@@ -13,6 +13,7 @@ import {
 import { DndProvider, useDrag, useDrop } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
 
+import { CaretIcons, ControlIcons } from '@paintbox/react-foundation';
 import { NormalTable, DraggableRowProps } from '@paintbox/react-table';
 import {
   titleData,
@@ -33,10 +34,9 @@ function EpisodeRows({ episodes }: { episodes: EpisodeResponse[] }) {
           {/* expander */}
           <NormalTable.StyledTD></NormalTable.StyledTD>
           {/* episode name */}
-          <NormalTable.StyledTD colSpan={2}>
-            {episode.episode_name}
+          <NormalTable.StyledTD colSpan={4} style={{ paddingLeft: '2.2rem' }}>
+            <span>{episode.episode_name}</span>
           </NormalTable.StyledTD>
-          <NormalTable.StyledTD colSpan={2}></NormalTable.StyledTD>
           {/* type */}
           <NormalTable.StyledTD>Episode</NormalTable.StyledTD>
           {/* season */}
@@ -79,13 +79,18 @@ function SeasonRows({ seasons }: { seasons: SeasonResponse[] }) {
               {/* expander */}
               <NormalTable.StyledTD></NormalTable.StyledTD>
               {/* season expander + season name */}
-              <NormalTable.StyledTD colSpan={2}>
-                <span onClick={handleEpExpanded}>
-                  {epExanded ? '👇' : '👉'}
-                </span>
-                {season.season_name}
+              <NormalTable.StyledTD colSpan={4}>
+                <div style={{ display: 'flex', gap: 6 }}>
+                  <span onClick={handleEpExpanded}>
+                    {epExanded ? (
+                      <CaretIcons.DownFill />
+                    ) : (
+                      <CaretIcons.RightFill />
+                    )}
+                  </span>
+                  <span>{season.season_name}</span>
+                </div>
               </NormalTable.StyledTD>
-              <NormalTable.StyledTD colSpan={2}></NormalTable.StyledTD>
               {/* type */}
               <NormalTable.StyledTD>Season</NormalTable.StyledTD>
               {/* season */}
@@ -144,7 +149,10 @@ function DraggableRow({ row, reorderRow }: DraggableRowProps<TitleResponse>) {
 
   return (
     <React.Fragment key={row.id}>
-      <NormalTable.StyledBodyTR style={{ opacity: isDragging ? 0.5 : 1 }}>
+      <NormalTable.StyledBodyTR
+      // ref={previewRef}
+      // style={{ opacity: isDragging ? 0.5 : 1 }}
+      >
         {row.getVisibleCells().map((cell, index) => {
           if (index === row.getVisibleCells().length - 1) {
             return null;
@@ -157,7 +165,9 @@ function DraggableRow({ row, reorderRow }: DraggableRowProps<TitleResponse>) {
           );
         })}
         <NormalTable.StyledTDRef ref={dropRef}>
-          <button ref={dragRef}>🟰</button>
+          <span ref={dragRef}>
+            <ControlIcons.Sequence />
+          </span>
         </NormalTable.StyledTDRef>
       </NormalTable.StyledBodyTR>
       {row.getIsExpanded() && <SeasonRows seasons={row.original.seasons} />}
@@ -206,14 +216,7 @@ function NormalAllFeatTable({ onSort, sortByClient }: NormalAllFeatTableProps) {
         {table.getHeaderGroups().map((headerGroup) => (
           <NormalTable.StyledHeadTR key={headerGroup.id}>
             {headerGroup.headers.map((header) => (
-              <NormalTable.StyledTH key={header.id}>
-                {header.isPlaceholder
-                  ? null
-                  : flexRender(
-                      header.column.columnDef.header,
-                      header.getContext()
-                    )}
-              </NormalTable.StyledTH>
+              <NormalTable.SortStyledTH header={header} />
             ))}
           </NormalTable.StyledHeadTR>
         ))}
@@ -230,13 +233,18 @@ function NormalAllFeatTable({ onSort, sortByClient }: NormalAllFeatTableProps) {
 const Template: ComponentStory<typeof NormalAllFeatTable> = (args) => {
   return (
     <DndProvider backend={HTML5Backend}>
-      <NormalAllFeatTable />
+      <NormalAllFeatTable {...args} />
     </DndProvider>
   );
 };
 
 export const Default = Template.bind({});
-Default.args = {};
+Default.args = {
+  onSort(s) {
+    console.log(s);
+  },
+  sortByClient: true,
+};
 
 export default {
   component: NormalAllFeatTable,

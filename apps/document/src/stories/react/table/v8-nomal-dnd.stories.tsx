@@ -10,6 +10,7 @@ import {
 import { DndProvider, useDrag, useDrop } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
 
+import { ControlIcons } from '@paintbox/react-foundation';
 import { NormalTable, DraggableRowProps } from '@paintbox/react-table';
 
 import { defaultData, Person, dndColumns } from './basic-data';
@@ -37,7 +38,9 @@ function DraggableRow<RowType>({
       style={{ opacity: isDragging ? 0.5 : 1 }}
     >
       <NormalTable.StyledTDRef ref={dropRef}>
-        <button ref={dragRef}>🟰</button>
+        <span ref={dragRef}>
+          <ControlIcons.Sequence />
+        </span>
       </NormalTable.StyledTDRef>
       {row.getVisibleCells().map((cell, index) => {
         if (index === 0) {

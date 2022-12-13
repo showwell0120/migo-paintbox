@@ -8,6 +8,7 @@ import {
   flexRender,
 } from '@tanstack/react-table';
 
+import { CaretIcons } from '@paintbox/react-foundation';
 import { NormalTable } from '@paintbox/react-table';
 import {
   titleData,
@@ -24,8 +25,8 @@ function EpisodeRows({ episodes }: { episodes: EpisodeResponse[] }) {
           {/* expander */}
           <NormalTable.StyledTD></NormalTable.StyledTD>
           {/* season expander + season name */}
-          <NormalTable.StyledTD colSpan={3}>
-            {episode.episode_name}
+          <NormalTable.StyledTD colSpan={3} style={{ paddingLeft: '2.2rem' }}>
+            <span>{episode.episode_name}</span>
           </NormalTable.StyledTD>
           {/* type */}
           <NormalTable.StyledTD>Episode</NormalTable.StyledTD>
@@ -55,10 +56,16 @@ function SeasonRows({ seasons }: { seasons: SeasonResponse[] }) {
               <NormalTable.StyledTD></NormalTable.StyledTD>
               {/* season expander + season name */}
               <NormalTable.StyledTD colSpan={3}>
-                <span onClick={handleEpExpanded}>
-                  {epExanded ? '👇' : '👉'}
-                </span>
-                {season.season_name}
+                <div style={{ display: 'flex', gap: 6 }}>
+                  <span onClick={handleEpExpanded}>
+                    {epExanded ? (
+                      <CaretIcons.DownFill />
+                    ) : (
+                      <CaretIcons.RightFill />
+                    )}
+                  </span>
+                  <span>{season.season_name}</span>
+                </div>
               </NormalTable.StyledTD>
               {/* type */}
               <NormalTable.StyledTD>Season</NormalTable.StyledTD>

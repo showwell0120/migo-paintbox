@@ -2,6 +2,8 @@
 import React from 'react';
 import { ClassNames } from '@emotion/react';
 import { Row, flexRender, Header } from '@tanstack/react-table';
+
+import { SortIcons } from '@paintbox/react-foundation';
 export interface NormalTableProps {
   children?: React.ReactNode;
   className?: string;
@@ -173,6 +175,7 @@ function StyledTH({ children, className, ...props }: NormalTableProps) {
         <th
           className={cx(
             css`
+              white-space: nowrap;
               padding-left: 1rem;
               &:first-child {
                 border-top-left-radius: 4px;
@@ -250,23 +253,54 @@ interface SortStyledTHProps<TData> {
 }
 
 export function SortStyledTH<TData>({ header }: SortStyledTHProps<TData>) {
+  const canSort = header.column.getCanSort();
+  const isSorted = header.column.getIsSorted();
+
   return (
     <NormalTable.StyledTH key={header.id}>
       {header.isPlaceholder ? null : (
-        <div
-          {...{
-            className: header.column.getCanSort()
-              ? 'cursor-pointer select-none'
-              : '',
-            onClick: header.column.getToggleSortingHandler(),
+        <ClassNames>
+          {({ css, cx }) => {
+            const wrapperStyle = css`
+              cursor: pointer;
+              color: ${isSorted ? 'var(--text-primary)' : 'var(--text-body)'};
+              font-weight: ${isSorted ? 'bold' : 'normal'};
+            `;
+
+            const iconStyle = css`
+              path {
+                fill: var(--text-primary);
+              }
+              margin-left: 5px;
+            `;
+
+            return (
+              <div
+                {...{
+                  className: canSort ? wrapperStyle : '',
+                  onClick: header.column.getToggleSortingHandler(),
+                }}
+              >
+                {flexRender(
+                  header.column.columnDef.header,
+                  header.getContext()
+                )}
+                {canSort
+                  ? {
+                      asc: <SortIcons.DownAlt className={iconStyle} />,
+                      desc: <SortIcons.Down className={iconStyle} />,
+                    }[isSorted as string] ?? (
+                      <SortIcons.Down
+                        className={css`
+                          margin-left: 5px;
+                        `}
+                      />
+                    )
+                  : null}
+              </div>
+            );
           }}
-        >
-          {flexRender(header.column.columnDef.header, header.getContext())}
-          {{
-            asc: ' 🔼',
-            desc: ' 🔽',
-          }[header.column.getIsSorted() as string] ?? null}
-        </div>
+        </ClassNames>
       )}
     </NormalTable.StyledTH>
   );

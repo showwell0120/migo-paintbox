@@ -1,5 +1,6 @@
 import { ColumnDef } from '@tanstack/react-table';
 
+import { CaretIcons } from '@paintbox/react-foundation';
 import { ReactCheckbox } from '@paintbox/react-checkbox';
 
 export const dndCol: ColumnDef<unknown> = {
@@ -24,14 +25,18 @@ export const expanderCol: ColumnDef<unknown> = {
   header: () => null,
   cell: ({ row }) => {
     return row.getCanExpand() ? (
-      <button
+      <span
         {...{
           onClick: row.getToggleExpandedHandler(),
           style: { cursor: 'pointer' },
         }}
       >
-        {row.getIsExpanded() ? '👇' : '👉'}
-      </button>
+        {row.getIsExpanded() ? (
+          <CaretIcons.DownFill />
+        ) : (
+          <CaretIcons.RightFill />
+        )}
+      </span>
     ) : null;
   },
 };

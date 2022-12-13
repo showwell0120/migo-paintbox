@@ -13,7 +13,7 @@ function People({ className }: TemplateProps) {
       </Wrapper>
       <Wrapper>
         <Small>VisibilityOff</Small>
-        <Small>(from billing system login)</Small>
+        <Small>(from billing portal)</Small>
         <PeopleIcons.VisibilityOff
           width={20}
           height={20}
@@ -22,7 +22,7 @@ function People({ className }: TemplateProps) {
       </Wrapper>
       <Wrapper>
         <Small>VisibilityOn</Small>
-        <Small>(from billing system login)</Small>
+        <Small>(from billing portal)</Small>
         <PeopleIcons.VisibilityOn
           width={20}
           height={20}
