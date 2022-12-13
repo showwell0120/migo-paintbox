@@ -1,2 +1,7 @@
-export * from './bookmark-check-fill';
-export * from './bookmark-x-fill';
+import { ReactComponent as BookmarkCheckFill } from './bookmark-check-fill.svg';
+import { ReactComponent as BookmarkXFill } from './bookmark-x-fill.svg';
+
+export const MiscIcons = {
+  BookmarkCheckFill,
+  BookmarkXFill,
+};

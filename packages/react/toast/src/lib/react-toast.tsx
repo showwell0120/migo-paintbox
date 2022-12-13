@@ -2,14 +2,14 @@ import React from 'react';
 import { css, ClassNames } from '@emotion/react';
 import styled from '@emotion/styled';
 
-import { Cross, ExclamationCycleFill } from '@paintbox/react-foundation';
+import { SignIcons } from '@paintbox/react-foundation';
 
 export type VariantType = 'warn' | 'info';
 
 type cssProps = {
-  xAxis: 'right' | 'center' | 'left',
-  yAxis: 'top' | 'center' | 'bottom',
-  variant: VariantType,
+  xAxis: 'right' | 'center' | 'left';
+  yAxis: 'top' | 'center' | 'bottom';
+  variant: VariantType;
 };
 
 const baseStyle = css`
@@ -27,15 +27,15 @@ const baseStyle = css`
 `;
 
 const warnStyle = css`
-  color: #DC3545;
+  color: var(--danger);
   background-color: rgba(220, 53, 69, 0.08);
-  border-color:#DC3545;
+  border-color: var(--danger); ;
 `;
 
 const infoStyle = css`
-  color: #ffffff;
+  color: var(--white);
   background-color: #000000;
-  border-color:#000000;
+  border-color: #000000;
 `;
 
 const yAxisStyle = {
@@ -50,16 +50,13 @@ const xAxisStyle = {
   left: 'left: 36px;',
 };
 
-const Container = styled.div<cssProps>(
-  baseStyle,
-  (props: cssProps) => {
-    return css`
-      ${props.variant === 'warn' ? warnStyle : infoStyle}
-      ${xAxisStyle[props.xAxis]}
+const Container = styled.div<cssProps>(baseStyle, (props: cssProps) => {
+  return css`
+    ${props.variant === 'warn' ? warnStyle : infoStyle}
+    ${xAxisStyle[props.xAxis]}
       ${yAxisStyle[props.yAxis]}
-    `;
-  }
-);
+  `;
+});
 
 /* eslint-disable-next-line */
 export interface ReactToastProps {
@@ -73,17 +70,6 @@ export interface ReactToastProps {
   enableClose?: boolean;
 }
 
-const getIconStroke = (variant: VariantType) => {
-  switch (variant) {
-    case 'warn':
-      return '#DC3545';
-    case 'info':
-      return '#ffffff';
-    default:
-      return;
-  }
-};
-
 export const ReactToast: React.FC<ReactToastProps> = ({
   variant,
   children,
@@ -95,8 +81,6 @@ export const ReactToast: React.FC<ReactToastProps> = ({
   onClose,
 }) => {
   const timer = React.useRef<ReturnType<typeof setTimeout>>();
-
-  const stroke = getIconStroke(variant);
 
   const handleClose = () => {
     onClose && onClose(false);
@@ -112,18 +96,39 @@ export const ReactToast: React.FC<ReactToastProps> = ({
 
   return (
     <ClassNames>
-      {({ cx }) => (
-        <Container variant={variant} xAxis={xAxis} yAxis={yAxis} className={cx(className)}>
-        {variant === 'warn' && (
-          <ExclamationCycleFill {...(stroke && { stroke })} />
-        )}
-        {children && children}
-        {enableClose && (
-          <div onClick={handleClose} style={{ cursor: 'pointer' }}>
-            <Cross {...(stroke && { stroke })} size={10} />
-          </div>
-        )}
-      </Container>
+      {({ css, cx }) => (
+        <Container
+          variant={variant}
+          xAxis={xAxis}
+          yAxis={yAxis}
+          className={cx(className)}
+        >
+          {variant === 'warn' && (
+            <SignIcons.ExclamationCircleFill
+              className={css`
+                path {
+                  fill: var(--danger);
+                }
+              `}
+            />
+          )}
+          {children && children}
+          {enableClose && (
+            <div onClick={handleClose} style={{ cursor: 'pointer' }}>
+              <SignIcons.X
+                height={10}
+                width={10}
+                className={css`
+                  path {
+                    fill: ${variant === 'warn'
+                      ? 'var(--danger)'
+                      : 'var(--white)'};
+                  }
+                `}
+              />
+            </div>
+          )}
+        </Container>
       )}
     </ClassNames>
   );

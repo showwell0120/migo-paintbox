@@ -23,5 +23,12 @@
     "**/*.stories.jsx",
     "**/*.stories.tsx"
   ],
-  "include": ["**/*.js", "**/*.jsx", "**/*.ts", "**/*.tsx"]
+  "include": [
+    "**/*.js",
+    "**/*.jsx",
+    "**/*.ts",
+    "**/*.tsx",
+    "src/stories/react/foundation/icons/.stories.tsx",
+    "src/stories/react/foundation/icons/.stories.tsx"
+  ]
 }

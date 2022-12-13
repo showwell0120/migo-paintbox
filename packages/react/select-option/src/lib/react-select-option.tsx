@@ -2,7 +2,7 @@ import React from 'react';
 import styled from '@emotion/styled';
 import { css } from '@emotion/react';
 
-import { ChevronDown } from '@paintbox/react-foundation';
+import { ChevronIcons } from '@paintbox/react-foundation';
 
 /* eslint-disable-next-line */
 export interface ReactSelectOptionProps {
@@ -117,7 +117,7 @@ export function ReactSelectOption({
         ))}
       </select>
       <div css={iconStyle}>
-        <ChevronDown />
+        <ChevronIcons.Down />
       </div>
     </Container>
   );

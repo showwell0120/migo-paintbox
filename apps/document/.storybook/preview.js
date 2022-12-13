@@ -4,6 +4,7 @@ import { useDarkMode } from 'storybook-dark-mode';
 import { DocsContainer } from './docs-container';
 
 import '../../../packages/react/foundation/src/palettes/main.scss';
+import '../src/stories/react/foundation/icons/_icons.scss';
 
 export const parameters = {
   layout: 'centered',

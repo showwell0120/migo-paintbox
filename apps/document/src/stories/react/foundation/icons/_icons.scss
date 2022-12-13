@@ -1,0 +1,41 @@
+.fill-path-primary {
+    path {
+        fill: var(--primary);
+    }
+}
+
+.fill-path-secondary {
+    path {
+        fill: var(--secondary);
+    }
+}
+
+.fill-path-success {
+    path {
+        fill: var(--success);
+    }
+}
+
+.fill-path-danger {
+    path {
+        fill: var(--danger);
+    }
+}
+
+.fill-path-warning {
+    path {
+        fill: var(--warning);
+    }
+}
+
+.fill-path-info {
+    path {
+        fill: var(--info);
+    }
+}
+
+.fill-path-brand {
+    path {
+        fill: var(--brand);
+    }
+}

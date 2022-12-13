@@ -9,7 +9,7 @@ import React from 'react';
 import ReactDatePicker from 'react-datepicker';
 import styled from '@emotion/styled';
 
-import { Clock, Calendar3 } from '@paintbox/react-foundation';
+import { TimeIcons } from '@paintbox/react-foundation';
 import { FormFieldBaseProps, ChangeHandlerParams } from '@paintbox/react-base';
 import {
   convertUTCToLocalDate,
@@ -75,7 +75,7 @@ export function ReactTimePicker<NameType>({
         <Label>{dateLabel}</Label>
         <Input>
           <Icon>
-            <Calendar3 />
+            <TimeIcons.Calendar3 />
           </Icon>
           <ReactDatePicker.default
             className="date"
@@ -91,7 +91,7 @@ export function ReactTimePicker<NameType>({
         <Label>{timeLabel}</Label>
         <Input>
           <Icon>
-            <Clock />
+            <TimeIcons.Clock />
           </Icon>
           <ReactDatePicker.default
             className="time"
