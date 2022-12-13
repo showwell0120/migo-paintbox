@@ -175,6 +175,7 @@ function StyledTH({ children, className, ...props }: NormalTableProps) {
         <th
           className={cx(
             css`
+              white-space: nowrap;
               padding-left: 1rem;
               &:first-child {
                 border-top-left-radius: 4px;

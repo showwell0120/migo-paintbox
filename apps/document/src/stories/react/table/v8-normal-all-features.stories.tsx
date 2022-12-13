@@ -216,14 +216,7 @@ function NormalAllFeatTable({ onSort, sortByClient }: NormalAllFeatTableProps) {
         {table.getHeaderGroups().map((headerGroup) => (
           <NormalTable.StyledHeadTR key={headerGroup.id}>
             {headerGroup.headers.map((header) => (
-              <NormalTable.StyledTH key={header.id}>
-                {header.isPlaceholder
-                  ? null
-                  : flexRender(
-                      header.column.columnDef.header,
-                      header.getContext()
-                    )}
-              </NormalTable.StyledTH>
+              <NormalTable.SortStyledTH header={header} />
             ))}
           </NormalTable.StyledHeadTR>
         ))}
@@ -240,13 +233,18 @@ function NormalAllFeatTable({ onSort, sortByClient }: NormalAllFeatTableProps) {
 const Template: ComponentStory<typeof NormalAllFeatTable> = (args) => {
   return (
     <DndProvider backend={HTML5Backend}>
-      <NormalAllFeatTable />
+      <NormalAllFeatTable {...args} />
     </DndProvider>
   );
 };
 
 export const Default = Template.bind({});
-Default.args = {};
+Default.args = {
+  onSort(s) {
+    console.log(s);
+  },
+  sortByClient: true,
+};
 
 export default {
   component: NormalAllFeatTable,
