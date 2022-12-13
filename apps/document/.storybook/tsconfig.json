@@ -15,9 +15,5 @@
     "../**/*.spec.tsx",
     "../**/*.spec.jsx"
   ],
-  "include": [
-    "../src/**/*",
-    "*.js",
-    "../src/stories/react/foundation/icons/.stories.tsx"
-  ]
+  "include": ["../src/**/*", "*.js", "*.tsx", "*.mdx", "*.ts"]
 }
