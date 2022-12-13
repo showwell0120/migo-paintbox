@@ -252,7 +252,8 @@ export const titleData: TitleResponse[] = [
   {
     title_id: 620089,
     title_iid: '620089',
-    title_name: 'Codec renew queue test series 0815',
+    title_name:
+      'Codec renew queue test series 0815Codec renew queue test series 0815',
     genre: {
       code: 'action',
       name: 'Action',
@@ -279,7 +280,8 @@ export const titleData: TitleResponse[] = [
       {
         season_id: 620091,
         season_uuid: '04339c06f72f2b50ee90d36115429e07',
-        season_name: 'Codec renew queue test series 0815 S01',
+        season_name:
+          'Codec renew queue test series 0815 S01Codec renew queue test series 0815 S01',
         season_number: 1,
         episode_count: 2,
         publish_timestamp: 1660544618517,
@@ -295,7 +297,8 @@ export const titleData: TitleResponse[] = [
           {
             episode_id: 621877,
             episode_uuid: '0d1f424ee3170e554e7040a8fafff7a3',
-            episode_name: 'Codec renew queue test series 0815 S01E01',
+            episode_name:
+              'Codec renew queue test series 0815 S01E01Codec renew queue test series 0815 S01E01',
             episode_number: 1,
             publish_timestamp: 1660544618683,
             activate: true,

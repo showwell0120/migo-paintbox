@@ -13,6 +13,7 @@ import {
 import { DndProvider, useDrag, useDrop } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
 
+import { CaretIcons } from '@paintbox/react-foundation';
 import { NormalTable, DraggableRowProps } from '@paintbox/react-table';
 import {
   titleData,
@@ -33,10 +34,9 @@ function EpisodeRows({ episodes }: { episodes: EpisodeResponse[] }) {
           {/* expander */}
           <NormalTable.StyledTD></NormalTable.StyledTD>
           {/* episode name */}
-          <NormalTable.StyledTD colSpan={2}>
-            {episode.episode_name}
+          <NormalTable.StyledTD colSpan={4} style={{ paddingLeft: '2.2rem' }}>
+            <span>{episode.episode_name}</span>
           </NormalTable.StyledTD>
-          <NormalTable.StyledTD colSpan={2}></NormalTable.StyledTD>
           {/* type */}
           <NormalTable.StyledTD>Episode</NormalTable.StyledTD>
           {/* season */}
@@ -79,13 +79,18 @@ function SeasonRows({ seasons }: { seasons: SeasonResponse[] }) {
               {/* expander */}
               <NormalTable.StyledTD></NormalTable.StyledTD>
               {/* season expander + season name */}
-              <NormalTable.StyledTD colSpan={2}>
-                <span onClick={handleEpExpanded}>
-                  {epExanded ? '👇' : '👉'}
-                </span>
-                {season.season_name}
+              <NormalTable.StyledTD colSpan={4}>
+                <div style={{ display: 'flex', gap: 6 }}>
+                  <span onClick={handleEpExpanded}>
+                    {epExanded ? (
+                      <CaretIcons.DownFill />
+                    ) : (
+                      <CaretIcons.RightFill />
+                    )}
+                  </span>
+                  <span>{season.season_name}</span>
+                </div>
               </NormalTable.StyledTD>
-              <NormalTable.StyledTD colSpan={2}></NormalTable.StyledTD>
               {/* type */}
               <NormalTable.StyledTD>Season</NormalTable.StyledTD>
               {/* season */}
