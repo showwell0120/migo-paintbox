@@ -13,7 +13,7 @@ import {
 import { DndProvider, useDrag, useDrop } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
 
-import { CaretIcons } from '@paintbox/react-foundation';
+import { CaretIcons, ControlIcons } from '@paintbox/react-foundation';
 import { NormalTable, DraggableRowProps } from '@paintbox/react-table';
 import {
   titleData,
@@ -149,7 +149,10 @@ function DraggableRow({ row, reorderRow }: DraggableRowProps<TitleResponse>) {
 
   return (
     <React.Fragment key={row.id}>
-      <NormalTable.StyledBodyTR style={{ opacity: isDragging ? 0.5 : 1 }}>
+      <NormalTable.StyledBodyTR
+      // ref={previewRef}
+      // style={{ opacity: isDragging ? 0.5 : 1 }}
+      >
         {row.getVisibleCells().map((cell, index) => {
           if (index === row.getVisibleCells().length - 1) {
             return null;
@@ -162,7 +165,9 @@ function DraggableRow({ row, reorderRow }: DraggableRowProps<TitleResponse>) {
           );
         })}
         <NormalTable.StyledTDRef ref={dropRef}>
-          <button ref={dragRef}>🟰</button>
+          <span ref={dragRef}>
+            <ControlIcons.Sequence />
+          </span>
         </NormalTable.StyledTDRef>
       </NormalTable.StyledBodyTR>
       {row.getIsExpanded() && <SeasonRows seasons={row.original.seasons} />}
