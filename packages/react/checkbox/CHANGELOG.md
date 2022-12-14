@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.3.0](https://gitlab.migoinc.com/migotv/paintbox/compare/react-checkbox@1.2.0...react-checkbox@1.3.0) (2022-12-14)
+
+
+### Features
+
+* **react-table:** add select rows story ([9904a6b](https://gitlab.migoinc.com/migotv/paintbox/commit/9904a6b496d6c853e53117605eecf30c9a3ccd0f))
+
 ## [1.2.0](https://gitlab.migoinc.com/migotv/paintbox/compare/react-checkbox@1.1.0...react-checkbox@1.2.0) (2022-09-21)
 
 ## [1.1.0](https://gitlab.migoinc.com/migotv/paintbox/compare/react-checkbox@1.0.0...react-checkbox@1.1.0) (2022-09-21)
