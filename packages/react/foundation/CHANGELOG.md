@@ -10,6 +10,14 @@ This file was generated using [@jscutlery/semver](https://github.com/jscutlery/s
 * **react-*:** add and update dnd table grag icon ([c4a4d43](https://gitlab.migoinc.com/migotv/paintbox/commit/c4a4d4397b6b8c640e30153d7dc1f040fa9ddbb4))
 * **react-*:** update sub-compontents table expand/collapse icons ([ebddecf](https://gitlab.migoinc.com/migotv/paintbox/commit/ebddecfede25f153e56298eed139751dff08222c))
 
+## [1.13.0](https://gitlab.migoinc.com/migotv/paintbox/compare/react-foundation@1.12.0...react-foundation@1.13.0) (2022-12-14)
+
+
+### Features
+
+* **react-*:** add and update dnd table grag icon ([c4a4d43](https://gitlab.migoinc.com/migotv/paintbox/commit/c4a4d4397b6b8c640e30153d7dc1f040fa9ddbb4))
+* **react-*:** update sub-compontents table expand/collapse icons ([ebddecf](https://gitlab.migoinc.com/migotv/paintbox/commit/ebddecfede25f153e56298eed139751dff08222c))
+
 ## [1.12.0](https://gitlab.migoinc.com/migotv/paintbox/compare/react-foundation@1.11.0...react-foundation@1.12.0) (2022-10-11)
 
 
