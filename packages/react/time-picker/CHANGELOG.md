@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [2.3.1](https://gitlab.migoinc.com/migotv/paintbox/compare/react-time-picker@2.3.0...react-time-picker@2.3.1) (2022-12-14)
+
+
+### Bug Fixes
+
+* **react-*:** update components that import icons ([9fbe99e](https://gitlab.migoinc.com/migotv/paintbox/commit/9fbe99edfc4f41e55d8380839947059498b6d446))
+
 ## [2.3.0](https://gitlab.migoinc.com/migotv/paintbox/compare/react-time-picker@2.2.1...react-time-picker@2.3.0) (2022-09-21)
 
 ### [2.2.1](https://gitlab.migoinc.com/migotv/paintbox/compare/react-time-picker@2.2.0...react-time-picker@2.2.1) (2022-09-21)
