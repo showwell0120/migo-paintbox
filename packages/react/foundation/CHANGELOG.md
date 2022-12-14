@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [1.13.1](https://gitlab.migoinc.com/migotv/paintbox/compare/react-foundation@1.13.0...react-foundation@1.13.1) (2022-12-14)
+
+
+### Bug Fixes
+
+* **react-foundation:** add svgr support for bundling svg component ([afc513d](https://gitlab.migoinc.com/migotv/paintbox/commit/afc513d9fda015d689cebe72c6a9d8e2114ad31c))
+
 ## [1.13.0](https://gitlab.migoinc.com/migotv/paintbox/compare/react-foundation@1.12.0...react-foundation@1.13.0) (2022-12-14)
 
 
