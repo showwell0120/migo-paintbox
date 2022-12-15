@@ -11,6 +11,14 @@ function Header({ className }: TemplateProps) {
         <Small>Info</Small>
         <HeaderIcons.Info width={20} height={20} className={className} />
       </Wrapper>
+      <Wrapper>
+        <Small>Carousel</Small>
+        <HeaderIcons.Carousel width={20} height={20} className={className} />
+      </Wrapper>
+      <Wrapper>
+        <Small>PromoBadge</Small>
+        <HeaderIcons.PromoBadge width={20} height={20} className={className} />
+      </Wrapper>
     </Container>
   );
 }

@@ -7,6 +7,7 @@ export * from './header';
 export * from './media';
 export * from './misc';
 export * from './people';
+export * from './real';
 export * from './sign';
 export * from './sort';
 export * from './time';
