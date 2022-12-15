@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.5.0](https://gitlab.migoinc.com/migotv/paintbox/compare/react-table@1.4.0...react-table@1.5.0) (2022-12-15)
+
+
+### Features
+
+* **react-foundation:** add icons to support side menu of CMS promos page ([970acc9](https://gitlab.migoinc.com/migotv/paintbox/commit/970acc907d775b693392ea5a19f43f44e5112b1f))
+
 ## [1.4.0](https://gitlab.migoinc.com/migotv/paintbox/compare/react-table@1.3.1...react-table@1.4.0) (2022-12-14)
 
 
