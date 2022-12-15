@@ -1,8 +1,9 @@
 import { Meta, Canvas, Story } from '@storybook/addon-docs/blocks';
 
-import { ReactSelectOption, SelectOptionSample } from '@paintbox/react-select-option';
+import { ReactSelectOption } from '@paintbox/react-select-option';
+import { Normal } from './normal.stories.tsx'
 
-<Meta title="React/Form/SelectOption" />
+<Meta title="React/Form/SelectOption/Doc" />
 
 # SelectOption
 
@@ -13,6 +14,7 @@ export interface ReactSelectOptionProps {
   options: OptionItem[];                   // 選項列表
   option?: OptionItem;                     // 目前選取的選項
   prefix?: string;                         // <select> 中的前綴字
+  enableSearch?: boolean;                  // 是否允許符合字搜尋
 
   onChange: (item: OptionItem) => void;    // 變更選項的 event handler
 }
@@ -52,18 +54,18 @@ export const SelectOptionSample = () => {
 
 ## Stories
 
-### Default
+### Table filter
 
 <Canvas>
-  <Story name="Default">
-    <SelectOptionSample />
+  <Story name="Table filter">
+    <div style={{height: 120}}><Normal prefix="prefix:" /></div>
   </Story>
 </Canvas>
 
-### With Prefix
+### Show keyword matching options
 
 <Canvas>
-  <Story name="With Prefix">
-    <SelectOptionSample prefix={'Price:'} />
+  <Story name="Show keyword matching options">
+    <div style={{height: 120}}><Normal enableSearch={true} showBorder={false} /></div>
   </Story>
 </Canvas>

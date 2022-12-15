@@ -2,6 +2,7 @@ export * from './arrow';
 export * from './box-arrow';
 export * from './caret';
 export * from './chevron';
+export * from './comms';
 export * from './control';
 export * from './header';
 export * from './media';
