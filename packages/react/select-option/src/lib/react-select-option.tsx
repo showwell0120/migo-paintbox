@@ -1,14 +1,21 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React from 'react';
 import styled from '@emotion/styled';
 import { css } from '@emotion/react';
 
-import { ChevronIcons } from '@paintbox/react-foundation';
+import {
+  ChevronIcons,
+  SignIcons,
+  CommsIcons,
+} from '@paintbox/react-foundation';
 
 /* eslint-disable-next-line */
 export interface ReactSelectOptionProps {
   options: OptionItem[];
   option: OptionItem;
   prefix?: string;
+  enableSearch?: boolean;
+  showBorder?: boolean;
 
   onChange: (item: OptionItem) => void;
 }
@@ -18,14 +25,21 @@ export interface OptionItem {
   name: string;
 }
 
-const Container = styled.div<{ prefixWidth: string }>`
-  font-size: 0.875rem;
+interface ContainerProps {
+  prefixWidth: string;
+  showBorder: boolean;
+}
+
+const Container = styled.div<ContainerProps>`
+  font-size: 0.75rem;
   letter-spacing: 0.15px;
   background: transparent;
   border-radius: 4px;
-  border: 1px solid var(--gray-500);
+  border: ${(props: ContainerProps) =>
+    props.showBorder ? '1px solid var(--gray-500)' : 'none'};
   position: relative;
-  padding-left: ${(props: { prefixWidth: string }) => props.prefixWidth};
+  padding-left: ${(props: ContainerProps) => props.prefixWidth};
+  width: fit-content;
 
   &[data-prefix] {
     &::before {
@@ -44,49 +58,101 @@ const Container = styled.div<{ prefixWidth: string }>`
   }
 `;
 
-const selectStyle = css`
+const currOptionStyle = css`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
   height: 40px;
-  padding: 11px 12px;
-  border: none;
-  display: block;
-  width: 100%;
-  outline: none;
-  -webkit-appearance: none;
-  position: relative;
+  margin-left: 12px;
+  cursor: pointer;
+`;
+
+const optionWrapperStyle = css`
+  background-color: var(--dark);
+  color: var(--white);
+  position: absolute;
+  left: 0;
   z-index: 1;
-  background: transparent;
-  color: var(--text-body);
+  min-width: -webkit-fill-available;
 `;
 
 const iconStyle = css`
-  position: absolute;
-  z-index: 0;
-  top: 12px;
-  right: 0;
-  bottom: 0;
   padding: 0 12px 0 0;
+`;
+
+const searchRowStyle = css`
+  display: flex;
+  padding: 12px;
+  padding-bottom: 6px;
+`;
+
+const keywordInputStyle = css`
+  all: unset;
+  border-bottom: 1px solid var(--white);
+  height: 0.75rem;
+  margin-left: 6px;
+  padding: 3px;
+`;
+
+const optionRowStyle = css`
+  display: flex;
+  padding: 6px 12px;
+  gap: 12px;
+  align-items: center;
+  cursor: pointer;
+  &:hover {
+    background: var(--primary);
+    svg {
+      path {
+        fill: var(--white);
+      }
+    }
+  }
 `;
 
 export function ReactSelectOption({
   options,
   option,
   prefix,
+  enableSearch = false,
+  showBorder = true,
   onChange,
 }: ReactSelectOptionProps) {
   const [prefixWidth, setPrefixWidth] = React.useState<string>('0px');
+  const [showOptions, setShowOptions] = React.useState<boolean>(false);
+  const [keyword, setKeyword] = React.useState<string>();
 
   const containerRef = React.useRef<HTMLDivElement>(null);
+  const optionsRef = React.useRef<HTMLDivElement>(null);
 
-  const handleChange = (e: React.SyntheticEvent<HTMLSelectElement>) => {
-    const { value } = e.currentTarget;
-
-    if (option?.id === value) {
-      return;
+  const activeOptions = React.useMemo(() => {
+    if (!keyword) {
+      return options;
     }
+    return options.filter((option) =>
+      option.name.toLowerCase().includes(keyword?.toLowerCase() ?? '')
+    );
+  }, [options, keyword]);
 
-    const item = options.find((el) => el.id === value);
-    if (item) {
-      onChange && onChange(item);
+  const handleSelect = (event: React.MouseEvent<HTMLDivElement>) => {
+    if (event.currentTarget?.dataset['id']) {
+      const itemID = event.currentTarget?.dataset['id'];
+      if (itemID !== option.id) {
+        const item = options.find((el) => el.id === itemID);
+        item && onChange && onChange(item);
+      }
+
+      setShowOptions(false);
+      setKeyword('');
+    }
+  };
+
+  const handleShowOptions = () => setShowOptions(true);
+
+  const handleHideOptions = (event: MouseEvent) => {
+    if (!optionsRef.current?.contains(event.target as Node) && showOptions) {
+      setShowOptions(false);
     }
   };
 
@@ -103,46 +169,71 @@ export function ReactSelectOption({
     }
   }, [prefix, prefixWidth]);
 
+  React.useEffect(() => {
+    window.addEventListener('click', handleHideOptions);
+
+    return () => {
+      window.removeEventListener('click', handleHideOptions);
+    };
+  }, [handleHideOptions]);
+
   return (
     <Container
       prefixWidth={prefixWidth}
+      showBorder={showBorder}
       ref={containerRef}
       data-prefix={prefix}
     >
-      <select css={selectStyle} value={option.id} onChange={handleChange}>
-        {options.map((item) => (
-          <option key={item.id} value={item.id}>
-            {item.name}
-          </option>
-        ))}
-      </select>
-      <div css={iconStyle}>
-        <ChevronIcons.Down />
+      <div css={currOptionStyle} onClick={handleShowOptions}>
+        <div>{option.name}</div>
+        <div css={iconStyle}>
+          {showOptions ? <ChevronIcons.Up /> : <ChevronIcons.Down />}
+        </div>
       </div>
+      {showOptions && (
+        <div ref={optionsRef} css={optionWrapperStyle}>
+          {enableSearch && (
+            <div css={searchRowStyle}>
+              <CommsIcons.Search
+                width={14}
+                css={css`
+                  path {
+                    fill: var(--white);
+                  }
+                `}
+              />
+              <input
+                value={keyword}
+                onChange={(e) => setKeyword(e.target.value)}
+                css={keywordInputStyle}
+              />
+            </div>
+          )}
+          <div>
+            {activeOptions.map((item) => (
+              <div
+                key={item.id}
+                data-id={item.id}
+                css={optionRowStyle}
+                onClick={handleSelect}
+              >
+                <SignIcons.Check
+                  height={12}
+                  width={13.5}
+                  css={css`
+                    path {
+                      fill: ${item.id === option.id
+                        ? 'var(--white)'
+                        : 'var(--dark)'};
+                    }
+                  `}
+                />
+                <div>{item.name}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
     </Container>
   );
 }
-
-const options: OptionItem[] = [
-  {
-    id: 'all',
-    name: 'All',
-  },
-  {
-    id: 'empty',
-    name: 'Empty',
-  },
-];
-
-export const SelectOptionSample = (props: Partial<ReactSelectOptionProps>) => {
-  const [selected, setSelected] = React.useState<OptionItem>(options[0]);
-
-  return (
-    <ReactSelectOption
-      options={options}
-      option={selected}
-      onChange={setSelected}
-      {...props}
-    />
-  );
-};
