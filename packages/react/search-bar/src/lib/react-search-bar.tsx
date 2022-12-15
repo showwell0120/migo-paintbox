@@ -1,11 +1,10 @@
-import { SearchIcon } from '../images/SearchIcon';
-import { CancelIcon } from '../images/CancelIcon';
 import React, { useState, useMemo, useEffect, useRef } from 'react';
 import { css } from '@emotion/react';
 import { debounce } from 'lodash';
 
+import { CommsIcons, SignIcons } from '@paintbox/react-foundation';
 /* eslint-disable-next-line */
-export type CallbackProp = (t: string) => void
+export type CallbackProp = (t: string) => void;
 
 const containerStyle = css`
   position: relative;
@@ -23,13 +22,14 @@ const containerStyle = css`
 `;
 
 const iconStyle = css`
-  height: 100%;
-  width: 12px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  padding-top: 3px;
   &:hover {
     cursor: pointer;
+  }
+  svg {
+    path {
+      fill: #727272;
+    }
   }
 `;
 
@@ -48,10 +48,10 @@ const inputStyle = css`
 `;
 
 export interface ReactSearchBarProps {
-  placeholder?: string,
-  onChange?: CallbackProp,
-  onEnter?: CallbackProp,
-  isDebounce?: boolean,
+  placeholder?: string;
+  onChange?: CallbackProp;
+  onEnter?: CallbackProp;
+  isDebounce?: boolean;
 }
 
 export const ReactSearchBar: React.FC<ReactSearchBarProps> = ({
@@ -67,7 +67,7 @@ export const ReactSearchBar: React.FC<ReactSearchBarProps> = ({
   const changeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     setKeyword(e.target.value);
     if (isDebounce) {
-      debounceChangeHandler(e.target.value)
+      debounceChangeHandler(e.target.value);
     } else {
       onChange && onChange(e.target.value.trim());
     }
@@ -77,8 +77,10 @@ export const ReactSearchBar: React.FC<ReactSearchBarProps> = ({
     setDebounceKeyword(word.trim());
   };
 
-  const debounceChangeHandler = useMemo(() =>
-    debounce(debounceHandler, 500), []);
+  const debounceChangeHandler = useMemo(
+    () => debounce(debounceHandler, 500),
+    []
+  );
 
   useEffect(() => {
     if (isFirstRender.current) {
@@ -91,7 +93,7 @@ export const ReactSearchBar: React.FC<ReactSearchBarProps> = ({
   }, [debounceKeyword, debounceChangeHandler]);
   // if include onChange in the dependency array, onChange will be invoked twice
 
-  const [ isFocus, setFocus ] = useState(false);
+  const [isFocus, setFocus] = useState(false);
   const onFocus = (e: React.FocusEvent<HTMLDivElement>) => {
     e.stopPropagation();
     setFocus(true);
@@ -115,27 +117,31 @@ export const ReactSearchBar: React.FC<ReactSearchBarProps> = ({
   };
 
   return (
-    <div
-      tabIndex={0}
-      onFocus={onFocus}
-      onBlur={onBlur}
-      css={containerStyle}
-    > 
-      <SearchIcon />
+    <div tabIndex={0} onFocus={onFocus} onBlur={onBlur} css={containerStyle}>
+      <div css={iconStyle}>
+        <CommsIcons.Search />
+      </div>
+
       <input
         tabIndex={1}
         type="text"
         value={keyword}
         placeholder={placeholder}
         onChange={changeHandler}
-        onBlur={(e: React.FocusEvent<HTMLInputElement>) => { e.stopPropagation() }}
+        onBlur={(e: React.FocusEvent<HTMLInputElement>) => {
+          e.stopPropagation();
+        }}
         onKeyDown={handleKeyDown}
         css={inputStyle}
       />
-      {(isFocus && keyword) && <div onClick={clearKeyword} css={iconStyle}><CancelIcon /></div>}
+      {isFocus && keyword && (
+        <div onClick={clearKeyword} css={iconStyle}>
+          <SignIcons.XCircleFill />
+        </div>
+      )}
     </div>
   );
-}
+};
 
 export const SearchBarSample = () => {
   const [keyword, setKeyword] = useState('');
