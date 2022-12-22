@@ -37,6 +37,11 @@ const Button = styled.button<ReactButtonProps>(
         color: var(--text-muted);
         background-color: var(--primary-transparent);
         cursor: not-allowed;
+        svg {
+          path {
+            fill:  var(--text-muted);
+          }
+        }
       `
       : `
       background-color: ${
@@ -70,7 +75,25 @@ const Button = styled.button<ReactButtonProps>(
             ? `var(--primary-${props.theme})`
             : `var(--primary-white)`
         };
+        svg {
+          path {
+            fill:  ${
+              props.variant === 'primary'
+                ? `var(--primary-${props.theme})`
+                : `var(--primary-white)`
+            };
+          }
+        }
       }
+      svg {
+          path {
+            fill:  ${
+              props.variant === 'primary'
+                ? 'var(--primary-white)'
+                : `var(--primary-${props.theme})`
+            };
+          }
+        }
       `;
   }
 );
