@@ -56,6 +56,7 @@ interface ColorSetting {
   background: string;
 }
 
+// TODO: check with kerwin
 function getColor(type: ColorType): ColorSetting {
   switch (type) {
     case 'green':

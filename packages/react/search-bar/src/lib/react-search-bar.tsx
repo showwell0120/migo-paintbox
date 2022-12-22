@@ -9,7 +9,7 @@ export type CallbackProp = (t: string) => void
 
 const containerStyle = css`
   position: relative;
-  border: 1px solid var(--secondary);
+  border: 1px solid var(--primary-secondary);
   box-sizing: border-box;
   border-radius: 4px;
   background-color: transparent;
@@ -17,8 +17,8 @@ const containerStyle = css`
   align-items: center;
   padding: 0px 12px 0px 12px;
   &:focus-within {
-    border: 1px solid var(--primary);
-    box-shadow: 0 0 0 1px var(--primary);
+    border: 1px solid var(--primary-primary);
+    box-shadow: 0 0 0 1px var(--primary-primary);
   }
 `;
 

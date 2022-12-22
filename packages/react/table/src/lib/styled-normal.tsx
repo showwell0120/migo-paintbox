@@ -20,7 +20,7 @@ function StyledTable({ children, className, ...props }: NormalTableProps) {
             css`
               font-size: 0.75rem;
               color: var(--text-body);
-              background-color: var(--background);
+              background-color: var(--primary-transparent);
               border-radius: 4px;
               text-align: left;
               border-collapse: separate;
@@ -263,13 +263,15 @@ export function SortStyledTH<TData>({ header }: SortStyledTHProps<TData>) {
           {({ css, cx }) => {
             const wrapperStyle = css`
               cursor: pointer;
-              color: ${isSorted ? 'var(--text-primary)' : 'var(--text-body)'};
+              color: ${isSorted
+                ? 'var(--primary-primary)'
+                : 'var(--text-body)'};
               font-weight: ${isSorted ? 'bold' : 'normal'};
             `;
 
             const iconStyle = css`
               path {
-                fill: var(--text-primary);
+                fill: var(--primary-primary);
               }
               margin-left: 5px;
             `;

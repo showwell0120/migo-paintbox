@@ -46,7 +46,7 @@ const Cycle = styled.div<{ status: Status }>`
   line-height: 32px;
   text-align: center;
   border-radius: 50%;
-  color: var(--white);
+  color: var(--primary-white);
   background-color: var(
     --${(props: { status: Status }) => getCSSVarByStatus(props.status)});
   );
