@@ -1,0 +1,46 @@
+import { Meta, Canvas, Story } from '@storybook/addon-docs/blocks';
+
+<Meta title="React/Form/Button/Doc" />
+
+# Button
+
+> 按鈕。提供以下 props－
+
+```javascript
+export type ButtonVariant = 'primary' | 'secondary' | 'outlined';
+
+export type ButtonTheme =
+  | 'brand'
+  | 'primary'
+  | 'secondary'
+  | 'success'
+  | 'danger'
+  | 'warning'
+  | 'info';
+
+export interface ReactButtonProps {
+  children: React.ReactNode; // 按鈕上顯示的內容
+  theme?: ButtonTheme;       // 按鈕的主題色
+  variant?: ButtonVariant;   // 按鈕的形式
+  disabled?: boolean;        // 是否為 disabled 的按鈕
+  onClick?: () => void;      // 按鈕點擊時所觸法的 callback
+}
+```
+
+## Usage
+
+```jsx
+import { ReactButton } from '@paintbox/react-button';
+
+export const ButtonSample = () => {
+  const onClick = () => {
+    alert('You just clicked me!');
+  };
+
+  return (
+    <div>
+      <ReactButton onClick={onClick}>Click me</ReactButton>
+    </div>
+  );
+};
+```
