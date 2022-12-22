@@ -33,6 +33,11 @@ const Container = styled.div<ContainerProps>`
   color: ${(props: ContainerProps) => `var(--primary-${props.theme})`};
   background-color: ${(props: ContainerProps) =>
     `var(--secondary-${props.theme})`};
+  svg {
+    path {
+      fill: ${(props: ContainerProps) => `var(--primary-${props.theme})`};
+    }
+  }
 `;
 
 /* eslint-disable-next-line */

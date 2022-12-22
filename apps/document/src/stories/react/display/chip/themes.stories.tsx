@@ -38,5 +38,5 @@ TriggerClick.args = {
 
 export default {
   component: ReactChip,
-  title: 'React/Display/Chip/Main',
+  title: 'React/Display/Chip/All Themes',
 } as ComponentMeta<typeof ReactChip>;
