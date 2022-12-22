@@ -1,5 +1,4 @@
 import { Meta, Canvas, Story } from '@storybook/addon-docs/blocks';
-import { ReactChip, ChipSample, ChipWithoutDotSample } from '@paintbox/react-chip';
 
 <Meta title="React/Display/Chip/Doc" />
 
@@ -8,19 +7,18 @@ import { ReactChip, ChipSample, ChipWithoutDotSample } from '@paintbox/react-chi
 > Chip。提供以下 props - 
 
 ```javascript
-type ColorType = 'green' | 'red' | 'blue' | 'white';
-interface ColorSetting {
-  text: string;
-  background: string;
-}
+export type ChipTheme =
+  | 'secondary'
+  | 'success'
+  | 'warning'
+  | 'danger'
+  | 'primary';
 
 export interface ReactChipProps {
-  color: ColorType;            // chip 的顏色
-  children?: React.ReactNode;  // chip 內顯示的文字
-  dot?: boolean;               // 是否要有左方的點點
-  icon?: React.ReactNode;      // chip 內的 icon
-  clickable?: boolean;         // 是否可以點選
-  onClick?: () => void;        // 點選時所觸發的 function
+  children: React.ReactNode; // chip 內顯示的內容
+  theme?: ChipTheme;         // chip 的主題色，預設為 secondary
+  dot?: boolean;             // 是否要有左方的點點，預設為 true
+  onClick?: () => void;      // 點選時所觸發的 function
 }
 ```
 
@@ -30,31 +28,12 @@ import { ReactChip } from '@paintbox/react-chip';
 
 export const ChipWithoutDotSample = () => {
   return (
-    <div>
-      <ReactChip
-        color={'green'}
+    <ReactChip
+        color={'success'}
         dot={false}
-        clickable={true}
+        onClick={() => console.log('click')}
       >Inactive</ReactChip>
-    </div>
   );
 };
 ```
 
-## Stories
-
-### Default
-
-<Canvas>
-  <Story name="Default">
-    <ChipSample />
-  </Story>
-</Canvas>
-
-### Without dot
-
-<Canvas>
-  <Story name="Without dot">
-    <ChipWithoutDotSample />
-  </Story>
-</Canvas>
