@@ -1,0 +1,39 @@
+import { Meta, Canvas, Story } from '@storybook/addon-docs/blocks';
+
+<Meta title="React/Display/Chip/Doc" />
+
+# Chip
+
+> Chip。提供以下 props - 
+
+```javascript
+export type ChipTheme =
+  | 'secondary'
+  | 'success'
+  | 'warning'
+  | 'danger'
+  | 'primary';
+
+export interface ReactChipProps {
+  children: React.ReactNode; // chip 內顯示的內容
+  theme?: ChipTheme;         // chip 的主題色，預設為 secondary
+  dot?: boolean;             // 是否要有左方的點點，預設為 true
+  onClick?: () => void;      // 點選時所觸發的 function
+}
+```
+
+## Usage
+```jsx
+import { ReactChip } from '@paintbox/react-chip';
+
+export const ChipWithoutDotSample = () => {
+  return (
+    <ReactChip
+        color={'success'}
+        dot={false}
+        onClick={() => console.log('click')}
+      >Inactive</ReactChip>
+  );
+};
+```
+

@@ -16,7 +16,7 @@ function StyledTable({ children, className, ...props }: PreviewTableProps) {
             css`
               font-size: 0.75rem;
               color: var(--text-body);
-              background-color: var(--background);
+              background-color: var(--primary-transparent);
               border-radius: 4px;
               text-align: left;
               border-collapse: separate;

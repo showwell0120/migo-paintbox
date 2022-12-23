@@ -16,13 +16,13 @@ const contentStyle = css`
   color: var(--text-body);
   &:hover {
     cursor: pointer;
-    background-color: var(--hover);
+    background-color: var(--primary-hover);
     border-radius: 4px;
   }
 `;
 
 const activeStyle = css`
-  background-color: var(--hover);
+  background-color: var(--primary-hover);
   border-radius: 4px;
 `;
 

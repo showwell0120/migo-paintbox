@@ -43,7 +43,7 @@ const inputStyle = css`
         top: 2px;
         width: 4px;
         height: 8px;
-        border: solid var(--primary);
+        border: solid var(--primary-primary);
         border-width: 0 2px 2px 0;
         -webkit-transform: rotate(45deg);
         -ms-transform: rotate(45deg);
@@ -59,7 +59,7 @@ const spanStyle = css`
   left: 0;
   height: 16px;
   width: 16px;
-  background-color: var(--transparent);
+  background-color: var(--primary-transparent);
   border: solid 1px var(--text-body);
   border-radius: 3px;
   /* Create the checkmark/indicator (hidden when not checked) */

@@ -13,13 +13,13 @@ type colorProps = {
 }
 
 const backgroundColors = {
-  'default-default': 'var(--primary)',
+  'default-default': 'var(--primary-primary)',
   'default-outlined': 'transparent',
   'default-light': '#eff2ff',
-  'red-default': 'var(--danger)',
+  'red-default': 'var(--primary-danger)',
   'red-outlined': 'transparent',
   'red-light': '#f8d6d9',
-  'gray-default': 'var(--secondary)',
+  'gray-default': 'var(--primary-secondary)',
   'gray-outlined': 'transparent',
   'gray-light': '#f0f1f2',
 };
@@ -27,26 +27,26 @@ const backgroundColors = {
 type colorKeyType = keyof typeof backgroundColors;
 
 const textColors = {
-  'default-default': 'var(--white)',
-  'default-outlined': 'var(--primary)',
-  'default-light': 'var(--primary)',
-  'red-default': 'var(--white)',
-  'red-outlined': 'var(--danger)',
-  'red-light': 'var(--danger)',
+  'default-default': 'var(--primary-white)',
+  'default-outlined': 'var(--primary-primary)',
+  'default-light': 'var(--primary-primary)',
+  'red-default': 'var(--primary-white)',
+  'red-outlined': 'var(--primary-danger)',
+  'red-light': 'var(--primary-danger)',
   'gray-default': '#FBFBFB',
-  'gray-outlined': 'var(--secondary)',
-  'gray-light': 'var(--secondary)',
+  'gray-outlined': 'var(--primary-secondary)',
+  'gray-light': 'var(--primary-secondary)',
 };
 
 const borderColors = {
-  'default-default': 'var(--primary)',
-  'default-outlined': 'var(--primary)',
+  'default-default': 'var(--primary-primary)',
+  'default-outlined': 'var(--primary-primary)',
   'default-light': '#eff2ff',
-  'red-default': 'var(--danger)',
-  'red-outlined': 'var(--danger)',
+  'red-default': 'var(--primary-danger)',
+  'red-outlined': 'var(--primary-danger)',
   'red-light': '#f8d6d9',
-  'gray-default': 'var(--secondary)',
-  'gray-outlined': 'var(--secondary)',
+  'gray-default': 'var(--primary-secondary)',
+  'gray-outlined': 'var(--primary-secondary)',
   'gray-light': '#f0f1f2',
 };
 
@@ -54,7 +54,7 @@ const hoverBgColors = {
   'default-default': '#7390ff',
   'default-outlined': '#eff2ff',
   'default-light': '#e0e6ff',
-  'red-default': 'var(--danger)',
+  'red-default': 'var(--primary-danger)',
   'red-outlined': '#fbeaec',
   'red-light': '#f4c2c7',
   'gray-default': '#899097',
@@ -64,13 +64,13 @@ const hoverBgColors = {
 
 const hoverBorderColors = {
   'default-default': '#7390ff',
-  'default-outlined': 'var(--primary)',
+  'default-outlined': 'var(--primary-primary)',
   'default-light': '#e0e6ff',
-  'red-default': 'var(--danger)',
-  'red-outlined': 'var(--danger)',
+  'red-default': 'var(--primary-danger)',
+  'red-outlined': 'var(--primary-danger)',
   'red-light': '#f4c2c7',
   'gray-default': '#899097',
-  'gray-outlined': 'var(--secondary)',
+  'gray-outlined': 'var(--primary-secondary)',
   'gray-light': '#e2e4e6',
 };
 

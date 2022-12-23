@@ -1,12 +1,92 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
+/*
+@figma: https://www.figma.com/file/Sv8VnmaINqyDQcpdO3cz5M/%F0%9F%96%A5-Foundation?node-id=5%3A2&t=a6oI9cMzvoyzJsju-0
+*/
 
-* {
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 400;
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap') format('woff2');
+}
+
+@font-face {
+  font-family: 'Roboto Fallback';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Times New Roman');
+  ascent-override: 84.57%;
+  descent-override: 22.25%;
+  line-gap-override: 0%;
+  size-adjust: 109.71%;
+}
+
+html, body, * {
+    font-family: 'Roboto', 'Roboto Fallback';
 }
 
 $palettes: (
+    // App Colors
+    app: (
+        red: #D63131,
+        critical: #F7514D,
+        success: #4F9D52,
+        warning: #F08843,
+        'decorative-red': #E02828,
+        'decorative-blue': #3453DA,
+        'decorative-purple': #9C27B0,
+        'background-black': #121212,
+        'background-blue': #1B1E2E,
+    ),
+    // Web Colors
+    primary-light: (
+        primary-brand: #D63131,
+        primary-primary: #6484FF,
+        primary-secondary: #6C757D,
+        primary-muted: #8C8C8C,
+        primary-success: #4F9D52,
+        primary-danger: #DC3545,
+        primary-warning: #F08843,
+        primary-info: #17A2B8,
+        primary-light: #EDEDED,
+        primary-hover: rgba(232, 245, 253, 0.8),
+        primary-dark: #292D43,
+        primary-white: #FFFFFF,
+        primary-transparent: rgba(196, 196, 196, 0.1),
+    ),
+    primary-dark: (
+        primary-brand: #D63131,
+        primary-primary: #809AFF,
+        primary-secondary: #7C8892,
+        primary-muted: #9C9C9C,
+        primary-success: #65BB68,
+        primary-danger: #F7514D,
+        primary-warning: #F99451,
+        primary-info: #18B0C8,
+        primary-light: #E8E8E8,
+        primary-hover: #35363A,
+        primary-dark: #202124,
+        primary-white: #FFFFFF,
+        primary-transparent: rgba(255, 255, 255, 0.1),
+    ),
+    secondary-light: (
+        secondary-brand: #F8DEDE,
+        secondary-primary: #DAE2FF,
+        secondary-secondary: #C4C8CB,
+        secondary-success: #C1E4C3,
+        secondary-danger: #F5C3C8,
+        secondary-warning: #FAD9C2,
+        secondary-info: #C8E9EE,
+    ),
+    secondary-dark: (
+        secondary-brand: #381c1c,
+        secondary-primary: #19203d,
+        secondary-secondary: #2b2f32,
+        secondary-success: #294b2a,
+        secondary-danger: #430f15,
+        secondary-warning: #4d2c15,
+        secondary-info: #07272c,
+    ),
     gray: (
         100: #F8F9FA,
         200: #E9ECEF,
@@ -18,53 +98,17 @@ $palettes: (
         800: #343A40,
         900: #212529
     ),
-    accent-light: (
-        brand: #D63131,
-        primary: #6484FF,
-        secondary: #6C757D,
-        success: #4F9D52,
-        danger: #DC3545,
-        warning: #F08843,
-        info: #17A2B8,
-        light: #EDEDED,
-        hover: rgba(232, 245, 253, 0.8),
-        dark: #292D43,
-        white: #FFFFFF,
-        transparent: rgba(196, 196, 196, 0.1),
-        background: #FFFFFF
-    ),
-    accent-dark: (
-        brand: #D63131,
-        primary: #809AFF,
-        secondary: #7C8892,
-        success: #65BB68,
-        danger: #F7514D,
-        warning: #F99451,
-        info: #18B0C8,
-        light: #E8E8E8,
-        hover: #35363A,
-        dark: #202124,
-        white: #FFFFFF,
-        transparent: rgba(255, 255, 255, 0.1),
-        background: #202124
-    ),
     text-light: (
         text-body: #000000,
-        text-body-reversed: #FFFFFF,
-        text-lighten: #292D43,
+        text-dark: #292D43,
         text-muted: #8C8C8C,
-        text-alpha50: rgba(0, 0, 0, 0.5),
-        text-brand: #D63131,
-        text-primary: #6484FF
+        text-halfbody: rgba(0, 0, 0, 0.5),
     ),
     text-dark: (
         text-body: #FFFFFF,
-        text-body-reversed: #000000,
-        text-lighten: #A8A8A8,
+        text-dark: #A8A8A8,
         text-muted: #686868,
-        text-alpha50: rgba(255, 255, 255, 0.5),
-        text-brand: #FD4141,
-        text-primary: #809AFF
+        text-halfbody: rgba(255, 255, 255, 0.5),
     )
 );
 
@@ -78,8 +122,13 @@ $palettes: (
 }
 
 :root, *[data-theme="light"] {
-    $colors: map-get($palettes, 'accent-light');
-    @each $name, $color in $colors {
+    $primary-colors: map-get($palettes, 'primary-light');
+    @each $name, $color in $primary-colors {
+        --#{$name}: #{$color};
+    }
+
+    $secondary-colors: map-get($palettes, 'secondary-light');
+    @each $name, $color in $secondary-colors {
         --#{$name}: #{$color};
     }
 
@@ -87,49 +136,21 @@ $palettes: (
     @each $name, $color in $text-colors {
         --#{$name}: #{$color};
     }
-
-    .migo-filled-light, .migo-filled-hover, .migo-filled-white, .migo-filled-transparent {
-        color: #343A40;
-    }
 }
 
 *[data-theme="dark"] {
-    $colors: map-get($palettes, 'accent-dark');
-    @each $name, $color in $colors {
+    $primary-colors: map-get($palettes, 'primary-dark');
+    @each $name, $color in $primary-colors {
+        --#{$name}: #{$color};
+    }
+
+    $secondary-colors: map-get($palettes, 'secondary-dark');
+    @each $name, $color in $primary-colors {
         --#{$name}: #{$color};
     }
 
     $text-colors: map-get($palettes, 'text-dark');
     @each $name, $color in $text-colors {
         --#{$name}: #{$color};
-    }
-
-    .migo-filled-light, .migo-filled-white {
-        color: #343A40;
-    }
-}
-
-// generate filled color classnames
-$accent-keys: map-keys(map-get($palettes, 'accent-light'));
-@each $name in $accent-keys {
-    .migo-filled-#{$name} {
-        background-color: var(--#{$name});
-        color: #FFFFFF;
-    }
-    
-}
-
-// generate outlined color classnames
-@for $i from 1 through 8 {
-    .migo-outlined-#{nth($accent-keys, $i)} {
-        border: 1px solid var(--#{nth($accent-keys, $i)});
-        color: var(--#{nth($accent-keys, $i)});
-    }
-}
-
-$text-keys: map-keys(map-get($palettes, 'text-light'));
-@each $name in $text-keys {
-    .migo-#{$name} {
-        color: var(--#{$name});
     }
 }

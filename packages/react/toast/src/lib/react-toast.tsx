@@ -27,13 +27,13 @@ const baseStyle = css`
 `;
 
 const warnStyle = css`
-  color: var(--danger);
+  color: var(--primary-danger);
   background-color: rgba(220, 53, 69, 0.08);
-  border-color: var(--danger); ;
+  border-color: var(--primary-danger); ;
 `;
 
 const infoStyle = css`
-  color: var(--white);
+  color: var(--primary-white);
   background-color: #000000;
   border-color: #000000;
 `;
@@ -107,7 +107,7 @@ export const ReactToast: React.FC<ReactToastProps> = ({
             <SignIcons.ExclamationCircleFill
               className={css`
                 path {
-                  fill: var(--danger);
+                  fill: var(--primary-danger);
                 }
               `}
             />
@@ -121,8 +121,8 @@ export const ReactToast: React.FC<ReactToastProps> = ({
                 className={css`
                   path {
                     fill: ${variant === 'warn'
-                      ? 'var(--danger)'
-                      : 'var(--white)'};
+                      ? 'var(--primary-danger)'
+                      : 'var(--primary-white)'};
                   }
                 `}
               />

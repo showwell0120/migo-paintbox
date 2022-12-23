@@ -66,7 +66,7 @@ const PriceText = styled.div`
 
 const WarnText = styled.div`
   margin-top: 8px;
-  color: var(--brand);
+  color: var(--primary-brand);
 `;
 
 const Description = styled.div`
@@ -192,7 +192,7 @@ export function ReactCurrencyInput<NameType>({
                     margin: 0;
                   }
                   &.warn-input {
-                    border-color: var(--brand);
+                    border-color: var(--primary-brand);
                   }
                 `,
                 showInvalid && 'warn-input'
