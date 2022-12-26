@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.16.0](https://gitlab.migoinc.com/migotv/paintbox/compare/react-foundation@1.15.0...react-foundation@1.16.0) (2022-12-26)
+
+
+### Features
+
+* **react-foundation:** add icon ([77d4127](https://gitlab.migoinc.com/migotv/paintbox/commit/77d41275fdaeff813769404bcc0c3c52094d178d))
+
 ## [1.15.0](https://gitlab.migoinc.com/migotv/paintbox/compare/react-foundation@1.14.0...react-foundation@1.15.0) (2022-12-26)
 
 
