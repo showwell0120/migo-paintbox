@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [1.2.2](https://gitlab.migoinc.com/migotv/paintbox/compare/react-dialog@1.2.1...react-dialog@1.2.2) (2022-12-26)
+
+
+### Bug Fixes
+
+* **react-dialog:** background color ([4d7dd2a](https://gitlab.migoinc.com/migotv/paintbox/commit/4d7dd2af4a078434ac11d9c5736788575ff7d17d))
+
 ### [1.2.1](https://gitlab.migoinc.com/migotv/paintbox/compare/react-dialog@1.2.0...react-dialog@1.2.1) (2022-12-26)
 
 ## [1.2.0](https://gitlab.migoinc.com/migotv/paintbox/compare/react-dialog@1.1.0...react-dialog@1.2.0) (2022-09-21)
