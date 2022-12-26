@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.3.0](https://gitlab.migoinc.com/migotv/paintbox/compare/react-chip@1.2.0...react-chip@1.3.0) (2022-12-26)
+
+
+### Features
+
+* **react-chip:** support icon style ([e5f680d](https://gitlab.migoinc.com/migotv/paintbox/commit/e5f680dc9d4898404fd0db1ce128481e3eca27b5))
+
 ## [1.2.0](https://gitlab.migoinc.com/migotv/paintbox/compare/react-chip@1.1.0...react-chip@1.2.0) (2022-09-21)
 
 ## [1.1.0](https://gitlab.migoinc.com/migotv/paintbox/compare/react-chip@1.0.8...react-chip@1.1.0) (2022-09-21)
