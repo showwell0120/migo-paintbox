@@ -170,7 +170,8 @@ export function ReactSelectOption({
   }, [prefix, prefixWidth]);
 
   React.useEffect(() => {
-    window.addEventListener('click', handleHideOptions);
+    // @see https://github.com/facebook/react/issues/20325#issuecomment-732707240
+    window.addEventListener('click', handleHideOptions, { capture: true });
 
     return () => {
       window.removeEventListener('click', handleHideOptions);
