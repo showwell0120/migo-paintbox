@@ -2,13 +2,7 @@
 @figma: https://www.figma.com/file/Sv8VnmaINqyDQcpdO3cz5M/%F0%9F%96%A5-Foundation?node-id=5%3A2&t=a6oI9cMzvoyzJsju-0
 */
 
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap') format('woff2');
-}
+@import url(https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap);
 
 @font-face {
   font-family: 'Roboto Fallback';
@@ -22,7 +16,7 @@
 }
 
 html, body, * {
-    font-family: 'Roboto', 'Roboto Fallback';
+    font-family: Roboto, 'Roboto Fallback';
 }
 
 $palettes: (

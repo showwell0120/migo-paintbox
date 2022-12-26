@@ -15,7 +15,7 @@ export interface ReactSelectOptionProps {
   option?: OptionItem;                     // 目前選取的選項
   prefix?: string;                         // <select> 中的前綴字
   enableSearch?: boolean;                  // 是否允許符合字搜尋
-
+  showBorder?:boolean;                     // 是否顯示邊線
   onChange: (item: OptionItem) => void;    // 變更選項的 event handler
 }
 
