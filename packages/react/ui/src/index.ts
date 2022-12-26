@@ -3,6 +3,7 @@ export * from '@paintbox/react-checkbox';
 export * from '@paintbox/react-chip';
 export * from '@paintbox/react-currency-input';
 export * from '@paintbox/react-dialog';
+export * from '@paintbox/react-icon-action';
 export * from '@paintbox/react-foundation';
 export * from '@paintbox/react-pagination';
 export * from '@paintbox/react-search-bar';
