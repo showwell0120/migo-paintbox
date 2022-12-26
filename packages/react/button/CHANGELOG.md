@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [2.0.0](https://gitlab.migoinc.com/migotv/paintbox/compare/react-button@1.3.0...react-button@2.0.0) (2022-12-26)
+
+
+### Features
+
+* **react-button:** support icon style ([52d2394](https://gitlab.migoinc.com/migotv/paintbox/commit/52d2394532c351c624038432424300a3ec7069a1))
+
 ## [1.4.0](https://gitlab.migoinc.com/migotv/paintbox/compare/react-button@1.3.0...react-button@1.4.0) (2022-12-26)
 
 
