@@ -2,6 +2,8 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [2.0.0](https://gitlab.migoinc.com/migotv/paintbox/compare/react-checkbox@1.3.0...react-checkbox@2.0.0) (2022-12-26)
+
 ### [1.3.1](https://gitlab.migoinc.com/migotv/paintbox/compare/react-checkbox@1.3.0...react-checkbox@1.3.1) (2022-12-26)
 
 ## [1.3.0](https://gitlab.migoinc.com/migotv/paintbox/compare/react-checkbox@1.2.0...react-checkbox@1.3.0) (2022-12-14)
