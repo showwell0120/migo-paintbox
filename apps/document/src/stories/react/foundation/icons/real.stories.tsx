@@ -11,6 +11,10 @@ function Real({ className }: TemplateProps) {
         <Small>TagFill</Small>
         <RealIcons.TagFill width={20} height={20} className={className} />
       </Wrapper>
+      <Wrapper>
+        <Small>TrashBin</Small>
+        <RealIcons.TrashBin width={20} height={20} className={className} />
+      </Wrapper>
     </Container>
   );
 }
