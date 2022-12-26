@@ -2,6 +2,8 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [2.4.2](https://gitlab.migoinc.com/migotv/paintbox/compare/react-toast@2.4.1...react-toast@2.4.2) (2022-12-26)
+
 ### [2.4.1](https://gitlab.migoinc.com/migotv/paintbox/compare/react-toast@2.4.0...react-toast@2.4.1) (2022-12-14)
 
 
