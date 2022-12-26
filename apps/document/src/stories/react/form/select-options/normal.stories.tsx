@@ -18,7 +18,7 @@ const options: OptionItem[] = [
   },
 ];
 
-export function Normal(props: ReactSelectOptionProps) {
+function Normal(props: ReactSelectOptionProps) {
   const [selected, setSelected] = React.useState<OptionItem>(options[1]);
 
   return (

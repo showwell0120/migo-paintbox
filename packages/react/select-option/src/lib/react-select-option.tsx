@@ -69,8 +69,8 @@ const currOptionStyle = css`
 `;
 
 const optionWrapperStyle = css`
-  background-color: var(--dark);
-  color: var(--white);
+  background-color: var(--primary-dark);
+  color: var(--primary-white);
   position: absolute;
   left: 0;
   z-index: 1;
@@ -89,7 +89,7 @@ const searchRowStyle = css`
 
 const keywordInputStyle = css`
   all: unset;
-  border-bottom: 1px solid var(--white);
+  border-bottom: 1px solid var(--primary-white);
   height: 0.75rem;
   margin-left: 6px;
   padding: 3px;
@@ -102,10 +102,10 @@ const optionRowStyle = css`
   align-items: center;
   cursor: pointer;
   &:hover {
-    background: var(--primary);
+    background: var(--primary-primary);
     svg {
       path {
-        fill: var(--white);
+        fill: var(--primary-white);
       }
     }
   }
@@ -198,7 +198,7 @@ export function ReactSelectOption({
                 width={14}
                 css={css`
                   path {
-                    fill: var(--white);
+                    fill: var(--primary-white);
                   }
                 `}
               />
@@ -223,8 +223,8 @@ export function ReactSelectOption({
                   css={css`
                     path {
                       fill: ${item.id === option.id
-                        ? 'var(--white)'
-                        : 'var(--dark)'};
+                        ? 'var(--primary-white)'
+                        : 'var(--primary-dark)'};
                     }
                   `}
                 />
