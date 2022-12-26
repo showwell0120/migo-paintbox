@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [1.2.4](https://gitlab.migoinc.com/migotv/paintbox/compare/react-select-option@1.2.3...react-select-option@1.2.4) (2022-12-26)
+
+
+### Bug Fixes
+
+* **react-select-option:** show options when click ([a775600](https://gitlab.migoinc.com/migotv/paintbox/commit/a7756001ac9eb59b443a8f34eec7041406332c39))
+
 ### [1.2.3](https://gitlab.migoinc.com/migotv/paintbox/compare/react-select-option@1.2.2...react-select-option@1.2.3) (2022-12-26)
 
 
