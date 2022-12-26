@@ -112,7 +112,7 @@ function StyledBodyTR({ children, className, ...props }: NormalTableProps) {
               }
               &:last-child {
                 td {
-                  &:first-child {
+                  &:first-of-type {
                     border-bottom-left-radius: 4px;
                   }
                   &:last-child {
@@ -148,7 +148,7 @@ const StyledBodyTRRef = React.forwardRef<HTMLTableRowElement, NormalTableProps>(
               }
               &:last-child {
                 td {
-                  &:first-child {
+                  &:first-of-type {
                     border-bottom-left-radius: 4px;
                   }
                   &:last-child {
@@ -177,7 +177,7 @@ function StyledTH({ children, className, ...props }: NormalTableProps) {
             css`
               white-space: nowrap;
               padding-left: 1rem;
-              &:first-child {
+              &:first-of-type {
                 border-top-left-radius: 4px;
               }
 

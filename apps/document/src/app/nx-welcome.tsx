@@ -185,7 +185,7 @@ export function NxWelcome({ title }: { title: string }) {
       transition-duration: 150ms;
       width: 100%;
     }
-    .list-item-link svg:first-child {
+    .list-item-link svg:first-of-type {
       margin-right: 1rem;
       height: 1.5rem;
       transition-property: background-color, border-color, color, fill, stroke,

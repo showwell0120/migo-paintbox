@@ -109,7 +109,7 @@ function StyledBodyTR({ children, className, ...props }: PreviewTableProps) {
               height: 32px;
               &:last-child {
                 td {
-                  &:first-child {
+                  &:first-of-type {
                     border-bottom-left-radius: 4px;
                   }
                   &:last-child {
@@ -137,7 +137,7 @@ function StyledTH({ children, className, ...props }: PreviewTableProps) {
           className={cx(
             css`
               padding-left: 1rem;
-              &:first-child {
+              &:first-of-type {
                 border-top-left-radius: 4px;
               }
 
