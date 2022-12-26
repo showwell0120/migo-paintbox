@@ -9,6 +9,13 @@ This file was generated using [@jscutlery/semver](https://github.com/jscutlery/s
 
 * **react-foundation:** add icons that support select-options ([0682298](https://gitlab.migoinc.com/migotv/paintbox/commit/06822987f118e3b097a11d13c9e4efe5fb3f93fe))
 
+## [1.15.0](https://gitlab.migoinc.com/migotv/paintbox/compare/react-foundation@1.14.0...react-foundation@1.15.0) (2022-12-26)
+
+
+### Features
+
+* **react-foundation:** add icons that support select-options ([0682298](https://gitlab.migoinc.com/migotv/paintbox/commit/06822987f118e3b097a11d13c9e4efe5fb3f93fe))
+
 ## [1.14.0](https://gitlab.migoinc.com/migotv/paintbox/compare/react-foundation@1.13.1...react-foundation@1.14.0) (2022-12-15)
 
 
