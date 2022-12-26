@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [1.16.1](https://gitlab.migoinc.com/migotv/paintbox/compare/react-foundation@1.16.0...react-foundation@1.16.1) (2022-12-26)
+
+
+### Bug Fixes
+
+* **react-foundation:** default font family setting ([2f1367a](https://gitlab.migoinc.com/migotv/paintbox/commit/2f1367a73b0edea6d724e6398582c62c31747f3f))
+
 ## [1.16.0](https://gitlab.migoinc.com/migotv/paintbox/compare/react-foundation@1.15.0...react-foundation@1.16.0) (2022-12-26)
 
 
