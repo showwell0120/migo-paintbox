@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [1.2.3](https://gitlab.migoinc.com/migotv/paintbox/compare/react-select-option@1.2.2...react-select-option@1.2.3) (2022-12-26)
+
+
+### Bug Fixes
+
+* **react-select-option:** css variables, stories ([991ac20](https://gitlab.migoinc.com/migotv/paintbox/commit/991ac20af133d8c5f85e4eb1207d91fb603bb8af))
+
 ### [1.2.2](https://gitlab.migoinc.com/migotv/paintbox/compare/react-select-option@1.2.1...react-select-option@1.2.2) (2022-12-26)
 
 ### [1.2.1](https://gitlab.migoinc.com/migotv/paintbox/compare/react-select-option@1.2.0...react-select-option@1.2.1) (2022-12-14)
