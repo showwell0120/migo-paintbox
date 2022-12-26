@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [1.7.4](https://gitlab.migoinc.com/migotv/paintbox/compare/react-ui@1.7.3...react-ui@1.7.4) (2022-12-26)
+
+
+### Features
+
+* **react-icon-action:** add component template ([338a57f](https://gitlab.migoinc.com/migotv/paintbox/commit/338a57f24795e6e329c8e40c8322e36d9ec3fd09))
+
 ### [1.7.3](https://gitlab.migoinc.com/migotv/paintbox/compare/react-ui@1.7.2...react-ui@1.7.3) (2022-12-26)
 
 ### [1.7.2](https://gitlab.migoinc.com/migotv/paintbox/compare/react-ui@1.7.1...react-ui@1.7.2) (2022-12-26)
