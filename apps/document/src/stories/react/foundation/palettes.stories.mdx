@@ -31,13 +31,7 @@ import { Meta } from '@storybook/addon-docs/blocks';
 /*
 @figma: https://www.figma.com/file/Sv8VnmaINqyDQcpdO3cz5M/%F0%9F%96%A5-Foundation?node-id=5%3A2&t=a6oI9cMzvoyzJsju-0
 */
-@font-face {
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap") format("woff2");
-}
+@import url(https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap);
 @font-face {
   font-family: "Roboto Fallback";
   font-style: normal;
@@ -49,7 +43,7 @@ import { Meta } from '@storybook/addon-docs/blocks';
   size-adjust: 109.71%;
 }
 html, body, * {
-  font-family: "Roboto", "Roboto Fallback";
+  font-family: Roboto, "Roboto Fallback";
 }
 
 :root {
@@ -62,6 +56,168 @@ html, body, * {
   --gray-700: #495057;
   --gray-800: #343A40;
   --gray-900: #212529;
+  --app-red: #D63131;
+  --app-critical: #F7514D;
+  --app-success: #4F9D52;
+  --app-warning: #F08843;
+  --app-decorative-red: #E02828;
+  --app-decorative-blue: #3453DA;
+  --app-decorative-purple: #9C27B0;
+  --app-background-black: #121212;
+  --app-background-blue: #1B1E2E;
+}
+:root .app-red-contained {
+  background-color: #D63131;
+  color: var(--primary-white);
+}
+:root .app-red-contained svg path {
+  fill: var(--primary-white);
+}
+:root .app-red-outlined {
+  background-color: transparent;
+  color: #D63131;
+}
+:root .app-red-outlined svg path {
+  fill: #D63131;
+}
+:root .app-red-outlined.has-bd {
+  border: 1px solid #D63131;
+}
+:root .app-critical-contained {
+  background-color: #F7514D;
+  color: var(--primary-white);
+}
+:root .app-critical-contained svg path {
+  fill: var(--primary-white);
+}
+:root .app-critical-outlined {
+  background-color: transparent;
+  color: #F7514D;
+}
+:root .app-critical-outlined svg path {
+  fill: #F7514D;
+}
+:root .app-critical-outlined.has-bd {
+  border: 1px solid #F7514D;
+}
+:root .app-success-contained {
+  background-color: #4F9D52;
+  color: var(--primary-white);
+}
+:root .app-success-contained svg path {
+  fill: var(--primary-white);
+}
+:root .app-success-outlined {
+  background-color: transparent;
+  color: #4F9D52;
+}
+:root .app-success-outlined svg path {
+  fill: #4F9D52;
+}
+:root .app-success-outlined.has-bd {
+  border: 1px solid #4F9D52;
+}
+:root .app-warning-contained {
+  background-color: #F08843;
+  color: var(--primary-white);
+}
+:root .app-warning-contained svg path {
+  fill: var(--primary-white);
+}
+:root .app-warning-outlined {
+  background-color: transparent;
+  color: #F08843;
+}
+:root .app-warning-outlined svg path {
+  fill: #F08843;
+}
+:root .app-warning-outlined.has-bd {
+  border: 1px solid #F08843;
+}
+:root .app-decorative-red-contained {
+  background-color: #E02828;
+  color: var(--primary-white);
+}
+:root .app-decorative-red-contained svg path {
+  fill: var(--primary-white);
+}
+:root .app-decorative-red-outlined {
+  background-color: transparent;
+  color: #E02828;
+}
+:root .app-decorative-red-outlined svg path {
+  fill: #E02828;
+}
+:root .app-decorative-red-outlined.has-bd {
+  border: 1px solid #E02828;
+}
+:root .app-decorative-blue-contained {
+  background-color: #3453DA;
+  color: var(--primary-white);
+}
+:root .app-decorative-blue-contained svg path {
+  fill: var(--primary-white);
+}
+:root .app-decorative-blue-outlined {
+  background-color: transparent;
+  color: #3453DA;
+}
+:root .app-decorative-blue-outlined svg path {
+  fill: #3453DA;
+}
+:root .app-decorative-blue-outlined.has-bd {
+  border: 1px solid #3453DA;
+}
+:root .app-decorative-purple-contained {
+  background-color: #9C27B0;
+  color: var(--primary-white);
+}
+:root .app-decorative-purple-contained svg path {
+  fill: var(--primary-white);
+}
+:root .app-decorative-purple-outlined {
+  background-color: transparent;
+  color: #9C27B0;
+}
+:root .app-decorative-purple-outlined svg path {
+  fill: #9C27B0;
+}
+:root .app-decorative-purple-outlined.has-bd {
+  border: 1px solid #9C27B0;
+}
+:root .app-background-black-contained {
+  background-color: #121212;
+  color: var(--primary-white);
+}
+:root .app-background-black-contained svg path {
+  fill: var(--primary-white);
+}
+:root .app-background-black-outlined {
+  background-color: transparent;
+  color: #121212;
+}
+:root .app-background-black-outlined svg path {
+  fill: #121212;
+}
+:root .app-background-black-outlined.has-bd {
+  border: 1px solid #121212;
+}
+:root .app-background-blue-contained {
+  background-color: #1B1E2E;
+  color: var(--primary-white);
+}
+:root .app-background-blue-contained svg path {
+  fill: var(--primary-white);
+}
+:root .app-background-blue-outlined {
+  background-color: transparent;
+  color: #1B1E2E;
+}
+:root .app-background-blue-outlined svg path {
+  fill: #1B1E2E;
+}
+:root .app-background-blue-outlined.has-bd {
+  border: 1px solid #1B1E2E;
 }
 
 :root, *[data-theme=light] {
@@ -90,6 +246,424 @@ html, body, * {
   --text-muted: #8C8C8C;
   --text-halfbody: rgba(0, 0, 0, 0.5);
 }
+:root .primary-brand-contained, *[data-theme=light] .primary-brand-contained {
+  background-color: #D63131;
+  color: var(--primary-white);
+}
+:root .primary-brand-contained svg path, *[data-theme=light] .primary-brand-contained svg path {
+  fill: var(--primary-white);
+}
+:root .primary-brand-contained.light, :root .primary-brand-contained.hover, :root .primary-brand-contained.white, :root .primary-brand-contained.transparent, *[data-theme=light] .primary-brand-contained.light, *[data-theme=light] .primary-brand-contained.hover, *[data-theme=light] .primary-brand-contained.white, *[data-theme=light] .primary-brand-contained.transparent {
+  color: var(--gray-800);
+}
+:root .primary-brand-contained.light svg path, :root .primary-brand-contained.hover svg path, :root .primary-brand-contained.white svg path, :root .primary-brand-contained.transparent svg path, *[data-theme=light] .primary-brand-contained.light svg path, *[data-theme=light] .primary-brand-contained.hover svg path, *[data-theme=light] .primary-brand-contained.white svg path, *[data-theme=light] .primary-brand-contained.transparent svg path {
+  fill: var(--gray-800);
+}
+:root .primary-brand-outlined, *[data-theme=light] .primary-brand-outlined {
+  background-color: transparent;
+  color: #D63131;
+}
+:root .primary-brand-outlined svg path, *[data-theme=light] .primary-brand-outlined svg path {
+  fill: #D63131;
+}
+:root .primary-brand-outlined .has-bd, *[data-theme=light] .primary-brand-outlined .has-bd {
+  border: 1px solid #D63131;
+}
+:root .primary-primary-contained, *[data-theme=light] .primary-primary-contained {
+  background-color: #6484FF;
+  color: var(--primary-white);
+}
+:root .primary-primary-contained svg path, *[data-theme=light] .primary-primary-contained svg path {
+  fill: var(--primary-white);
+}
+:root .primary-primary-contained.light, :root .primary-primary-contained.hover, :root .primary-primary-contained.white, :root .primary-primary-contained.transparent, *[data-theme=light] .primary-primary-contained.light, *[data-theme=light] .primary-primary-contained.hover, *[data-theme=light] .primary-primary-contained.white, *[data-theme=light] .primary-primary-contained.transparent {
+  color: var(--gray-800);
+}
+:root .primary-primary-contained.light svg path, :root .primary-primary-contained.hover svg path, :root .primary-primary-contained.white svg path, :root .primary-primary-contained.transparent svg path, *[data-theme=light] .primary-primary-contained.light svg path, *[data-theme=light] .primary-primary-contained.hover svg path, *[data-theme=light] .primary-primary-contained.white svg path, *[data-theme=light] .primary-primary-contained.transparent svg path {
+  fill: var(--gray-800);
+}
+:root .primary-primary-outlined, *[data-theme=light] .primary-primary-outlined {
+  background-color: transparent;
+  color: #6484FF;
+}
+:root .primary-primary-outlined svg path, *[data-theme=light] .primary-primary-outlined svg path {
+  fill: #6484FF;
+}
+:root .primary-primary-outlined .has-bd, *[data-theme=light] .primary-primary-outlined .has-bd {
+  border: 1px solid #6484FF;
+}
+:root .primary-secondary-contained, *[data-theme=light] .primary-secondary-contained {
+  background-color: #6C757D;
+  color: var(--primary-white);
+}
+:root .primary-secondary-contained svg path, *[data-theme=light] .primary-secondary-contained svg path {
+  fill: var(--primary-white);
+}
+:root .primary-secondary-contained.light, :root .primary-secondary-contained.hover, :root .primary-secondary-contained.white, :root .primary-secondary-contained.transparent, *[data-theme=light] .primary-secondary-contained.light, *[data-theme=light] .primary-secondary-contained.hover, *[data-theme=light] .primary-secondary-contained.white, *[data-theme=light] .primary-secondary-contained.transparent {
+  color: var(--gray-800);
+}
+:root .primary-secondary-contained.light svg path, :root .primary-secondary-contained.hover svg path, :root .primary-secondary-contained.white svg path, :root .primary-secondary-contained.transparent svg path, *[data-theme=light] .primary-secondary-contained.light svg path, *[data-theme=light] .primary-secondary-contained.hover svg path, *[data-theme=light] .primary-secondary-contained.white svg path, *[data-theme=light] .primary-secondary-contained.transparent svg path {
+  fill: var(--gray-800);
+}
+:root .primary-secondary-outlined, *[data-theme=light] .primary-secondary-outlined {
+  background-color: transparent;
+  color: #6C757D;
+}
+:root .primary-secondary-outlined svg path, *[data-theme=light] .primary-secondary-outlined svg path {
+  fill: #6C757D;
+}
+:root .primary-secondary-outlined .has-bd, *[data-theme=light] .primary-secondary-outlined .has-bd {
+  border: 1px solid #6C757D;
+}
+:root .primary-muted-contained, *[data-theme=light] .primary-muted-contained {
+  background-color: #8C8C8C;
+  color: var(--primary-white);
+}
+:root .primary-muted-contained svg path, *[data-theme=light] .primary-muted-contained svg path {
+  fill: var(--primary-white);
+}
+:root .primary-muted-contained.light, :root .primary-muted-contained.hover, :root .primary-muted-contained.white, :root .primary-muted-contained.transparent, *[data-theme=light] .primary-muted-contained.light, *[data-theme=light] .primary-muted-contained.hover, *[data-theme=light] .primary-muted-contained.white, *[data-theme=light] .primary-muted-contained.transparent {
+  color: var(--gray-800);
+}
+:root .primary-muted-contained.light svg path, :root .primary-muted-contained.hover svg path, :root .primary-muted-contained.white svg path, :root .primary-muted-contained.transparent svg path, *[data-theme=light] .primary-muted-contained.light svg path, *[data-theme=light] .primary-muted-contained.hover svg path, *[data-theme=light] .primary-muted-contained.white svg path, *[data-theme=light] .primary-muted-contained.transparent svg path {
+  fill: var(--gray-800);
+}
+:root .primary-muted-outlined, *[data-theme=light] .primary-muted-outlined {
+  background-color: transparent;
+  color: #8C8C8C;
+}
+:root .primary-muted-outlined svg path, *[data-theme=light] .primary-muted-outlined svg path {
+  fill: #8C8C8C;
+}
+:root .primary-muted-outlined .has-bd, *[data-theme=light] .primary-muted-outlined .has-bd {
+  border: 1px solid #8C8C8C;
+}
+:root .primary-success-contained, *[data-theme=light] .primary-success-contained {
+  background-color: #4F9D52;
+  color: var(--primary-white);
+}
+:root .primary-success-contained svg path, *[data-theme=light] .primary-success-contained svg path {
+  fill: var(--primary-white);
+}
+:root .primary-success-contained.light, :root .primary-success-contained.hover, :root .primary-success-contained.white, :root .primary-success-contained.transparent, *[data-theme=light] .primary-success-contained.light, *[data-theme=light] .primary-success-contained.hover, *[data-theme=light] .primary-success-contained.white, *[data-theme=light] .primary-success-contained.transparent {
+  color: var(--gray-800);
+}
+:root .primary-success-contained.light svg path, :root .primary-success-contained.hover svg path, :root .primary-success-contained.white svg path, :root .primary-success-contained.transparent svg path, *[data-theme=light] .primary-success-contained.light svg path, *[data-theme=light] .primary-success-contained.hover svg path, *[data-theme=light] .primary-success-contained.white svg path, *[data-theme=light] .primary-success-contained.transparent svg path {
+  fill: var(--gray-800);
+}
+:root .primary-success-outlined, *[data-theme=light] .primary-success-outlined {
+  background-color: transparent;
+  color: #4F9D52;
+}
+:root .primary-success-outlined svg path, *[data-theme=light] .primary-success-outlined svg path {
+  fill: #4F9D52;
+}
+:root .primary-success-outlined .has-bd, *[data-theme=light] .primary-success-outlined .has-bd {
+  border: 1px solid #4F9D52;
+}
+:root .primary-danger-contained, *[data-theme=light] .primary-danger-contained {
+  background-color: #DC3545;
+  color: var(--primary-white);
+}
+:root .primary-danger-contained svg path, *[data-theme=light] .primary-danger-contained svg path {
+  fill: var(--primary-white);
+}
+:root .primary-danger-contained.light, :root .primary-danger-contained.hover, :root .primary-danger-contained.white, :root .primary-danger-contained.transparent, *[data-theme=light] .primary-danger-contained.light, *[data-theme=light] .primary-danger-contained.hover, *[data-theme=light] .primary-danger-contained.white, *[data-theme=light] .primary-danger-contained.transparent {
+  color: var(--gray-800);
+}
+:root .primary-danger-contained.light svg path, :root .primary-danger-contained.hover svg path, :root .primary-danger-contained.white svg path, :root .primary-danger-contained.transparent svg path, *[data-theme=light] .primary-danger-contained.light svg path, *[data-theme=light] .primary-danger-contained.hover svg path, *[data-theme=light] .primary-danger-contained.white svg path, *[data-theme=light] .primary-danger-contained.transparent svg path {
+  fill: var(--gray-800);
+}
+:root .primary-danger-outlined, *[data-theme=light] .primary-danger-outlined {
+  background-color: transparent;
+  color: #DC3545;
+}
+:root .primary-danger-outlined svg path, *[data-theme=light] .primary-danger-outlined svg path {
+  fill: #DC3545;
+}
+:root .primary-danger-outlined .has-bd, *[data-theme=light] .primary-danger-outlined .has-bd {
+  border: 1px solid #DC3545;
+}
+:root .primary-warning-contained, *[data-theme=light] .primary-warning-contained {
+  background-color: #F08843;
+  color: var(--primary-white);
+}
+:root .primary-warning-contained svg path, *[data-theme=light] .primary-warning-contained svg path {
+  fill: var(--primary-white);
+}
+:root .primary-warning-contained.light, :root .primary-warning-contained.hover, :root .primary-warning-contained.white, :root .primary-warning-contained.transparent, *[data-theme=light] .primary-warning-contained.light, *[data-theme=light] .primary-warning-contained.hover, *[data-theme=light] .primary-warning-contained.white, *[data-theme=light] .primary-warning-contained.transparent {
+  color: var(--gray-800);
+}
+:root .primary-warning-contained.light svg path, :root .primary-warning-contained.hover svg path, :root .primary-warning-contained.white svg path, :root .primary-warning-contained.transparent svg path, *[data-theme=light] .primary-warning-contained.light svg path, *[data-theme=light] .primary-warning-contained.hover svg path, *[data-theme=light] .primary-warning-contained.white svg path, *[data-theme=light] .primary-warning-contained.transparent svg path {
+  fill: var(--gray-800);
+}
+:root .primary-warning-outlined, *[data-theme=light] .primary-warning-outlined {
+  background-color: transparent;
+  color: #F08843;
+}
+:root .primary-warning-outlined svg path, *[data-theme=light] .primary-warning-outlined svg path {
+  fill: #F08843;
+}
+:root .primary-warning-outlined .has-bd, *[data-theme=light] .primary-warning-outlined .has-bd {
+  border: 1px solid #F08843;
+}
+:root .primary-info-contained, *[data-theme=light] .primary-info-contained {
+  background-color: #17A2B8;
+  color: var(--primary-white);
+}
+:root .primary-info-contained svg path, *[data-theme=light] .primary-info-contained svg path {
+  fill: var(--primary-white);
+}
+:root .primary-info-contained.light, :root .primary-info-contained.hover, :root .primary-info-contained.white, :root .primary-info-contained.transparent, *[data-theme=light] .primary-info-contained.light, *[data-theme=light] .primary-info-contained.hover, *[data-theme=light] .primary-info-contained.white, *[data-theme=light] .primary-info-contained.transparent {
+  color: var(--gray-800);
+}
+:root .primary-info-contained.light svg path, :root .primary-info-contained.hover svg path, :root .primary-info-contained.white svg path, :root .primary-info-contained.transparent svg path, *[data-theme=light] .primary-info-contained.light svg path, *[data-theme=light] .primary-info-contained.hover svg path, *[data-theme=light] .primary-info-contained.white svg path, *[data-theme=light] .primary-info-contained.transparent svg path {
+  fill: var(--gray-800);
+}
+:root .primary-info-outlined, *[data-theme=light] .primary-info-outlined {
+  background-color: transparent;
+  color: #17A2B8;
+}
+:root .primary-info-outlined svg path, *[data-theme=light] .primary-info-outlined svg path {
+  fill: #17A2B8;
+}
+:root .primary-info-outlined .has-bd, *[data-theme=light] .primary-info-outlined .has-bd {
+  border: 1px solid #17A2B8;
+}
+:root .primary-light-contained, *[data-theme=light] .primary-light-contained {
+  background-color: #EDEDED;
+  color: var(--primary-white);
+}
+:root .primary-light-contained svg path, *[data-theme=light] .primary-light-contained svg path {
+  fill: var(--primary-white);
+}
+:root .primary-light-contained.light, :root .primary-light-contained.hover, :root .primary-light-contained.white, :root .primary-light-contained.transparent, *[data-theme=light] .primary-light-contained.light, *[data-theme=light] .primary-light-contained.hover, *[data-theme=light] .primary-light-contained.white, *[data-theme=light] .primary-light-contained.transparent {
+  color: var(--gray-800);
+}
+:root .primary-light-contained.light svg path, :root .primary-light-contained.hover svg path, :root .primary-light-contained.white svg path, :root .primary-light-contained.transparent svg path, *[data-theme=light] .primary-light-contained.light svg path, *[data-theme=light] .primary-light-contained.hover svg path, *[data-theme=light] .primary-light-contained.white svg path, *[data-theme=light] .primary-light-contained.transparent svg path {
+  fill: var(--gray-800);
+}
+:root .primary-light-outlined, *[data-theme=light] .primary-light-outlined {
+  background-color: transparent;
+  color: #EDEDED;
+}
+:root .primary-light-outlined svg path, *[data-theme=light] .primary-light-outlined svg path {
+  fill: #EDEDED;
+}
+:root .primary-light-outlined .has-bd, *[data-theme=light] .primary-light-outlined .has-bd {
+  border: 1px solid #EDEDED;
+}
+:root .primary-hover-contained, *[data-theme=light] .primary-hover-contained {
+  background-color: rgba(232, 245, 253, 0.8);
+  color: var(--primary-white);
+}
+:root .primary-hover-contained svg path, *[data-theme=light] .primary-hover-contained svg path {
+  fill: var(--primary-white);
+}
+:root .primary-hover-contained.light, :root .primary-hover-contained.hover, :root .primary-hover-contained.white, :root .primary-hover-contained.transparent, *[data-theme=light] .primary-hover-contained.light, *[data-theme=light] .primary-hover-contained.hover, *[data-theme=light] .primary-hover-contained.white, *[data-theme=light] .primary-hover-contained.transparent {
+  color: var(--gray-800);
+}
+:root .primary-hover-contained.light svg path, :root .primary-hover-contained.hover svg path, :root .primary-hover-contained.white svg path, :root .primary-hover-contained.transparent svg path, *[data-theme=light] .primary-hover-contained.light svg path, *[data-theme=light] .primary-hover-contained.hover svg path, *[data-theme=light] .primary-hover-contained.white svg path, *[data-theme=light] .primary-hover-contained.transparent svg path {
+  fill: var(--gray-800);
+}
+:root .primary-hover-outlined, *[data-theme=light] .primary-hover-outlined {
+  background-color: transparent;
+  color: rgba(232, 245, 253, 0.8);
+}
+:root .primary-hover-outlined svg path, *[data-theme=light] .primary-hover-outlined svg path {
+  fill: rgba(232, 245, 253, 0.8);
+}
+:root .primary-hover-outlined .has-bd, *[data-theme=light] .primary-hover-outlined .has-bd {
+  border: 1px solid rgba(232, 245, 253, 0.8);
+}
+:root .primary-dark-contained, *[data-theme=light] .primary-dark-contained {
+  background-color: #292D43;
+  color: var(--primary-white);
+}
+:root .primary-dark-contained svg path, *[data-theme=light] .primary-dark-contained svg path {
+  fill: var(--primary-white);
+}
+:root .primary-dark-contained.light, :root .primary-dark-contained.hover, :root .primary-dark-contained.white, :root .primary-dark-contained.transparent, *[data-theme=light] .primary-dark-contained.light, *[data-theme=light] .primary-dark-contained.hover, *[data-theme=light] .primary-dark-contained.white, *[data-theme=light] .primary-dark-contained.transparent {
+  color: var(--gray-800);
+}
+:root .primary-dark-contained.light svg path, :root .primary-dark-contained.hover svg path, :root .primary-dark-contained.white svg path, :root .primary-dark-contained.transparent svg path, *[data-theme=light] .primary-dark-contained.light svg path, *[data-theme=light] .primary-dark-contained.hover svg path, *[data-theme=light] .primary-dark-contained.white svg path, *[data-theme=light] .primary-dark-contained.transparent svg path {
+  fill: var(--gray-800);
+}
+:root .primary-dark-outlined, *[data-theme=light] .primary-dark-outlined {
+  background-color: transparent;
+  color: #292D43;
+}
+:root .primary-dark-outlined svg path, *[data-theme=light] .primary-dark-outlined svg path {
+  fill: #292D43;
+}
+:root .primary-dark-outlined .has-bd, *[data-theme=light] .primary-dark-outlined .has-bd {
+  border: 1px solid #292D43;
+}
+:root .primary-white-contained, *[data-theme=light] .primary-white-contained {
+  background-color: #FFFFFF;
+  color: var(--primary-white);
+}
+:root .primary-white-contained svg path, *[data-theme=light] .primary-white-contained svg path {
+  fill: var(--primary-white);
+}
+:root .primary-white-contained.light, :root .primary-white-contained.hover, :root .primary-white-contained.white, :root .primary-white-contained.transparent, *[data-theme=light] .primary-white-contained.light, *[data-theme=light] .primary-white-contained.hover, *[data-theme=light] .primary-white-contained.white, *[data-theme=light] .primary-white-contained.transparent {
+  color: var(--gray-800);
+}
+:root .primary-white-contained.light svg path, :root .primary-white-contained.hover svg path, :root .primary-white-contained.white svg path, :root .primary-white-contained.transparent svg path, *[data-theme=light] .primary-white-contained.light svg path, *[data-theme=light] .primary-white-contained.hover svg path, *[data-theme=light] .primary-white-contained.white svg path, *[data-theme=light] .primary-white-contained.transparent svg path {
+  fill: var(--gray-800);
+}
+:root .primary-white-outlined, *[data-theme=light] .primary-white-outlined {
+  background-color: transparent;
+  color: #FFFFFF;
+}
+:root .primary-white-outlined svg path, *[data-theme=light] .primary-white-outlined svg path {
+  fill: #FFFFFF;
+}
+:root .primary-white-outlined .has-bd, *[data-theme=light] .primary-white-outlined .has-bd {
+  border: 1px solid #FFFFFF;
+}
+:root .primary-transparent-contained, *[data-theme=light] .primary-transparent-contained {
+  background-color: rgba(196, 196, 196, 0.1);
+  color: var(--primary-white);
+}
+:root .primary-transparent-contained svg path, *[data-theme=light] .primary-transparent-contained svg path {
+  fill: var(--primary-white);
+}
+:root .primary-transparent-contained.light, :root .primary-transparent-contained.hover, :root .primary-transparent-contained.white, :root .primary-transparent-contained.transparent, *[data-theme=light] .primary-transparent-contained.light, *[data-theme=light] .primary-transparent-contained.hover, *[data-theme=light] .primary-transparent-contained.white, *[data-theme=light] .primary-transparent-contained.transparent {
+  color: var(--gray-800);
+}
+:root .primary-transparent-contained.light svg path, :root .primary-transparent-contained.hover svg path, :root .primary-transparent-contained.white svg path, :root .primary-transparent-contained.transparent svg path, *[data-theme=light] .primary-transparent-contained.light svg path, *[data-theme=light] .primary-transparent-contained.hover svg path, *[data-theme=light] .primary-transparent-contained.white svg path, *[data-theme=light] .primary-transparent-contained.transparent svg path {
+  fill: var(--gray-800);
+}
+:root .primary-transparent-outlined, *[data-theme=light] .primary-transparent-outlined {
+  background-color: transparent;
+  color: rgba(196, 196, 196, 0.1);
+}
+:root .primary-transparent-outlined svg path, *[data-theme=light] .primary-transparent-outlined svg path {
+  fill: rgba(196, 196, 196, 0.1);
+}
+:root .primary-transparent-outlined .has-bd, *[data-theme=light] .primary-transparent-outlined .has-bd {
+  border: 1px solid rgba(196, 196, 196, 0.1);
+}
+:root .secondary-brand-contained, *[data-theme=light] .secondary-brand-contained {
+  background-color: #F8DEDE;
+  color: var(--primary-brand);
+}
+:root .secondary-brand-contained svg path, *[data-theme=light] .secondary-brand-contained svg path {
+  fill: var(--primary-brand);
+}
+:root .secondary-brand-outlined, *[data-theme=light] .secondary-brand-outlined {
+  background-color: transparent;
+  color: #F8DEDE;
+}
+:root .secondary-brand-outlined svg path, *[data-theme=light] .secondary-brand-outlined svg path {
+  fill: #F8DEDE;
+}
+:root .secondary-brand-outlined .has-bd, *[data-theme=light] .secondary-brand-outlined .has-bd {
+  border: 1px solid #F8DEDE;
+}
+:root .secondary-primary-contained, *[data-theme=light] .secondary-primary-contained {
+  background-color: #DAE2FF;
+  color: var(--primary-primary);
+}
+:root .secondary-primary-contained svg path, *[data-theme=light] .secondary-primary-contained svg path {
+  fill: var(--primary-primary);
+}
+:root .secondary-primary-outlined, *[data-theme=light] .secondary-primary-outlined {
+  background-color: transparent;
+  color: #DAE2FF;
+}
+:root .secondary-primary-outlined svg path, *[data-theme=light] .secondary-primary-outlined svg path {
+  fill: #DAE2FF;
+}
+:root .secondary-primary-outlined .has-bd, *[data-theme=light] .secondary-primary-outlined .has-bd {
+  border: 1px solid #DAE2FF;
+}
+:root .secondary-secondary-contained, *[data-theme=light] .secondary-secondary-contained {
+  background-color: #C4C8CB;
+  color: var(--primary-secondary);
+}
+:root .secondary-secondary-contained svg path, *[data-theme=light] .secondary-secondary-contained svg path {
+  fill: var(--primary-secondary);
+}
+:root .secondary-secondary-outlined, *[data-theme=light] .secondary-secondary-outlined {
+  background-color: transparent;
+  color: #C4C8CB;
+}
+:root .secondary-secondary-outlined svg path, *[data-theme=light] .secondary-secondary-outlined svg path {
+  fill: #C4C8CB;
+}
+:root .secondary-secondary-outlined .has-bd, *[data-theme=light] .secondary-secondary-outlined .has-bd {
+  border: 1px solid #C4C8CB;
+}
+:root .secondary-success-contained, *[data-theme=light] .secondary-success-contained {
+  background-color: #C1E4C3;
+  color: var(--primary-success);
+}
+:root .secondary-success-contained svg path, *[data-theme=light] .secondary-success-contained svg path {
+  fill: var(--primary-success);
+}
+:root .secondary-success-outlined, *[data-theme=light] .secondary-success-outlined {
+  background-color: transparent;
+  color: #C1E4C3;
+}
+:root .secondary-success-outlined svg path, *[data-theme=light] .secondary-success-outlined svg path {
+  fill: #C1E4C3;
+}
+:root .secondary-success-outlined .has-bd, *[data-theme=light] .secondary-success-outlined .has-bd {
+  border: 1px solid #C1E4C3;
+}
+:root .secondary-danger-contained, *[data-theme=light] .secondary-danger-contained {
+  background-color: #F5C3C8;
+  color: var(--primary-danger);
+}
+:root .secondary-danger-contained svg path, *[data-theme=light] .secondary-danger-contained svg path {
+  fill: var(--primary-danger);
+}
+:root .secondary-danger-outlined, *[data-theme=light] .secondary-danger-outlined {
+  background-color: transparent;
+  color: #F5C3C8;
+}
+:root .secondary-danger-outlined svg path, *[data-theme=light] .secondary-danger-outlined svg path {
+  fill: #F5C3C8;
+}
+:root .secondary-danger-outlined .has-bd, *[data-theme=light] .secondary-danger-outlined .has-bd {
+  border: 1px solid #F5C3C8;
+}
+:root .secondary-warning-contained, *[data-theme=light] .secondary-warning-contained {
+  background-color: #FAD9C2;
+  color: var(--primary-warning);
+}
+:root .secondary-warning-contained svg path, *[data-theme=light] .secondary-warning-contained svg path {
+  fill: var(--primary-warning);
+}
+:root .secondary-warning-outlined, *[data-theme=light] .secondary-warning-outlined {
+  background-color: transparent;
+  color: #FAD9C2;
+}
+:root .secondary-warning-outlined svg path, *[data-theme=light] .secondary-warning-outlined svg path {
+  fill: #FAD9C2;
+}
+:root .secondary-warning-outlined .has-bd, *[data-theme=light] .secondary-warning-outlined .has-bd {
+  border: 1px solid #FAD9C2;
+}
+:root .secondary-info-contained, *[data-theme=light] .secondary-info-contained {
+  background-color: #C8E9EE;
+  color: var(--primary-info);
+}
+:root .secondary-info-contained svg path, *[data-theme=light] .secondary-info-contained svg path {
+  fill: var(--primary-info);
+}
+:root .secondary-info-outlined, *[data-theme=light] .secondary-info-outlined {
+  background-color: transparent;
+  color: #C8E9EE;
+}
+:root .secondary-info-outlined svg path, *[data-theme=light] .secondary-info-outlined svg path {
+  fill: #C8E9EE;
+}
+:root .secondary-info-outlined .has-bd, *[data-theme=light] .secondary-info-outlined .has-bd {
+  border: 1px solid #C8E9EE;
+}
 
 *[data-theme=dark] {
   --primary-brand: #D63131;
@@ -105,23 +679,435 @@ html, body, * {
   --primary-dark: #202124;
   --primary-white: #FFFFFF;
   --primary-transparent: rgba(255, 255, 255, 0.1);
-  --primary-brand: #D63131;
-  --primary-primary: #809AFF;
-  --primary-secondary: #7C8892;
-  --primary-muted: #9C9C9C;
-  --primary-success: #65BB68;
-  --primary-danger: #F7514D;
-  --primary-warning: #F99451;
-  --primary-info: #18B0C8;
-  --primary-light: #E8E8E8;
-  --primary-hover: #35363A;
-  --primary-dark: #202124;
-  --primary-white: #FFFFFF;
-  --primary-transparent: rgba(255, 255, 255, 0.1);
+  --secondary-brand: #381c1c;
+  --secondary-primary: #19203d;
+  --secondary-secondary: #2b2f32;
+  --secondary-success: #294b2a;
+  --secondary-danger: #430f15;
+  --secondary-warning: #4d2c15;
+  --secondary-info: #07272c;
   --text-body: #FFFFFF;
   --text-dark: #A8A8A8;
   --text-muted: #686868;
   --text-halfbody: rgba(255, 255, 255, 0.5);
+}
+*[data-theme=dark] .primary-brand-contained {
+  background-color: #D63131;
+  color: var(--primary-white);
+}
+*[data-theme=dark] .primary-brand-contained svg path {
+  fill: var(--primary-white);
+}
+*[data-theme=dark] .primary-brand-contained.light, *[data-theme=dark] .primary-brand-contained.hover, *[data-theme=dark] .primary-brand-contained.white, *[data-theme=dark] .primary-brand-contained.transparent {
+  color: var(--gray-800);
+}
+*[data-theme=dark] .primary-brand-contained.light svg path, *[data-theme=dark] .primary-brand-contained.hover svg path, *[data-theme=dark] .primary-brand-contained.white svg path, *[data-theme=dark] .primary-brand-contained.transparent svg path {
+  fill: var(--gray-800);
+}
+*[data-theme=dark] .primary-brand-outlined {
+  background-color: transparent;
+  color: #D63131;
+}
+*[data-theme=dark] .primary-brand-outlined svg path {
+  fill: #D63131;
+}
+*[data-theme=dark] .primary-brand-outlined .has-bd {
+  border: 1px solid #D63131;
+}
+*[data-theme=dark] .primary-primary-contained {
+  background-color: #809AFF;
+  color: var(--primary-white);
+}
+*[data-theme=dark] .primary-primary-contained svg path {
+  fill: var(--primary-white);
+}
+*[data-theme=dark] .primary-primary-contained.light, *[data-theme=dark] .primary-primary-contained.hover, *[data-theme=dark] .primary-primary-contained.white, *[data-theme=dark] .primary-primary-contained.transparent {
+  color: var(--gray-800);
+}
+*[data-theme=dark] .primary-primary-contained.light svg path, *[data-theme=dark] .primary-primary-contained.hover svg path, *[data-theme=dark] .primary-primary-contained.white svg path, *[data-theme=dark] .primary-primary-contained.transparent svg path {
+  fill: var(--gray-800);
+}
+*[data-theme=dark] .primary-primary-outlined {
+  background-color: transparent;
+  color: #809AFF;
+}
+*[data-theme=dark] .primary-primary-outlined svg path {
+  fill: #809AFF;
+}
+*[data-theme=dark] .primary-primary-outlined .has-bd {
+  border: 1px solid #809AFF;
+}
+*[data-theme=dark] .primary-secondary-contained {
+  background-color: #7C8892;
+  color: var(--primary-white);
+}
+*[data-theme=dark] .primary-secondary-contained svg path {
+  fill: var(--primary-white);
+}
+*[data-theme=dark] .primary-secondary-contained.light, *[data-theme=dark] .primary-secondary-contained.hover, *[data-theme=dark] .primary-secondary-contained.white, *[data-theme=dark] .primary-secondary-contained.transparent {
+  color: var(--gray-800);
+}
+*[data-theme=dark] .primary-secondary-contained.light svg path, *[data-theme=dark] .primary-secondary-contained.hover svg path, *[data-theme=dark] .primary-secondary-contained.white svg path, *[data-theme=dark] .primary-secondary-contained.transparent svg path {
+  fill: var(--gray-800);
+}
+*[data-theme=dark] .primary-secondary-outlined {
+  background-color: transparent;
+  color: #7C8892;
+}
+*[data-theme=dark] .primary-secondary-outlined svg path {
+  fill: #7C8892;
+}
+*[data-theme=dark] .primary-secondary-outlined .has-bd {
+  border: 1px solid #7C8892;
+}
+*[data-theme=dark] .primary-muted-contained {
+  background-color: #9C9C9C;
+  color: var(--primary-white);
+}
+*[data-theme=dark] .primary-muted-contained svg path {
+  fill: var(--primary-white);
+}
+*[data-theme=dark] .primary-muted-contained.light, *[data-theme=dark] .primary-muted-contained.hover, *[data-theme=dark] .primary-muted-contained.white, *[data-theme=dark] .primary-muted-contained.transparent {
+  color: var(--gray-800);
+}
+*[data-theme=dark] .primary-muted-contained.light svg path, *[data-theme=dark] .primary-muted-contained.hover svg path, *[data-theme=dark] .primary-muted-contained.white svg path, *[data-theme=dark] .primary-muted-contained.transparent svg path {
+  fill: var(--gray-800);
+}
+*[data-theme=dark] .primary-muted-outlined {
+  background-color: transparent;
+  color: #9C9C9C;
+}
+*[data-theme=dark] .primary-muted-outlined svg path {
+  fill: #9C9C9C;
+}
+*[data-theme=dark] .primary-muted-outlined .has-bd {
+  border: 1px solid #9C9C9C;
+}
+*[data-theme=dark] .primary-success-contained {
+  background-color: #65BB68;
+  color: var(--primary-white);
+}
+*[data-theme=dark] .primary-success-contained svg path {
+  fill: var(--primary-white);
+}
+*[data-theme=dark] .primary-success-contained.light, *[data-theme=dark] .primary-success-contained.hover, *[data-theme=dark] .primary-success-contained.white, *[data-theme=dark] .primary-success-contained.transparent {
+  color: var(--gray-800);
+}
+*[data-theme=dark] .primary-success-contained.light svg path, *[data-theme=dark] .primary-success-contained.hover svg path, *[data-theme=dark] .primary-success-contained.white svg path, *[data-theme=dark] .primary-success-contained.transparent svg path {
+  fill: var(--gray-800);
+}
+*[data-theme=dark] .primary-success-outlined {
+  background-color: transparent;
+  color: #65BB68;
+}
+*[data-theme=dark] .primary-success-outlined svg path {
+  fill: #65BB68;
+}
+*[data-theme=dark] .primary-success-outlined .has-bd {
+  border: 1px solid #65BB68;
+}
+*[data-theme=dark] .primary-danger-contained {
+  background-color: #F7514D;
+  color: var(--primary-white);
+}
+*[data-theme=dark] .primary-danger-contained svg path {
+  fill: var(--primary-white);
+}
+*[data-theme=dark] .primary-danger-contained.light, *[data-theme=dark] .primary-danger-contained.hover, *[data-theme=dark] .primary-danger-contained.white, *[data-theme=dark] .primary-danger-contained.transparent {
+  color: var(--gray-800);
+}
+*[data-theme=dark] .primary-danger-contained.light svg path, *[data-theme=dark] .primary-danger-contained.hover svg path, *[data-theme=dark] .primary-danger-contained.white svg path, *[data-theme=dark] .primary-danger-contained.transparent svg path {
+  fill: var(--gray-800);
+}
+*[data-theme=dark] .primary-danger-outlined {
+  background-color: transparent;
+  color: #F7514D;
+}
+*[data-theme=dark] .primary-danger-outlined svg path {
+  fill: #F7514D;
+}
+*[data-theme=dark] .primary-danger-outlined .has-bd {
+  border: 1px solid #F7514D;
+}
+*[data-theme=dark] .primary-warning-contained {
+  background-color: #F99451;
+  color: var(--primary-white);
+}
+*[data-theme=dark] .primary-warning-contained svg path {
+  fill: var(--primary-white);
+}
+*[data-theme=dark] .primary-warning-contained.light, *[data-theme=dark] .primary-warning-contained.hover, *[data-theme=dark] .primary-warning-contained.white, *[data-theme=dark] .primary-warning-contained.transparent {
+  color: var(--gray-800);
+}
+*[data-theme=dark] .primary-warning-contained.light svg path, *[data-theme=dark] .primary-warning-contained.hover svg path, *[data-theme=dark] .primary-warning-contained.white svg path, *[data-theme=dark] .primary-warning-contained.transparent svg path {
+  fill: var(--gray-800);
+}
+*[data-theme=dark] .primary-warning-outlined {
+  background-color: transparent;
+  color: #F99451;
+}
+*[data-theme=dark] .primary-warning-outlined svg path {
+  fill: #F99451;
+}
+*[data-theme=dark] .primary-warning-outlined .has-bd {
+  border: 1px solid #F99451;
+}
+*[data-theme=dark] .primary-info-contained {
+  background-color: #18B0C8;
+  color: var(--primary-white);
+}
+*[data-theme=dark] .primary-info-contained svg path {
+  fill: var(--primary-white);
+}
+*[data-theme=dark] .primary-info-contained.light, *[data-theme=dark] .primary-info-contained.hover, *[data-theme=dark] .primary-info-contained.white, *[data-theme=dark] .primary-info-contained.transparent {
+  color: var(--gray-800);
+}
+*[data-theme=dark] .primary-info-contained.light svg path, *[data-theme=dark] .primary-info-contained.hover svg path, *[data-theme=dark] .primary-info-contained.white svg path, *[data-theme=dark] .primary-info-contained.transparent svg path {
+  fill: var(--gray-800);
+}
+*[data-theme=dark] .primary-info-outlined {
+  background-color: transparent;
+  color: #18B0C8;
+}
+*[data-theme=dark] .primary-info-outlined svg path {
+  fill: #18B0C8;
+}
+*[data-theme=dark] .primary-info-outlined .has-bd {
+  border: 1px solid #18B0C8;
+}
+*[data-theme=dark] .primary-light-contained {
+  background-color: #E8E8E8;
+  color: var(--primary-white);
+}
+*[data-theme=dark] .primary-light-contained svg path {
+  fill: var(--primary-white);
+}
+*[data-theme=dark] .primary-light-contained.light, *[data-theme=dark] .primary-light-contained.hover, *[data-theme=dark] .primary-light-contained.white, *[data-theme=dark] .primary-light-contained.transparent {
+  color: var(--gray-800);
+}
+*[data-theme=dark] .primary-light-contained.light svg path, *[data-theme=dark] .primary-light-contained.hover svg path, *[data-theme=dark] .primary-light-contained.white svg path, *[data-theme=dark] .primary-light-contained.transparent svg path {
+  fill: var(--gray-800);
+}
+*[data-theme=dark] .primary-light-outlined {
+  background-color: transparent;
+  color: #E8E8E8;
+}
+*[data-theme=dark] .primary-light-outlined svg path {
+  fill: #E8E8E8;
+}
+*[data-theme=dark] .primary-light-outlined .has-bd {
+  border: 1px solid #E8E8E8;
+}
+*[data-theme=dark] .primary-hover-contained {
+  background-color: #35363A;
+  color: var(--primary-white);
+}
+*[data-theme=dark] .primary-hover-contained svg path {
+  fill: var(--primary-white);
+}
+*[data-theme=dark] .primary-hover-contained.light, *[data-theme=dark] .primary-hover-contained.hover, *[data-theme=dark] .primary-hover-contained.white, *[data-theme=dark] .primary-hover-contained.transparent {
+  color: var(--gray-800);
+}
+*[data-theme=dark] .primary-hover-contained.light svg path, *[data-theme=dark] .primary-hover-contained.hover svg path, *[data-theme=dark] .primary-hover-contained.white svg path, *[data-theme=dark] .primary-hover-contained.transparent svg path {
+  fill: var(--gray-800);
+}
+*[data-theme=dark] .primary-hover-outlined {
+  background-color: transparent;
+  color: #35363A;
+}
+*[data-theme=dark] .primary-hover-outlined svg path {
+  fill: #35363A;
+}
+*[data-theme=dark] .primary-hover-outlined .has-bd {
+  border: 1px solid #35363A;
+}
+*[data-theme=dark] .primary-dark-contained {
+  background-color: #202124;
+  color: var(--primary-white);
+}
+*[data-theme=dark] .primary-dark-contained svg path {
+  fill: var(--primary-white);
+}
+*[data-theme=dark] .primary-dark-contained.light, *[data-theme=dark] .primary-dark-contained.hover, *[data-theme=dark] .primary-dark-contained.white, *[data-theme=dark] .primary-dark-contained.transparent {
+  color: var(--gray-800);
+}
+*[data-theme=dark] .primary-dark-contained.light svg path, *[data-theme=dark] .primary-dark-contained.hover svg path, *[data-theme=dark] .primary-dark-contained.white svg path, *[data-theme=dark] .primary-dark-contained.transparent svg path {
+  fill: var(--gray-800);
+}
+*[data-theme=dark] .primary-dark-outlined {
+  background-color: transparent;
+  color: #202124;
+}
+*[data-theme=dark] .primary-dark-outlined svg path {
+  fill: #202124;
+}
+*[data-theme=dark] .primary-dark-outlined .has-bd {
+  border: 1px solid #202124;
+}
+*[data-theme=dark] .primary-white-contained {
+  background-color: #FFFFFF;
+  color: var(--primary-white);
+}
+*[data-theme=dark] .primary-white-contained svg path {
+  fill: var(--primary-white);
+}
+*[data-theme=dark] .primary-white-contained.light, *[data-theme=dark] .primary-white-contained.hover, *[data-theme=dark] .primary-white-contained.white, *[data-theme=dark] .primary-white-contained.transparent {
+  color: var(--gray-800);
+}
+*[data-theme=dark] .primary-white-contained.light svg path, *[data-theme=dark] .primary-white-contained.hover svg path, *[data-theme=dark] .primary-white-contained.white svg path, *[data-theme=dark] .primary-white-contained.transparent svg path {
+  fill: var(--gray-800);
+}
+*[data-theme=dark] .primary-white-outlined {
+  background-color: transparent;
+  color: #FFFFFF;
+}
+*[data-theme=dark] .primary-white-outlined svg path {
+  fill: #FFFFFF;
+}
+*[data-theme=dark] .primary-white-outlined .has-bd {
+  border: 1px solid #FFFFFF;
+}
+*[data-theme=dark] .primary-transparent-contained {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--primary-white);
+}
+*[data-theme=dark] .primary-transparent-contained svg path {
+  fill: var(--primary-white);
+}
+*[data-theme=dark] .primary-transparent-contained.light, *[data-theme=dark] .primary-transparent-contained.hover, *[data-theme=dark] .primary-transparent-contained.white, *[data-theme=dark] .primary-transparent-contained.transparent {
+  color: var(--gray-800);
+}
+*[data-theme=dark] .primary-transparent-contained.light svg path, *[data-theme=dark] .primary-transparent-contained.hover svg path, *[data-theme=dark] .primary-transparent-contained.white svg path, *[data-theme=dark] .primary-transparent-contained.transparent svg path {
+  fill: var(--gray-800);
+}
+*[data-theme=dark] .primary-transparent-outlined {
+  background-color: transparent;
+  color: rgba(255, 255, 255, 0.1);
+}
+*[data-theme=dark] .primary-transparent-outlined svg path {
+  fill: rgba(255, 255, 255, 0.1);
+}
+*[data-theme=dark] .primary-transparent-outlined .has-bd {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+*[data-theme=dark] .secondary-brand-contained {
+  background-color: #381c1c;
+  color: var(--primary-brand);
+}
+*[data-theme=dark] .secondary-brand-contained svg path {
+  fill: var(--primary-brand);
+}
+*[data-theme=dark] .secondary-brand-outlined {
+  background-color: transparent;
+  color: #381c1c;
+}
+*[data-theme=dark] .secondary-brand-outlined svg path {
+  fill: #381c1c;
+}
+*[data-theme=dark] .secondary-brand-outlined .has-bd {
+  border: 1px solid #381c1c;
+}
+*[data-theme=dark] .secondary-primary-contained {
+  background-color: #19203d;
+  color: var(--primary-primary);
+}
+*[data-theme=dark] .secondary-primary-contained svg path {
+  fill: var(--primary-primary);
+}
+*[data-theme=dark] .secondary-primary-outlined {
+  background-color: transparent;
+  color: #19203d;
+}
+*[data-theme=dark] .secondary-primary-outlined svg path {
+  fill: #19203d;
+}
+*[data-theme=dark] .secondary-primary-outlined .has-bd {
+  border: 1px solid #19203d;
+}
+*[data-theme=dark] .secondary-secondary-contained {
+  background-color: #2b2f32;
+  color: var(--primary-secondary);
+}
+*[data-theme=dark] .secondary-secondary-contained svg path {
+  fill: var(--primary-secondary);
+}
+*[data-theme=dark] .secondary-secondary-outlined {
+  background-color: transparent;
+  color: #2b2f32;
+}
+*[data-theme=dark] .secondary-secondary-outlined svg path {
+  fill: #2b2f32;
+}
+*[data-theme=dark] .secondary-secondary-outlined .has-bd {
+  border: 1px solid #2b2f32;
+}
+*[data-theme=dark] .secondary-success-contained {
+  background-color: #294b2a;
+  color: var(--primary-success);
+}
+*[data-theme=dark] .secondary-success-contained svg path {
+  fill: var(--primary-success);
+}
+*[data-theme=dark] .secondary-success-outlined {
+  background-color: transparent;
+  color: #294b2a;
+}
+*[data-theme=dark] .secondary-success-outlined svg path {
+  fill: #294b2a;
+}
+*[data-theme=dark] .secondary-success-outlined .has-bd {
+  border: 1px solid #294b2a;
+}
+*[data-theme=dark] .secondary-danger-contained {
+  background-color: #430f15;
+  color: var(--primary-danger);
+}
+*[data-theme=dark] .secondary-danger-contained svg path {
+  fill: var(--primary-danger);
+}
+*[data-theme=dark] .secondary-danger-outlined {
+  background-color: transparent;
+  color: #430f15;
+}
+*[data-theme=dark] .secondary-danger-outlined svg path {
+  fill: #430f15;
+}
+*[data-theme=dark] .secondary-danger-outlined .has-bd {
+  border: 1px solid #430f15;
+}
+*[data-theme=dark] .secondary-warning-contained {
+  background-color: #4d2c15;
+  color: var(--primary-warning);
+}
+*[data-theme=dark] .secondary-warning-contained svg path {
+  fill: var(--primary-warning);
+}
+*[data-theme=dark] .secondary-warning-outlined {
+  background-color: transparent;
+  color: #4d2c15;
+}
+*[data-theme=dark] .secondary-warning-outlined svg path {
+  fill: #4d2c15;
+}
+*[data-theme=dark] .secondary-warning-outlined .has-bd {
+  border: 1px solid #4d2c15;
+}
+*[data-theme=dark] .secondary-info-contained {
+  background-color: #07272c;
+  color: var(--primary-info);
+}
+*[data-theme=dark] .secondary-info-contained svg path {
+  fill: var(--primary-info);
+}
+*[data-theme=dark] .secondary-info-outlined {
+  background-color: transparent;
+  color: #07272c;
+}
+*[data-theme=dark] .secondary-info-outlined svg path {
+  fill: #07272c;
+}
+*[data-theme=dark] .secondary-info-outlined .has-bd {
+  border: 1px solid #07272c;
 }
 ```
 

@@ -34,52 +34,52 @@ $palettes: (
     ),
     // Web Colors
     primary-light: (
-        primary-brand: #D63131,
-        primary-primary: #6484FF,
-        primary-secondary: #6C757D,
-        primary-muted: #8C8C8C,
-        primary-success: #4F9D52,
-        primary-danger: #DC3545,
-        primary-warning: #F08843,
-        primary-info: #17A2B8,
-        primary-light: #EDEDED,
-        primary-hover: rgba(232, 245, 253, 0.8),
-        primary-dark: #292D43,
-        primary-white: #FFFFFF,
-        primary-transparent: rgba(196, 196, 196, 0.1),
+        brand: #D63131,
+        primary: #6484FF,
+        secondary: #6C757D,
+        muted: #8C8C8C,
+        success: #4F9D52,
+        danger: #DC3545,
+        warning: #F08843,
+        info: #17A2B8,
+        light: #EDEDED,
+        hover: rgba(232, 245, 253, 0.8),
+        dark: #292D43,
+        white: #FFFFFF,
+        transparent: rgba(196, 196, 196, 0.1),
     ),
     primary-dark: (
-        primary-brand: #D63131,
-        primary-primary: #809AFF,
-        primary-secondary: #7C8892,
-        primary-muted: #9C9C9C,
-        primary-success: #65BB68,
-        primary-danger: #F7514D,
-        primary-warning: #F99451,
-        primary-info: #18B0C8,
-        primary-light: #E8E8E8,
-        primary-hover: #35363A,
-        primary-dark: #202124,
-        primary-white: #FFFFFF,
-        primary-transparent: rgba(255, 255, 255, 0.1),
+        brand: #D63131,
+        primary: #809AFF,
+        secondary: #7C8892,
+        muted: #9C9C9C,
+        success: #65BB68,
+        danger: #F7514D,
+        warning: #F99451,
+        info: #18B0C8,
+        light: #E8E8E8,
+        hover: #35363A,
+        dark: #202124,
+        white: #FFFFFF,
+        transparent: rgba(255, 255, 255, 0.1),
     ),
     secondary-light: (
-        secondary-brand: #F8DEDE,
-        secondary-primary: #DAE2FF,
-        secondary-secondary: #C4C8CB,
-        secondary-success: #C1E4C3,
-        secondary-danger: #F5C3C8,
-        secondary-warning: #FAD9C2,
-        secondary-info: #C8E9EE,
+        brand: #F8DEDE,
+        primary: #DAE2FF,
+        secondary: #C4C8CB,
+        success: #C1E4C3,
+        danger: #F5C3C8,
+        warning: #FAD9C2,
+        info: #C8E9EE,
     ),
     secondary-dark: (
-        secondary-brand: #381c1c,
-        secondary-primary: #19203d,
-        secondary-secondary: #2b2f32,
-        secondary-success: #294b2a,
-        secondary-danger: #430f15,
-        secondary-warning: #4d2c15,
-        secondary-info: #07272c,
+        brand: #381c1c,
+        primary: #19203d,
+        secondary: #2b2f32,
+        success: #294b2a,
+        danger: #430f15,
+        warning: #4d2c15,
+        info: #07272c,
     ),
     gray: (
         100: #F8F9FA,
@@ -93,16 +93,16 @@ $palettes: (
         900: #212529
     ),
     text-light: (
-        text-body: #000000,
-        text-dark: #292D43,
-        text-muted: #8C8C8C,
-        text-halfbody: rgba(0, 0, 0, 0.5),
+        body: #000000,
+        dark: #292D43,
+        muted: #8C8C8C,
+        halfbody: rgba(0, 0, 0, 0.5),
     ),
     text-dark: (
-        text-body: #FFFFFF,
-        text-dark: #A8A8A8,
-        text-muted: #686868,
-        text-halfbody: rgba(255, 255, 255, 0.5),
+        body: #FFFFFF,
+        dark: #A8A8A8,
+        muted: #686868,
+        halfbody: rgba(255, 255, 255, 0.5),
     )
 );
 
@@ -113,38 +113,164 @@ $palettes: (
     @each $name, $color in $colors {
         --gray-#{$name}: #{$color};
     }
+
+    $app-colors: map-get($palettes, 'app');
+    @each $name, $color in $app-colors {
+        --app-#{$name}: #{$color};
+        .app-#{$name}-contained {
+            background-color: #{$color};
+            color: var(--primary-white);
+            svg {
+                path {
+                    fill: var(--primary-white);
+                }
+            }
+        }
+        .app-#{$name}-outlined {
+            background-color: transparent;
+            color: #{$color};
+            svg {
+                path {
+                    fill: #{$color};
+                }
+            }
+            &.has-bd {
+                border: 1px solid #{$color};
+            }
+        }
+    }
 }
 
 :root, *[data-theme="light"] {
     $primary-colors: map-get($palettes, 'primary-light');
     @each $name, $color in $primary-colors {
-        --#{$name}: #{$color};
+        --primary-#{$name}: #{$color};
+        .primary-#{$name}-contained {
+            background-color: #{$color};
+            color: var(--primary-white);
+            svg {
+                path {
+                    fill:  var(--primary-white);
+                }
+            }
+            @if ($name == light) or ($name == hover) or ($name == white) or ($name == transparent) {
+                color: var(--gray-800);
+                svg {
+                    path {
+                        fill:  var(--gray-800);
+                    }
+                }
+            }
+        }
+        .primary-#{$name}-outlined {
+            background-color: transparent;
+            color: #{$color};
+            svg {
+                path {
+                    fill: #{$color};
+                }
+            }
+            &.has-bd {
+                border: 1px solid #{$color};
+            }
+        }
     }
 
     $secondary-colors: map-get($palettes, 'secondary-light');
     @each $name, $color in $secondary-colors {
-        --#{$name}: #{$color};
+        --secondary-#{$name}: #{$color};
+        .secondary-#{$name}-contained {
+            background-color: #{$color};
+            color: var(--primary-#{$name});
+            svg {
+                path {
+                    fill: var(--primary-#{$name});
+                }
+            }
+        }
+        .secondary-#{$name}-outlined {
+            background-color: transparent;
+            color: #{$color};
+            svg {
+                path {
+                    fill: #{$color};
+                }
+            }
+            &.has-bd {
+                border: 1px solid #{$color};
+            }
+        }
     }
 
     $text-colors: map-get($palettes, 'text-light');
     @each $name, $color in $text-colors {
-        --#{$name}: #{$color};
+        --text-#{$name}: #{$color};
     }
 }
 
 *[data-theme="dark"] {
     $primary-colors: map-get($palettes, 'primary-dark');
     @each $name, $color in $primary-colors {
-        --#{$name}: #{$color};
+        --primary-#{$name}: #{$color};
+        .primary-#{$name}-contained {
+            background-color: #{$color};
+            color: var(--primary-white);
+            svg {
+                path {
+                    fill:  var(--primary-white);
+                }
+            }
+            &.light, &.hover, &.white, &.transparent {
+                color: var(--gray-800);
+                svg {
+                    path {
+                        fill:  var(--gray-800);
+                    }
+                }
+            }
+        }
+        .primary-#{$name}-outlined {
+            background-color: transparent;
+            color: #{$color};
+            svg {
+                path {
+                    fill: #{$color};
+                }
+            }
+            &.has-bd {
+                border: 1px solid #{$color};
+            }
+        }
     }
 
     $secondary-colors: map-get($palettes, 'secondary-dark');
-    @each $name, $color in $primary-colors {
-        --#{$name}: #{$color};
+    @each $name, $color in $secondary-colors {
+        --secondary-#{$name}: #{$color};
+        .secondary-#{$name}-contained {
+            background-color: #{$color};
+            color: var(--primary-#{$name});
+            svg {
+                path {
+                    fill: var(--primary-#{$name});
+                }
+            }
+        }
+        .secondary-#{$name}-outlined {
+            background-color: transparent;
+            color: #{$color};
+            svg {
+                path {
+                    fill: #{$color};
+                }
+            }
+            &.has-bd {
+                border: 1px solid #{$color};
+            }
+        }
     }
 
     $text-colors: map-get($palettes, 'text-dark');
     @each $name, $color in $text-colors {
-        --#{$name}: #{$color};
+        --text-#{$name}: #{$color};
     }
 }
