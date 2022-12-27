@@ -1,0 +1,32 @@
+import { Meta, Canvas, Story } from '@storybook/addon-docs/blocks';
+
+<Meta title="React/Form/IconAction/Doc" />
+
+# IconAction
+
+> 可執行點擊動作的 icon 。提供以下 props－
+
+```javascript
+export interface ReactIconActionProps {
+  icon: React.ReactNode;       
+  tooltip?: React.ReactNode;
+
+  onClick: () => void;
+}
+```
+
+## Usage
+
+```jsx
+import { ReactIconAction } from '@paintbox/react-button';
+import { RealIcons } from '@paintbox/react-foundation';
+
+export const IconActionSample = () => {
+  return (
+    <ReactIconAction 
+      icon={<RealIcons.TrashBin /> 
+      tooltip={'Delete'}} 
+      onClick={() => alert('You just clicked me!')} />
+  );
+};
+```
