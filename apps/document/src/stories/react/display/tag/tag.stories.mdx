@@ -1,0 +1,36 @@
+import { Meta, Canvas, Story } from '@storybook/addon-docs/blocks';
+import { ReactTag, TagSample, ColorTagSample } from '@paintbox/react-tag';
+
+<Meta title="React/Display/Tag/Doc" />
+
+# Tag
+
+> 標籤。提供以下 props -
+
+```javascript
+export interface ReactTagProps {
+  children: React.ReactNode;
+  variant: Variant;          // 從 react-foundation 匯入，標籤的形式
+  theme: ColorThemeType;     // 從 react-foundation 匯入，標籤的主題色
+  className?: string;
+  hasBorder?: boolean;
+
+  onClose?: () => void;
+  onClick?: () => void;
+}
+```
+
+## Usage
+
+```javascript
+import { ReactTag } from '@paintbox/react-tag';
+
+export const ColorTagSample = () => {
+  return (
+    <ReactTag
+      variant={'contained'}
+      theme={'app-red'}
+    >tag</ReactTag>
+  );
+};
+```
