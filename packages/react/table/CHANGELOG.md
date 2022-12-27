@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [1.5.2](https://gitlab.migoinc.com/migotv/paintbox/compare/react-table@1.5.1...react-table@1.5.2) (2022-12-27)
+
+
+### Bug Fixes
+
+* **react-table:** replace first-child presudo ([f8b77fd](https://gitlab.migoinc.com/migotv/paintbox/commit/f8b77fd8ca5429d6768036a0cf2c04ecd7273576))
+
 ### [1.5.1](https://gitlab.migoinc.com/migotv/paintbox/compare/react-table@1.5.0...react-table@1.5.1) (2022-12-26)
 
 ## [1.5.0](https://gitlab.migoinc.com/migotv/paintbox/compare/react-table@1.4.0...react-table@1.5.0) (2022-12-15)
