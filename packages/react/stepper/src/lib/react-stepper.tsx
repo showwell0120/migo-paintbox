@@ -4,12 +4,7 @@ import styled from '@emotion/styled';
 import { ReactButton } from '@paintbox/react-button';
 import { H5 } from '@paintbox/react-foundation';
 
-import {
-  FormStepItem,
-  UseFormStepReturn,
-  Status,
-  useFormStep,
-} from './useFormStep';
+import { FormStepItem, UseFormStepReturn, Status } from './useFormStep';
 
 export interface StepActionsProps extends UseFormStepReturn {
   onCancel: () => void;
@@ -20,11 +15,11 @@ export interface StepActionsProps extends UseFormStepReturn {
 const getCSSVarByStatus = (status: Status) => {
   switch (status) {
     case 'current':
-      return 'primary';
+      return 'primary-primary';
     case 'done':
-      return 'success';
+      return 'primary-success';
     case 'none':
-      return 'secondary';
+      return 'primary-secondary';
     default:
       return;
   }
@@ -154,73 +149,3 @@ export function StepActions({
     </Buttons>
   );
 }
-
-const defaultStepItems: FormStepItem[] = [
-  {
-    name: 'Step 1',
-    order: 1,
-    status: 'current',
-    validated: true,
-  },
-  {
-    name: 'Step 2',
-    order: 2,
-    status: 'none',
-    validated: true,
-  },
-  {
-    name: 'Step 3',
-    order: 3,
-    status: 'none',
-    validated: true,
-  },
-];
-
-export const StepperSample1 = () => {
-  const stepProps = useFormStep(defaultStepItems);
-
-  return (
-    <div>
-      <StepGraph stepItems={stepProps.stepItems} />
-      <StepContents stepItems={stepProps.stepItems}>
-        <div>step 1</div>
-        <div>step 2</div>
-        <div>step 3</div>
-      </StepContents>
-      <StepActions
-        {...stepProps}
-        onCancel={() => alert('cancel')}
-        onSubmit={() => alert('submit')}
-      />
-    </div>
-  );
-};
-
-export const StepperSample2 = () => {
-  const stepItems = [...defaultStepItems];
-  stepItems[1] = {
-    name: 'Step 2',
-    order: 2,
-    status: 'none',
-    validated: false,
-  };
-
-  const stepProps = useFormStep(stepItems);
-
-  return (
-    <div>
-      <StepGraph stepItems={stepProps.stepItems} />
-      <StepContents stepItems={stepProps.stepItems}>
-        <div>step 1</div>
-        <div>step 2</div>
-        <div>step 3</div>
-        <div>step 4</div>
-      </StepContents>
-      <StepActions
-        {...stepProps}
-        onCancel={() => alert('cancel')}
-        onSubmit={() => alert('submit')}
-      />
-    </div>
-  );
-};

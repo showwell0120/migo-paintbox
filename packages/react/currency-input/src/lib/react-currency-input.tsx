@@ -61,7 +61,7 @@ const PriceText = styled.div`
   height: 36px;
   line-height: 36px;
   width: calc(100% - 24px);
-  background-color: transparent;
+  background-color: var(--primary-white);
 `;
 
 const WarnText = styled.div`
@@ -212,24 +212,3 @@ export function ReactCurrencyInput<NameType>({
     </Container>
   );
 }
-
-export const CurrencyInputSample = (
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  props: Partial<ReactCurrencyInputProps<any>>
-) => {
-  const [value, setValue] = React.useState<number | null>(null);
-
-  const handleChange = (params: ChangeHandlerParams) => {
-    setValue(params.value);
-  };
-
-  return (
-    <ReactCurrencyInput
-      name="list_price"
-      label="List Price"
-      value={value}
-      onChange={handleChange}
-      {...props}
-    />
-  );
-};
