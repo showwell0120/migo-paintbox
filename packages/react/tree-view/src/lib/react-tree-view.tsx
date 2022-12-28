@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from '@emotion/styled';
 import { css } from '@emotion/react';
 
@@ -72,87 +72,17 @@ export const ReactTreeView: React.FC<ReactTreeViewProps> = ({
               <Text>{item.name}</Text>
               <div>{item.info}</div>
             </div>
-            { item.children && <ReactTreeView
-              items={item.children}
-              selectedTab={selectedTab}
-              onSelectTab={onSelectTab}
-              depth={depth + 1}
-            />}
+            {item.children && (
+              <ReactTreeView
+                items={item.children}
+                selectedTab={selectedTab}
+                onSelectTab={onSelectTab}
+                depth={depth + 1}
+              />
+            )}
           </div>
         ))}
       </>
     )
   );
-};
-
-export const TreeViewSample = () => {
-  const items = [
-    {
-      id: '1',
-      name: 'Test 1',
-    },
-    {
-      id: '2',
-      name: 'Test 2',
-      children: [
-        {
-          id: '3',
-          name: 'Test 3',
-        },
-      ],
-    },
-  ];
-
-  const [tab, setTab] = useState('Test 1');
-  const handleTab = (t: ItemType) => {
-    setTab(t.name);
-  };
-
-  return (<div style={{width: '300px'}}>
-    <ReactTreeView
-      items={items}
-      selectedTab={tab}
-      onSelectTab={handleTab}
-    />
-  </div>);
-};
-
-export const TreeViewWithIconSample = () => {
-  const items = [
-    {
-      id: '1',
-      name: 'Item 1',
-      icon: '*',
-    },
-    {
-      id: '2',
-      name: 'Item 2',
-      icon: '#',
-      children: [
-        {
-          id: '3',
-          name: 'Item 3',
-          icon: '::',
-        },
-        {
-          id: '4',
-          name: 'Item 4',
-          icon: '::'
-        }
-      ],
-    }
-  ];
-
-  const [tab, setTab] = useState('Test 1');
-  const handleTab = (t: ItemType) => {
-    setTab(t.name);
-  };
-
-  return (<div style={{width: '300px'}}>
-    <ReactTreeView
-      items={items}
-      selectedTab={tab}
-      onSelectTab={handleTab}
-    />
-  </div>);
 };

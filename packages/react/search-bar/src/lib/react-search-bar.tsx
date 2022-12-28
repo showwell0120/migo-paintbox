@@ -142,25 +142,3 @@ export const ReactSearchBar: React.FC<ReactSearchBarProps> = ({
     </div>
   );
 };
-
-export const SearchBarSample = () => {
-  const [keyword, setKeyword] = useState('');
-  const onChange = (k: string) => {
-    setKeyword(k);
-  };
-
-  const onEnter = (k: string) => {
-    alert(`you press enter and the keyword is: ${k}`);
-  };
-
-  return (
-    <div style={{ width: '300px' }}>
-      <p>You are typing: {keyword}</p>
-      <ReactSearchBar
-        placeholder="search for..."
-        onChange={onChange}
-        onEnter={onEnter}
-      />
-    </div>
-  );
-};

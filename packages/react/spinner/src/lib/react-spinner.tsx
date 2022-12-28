@@ -1,4 +1,3 @@
-import styled from '@emotion/styled';
 import { keyframes, css } from '@emotion/react';
 
 const rotate = keyframes`
