@@ -16,6 +16,10 @@ function Sign({ className }: TemplateProps) {
         />
       </Wrapper>
       <Wrapper>
+        <Small>Check</Small>
+        <SignIcons.Check width={20} height={20} className={className} />
+      </Wrapper>
+      <Wrapper>
         <Small>ExclamationCircleFill</Small>
         <SignIcons.ExclamationCircleFill
           width={20}
@@ -24,12 +28,28 @@ function Sign({ className }: TemplateProps) {
         />
       </Wrapper>
       <Wrapper>
-        <Small>X</Small>
-        <SignIcons.X width={20} height={20} className={className} />
+        <Small>ExclamationTriangleFill</Small>
+        <SignIcons.ExclamationTriangleFill
+          width={20}
+          height={20}
+          className={className}
+        />
+      </Wrapper>
+      <Wrapper>
+        <Small>InfoCircleFill</Small>
+        <SignIcons.InfoCircleFill
+          width={20}
+          height={20}
+          className={className}
+        />
       </Wrapper>
       <Wrapper>
         <Small>XCircleFill</Small>
         <SignIcons.XCircleFill width={20} height={20} className={className} />
+      </Wrapper>
+      <Wrapper>
+        <Small>X</Small>
+        <SignIcons.X width={20} height={20} className={className} />
       </Wrapper>
     </Container>
   );
