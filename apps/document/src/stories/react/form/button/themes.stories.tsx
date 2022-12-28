@@ -2,27 +2,24 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
+import { ColorThemes } from '@paintbox/react-foundation';
 import { ReactButton, ReactButtonProps } from '@paintbox/react-button';
 
 const AllThemes: ComponentStory<typeof ReactButton> = (
   args: ReactButtonProps
 ) => {
   return (
-    <div style={{ display: 'flex', gap: '1rem' }}>
-      <ReactButton {...args} theme={'brand'} children={'brand'} />
-      <ReactButton {...args} theme={'primary'} children={'primary'} />
-      <ReactButton {...args} theme={'secondary'} children={'secondary'} />
-      <ReactButton {...args} theme={'danger'} children={'danger'} />
-      <ReactButton {...args} theme={'info'} children={'info'} />
-      <ReactButton {...args} theme={'success'} children={'success'} />
-      <ReactButton {...args} theme={'warning'} children={'warning'} />
+    <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
+      {ColorThemes.map((theme) => (
+        <ReactButton {...args} theme={theme} children={theme} />
+      ))}
     </div>
   );
 };
 
 export const Default = AllThemes.bind({});
 Default.args = {
-  variant: 'primary',
+  variant: 'contained',
   disabled: false,
   onClick() {
     alert('clicked');

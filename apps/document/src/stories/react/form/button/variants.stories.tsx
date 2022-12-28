@@ -9,8 +9,7 @@ const AllVariants: ComponentStory<typeof ReactButton> = (
 ) => {
   return (
     <div style={{ display: 'flex', gap: '1rem' }}>
-      <ReactButton {...args} variant={'primary'} children={'primary'} />
-      <ReactButton {...args} variant={'secondary'} children={'secondary'} />
+      <ReactButton {...args} variant={'contained'} children={'contained'} />
       <ReactButton {...args} variant={'outlined'} children={'outlined'} />
     </div>
   );
@@ -18,7 +17,7 @@ const AllVariants: ComponentStory<typeof ReactButton> = (
 
 export const Default = AllVariants.bind({});
 Default.args = {
-  theme: 'primary',
+  theme: 'primary-primary',
   disabled: false,
   onClick() {
     alert('clicked');
