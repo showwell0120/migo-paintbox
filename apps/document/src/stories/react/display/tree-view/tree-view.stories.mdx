@@ -1,7 +1,7 @@
 import { Meta, Canvas, Story } from '@storybook/addon-docs/blocks';
 import { ReactTreeView, TreeViewSample, TreeViewWithIconSample } from '@paintbox/react-tree-view';
 
-<Meta title="React/Display/TreeView" />
+<Meta title="React/Display/TreeView/Doc" />
 
 # TreeView
 
@@ -26,7 +26,7 @@ export interface ReactTreeViewProps {
 
 ## Usage
 
-```javascript
+```jsx
 import { ReactTreeView } from '@paintbox/react-tree-view';
 
 export const TreeViewSample = () => {
@@ -61,21 +61,3 @@ export const TreeViewSample = () => {
   </div>);
 };
 ```
-
-## Stories
-
-### Default
-
-<Canvas>
-  <Story name="Default">
-    <TreeViewSample />
-  </Story>
-</Canvas>
-
-### With icon
-
-<Canvas>
-  <Story name="With icon">
-    <TreeViewWithIconSample />
-  </Story>
-</Canvas>

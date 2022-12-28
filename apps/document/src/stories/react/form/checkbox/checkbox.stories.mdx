@@ -1,8 +1,6 @@
 import { Meta, Canvas, Story } from '@storybook/addon-docs/blocks';
 
-import { ReactCheckbox, CheckboxSample } from '@paintbox/react-checkbox';
-
-<Meta title="React/Form/Checkbox" />
+<Meta title="React/Form/Checkbox/Doc" />
 
 # Checkbox
 
@@ -30,21 +28,3 @@ export const Sample = () => {
   return <ReactCheckbox checked={checked} onChange={setChecked} />;
 };
 ```
-
-## Stories
-
-### Default
-
-<Canvas>
-  <Story name="Default">
-    <CheckboxSample />
-  </Story>
-</Canvas>
-
-### With Label
-
-<Canvas>
-  <Story name="With Label">
-    <CheckboxSample label="Set Discount" />
-  </Story>
-</Canvas>

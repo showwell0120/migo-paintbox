@@ -1,8 +1,6 @@
 import { Meta, Canvas, Story } from '@storybook/addon-docs/blocks';
 
-import { ReactCurrencyInput, CurrencyInputSample } from '@paintbox/react-currency-input';
-
-<Meta title="React/Form/CurrencyInput" />
+<Meta title="React/Form/CurrencyInput/Doc" />
 
 # CurrencyInput
 
@@ -53,24 +51,3 @@ export const CurrencyInputSample = () => {
       value={value} onChange={handleChange} />;
 };
 ```
-
-## Stories
-
-### Default
-
-<Canvas>
-  <Story name="Default">
-    <CurrencyInputSample />
-  </Story>
-</Canvas>
-
-### With Description and Max
-
-<Canvas>
-  <Story name="With Description and Max">
-    <CurrencyInputSample max={1000} description={<div>
-        This price will be shown on Migo app for customers as original price with
-        strickthrough. (e.g. <del>Rp 30.000</del>)
-      </div>} />
-  </Story>
-</Canvas>
