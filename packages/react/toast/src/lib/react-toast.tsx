@@ -2,14 +2,31 @@ import React from 'react';
 import { css, ClassNames } from '@emotion/react';
 import styled from '@emotion/styled';
 
-import { SignIcons } from '@paintbox/react-foundation';
+import { ColorThemeType, SignIcons } from '@paintbox/react-foundation';
 
-export type VariantType = 'warn' | 'info';
+/* eslint-disable-next-line */
+export interface ReactToastProps {
+  theme: Extract<
+    ColorThemeType,
+    | 'secondary-danger'
+    | 'secondary-warning'
+    | 'secondary-info'
+    | 'secondary-success'
+  >;
+  children: React.ReactNode;
+  yAxis?: 'top' | 'center' | 'bottom';
+  xAxis?: 'right' | 'center' | 'left';
+  className?: string;
+  waitToClose?: number;
+  enableClose?: boolean;
+  showPrefixIcon?: boolean;
+
+  onClose?: (visible: boolean) => void;
+}
 
 type cssProps = {
   xAxis: 'right' | 'center' | 'left';
   yAxis: 'top' | 'center' | 'bottom';
-  variant: VariantType;
 };
 
 const baseStyle = css`
@@ -26,18 +43,6 @@ const baseStyle = css`
   border: 1px solid transparent;
 `;
 
-const warnStyle = css`
-  color: var(--primary-danger);
-  background-color: rgba(220, 53, 69, 0.08);
-  border-color: var(--primary-danger); ;
-`;
-
-const infoStyle = css`
-  color: var(--primary-white);
-  background-color: #000000;
-  border-color: #000000;
-`;
-
 const yAxisStyle = {
   top: 'top: 96px;',
   center: 'top: 50%; transform: translateY(-50%);',
@@ -52,123 +57,69 @@ const xAxisStyle = {
 
 const Container = styled.div<cssProps>(baseStyle, (props: cssProps) => {
   return css`
-    ${props.variant === 'warn' ? warnStyle : infoStyle}
     ${xAxisStyle[props.xAxis]}
-      ${yAxisStyle[props.yAxis]}
+    ${yAxisStyle[props.yAxis]}
   `;
 });
 
-/* eslint-disable-next-line */
-export interface ReactToastProps {
-  variant: VariantType;
-  children?: React.ReactNode;
-  onClose?: (visible: boolean) => void;
-  yAxis?: 'top' | 'center' | 'bottom';
-  xAxis?: 'right' | 'center' | 'left';
-  className?: string;
-  waitToClose?: number;
-  enableClose?: boolean;
-}
-
 export const ReactToast: React.FC<ReactToastProps> = ({
-  variant,
+  theme,
   children,
   yAxis = 'top',
   xAxis = 'center',
   className,
   waitToClose,
   enableClose = true,
+  showPrefixIcon = true,
   onClose,
 }) => {
   const timer = React.useRef<ReturnType<typeof setTimeout>>();
 
   const handleClose = () => {
-    onClose && onClose(false);
+    onClose?.(false);
   };
+
+  const PrefixIcon = React.useMemo(() => {
+    const themeVar = theme ? theme.split('-')[1] : '';
+    switch (themeVar) {
+      case 'danger':
+        return <SignIcons.ExclamationCircleFill />;
+      case 'warning':
+        return <SignIcons.ExclamationTriangleFill />;
+      case 'info':
+        return <SignIcons.InfoCircleFill />;
+      case 'success':
+        return <SignIcons.CheckCircleFill />;
+      default:
+        return;
+    }
+  }, [theme]);
 
   React.useEffect(() => {
     waitToClose &&
       (timer.current = setTimeout(() => {
-        onClose && onClose(false);
+        handleClose();
         clearTimeout(timer.current);
       }, waitToClose));
-  }, [waitToClose, onClose]);
+  }, [waitToClose, onClose, handleClose]);
 
   return (
     <ClassNames>
       {({ css, cx }) => (
         <Container
-          variant={variant}
           xAxis={xAxis}
           yAxis={yAxis}
-          className={cx(className)}
+          className={cx(`${theme}-contained`, className)}
         >
-          {variant === 'warn' && (
-            <SignIcons.ExclamationCircleFill
-              className={css`
-                path {
-                  fill: var(--primary-danger);
-                }
-              `}
-            />
-          )}
-          {children && children}
+          {showPrefixIcon && PrefixIcon}
+          {children}
           {enableClose && (
             <div onClick={handleClose} style={{ cursor: 'pointer' }}>
-              <SignIcons.X
-                height={10}
-                width={10}
-                className={css`
-                  path {
-                    fill: ${variant === 'warn'
-                      ? 'var(--primary-danger)'
-                      : 'var(--primary-white)'};
-                  }
-                `}
-              />
+              <SignIcons.X height={10} width={10} className={css``} />
             </div>
           )}
         </Container>
       )}
     </ClassNames>
-  );
-};
-
-export const ToastSample = () => {
-  const [open, setOpen] = React.useState(false);
-
-  const onClose = () => {
-    setOpen(false);
-  };
-
-  return (
-    <div style={{ textAlign: 'center' }}>
-      <p>Click button to see the info message <span role="img" aria-label="Pointing Down">👇</span></p>
-      <button onClick={() => setOpen(true)}>Show message</button>
-      {open && <ReactToast
-        variant={'info'}
-        enableClose={false}
-        waitToClose={3000}
-        onClose={onClose}
-      >Price successfully updated!</ReactToast>}
-      {open && <p>And it will be automatically closed in 3s.</p>}
-    </div>
-  );
-};
-
-export const WarnToastSample = () => {
-  const [open, setOpen] = React.useState(false);
-
-  return (
-    <div>
-      <p>Click button to see the warn message <span role="img" aria-label="Pointing Down">👇</span></p>
-      <button onClick={() => setOpen(true)}>Show warning</button>
-      {open && <ReactToast
-        variant={'warn'}
-        yAxis={'top'}
-        xAxis={'right'}
-        onClose={() => setOpen(false)}
-      >Unable to log in, please check your login information and try again.</ReactToast>}
-    </div>
   );
 };

@@ -1,0 +1,55 @@
+import { Meta, Canvas, Story } from '@storybook/addon-docs/blocks';
+import { ReactToast, ToastSample, WarnToastSample } from '@paintbox/react-toast';
+
+<Meta title="React/Feedback/Toast/Doc" />
+
+# Toast
+
+> Toast Message。提供以下 props－
+
+```javascript
+export interface ReactToastProps {
+  theme: Extract<
+    ColorThemeType,
+    | 'secondary-danger'
+    | 'secondary-warning'
+    | 'secondary-info'
+    | 'secondary-success'
+  >;
+  children: React.ReactNode;
+  yAxis?: 'top' | 'center' | 'bottom';    // 預設 top
+  xAxis?: 'right' | 'center' | 'left';    // 預設 center
+  className?: string;
+  waitToClose?: number;                   // 多久之後關閉 toast
+  enableClose?: boolean;
+  showPrefixIcon?: boolean;               // 是否顯示前面的 icon
+
+  onClose?: (visible: boolean) => void;
+}
+```
+
+## Mockup
+
+- [Biiling System on Figma](https://www.figma.com/file/rvTsTJLCarPAEYvdXQuRDY/Billing-System---1.0.0?node-id=5298%3A13172)
+- [CMS on Figma](https://www.figma.com/file/MYOhKjlkEXZoqul9AoC7nW/CMS---3.2.0-TVOD?node-id=4916%3A71880)
+
+## Usage
+
+```jsx
+import { ReactToast } from '@paintbox/react-toast';
+
+export const ToastSample = () => {
+  const [open, setOpen] = React.useState(false);
+
+  const onClose = () => {
+    setOpen(false);
+  };
+
+  return (
+    <div>
+      <button onClick={() => setOpen(true)}>Show message</button>
+      {open && <ReactToast theme={'secondary-danger'} onClose={onClose}>This is a reminder</ReactToast>}
+    </div>
+  );
+};
+```
