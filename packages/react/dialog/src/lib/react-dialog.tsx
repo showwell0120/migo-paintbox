@@ -1,5 +1,7 @@
 import { css } from '@emotion/react';
-import React, { useState } from 'react';
+import React from 'react';
+
+import { ReactButton } from '@paintbox/react-button';
 
 const containerStyle = css`
   position: fixed;
@@ -8,7 +10,7 @@ const containerStyle = css`
   z-index: 2147483646;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, .50);
+  background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
 `;
@@ -24,17 +26,30 @@ const boxStyle = css`
 
 /* eslint-disable-next-line */
 export interface ReactDialogProps {
-  isOpen: boolean,
-  onClose: () => void,
-  closeOnOverlayClick?: boolean,
-  children?: React.ReactNode,
+  isOpen: boolean;
+  closeOnOverlayClick?: boolean;
+  children?: React.ReactNode;
+  actionPosition?: 'top' | 'bottom';
+  cancelText?: string;
+  submitText?: string;
+  className?: string;
+
+  onClose: () => void;
+  onCancel?: () => void;
+  onSubmit?: () => void;
 }
 
 export const ReactDialog: React.FC<ReactDialogProps> = ({
   isOpen,
   onClose,
+  onCancel,
+  onSubmit,
   closeOnOverlayClick = false,
+  actionPosition = 'bottom',
+  cancelText = 'Cancel',
+  submitText = 'Submit',
   children,
+  className,
 }) => {
   const onClickOverlay = (e: React.MouseEvent<HTMLDivElement>) => {
     const overlay = e.target as HTMLDivElement;
@@ -44,43 +59,34 @@ export const ReactDialog: React.FC<ReactDialogProps> = ({
     }
   };
 
-  return (
-    isOpen
-    ? <div css={containerStyle} id={'overlay'} onClick={onClickOverlay}>
-      <div css={boxStyle}>
+  const ActionButtons = React.useMemo(() => {
+    if (!onCancel && !onSubmit) {
+      return null;
+    }
+
+    return (
+      <div style={{ display: 'flex', gap: '1rem', justifyContent: 'flex-end' }}>
+        {onCancel && (
+          <ReactButton variant={'outlined'} onClick={onCancel}>
+            {cancelText}
+          </ReactButton>
+        )}
+        {onSubmit && <ReactButton onClick={onSubmit}>{submitText}</ReactButton>}
+      </div>
+    );
+  }, [onCancel, onSubmit]);
+
+  return isOpen ? (
+    <div css={containerStyle} id={'overlay'} onClick={onClickOverlay}>
+      <div css={boxStyle} className={className}>
+        {actionPosition === 'top' && (
+          <div style={{ marginBottom: '1rem' }}>{ActionButtons}</div>
+        )}
         {children}
+        {actionPosition === 'bottom' && (
+          <div style={{ marginTop: '1rem' }}>{ActionButtons}</div>
+        )}
       </div>
     </div>
-    : null
-  );
-}
-
-export const DialogSample = () => {
-  const [open, setOpen] = useState(false);
-  const onClose = () => {
-    setOpen(false);
-  };
-
-  return (<div>
-    <button onClick={() => {setOpen(true)}}>Click to open</button>
-    <ReactDialog isOpen={open} onClose={onClose}>
-      <div>Check</div>
-      <button onClick={onClose}>click to close</button>
-    </ReactDialog>
-  </div>);
-};
-
-export const ClickOverlaySample = () => {
-  const [open, setOpen] = useState(false);
-  const onClose = () => {
-    setOpen(false);
-  };
-
-  return (<div>
-    <button onClick={() => {setOpen(true)}}>Click to open</button>
-    <ReactDialog isOpen={open} onClose={onClose} closeOnOverlayClick={true}>
-      <div>Check</div>
-      <button onClick={onClose}>click to close</button>
-    </ReactDialog>
-  </div>);
+  ) : null;
 };

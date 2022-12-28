@@ -1,7 +1,7 @@
 import { Meta, Canvas, Story } from '@storybook/addon-docs/blocks';
 import { ReactDialog, DialogSample, ClickOverlaySample } from '@paintbox/react-dialog';
 
-<Meta title="React/Feedback/Dialog" />
+<Meta title="React/Feedback/dialog/Doc" />
 
 # Dialog
 
@@ -18,7 +18,7 @@ export interface ReactDialogProps {
 
 ## Usage
 
-```
+```jsx
 import { ReactDialog } from '@paintbox/react-dialog';
 import { useState } from 'react'
 
@@ -37,21 +37,3 @@ export const DialogSample = () => {
   </div>);
 }; 
 ```
-
-## Stories
-
-### Default
-
-<Canvas>
-  <Story name="Default">
-    <DialogSample />
-  </Story>
-</Canvas>
-
-### ClickOverlay
-
-<Canvas>
-  <Story name="ClickOverlay">
-    <ClickOverlaySample />
-  </Story>
-</Canvas>
