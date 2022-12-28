@@ -2,6 +2,10 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.3.0](https://gitlab.migoinc.com/migotv/paintbox/compare/react-spinner@1.2.1...react-spinner@1.3.0) (2022-12-28)
+
+### [1.2.2](https://gitlab.migoinc.com/migotv/paintbox/compare/react-spinner@1.2.1...react-spinner@1.2.2) (2022-12-28)
+
 ### [1.2.1](https://gitlab.migoinc.com/migotv/paintbox/compare/react-spinner@1.2.0...react-spinner@1.2.1) (2022-12-26)
 
 ## [1.2.0](https://gitlab.migoinc.com/migotv/paintbox/compare/react-spinner@1.1.0...react-spinner@1.2.0) (2022-09-21)
