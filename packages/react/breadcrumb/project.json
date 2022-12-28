@@ -1,0 +1,70 @@
+{
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/react/breadcrumb/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:rollup",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/react/breadcrumb",
+        "tsConfig": "packages/react/breadcrumb/tsconfig.lib.json",
+        "project": "packages/react/breadcrumb/package.json",
+        "entryFile": "packages/react/breadcrumb/src/index.ts",
+        "external": ["@emotion/react/jsx-runtime"],
+        "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
+        "compiler": "babel",
+        "assets": [
+          {
+            "glob": "packages/react/breadcrumb/README.md",
+            "input": ".",
+            "output": "."
+          }
+        ]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/react/breadcrumb/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/packages/react/breadcrumb"],
+      "options": {
+        "jestConfig": "packages/react/breadcrumb/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "lint-test": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": ["nx lint react-breadcrumb", "nx test react-breadcrumb"]
+      }
+    },
+    "publish": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": [
+          "nx build react-breadcrumb",
+          "nx version react-breadcrumb"
+        ],
+        "parallel": false
+      }
+    },
+    "version": {
+      "executor": "@jscutlery/semver:version",
+      "options": {
+        "preset": "conventional",
+        "tagPrefix": "react-breadcrumb@",
+        "postTargets": ["react-breadcrumb:deploy"]
+      }
+    },
+    "deploy": {
+      "executor": "ngx-deploy-npm:deploy"
+    }
+  }
+}

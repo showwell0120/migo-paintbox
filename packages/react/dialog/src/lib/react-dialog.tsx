@@ -51,6 +51,8 @@ export const ReactDialog: React.FC<ReactDialogProps> = ({
   children,
   className,
 }) => {
+  // TODO: disable scroll when display dialog
+
   const onClickOverlay = (e: React.MouseEvent<HTMLDivElement>) => {
     const overlay = e.target as HTMLDivElement;
     const isOverlay = overlay.id === 'overlay';

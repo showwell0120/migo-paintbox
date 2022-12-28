@@ -72,9 +72,11 @@ const optionWrapperStyle = css`
   background-color: var(--primary-dark);
   color: var(--primary-white);
   position: absolute;
+  top: 45px;
   left: 0;
   z-index: 1;
   min-width: -webkit-fill-available;
+  border-radius: 4px;
 `;
 
 const iconStyle = css`

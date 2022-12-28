@@ -49,5 +49,5 @@ Default.args = {
 
 export default {
   component: Normal,
-  title: 'React/Form/SelectOption/Normal',
+  title: 'React/Form/SelectOption/Stories',
 } as ComponentMeta<typeof Normal>;

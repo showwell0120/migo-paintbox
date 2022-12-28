@@ -19,7 +19,9 @@
         "packages/helper/axios-client/src/index.ts"
       ],
       "@paintbox/model-media": ["packages/model/media/src/index.ts"],
+      "@paintbox/react-avatar": ["packages/react/avatar/src/index.ts"],
       "@paintbox/react-base": ["packages/react/base/src/index.ts"],
+      "@paintbox/react-breadcrumb": ["packages/react/breadcrumb/src/index.ts"],
       "@paintbox/react-button": ["packages/react/button/src/index.ts"],
       "@paintbox/react-checkbox": ["packages/react/checkbox/src/index.ts"],
       "@paintbox/react-chip": ["packages/react/chip/src/index.ts"],
@@ -31,6 +33,9 @@
       "@paintbox/react-icon-action": [
         "packages/react/icon-action/src/index.ts"
       ],
+      "@paintbox/react-image-uploader": [
+        "packages/react/image-uploader/src/index.ts"
+      ],
       "@paintbox/react-pagination": ["packages/react/pagination/src/index.ts"],
       "@paintbox/react-radio": ["packages/react/radio/src/index.ts"],
       "@paintbox/react-search-bar": ["packages/react/search-bar/src/index.ts"],
@@ -40,11 +45,16 @@
       "@paintbox/react-spinner": ["packages/react/spinner/src/index.ts"],
       "@paintbox/react-stepper": ["packages/react/stepper/src/index.ts"],
       "@paintbox/react-table": ["packages/react/table/src/index.ts"],
+      "@paintbox/react-tabs": ["packages/react/tabs/src/index.ts"],
       "@paintbox/react-tag": ["packages/react/tag/src/index.ts"],
+      "@paintbox/react-tag-input": ["packages/react/tag-input/src/index.ts"],
       "@paintbox/react-time-picker": [
         "packages/react/time-picker/src/index.ts"
       ],
       "@paintbox/react-toast": ["packages/react/toast/src/index.ts"],
+      "@paintbox/react-toggle-switch": [
+        "packages/react/toggle-switch/src/index.ts"
+      ],
       "@paintbox/react-tree-view": ["packages/react/tree-view/src/index.ts"],
       "@paintbox/react-ui": ["packages/react/ui/src/index.ts"],
       "@paintbox/util-i18n": ["packages/util/i18n/src/index.ts"]
