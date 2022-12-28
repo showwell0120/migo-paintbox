@@ -10,11 +10,41 @@ const Template: ComponentStory<typeof ReactChip> = (args: ReactChipProps) => {
 const AllChips: ComponentStory<typeof ReactChip> = (args: ReactChipProps) => {
   return (
     <div style={{ display: 'flex', gap: '1rem' }}>
-      <ReactChip {...args} theme={'danger'} children={'danger'} />
-      <ReactChip {...args} theme={'primary'} children={'primary'} />
-      <ReactChip {...args} theme={'secondary'} children={'secondary'} />
-      <ReactChip {...args} theme={'success'} children={'success'} />
-      <ReactChip {...args} theme={'warning'} children={'warning'} />
+      <ReactChip
+        {...args}
+        theme={'secondary-brand'}
+        children={'secondary-brand'}
+      />
+      <ReactChip
+        {...args}
+        theme={'secondary-danger'}
+        children={'secondary-danger'}
+      />
+      <ReactChip
+        {...args}
+        theme={'secondary-info'}
+        children={'secondary-info'}
+      />
+      <ReactChip
+        {...args}
+        theme={'secondary-primary'}
+        children={'secondary-primary'}
+      />
+      <ReactChip
+        {...args}
+        theme={'secondary-secondary'}
+        children={'secondary-secondary'}
+      />
+      <ReactChip
+        {...args}
+        theme={'secondary-success'}
+        children={'secondary-success'}
+      />
+      <ReactChip
+        {...args}
+        theme={'secondary-warning'}
+        children={'secondary-warning'}
+      />
     </div>
   );
 };

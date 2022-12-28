@@ -18,7 +18,7 @@ const Template: ComponentStory<typeof ReactChip> = (args: ReactChipProps) => {
 export const Default = Template.bind({});
 Default.args = {
   dot: false,
-  theme: 'primary',
+  theme: 'secondary-info',
 };
 
 export default {

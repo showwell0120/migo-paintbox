@@ -52,7 +52,7 @@ export const ReactTag: React.FC<ReactTagProps> = ({
             hasBorder && `has-bd`,
             className
           )}
-          onClick={onClick ? onClick : undefined}
+          {...(onClick && { onClick })}
         >
           {children}
           {onClose && (

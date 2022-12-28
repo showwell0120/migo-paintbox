@@ -32,7 +32,6 @@ export const ColorThemes = [
   'secondary-brand',
   'secondary-primary',
   'secondary-secondary',
-  'secondary-muted',
   'secondary-success',
   'secondary-danger',
   'secondary-warning',
