@@ -2,6 +2,14 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.17.0](https://gitlab.migoinc.com/migotv/paintbox/compare/react-foundation@1.16.1...react-foundation@1.17.0) (2022-12-28)
+
+
+### Features
+
+* **react-foundation:** add color related css selectors ([f81604a](https://gitlab.migoinc.com/migotv/paintbox/commit/f81604aa7c30bc809f09eaa33effa07e75502aff))
+* **react-foundation:** add sign icons ([601c394](https://gitlab.migoinc.com/migotv/paintbox/commit/601c39494e2db5a04914641178efc8012a223911))
+
 ### [1.16.1](https://gitlab.migoinc.com/migotv/paintbox/compare/react-foundation@1.16.0...react-foundation@1.16.1) (2022-12-26)
 
 
