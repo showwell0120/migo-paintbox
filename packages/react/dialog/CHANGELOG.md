@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.3.0](https://gitlab.migoinc.com/migotv/paintbox/compare/react-dialog@1.2.2...react-dialog@1.3.0) (2022-12-28)
+
+
+### Features
+
+* **react-dialog:** add action buttons ([5f4e1a8](https://gitlab.migoinc.com/migotv/paintbox/commit/5f4e1a89adedc7e8559fedc97d7ed9191ccf7c28))
+
 ### [1.2.2](https://gitlab.migoinc.com/migotv/paintbox/compare/react-dialog@1.2.1...react-dialog@1.2.2) (2022-12-26)
 
 
