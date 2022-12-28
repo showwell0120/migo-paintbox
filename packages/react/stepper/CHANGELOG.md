@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [1.2.2](https://gitlab.migoinc.com/migotv/paintbox/compare/react-stepper@1.2.1...react-stepper@1.2.2) (2022-12-28)
+
+
+### Bug Fixes
+
+* **react-*:** correct css variable in components ([b6c3aca](https://gitlab.migoinc.com/migotv/paintbox/commit/b6c3aca70ca4129e312363c58435b19623e70835))
+
 ### [1.2.1](https://gitlab.migoinc.com/migotv/paintbox/compare/react-stepper@1.2.0...react-stepper@1.2.1) (2022-12-26)
 
 ## [1.2.0](https://gitlab.migoinc.com/migotv/paintbox/compare/react-stepper@1.1.0...react-stepper@1.2.0) (2022-09-21)
