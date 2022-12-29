@@ -4,6 +4,7 @@ export * from './caret';
 export * from './chevron';
 export * from './comms';
 export * from './control';
+export * from './file';
 export * from './header';
 export * from './media';
 export * from './misc';
