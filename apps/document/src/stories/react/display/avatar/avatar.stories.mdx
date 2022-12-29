@@ -1,0 +1,40 @@
+import { Meta, Canvas, Story } from '@storybook/addon-docs/blocks';
+
+<Meta title="React/Display/Avatar/Doc" />
+
+# Avatar
+
+> 預覽 Avatar 以及提供可上傳圖片的功能。提供以下 props -
+
+```javascript
+export interface ReactAvatarProps {
+  avatarURL: string | undefined;             // 圖片的 URL
+  editable?: boolean;                        // 是否可進行編輯，預設 false
+  displaySize?: number;                      // 預覽的尺寸，預設 50 px
+  exactSize?: number;                        // 設定精準的原始圖片尺寸
+  required?: boolean;                        // 是否一定要有圖片
+  avatarName?: string;                       // Avatar 的類型稱呼
+
+  onImageSuccess: (f: File | Blob) => void;  // 透過 FileUploader onload 成功後執行的 callback
+  onImageError?: (msg?: string) => void;     // 透過 FileUploader onload 失敗後執行的 callback
+}
+```
+
+## Usage
+
+```jsx
+const Sample = () => {
+  const [avatarURL, setAvatarURL] = React.useState<string>('');
+
+  const handleSyncAvatar = (f: File | Blob) => {
+    setAvatarURL(URL.createObjectURL(f as Blob));
+  };
+
+  return (
+    <ReactAvatar
+      avatarURL={avatarURL}
+      onImageSuccess={handleSyncAvatar}
+    />
+  );
+};
+```
