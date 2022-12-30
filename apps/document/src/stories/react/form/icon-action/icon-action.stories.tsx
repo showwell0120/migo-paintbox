@@ -25,5 +25,5 @@ Default.args = {
 
 export default {
   component: ReactIconAction,
-  title: 'React/Form/IconAction/Main',
+  title: 'React/Form/IconAction/Stories',
 } as ComponentMeta<typeof ReactIconAction>;

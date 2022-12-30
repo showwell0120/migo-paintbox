@@ -43,6 +43,13 @@ const baseStyle = css`
   border: 1px solid transparent;
 `;
 
+const childrenStyle = css`
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 60vw;
+`;
+
 const yAxisStyle = {
   top: 'top: 96px;',
   center: 'top: 50%; transform: translateY(-50%);',
@@ -112,7 +119,7 @@ export const ReactToast: React.FC<ReactToastProps> = ({
           className={cx(`${theme}-contained`, className)}
         >
           {showPrefixIcon && PrefixIcon}
-          {children}
+          <div css={childrenStyle}>{children}</div>
           {enableClose && (
             <div onClick={handleClose} style={{ cursor: 'pointer' }}>
               <SignIcons.X height={10} width={10} className={css``} />

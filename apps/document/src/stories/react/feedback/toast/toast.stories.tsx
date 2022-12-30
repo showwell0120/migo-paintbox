@@ -79,5 +79,5 @@ AutoClose.args = {
 
 export default {
   component: ReactToast,
-  title: 'React/feedback/toast/Stories',
+  title: 'React/Feedback/Toast/Stories',
 } as ComponentMeta<typeof ReactToast>;
