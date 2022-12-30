@@ -1,0 +1,37 @@
+import { Meta, Canvas, Story } from '@storybook/addon-docs/blocks';
+
+<Meta title="React/Form/ToggleSwitch/Doc" />
+
+# ToggleSwitch
+
+> Toggle Switch。以控制元件的方式實作，提供以下 props－
+
+```javascript
+export interface ReactToggleSwitchProps {
+  checked: boolean;
+  theme: Extract<ColorThemeType, 'primary-primary' | 'primary-success'>;
+  disable?: boolean;
+  onText?: string;
+  offText?: string;
+
+  onChange: (checked: boolean) => void;
+}
+```
+
+## Mockup
+
+- [Figma](https://www.figma.com/file/Sv8VnmaINqyDQcpdO3cz5M/%F0%9F%96%A5-Foundation?node-id=49%3A21916&t=CI82AEPOSyPxIXDc-4)
+
+## Usage 
+
+```jsx
+import { ReactToggleSwitch } from '@paintbox/react-toggle-switch';
+
+export const Sample = () => {
+  const [checked, setChecked] = React.useState<boolean>(false);
+
+  return (
+    <ReactToggleSwitch checked={checked} onChange={setChecked} />
+  );
+};
+```
