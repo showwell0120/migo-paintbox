@@ -2,9 +2,11 @@ import React from 'react';
 import { ClassNames } from '@emotion/react';
 
 import { Variant, ColorThemeType } from '@paintbox/react-foundation';
+import { ComponentBaseProps } from '@paintbox/react-base';
+import classNames from 'classnames';
 
 /* eslint-disable-next-line */
-export interface ReactButtonProps {
+export interface ReactButtonProps extends ComponentBaseProps {
   children: React.ReactNode;
 
   theme?: ColorThemeType;
@@ -19,6 +21,8 @@ export const ReactButton: React.FC<ReactButtonProps> = ({
   variant = 'contained',
   disabled = false,
   onClick,
+  className,
+  style,
 }) => {
   function handleClick() {
     !disabled && onClick?.();
@@ -33,6 +37,7 @@ export const ReactButton: React.FC<ReactButtonProps> = ({
         return (
           <button
             onClick={handleClick}
+            {...(style && { style })}
             className={cx(
               css`
                 border: 1px solid;
@@ -75,7 +80,8 @@ export const ReactButton: React.FC<ReactButtonProps> = ({
                       }
                     }
                   }
-                `
+                `,
+              className
             )}
           >
             {children}
