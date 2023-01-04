@@ -1,5 +1,6 @@
 import { themes } from '@storybook/theming';
 import { useDarkMode } from 'storybook-dark-mode';
+import { withRouter } from 'storybook-addon-react-router-v6';
 
 import { DocsContainer } from './docs-container';
 
@@ -37,4 +38,5 @@ export const decorators = [
       <Story />
     </div>
   ),
+  withRouter,
 ];

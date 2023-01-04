@@ -5,6 +5,7 @@ module.exports = {
     'storybook-addon-designs',
     '@storybook/addon-storysource',
     'storybook-dark-mode',
+    'storybook-addon-react-router-v6',
     {
       name: '@storybook/addon-docs',
       options: {
