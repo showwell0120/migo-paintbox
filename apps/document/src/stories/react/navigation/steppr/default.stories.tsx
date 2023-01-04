@@ -33,5 +33,5 @@ export const Default = Template.bind({});
 
 export default {
   component: Template,
-  title: 'React/Form/Stepper/Stories/Default',
+  title: 'React/Navigation/Stepper/Stories/Default',
 } as ComponentMeta<typeof Template>;

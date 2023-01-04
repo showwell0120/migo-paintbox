@@ -72,5 +72,5 @@ WithIcon.args = {
 
 export default {
   component: ReactTreeView,
-  title: 'React/Display/TreeView/Stories',
+  title: 'React/Navigation/TreeView/Stories',
 } as ComponentMeta<typeof ReactTreeView>;

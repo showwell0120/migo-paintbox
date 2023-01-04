@@ -35,5 +35,5 @@ Default.args = {};
 
 export default {
   component: ReactPagination,
-  title: 'React/Table/Pagination/Stories',
+  title: 'React/Navigation/Pagination/Stories',
 } as ComponentMeta<typeof ReactPagination>;

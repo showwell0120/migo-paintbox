@@ -6,7 +6,6 @@ import {
   StepGraph,
   StepContents,
   StepActions,
-  FormStepItem,
 } from '@paintbox/react-stepper';
 import { defaultStepItems } from './stepItems';
 
@@ -43,5 +42,5 @@ export const DisableStep = Template1.bind({});
 
 export default {
   component: Template1,
-  title: 'React/Form/Stepper/Stories/DisableStep',
+  title: 'React/Form/Navigation/Stories/DisableStep',
 } as ComponentMeta<typeof Template1>;

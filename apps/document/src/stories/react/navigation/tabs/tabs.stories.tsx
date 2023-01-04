@@ -5,7 +5,7 @@ import { ReactTabs, TabItem } from '@paintbox/react-tabs';
 
 export default {
   component: ReactTabs,
-  title: 'React/Display/Tabs/Stories',
+  title: 'React/Navigation/Tabs/Stories',
 } as ComponentMeta<typeof ReactTabs>;
 
 const Template: ComponentStory<typeof Tabs> = (args) => {
