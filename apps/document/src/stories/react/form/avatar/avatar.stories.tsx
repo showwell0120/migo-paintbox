@@ -8,14 +8,14 @@ const Template: ComponentStory<typeof ReactAvatar> = (
 ) => {
   const [avatarURL, setAvatarURL] = React.useState<string>('');
 
-  const handleSyncAvatar = (f: File | Blob) => {
-    setAvatarURL(URL.createObjectURL(f as Blob));
+  const handleSyncAvatar = (f: File | Blob | null) => {
+    setAvatarURL(f ? URL.createObjectURL(f as Blob) : '');
   };
 
   return (
     <ReactAvatar
       {...args}
-      avatarURL={avatarURL}
+      imageURL={avatarURL}
       onImageSuccess={handleSyncAvatar}
     />
   );
@@ -24,13 +24,15 @@ const Template: ComponentStory<typeof ReactAvatar> = (
 export const Default = Template.bind({});
 Default.args = {
   editable: true,
-  displaySize: 120,
-  exactSize: 0,
   required: true,
-  avatarName: 'Avatar',
+  maxFileSize: 1 * 1024 * 1024,
+  displaySize: {
+    width: 120,
+    height: 120,
+  },
 };
 
 export default {
   component: ReactAvatar,
-  title: 'React/Display/Avatar/Stories',
+  title: 'React/Form/Avatar/Stories',
 } as ComponentMeta<typeof ReactAvatar>;
