@@ -1,11 +1,12 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import * as Pages from './pages';
-import { RouteObject } from 'react-router-dom';
+import { RouteObject, createBrowserRouter } from 'react-router-dom';
 
 /**
  * @reference https://github.com/remix-run/react-router/blob/dev/examples/route-objects/src/App.tsx
  */
 
-const routes: RouteObject[] = [
+export const routes: RouteObject[] = [
   {
     path: '/',
     element: <Pages.Layout />,
@@ -151,4 +152,4 @@ const routes: RouteObject[] = [
   },
 ];
 
-export default routes;
+export const router = createBrowserRouter(routes);

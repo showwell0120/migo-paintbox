@@ -38,5 +38,4 @@ export const decorators = [
       <Story />
     </div>
   ),
-  withRouter,
 ];

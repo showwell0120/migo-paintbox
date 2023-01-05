@@ -1,4 +1,4 @@
-import { Link, Outlet, useParams, useNavigate } from 'react-router-dom';
+import { Outlet, useParams, useNavigate } from 'react-router-dom';
 
 export const Layout = () => {
   const navigate = useNavigate();
