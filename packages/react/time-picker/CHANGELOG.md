@@ -2,6 +2,8 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [2.4.0](https://gitlab.migoinc.com/migotv/paintbox/compare/react-time-picker@2.3.1...react-time-picker@2.4.0) (2023-01-05)
+
 ### [2.3.1](https://gitlab.migoinc.com/migotv/paintbox/compare/react-time-picker@2.3.0...react-time-picker@2.3.1) (2022-12-14)
 
 
