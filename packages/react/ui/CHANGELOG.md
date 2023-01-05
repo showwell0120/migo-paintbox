@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.11.0](https://gitlab.migoinc.com/migotv/paintbox/compare/react-ui@1.10.0...react-ui@1.11.0) (2023-01-05)
+
+
+### Features
+
+* **react-*:** add templatepackages to required components ([9c5f34c](https://gitlab.migoinc.com/migotv/paintbox/commit/9c5f34c7228b7d09f82fbb8409fd1a1edcefed45))
+
 ## [1.10.0](https://gitlab.migoinc.com/migotv/paintbox/compare/react-ui@1.9.0...react-ui@1.10.0) (2022-12-28)
 
 ## [1.9.0](https://gitlab.migoinc.com/migotv/paintbox/compare/react-ui@1.8.0...react-ui@1.9.0) (2022-12-28)
