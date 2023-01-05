@@ -2,6 +2,8 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.3.0](https://gitlab.migoinc.com/migotv/paintbox/compare/react-currency-input@1.2.2...react-currency-input@1.3.0) (2023-01-05)
+
 ### [1.2.2](https://gitlab.migoinc.com/migotv/paintbox/compare/react-currency-input@1.2.1...react-currency-input@1.2.2) (2022-12-28)
 
 
