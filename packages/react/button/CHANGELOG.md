@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [2.1.0](https://gitlab.migoinc.com/migotv/paintbox/compare/react-button@2.0.1...react-button@2.1.0) (2023-01-05)
+
+
+### Features
+
+* **react-image-uploader:** implement main features, add story ([fdc9276](https://gitlab.migoinc.com/migotv/paintbox/commit/fdc9276e6f4ce270fd5f9c15b544e5d04d158ffd))
+
 ### [2.0.1](https://gitlab.migoinc.com/migotv/paintbox/compare/react-button@2.0.0...react-button@2.0.1) (2022-12-28)
 
 ## [2.0.0](https://gitlab.migoinc.com/migotv/paintbox/compare/react-button@1.3.0...react-button@2.0.0) (2022-12-26)
