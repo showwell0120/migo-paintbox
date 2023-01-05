@@ -74,7 +74,7 @@ specifiers:
   react-dnd-html5-backend: ^16.0.1
   react-dom: 18.2.0
   react-error-boundary: ^3.1.4
-  react-router-dom: ^6.3.0
+  react-router-dom: ^6.6.1
   react-table: ^7.8.0
   react-test-renderer: 18.2.0
   regenerator-runtime: 0.13.9
@@ -111,7 +111,7 @@ dependencies:
   react-dnd-html5-backend: 16.0.1
   react-dom: 18.2.0_react@18.2.0
   react-error-boundary: 3.1.4_react@18.2.0
-  react-router-dom: 6.3.0_biqbaboplfbrettd7655fr4n2y
+  react-router-dom: 6.6.1_biqbaboplfbrettd7655fr4n2y
   react-table: 7.8.0_react@18.2.0
   regenerator-runtime: 0.13.9
   tslib: 2.4.0
@@ -177,7 +177,7 @@ devDependencies:
   require-from-string: 2.0.2
   sass-loader: 13.0.2_webpack@5.72.1
   storybook-addon-designs: 6.3.1_react@18.2.0
-  storybook-addon-react-router-v6: 0.2.1_lxc64rx56ukfurc2y76kl6edwy
+  storybook-addon-react-router-v6: 0.2.1_unr22mskwr5vfsq5w66gpd5ety
   storybook-dark-mode: 1.1.2_biqbaboplfbrettd7655fr4n2y
   style-loader: 3.3.1_webpack@5.72.1
   ts-jest: 28.0.2_gf35hfmnuhdkx55zlntmartzci
@@ -5355,6 +5355,10 @@ packages:
   /@react-dnd/shallowequal/4.0.2:
     resolution: {integrity: sha512-/RVXdLvJxLg4QKvMoM5WlwNR9ViO9z8B/qPcc+C0Sa/teJY7QG7kJ441DwzOjMYEY7GmU4dj5EcGHIkKZiQZCA==}
     dev: false
+
+  /@remix-run/router/1.2.1:
+    resolution: {integrity: sha512-XiY0IsyHR+DXYS5vBxpoBe/8veTeoRpMHP+vDosLZxL5bnpetzI0igkxkLZS235ldLzyfkxF+2divEwWHP3vMQ==}
+    engines: {node: '>=14'}
 
   /@rollup/plugin-babel/5.3.1_ddp4whfhauf2n5cf6yj7gaerwe:
     resolution: {integrity: sha512-WFfdLWU/xVWKeRQnKmIAQULUI7Il0gZnBIH/ZFO069wYIfPu+8zrfp/KMW0atmELoRDq8FbiP3VCss9MhCut7Q==}
@@ -12875,11 +12879,6 @@ packages:
     resolution: {integrity: sha512-tzcUFauisWKNHaRkN4Wjl/ZA07gENAjFl3J/c480dprkGTg5EQstgaNFqBfUqCq54kZRIEcreTsAgF/m2quD7A==}
     dev: true
 
-  /history/5.3.0:
-    resolution: {integrity: sha512-ZqaKwjjrAYUYfLG+htGaIIZ4nioX2L70ZUMIFysS3xvBsSG4x/n1V6TXV3N8ZYNuFGlDirFg32T7B6WOUPDYcQ==}
-    dependencies:
-      '@babel/runtime': 7.18.6
-
   /hmac-drbg/1.0.1:
     resolution: {integrity: sha512-Tti3gMqLdZfhOQY1Mzf/AanLiqh1WTiJgEj26ZuYQ9fbkLomzGchCws4FyrSd4VkpBfiNhaE1On+lOz894jvXg==}
     dependencies:
@@ -17728,23 +17727,25 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
-  /react-router-dom/6.3.0_biqbaboplfbrettd7655fr4n2y:
-    resolution: {integrity: sha512-uaJj7LKytRxZNQV8+RbzJWnJ8K2nPsOOEuX7aQstlMZKQT0164C+X2w6bnkqU3sjtLvpd5ojrezAyfZ1+0sStw==}
+  /react-router-dom/6.6.1_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-u+8BKUtelStKbZD5UcY0NY90WOzktrkJJhyhNg7L0APn9t1qJNLowzrM9CHdpB6+rcPt6qQrlkIXsTvhuXP68g==}
+    engines: {node: '>=14'}
     peerDependencies:
       react: '>=16.8'
       react-dom: '>=16.8'
     dependencies:
-      history: 5.3.0
+      '@remix-run/router': 1.2.1
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
-      react-router: 6.3.0_react@18.2.0
+      react-router: 6.6.1_react@18.2.0
 
-  /react-router/6.3.0_react@18.2.0:
-    resolution: {integrity: sha512-7Wh1DzVQ+tlFjkeo+ujvjSqSJmkt1+8JO+T5xklPlgrh70y7ogx75ODRW0ThWhY7S+6yEDks8TYrtQe/aoboBQ==}
+  /react-router/6.6.1_react@18.2.0:
+    resolution: {integrity: sha512-YkvlYRusnI/IN0kDtosUCgxqHeulN5je+ew8W+iA1VvFhf86kA+JEI/X/8NqYcr11hCDDp906S+SGMpBheNeYQ==}
+    engines: {node: '>=14'}
     peerDependencies:
       react: '>=16.8'
     dependencies:
-      history: 5.3.0
+      '@remix-run/router': 1.2.1
       react: 18.2.0
 
   /react-shallow-renderer/16.15.0_react@18.2.0:
@@ -19054,7 +19055,7 @@ packages:
       - react
     dev: true
 
-  /storybook-addon-react-router-v6/0.2.1_lxc64rx56ukfurc2y76kl6edwy:
+  /storybook-addon-react-router-v6/0.2.1_unr22mskwr5vfsq5w66gpd5ety:
     resolution: {integrity: sha512-dwYLaE6/bsGnkTn1l5rb5SYIhv2xwwSeRkhWX86bihDWJjz/+NlWSN+r4Kp2WNMVN9vEhMleunXPiGJiFUn7Hg==}
     peerDependencies:
       '@storybook/addons': ^6.4.0
@@ -19080,8 +19081,8 @@ packages:
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
       react-inspector: 5.1.1_react@18.2.0
-      react-router: 6.3.0_react@18.2.0
-      react-router-dom: 6.3.0_biqbaboplfbrettd7655fr4n2y
+      react-router: 6.6.1_react@18.2.0
+      react-router-dom: 6.6.1_biqbaboplfbrettd7655fr4n2y
     dev: true
 
   /storybook-dark-mode/1.1.2_biqbaboplfbrettd7655fr4n2y:
