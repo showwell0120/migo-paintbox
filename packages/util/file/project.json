@@ -1,22 +1,22 @@
 {
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "packages/helper/converter/src",
+  "sourceRoot": "packages/util/file/src",
   "projectType": "library",
   "targets": {
     "build": {
       "executor": "@nrwl/js:tsc",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/packages/helper/converter",
-        "main": "packages/helper/converter/src/index.ts",
-        "tsConfig": "packages/helper/converter/tsconfig.lib.json",
-        "assets": ["packages/helper/converter/*.md"]
+        "outputPath": "dist/packages/util/file",
+        "main": "packages/util/file/src/index.ts",
+        "tsConfig": "packages/util/file/tsconfig.lib.json",
+        "assets": ["packages/util/file/*.md"]
       }
     },
     "publish": {
       "executor": "@nrwl/workspace:run-commands",
       "options": {
-        "command": "node tools/scripts/publish.mjs helper-converter {args.ver} {args.tag}"
+        "command": "node tools/scripts/publish.mjs util-file {args.ver} {args.tag}"
       },
       "dependsOn": [
         {
@@ -29,14 +29,14 @@
       "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["packages/helper/converter/**/*.ts"]
+        "lintFilePatterns": ["packages/util/file/**/*.ts"]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/packages/helper/converter"],
+      "outputs": ["coverage/packages/util/file"],
       "options": {
-        "jestConfig": "packages/helper/converter/jest.config.ts",
+        "jestConfig": "packages/util/file/jest.config.ts",
         "passWithNoTests": true
       }
     }

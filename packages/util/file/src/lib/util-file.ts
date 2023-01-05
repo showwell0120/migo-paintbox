@@ -1,7 +1,3 @@
-export function helperConverter(): string {
-  return 'helper-converter';
-}
-
 const KB = 1024;
 const MB = KB * 1024;
 const GB = MB * 1024;

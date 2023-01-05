@@ -18,7 +18,6 @@
       "@paintbox/helper-axios-client": [
         "packages/helper/axios-client/src/index.ts"
       ],
-      "@paintbox/helper-converter": ["packages/helper/converter/src/index.ts"],
       "@paintbox/model-media": ["packages/model/media/src/index.ts"],
       "@paintbox/react-avatar": ["packages/react/avatar/src/index.ts"],
       "@paintbox/react-base": ["packages/react/base/src/index.ts"],
@@ -58,6 +57,7 @@
       ],
       "@paintbox/react-tree-view": ["packages/react/tree-view/src/index.ts"],
       "@paintbox/react-ui": ["packages/react/ui/src/index.ts"],
+      "@paintbox/util-file": ["packages/util/file/src/index.ts"],
       "@paintbox/util-i18n": ["packages/util/i18n/src/index.ts"]
     }
   },

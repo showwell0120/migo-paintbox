@@ -2,7 +2,7 @@ import React from 'react';
 import styled from '@emotion/styled';
 import { css } from '@emotion/react';
 
-import { getDisplayedSize } from '@paintbox/helper-converter';
+import { getDisplayedSize } from '@paintbox/util-file';
 import { Small } from '@paintbox/react-foundation';
 
 import { ImageFileProps } from '.';
