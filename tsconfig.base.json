@@ -57,7 +57,6 @@
       ],
       "@paintbox/react-tree-view": ["packages/react/tree-view/src/index.ts"],
       "@paintbox/react-ui": ["packages/react/ui/src/index.ts"],
-      "@paintbox/util-file": ["packages/util/file/src/index.ts"],
       "@paintbox/util-i18n": ["packages/util/i18n/src/index.ts"]
     }
   },
