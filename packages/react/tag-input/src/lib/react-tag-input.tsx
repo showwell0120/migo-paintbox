@@ -14,5 +14,3 @@ export function ReactTagInput(props: ReactTagInputProps) {
     </StyledReactTagInput>
   );
 }
-
-export default ReactTagInput;

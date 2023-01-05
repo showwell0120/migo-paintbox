@@ -1,4 +1,6 @@
 import styled from '@emotion/styled';
+import { css } from '@emotion/react';
+
 import { useMatches, Link, Params } from 'react-router-dom';
 
 /* eslint-disable-next-line */
@@ -14,7 +16,23 @@ interface CustomMatch {
   };
 }
 
-const Container = styled.nav``;
+const Ol = styled.ol`
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+`;
+
+const Li = styled.li`
+  padding-left: 0.5rem;
+  ${() => Li} + ${() => Li} {
+    &:before {
+      display: inline-block;
+      padding-right: 0.5rem;
+      color: var(--gray-600);
+      content: '/';
+    }
+  }
+`;
 
 export function ReactBreadcrumb(props: ReactBreadcrumbProps) {
   const matches = useMatches() as unknown as CustomMatch[];
@@ -29,21 +47,35 @@ export function ReactBreadcrumb(props: ReactBreadcrumbProps) {
   const isCurrentPath = true;
 
   return (
-    <Container>
-      <ol>
+    <nav>
+      <Ol>
         {routes.map((route, index) => {
           return (
-            <li key={index}>
+            <Li
+              key={index}
+              css={[
+                isCurrentPath &&
+                  css`
+                    a {
+                      color: var(--primary-primary);
+                      text-decoration: none;
+                      &:hover {
+                        text-decoration: none;
+                      }
+                    }
+                  `,
+              ]}
+            >
               {isCurrentPath ? (
                 route.crumb
               ) : (
                 <Link to={route.pathname}>{route.crumb}</Link>
               )}
-            </li>
+            </Li>
           );
         })}
-      </ol>
-    </Container>
+      </Ol>
+    </nav>
   );
 }
 
