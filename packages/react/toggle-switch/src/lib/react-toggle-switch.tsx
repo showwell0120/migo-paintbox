@@ -27,11 +27,15 @@ const Label = styled.label`
   height: 24px;
 `;
 
-const Slider = styled.span<{ disable: boolean }>`
+interface SliderProps {
+  disable: boolean;
+}
+const Slider = styled.span<SliderProps>`
   position: absolute;
-  cursor: ${(props) => (props.disable ? 'not-allowed' : 'pointer')};
+  cursor: ${(props: SliderProps) =>
+    props.disable ? 'not-allowed' : 'pointer'};
   background-color: var(
-    --${(props) => (props.disable ? 'gray-400' : 'primary-muted')}
+    --${(props: SliderProps) => (props.disable ? 'gray-400' : 'primary-muted')}
   );
   top: 0;
   left: 0;

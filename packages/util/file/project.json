@@ -39,6 +39,30 @@
         "jestConfig": "packages/util/file/jest.config.ts",
         "passWithNoTests": true
       }
+    },
+    "lint-test": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": ["nx lint util-file", "nx test util-file"]
+      }
+    },
+    "publish": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": ["nx build util-file", "nx version util-file"],
+        "parallel": false
+      }
+    },
+    "version": {
+      "executor": "@jscutlery/semver:version",
+      "options": {
+        "preset": "conventional",
+        "tagPrefix": "util-file@",
+        "postTargets": ["util-file:deploy"]
+      }
+    },
+    "deploy": {
+      "executor": "ngx-deploy-npm:deploy"
     }
   },
   "tags": []
