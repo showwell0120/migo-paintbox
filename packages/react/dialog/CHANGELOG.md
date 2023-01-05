@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.4.0](https://gitlab.migoinc.com/migotv/paintbox/compare/react-dialog@1.3.0...react-dialog@1.4.0) (2023-01-05)
+
+
+### Features
+
+* **react-*:** add templatepackages to required components ([9c5f34c](https://gitlab.migoinc.com/migotv/paintbox/commit/9c5f34c7228b7d09f82fbb8409fd1a1edcefed45))
+
 ## [1.3.0](https://gitlab.migoinc.com/migotv/paintbox/compare/react-dialog@1.2.2...react-dialog@1.3.0) (2022-12-28)
 
 
