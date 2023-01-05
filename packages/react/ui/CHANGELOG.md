@@ -2,6 +2,8 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [1.11.1](https://gitlab.migoinc.com/migotv/paintbox/compare/react-ui@1.11.0...react-ui@1.11.1) (2023-01-05)
+
 ## [1.11.0](https://gitlab.migoinc.com/migotv/paintbox/compare/react-ui@1.10.0...react-ui@1.11.0) (2023-01-05)
 
 
