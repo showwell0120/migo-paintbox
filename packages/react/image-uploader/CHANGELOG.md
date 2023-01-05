@@ -2,6 +2,8 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.2.0](https://gitlab.migoinc.com/migotv/paintbox/compare/react-image-uploader@0.1.0...react-image-uploader@0.2.0) (2023-01-05)
+
 ## 0.1.0 (2023-01-05)
 
 
