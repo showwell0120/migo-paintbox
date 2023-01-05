@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [2.4.4](https://gitlab.migoinc.com/migotv/paintbox/compare/react-toast@2.4.3...react-toast@2.4.4) (2023-01-05)
+
+
+### Bug Fixes
+
+* **react-toast:** fix overflow style ([1355efb](https://gitlab.migoinc.com/migotv/paintbox/commit/1355efbdb0357780d982896e6ebb136a981ec9ad))
+
 ### [2.4.3](https://gitlab.migoinc.com/migotv/paintbox/compare/react-toast@2.4.2...react-toast@2.4.3) (2022-12-28)
 
 ### [2.4.2](https://gitlab.migoinc.com/migotv/paintbox/compare/react-toast@2.4.1...react-toast@2.4.2) (2022-12-26)
