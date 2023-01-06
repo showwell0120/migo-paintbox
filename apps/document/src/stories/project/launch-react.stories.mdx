@@ -298,11 +298,49 @@ pnpm i -D @jscutlery/semver
 
 ### Proxy configuration
 
-// TODO
+- `project.json`：在 `serve` target 中的 `options` 中新增設定
+
+```json
+"options": {
+    "buildTarget": "main:build",
+    "hmr": true,
+    "proxyConfig": "apps/main/proxy.conf.json"  // add this line
+},
+```
+
+- `proxy.conf.json`
+
+```json
+{
+  "/api/*": {
+    "target": "http://evergreen.private.migosrv-dev.com",
+    "logLevel": "debug",
+    "secure": false,
+    "changeOrigin": true,
+    "ws": true
+  }
+}
+```
+
 
 ### Path alias
 
-// TODO
+在 `tsconfig.base.json` 中新增 `path` 欄位－
+
+```json
+"paths": {
+    "@api/*": ["apps/main/src/api/*"],
+    "@app/*": ["apps/main/src/app/*"],
+    "@assets/*": ["apps/main/src/assets/*"],
+    "@components/*": ["apps/main/src/components/*"],
+    "@contexts/*": ["apps/main/src/contexts/*"],
+    "@helpers/*": ["apps/main/src/helpers/*"],
+    "@hooks/*": ["apps/main/src/hooks/*"],
+    "@msw/*": ["apps/main/src/msw/*"],
+    "@pages/*": ["apps/main/src/pages/*"],
+    "@src/*": ["apps/main/src/*"]
+}
+```
 
 ### Ansible
 
