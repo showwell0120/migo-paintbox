@@ -22,9 +22,6 @@ interface OptionsProps {
 }
 
 function SwapOptions({ onChange, data }: OptionsProps) {
-  const [CID, setCID] = React.useState<OptionItem>();
-  const [serviceUnit, setServiceUnit] = React.useState<OptionItem>();
-
   return (
     <>
       <ReactSelectOption
@@ -48,9 +45,6 @@ function SwapOptions({ onChange, data }: OptionsProps) {
 }
 
 function CIDRegistrationOptions({ onChange, data }: OptionsProps) {
-  const [CID, setCID] = React.useState<OptionItem>();
-  const [serialNo, setSerialNo] = React.useState<OptionItem>();
-
   return (
     <>
       <ReactSelectOption
