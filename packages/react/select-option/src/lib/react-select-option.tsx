@@ -40,6 +40,7 @@ const Container = styled.div<ContainerProps>`
   position: relative;
   padding-left: ${(props: ContainerProps) => props.prefixWidth};
   min-width: fit-content;
+  // width: 100%;
 
   &[data-prefix] {
     &::before {

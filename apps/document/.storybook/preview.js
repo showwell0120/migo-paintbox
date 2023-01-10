@@ -5,7 +5,7 @@ import { withRouter } from 'storybook-addon-react-router-v6';
 import { DocsContainer } from './docs-container';
 
 import '../../../packages/react/foundation/src/palettes/main.scss';
-import '../src/stories/react/foundation/icons/_icons.scss';
+import '../src/stories/react/styles.scss';
 
 export const parameters = {
   layout: 'centered',
