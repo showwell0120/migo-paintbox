@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.4.0](https://gitlab.migoinc.com/migotv/paintbox/compare/react-select-option@1.3.0...react-select-option@1.4.0) (2023-01-10)
+
+
+### Features
+
+* **react-select-option:** enable default empty, enhance style ([e2655f7](https://gitlab.migoinc.com/migotv/paintbox/commit/e2655f7b3d0fa38c801248cc62b7c5779945297d))
+
 ## [1.3.0](https://gitlab.migoinc.com/migotv/paintbox/compare/react-select-option@1.2.4...react-select-option@1.3.0) (2023-01-05)
 
 
