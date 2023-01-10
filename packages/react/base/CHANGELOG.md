@@ -2,6 +2,8 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [1.4.1](https://gitlab.migoinc.com/migotv/paintbox/compare/react-base@1.4.0...react-base@1.4.1) (2023-01-10)
+
 ## [1.4.0](https://gitlab.migoinc.com/migotv/paintbox/compare/react-base@1.3.1...react-base@1.4.0) (2023-01-05)
 
 ### [1.3.1](https://gitlab.migoinc.com/migotv/paintbox/compare/react-base@1.3.0...react-base@1.3.1) (2023-01-05)
