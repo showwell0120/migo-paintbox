@@ -12,7 +12,7 @@ import {
 /* eslint-disable-next-line */
 export interface ReactSelectOptionProps {
   options: OptionItem[];
-  option: OptionItem;
+  option: OptionItem | undefined | null;
   prefix?: string;
   enableSearch?: boolean;
   showBorder?: boolean;
@@ -21,7 +21,7 @@ export interface ReactSelectOptionProps {
 }
 
 export interface OptionItem {
-  id: string | number;
+  id: string;
   name: string;
 }
 
@@ -39,7 +39,7 @@ const Container = styled.div<ContainerProps>`
     props.showBorder ? '1px solid var(--gray-500)' : 'none'};
   position: relative;
   padding-left: ${(props: ContainerProps) => props.prefixWidth};
-  width: fit-content;
+  min-width: fit-content;
 
   &[data-prefix] {
     &::before {
@@ -60,7 +60,7 @@ const Container = styled.div<ContainerProps>`
 
 const currOptionStyle = css`
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   gap: 12px;
   height: 40px;
@@ -140,7 +140,7 @@ export function ReactSelectOption({
   const handleSelect = (event: React.MouseEvent<HTMLDivElement>) => {
     if (event.currentTarget?.dataset['id']) {
       const itemID = event.currentTarget?.dataset['id'];
-      if (itemID !== option.id) {
+      if (!option || itemID !== option.id) {
         const item = options.find((el) => el.id === itemID);
         item && onChange && onChange(item);
       }
@@ -174,7 +174,6 @@ export function ReactSelectOption({
   React.useEffect(() => {
     // @see https://github.com/facebook/react/issues/20325#issuecomment-732707240
     window.addEventListener('click', handleHideOptions, { capture: true });
-
     return () => {
       window.removeEventListener('click', handleHideOptions);
     };
@@ -188,7 +187,7 @@ export function ReactSelectOption({
       data-prefix={prefix}
     >
       <div css={currOptionStyle} onClick={handleShowOptions}>
-        <div>{option.name}</div>
+        {option ? <div>{option.name}</div> : <div></div>}
         <div css={iconStyle}>
           {showOptions ? <ChevronIcons.Up /> : <ChevronIcons.Down />}
         </div>
@@ -225,7 +224,7 @@ export function ReactSelectOption({
                   width={13.5}
                   css={css`
                     path {
-                      fill: ${item.id === option.id
+                      fill: ${option && item.id === option.id
                         ? 'var(--primary-white)'
                         : 'var(--primary-dark)'};
                     }
